@@ -1,16 +1,19 @@
-stages:
-  - deploy
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
 pages:
   timeout: 5m
-  stage: deploy
-  image: registry.gitlab.com/pages/hugo:latest
+  image: node:14
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - .npm/
+  before_script:
+    - npm ci --cache .npm --prefer-offline
   script:
     - mv exampleContent content
-    - hugo
+    - npm run build
   artifacts:
     paths:
       - public
