@@ -1,0 +1,182 @@
+.single {
+    &__article {
+        width: 760px;
+        min-height: 600px;
+        margin-top: 20px;
+        padding: 20px;
+        background: #fff;
+        border: 1px solid $border;
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &__date {
+            font-size: 15px;
+            & i {
+                margin-right: 5px;
+            }
+        }
+        &__title {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 2px;
+            border-bottom: 3px solid $title-border;
+        }
+        &__shareLinks {
+            margin-bottom: 20px;
+        }
+        &__tag {
+            &__items {
+                list-style: none;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            &__itemLink {
+                display: flex;
+                align-items: center;
+                margin-right: 6px;
+                margin-bottom: 6px;
+                padding: 3px 6px;
+                background: $light-background;
+                font-size: 12px;
+                color: $light-text;
+            }
+            &__itemIcon {
+                margin-right: 5px;
+            }
+        }
+        &__thumbnail {
+            margin: 20px auto;
+        }
+        &__content {
+            margin: 20px 10px;
+            font-size: 16px;
+            line-height: 200%;
+            word-break: break-all;
+            h1 {
+                margin-top: 35px;
+                margin-bottom: 20px;
+                padding: 5px 20px;
+                border-left: 10px solid $title-border;
+            }
+            h2 {
+                margin-top: 30px;
+                margin-bottom: 15px;
+                padding-bottom: 2px;
+                border-bottom: 2px solid $title-border;
+            }
+            h3 {
+                margin-top: 25px;
+                margin-bottom: 10px;
+            }
+            h4 {
+                margin-top: 20px;
+                margin-bottom: 5px;
+            }
+            h5 {
+                margin-top: 15px;
+            }
+            h6 {
+                margin-top: 10px;
+            }
+            p {
+                margin: 10px 0;
+                > code {
+                    padding: 1px 3px;
+                    background: #eee;
+                }
+            }
+            ul, ol {
+                margin-left: 20px;
+            }
+            .highlight {
+                & pre {
+                    padding: 5px;
+                }
+            }
+            a {
+                text-decoration: underline;
+            }
+            img {
+                margin: auto;
+            }
+        }
+    }
+    &__navigation {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        &__prev {
+            position: relative;
+            width: 47.5%;
+            padding: 10px;
+            padding-left: 30px;
+            background: #fff;
+            border: 1px solid $border;
+            display: flex;
+            align-items: center;
+            &::before {
+                content: "<";
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 10px;
+                font-weight: bold;
+            }
+        }
+        &__next {
+            position: relative;
+            width: 47.5%;
+            padding: 10px;
+            padding-right: 30px;
+            background: #fff;
+            border: 1px solid $border;
+            display: flex;
+            align-items: center;
+            &::after {
+                content: ">";
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 10px;
+                font-weight: bold;
+            }
+        }
+        &__center {
+            margin: auto;
+        }
+    }
+}
+
+@media only screen and (max-width: $sp-width) {
+    .single {
+        &__article {
+            width: 100%;
+            min-height: 500px;
+            margin-top: 10px;
+            &__header {
+                display: block;
+            }
+            &__date {
+                margin-bottom: 10px;
+                font-size: 14px;
+            }
+            &__title {
+                margin-top: 20px;
+                margin-bottom: 5px;
+            }
+            &__content {
+                margin: 20px 10px;
+                font-size: 16px;
+                line-height: 150%;
+                p {
+                    margin: 15px 0;
+                }
+            }
+        }
+        &__navigation {
+            font-size: 14px;
+        }
+    }
+}

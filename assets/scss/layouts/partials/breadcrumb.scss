@@ -1,0 +1,31 @@
+
+.partials {
+    &__breadcrumb {
+        list-style: none;
+        display: flex;
+        white-space: nowrap;
+        font-size: 14px;
+        color: $light-text;
+        & li:not(:first-child) {
+            margin-left: 6px;
+        }
+        & li:last-child {
+            max-width: 250px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        & i {
+            margin-right: 6px;
+        }
+    }
+}
+
+
+@media only screen and (max-width: $sp-width) {
+    .partials {
+        &__articleCard {
+            width: 100%;
+        }
+    }
+}

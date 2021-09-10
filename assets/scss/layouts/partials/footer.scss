@@ -1,0 +1,35 @@
+.partials {
+    &__footer {
+        padding: 10px;
+        &__menu {
+            display: flex;
+            justify-content: space-around;
+            &__list {
+                list-style: none;
+                font-size: 15px;
+                color: $footer-menu;
+                & li:not(:first-child) {
+                    margin-top: 5px;
+                }
+            }
+        }
+        &__copyright {
+            margin-top: 20px;
+            text-align: center;
+        }
+    }
+}
+
+@media only screen and (max-width: $sp-width) {
+    .partials {
+        &__footer {
+            &__menu {
+                display: flex;
+                flex-direction: column;
+                &__list:not(:first-child) {
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+}

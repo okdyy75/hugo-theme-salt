@@ -1,0 +1,84 @@
+
+.partials {
+    &__shareLinks {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        &__item {
+            width: 110px;
+        }
+        %__itemLink {
+            display: block;
+            padding: 10px 20px;
+            border-radius: 3px;
+            text-align: center;
+            font-size: 11px;
+            color: #fff;
+            transition: 0.3s ease-in-out;
+            & i {
+                margin-right: 5px;
+            }
+            &:hover {
+                transform: translate3d(0px, 3px, 1px);
+                box-shadow: none;
+            }
+        }
+        &__itemLink {
+            &--twitter {
+                @extend %__itemLink;
+                background: #1da1f1;
+                box-shadow: 0 3px 0 #0092ca;
+            }
+            &--facebook {
+                @extend %__itemLink;
+                background: #3b5998;
+                box-shadow: 0 3px 0 #2c4373;
+            }
+            &--hatena {
+                @extend %__itemLink;
+                &::before {
+                    content: 'B!';
+                    font-weight: bold;
+                    line-height: 1;
+                }
+                background: #5d8ac1;
+                box-shadow: 0 3px 0 #43638b;
+            }
+            &--pocket {
+                @extend %__itemLink;
+                background: #f03e51;
+                box-shadow: 0 3px 0 #c0392b;
+            }
+            &--pocket {
+                @extend %__itemLink;
+                background: #f03e51;
+                box-shadow: 0 3px 0 #c0392b;
+            }
+            &--line {
+                @extend %__itemLink;
+                background: #25af00;
+                box-shadow: 0 3px 0 #219900;
+            }
+            &--copy {
+                @extend %__itemLink;
+                background: #555;
+                box-shadow: 0 3px 0 #333;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: $sp-width) {
+    .partials {
+        &__shareLinks {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            &__item {
+                width: 48%;
+                margin: 1%;
+            }
+        }
+    }
+}

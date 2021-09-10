@@ -1,0 +1,47 @@
+{{ define "main" }}
+    <section>
+        <article class="single__article">
+            <div class="single__article__header">
+                {{ partial "breadcrumb.html" . }}
+                <div class="pcShow single__article__date">
+                    <i class="far fa-calendar-alt"></i>{{ .Date.Format "2006-01-02" }}
+                    &#032;&#047;&#032;<i class="fas fa-sync-alt"></i>{{ .Date.Format "2006-01-02" }}
+                </div>
+            </div>
+            <h1 class="single__article__title">{{ .Title }}</h1>
+            <div class="spShow single__article__date">
+                <i class="far fa-calendar-alt"></i>{{ .Date.Format "2006-01-02" }}
+                &#032;&#047;&#032;<i class="fas fa-sync-alt"></i>{{ .Date.Format "2006-01-02" }}
+            </div>
+            {{ if .Params.share }}
+                <section class="single__article__shareLinks">
+                    {{ partial "share-links.html" . }}
+                </section>
+            {{ end }}
+
+            {{ $tags := .GetTerms "tags" }}
+            {{ if $tags }}
+                {{ partial "tag-list.html" (dict "tags" $tags) }}
+            {{ end }}
+
+            {{ $thumbnail := .Resources.Match "thumbnail.*" }}
+            {{ if $thumbnail }}
+                {{ $thumbnail = (index $thumbnail 0).Fit "640x640 q100 webp" }}
+                <img src="{{ $thumbnail.RelPermalink  }}" alt="{{ .Title }}" loading="lazy" class="single__article__thumbnail">
+            {{ end }}
+            
+            <div class="single__article__content">
+                {{ .Content }}
+            </div>
+        </article>
+        <div class="single__navigation">
+            {{ with .PrevInSection }}
+                <a href="{{ .Permalink }}" class="single__navigation__prev">{{ .LinkTitle }}</a>
+            {{ end }}
+            <div class="single__navigation__center"></div>
+            {{ with .NextInSection }}
+                <a href="{{ .Permalink }}" class="single__navigation__next">{{ .LinkTitle }}</a>
+            {{ end }}
+        </div>
+    </section>
+{{ end }}

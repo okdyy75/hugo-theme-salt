@@ -1,0 +1,57 @@
+
+.partials {
+    &__articleCard {
+        display: block;
+        width: 380px;
+        font-size: 14px;
+        padding: 10px;
+        &__inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            background: #FFF;
+            box-shadow: 0 0 5px rgba(0, 0, 0, .05)
+        }
+        &__inner:hover * {
+            cursor: pointer;
+        }
+        &__link {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        &__thumbnail {
+            width: 320px;
+            height: 180px;
+            object-fit: cover;
+            margin: auto;
+        }
+        &__title {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            padding-bottom: 2px;
+            border-bottom: 2px solid $title-border
+        }
+        &__description {
+            margin-left: 5px;
+            margin-top: 5px;
+            height: 6em;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4;
+            overflow: hidden;
+        }
+    }
+}
+
+
+@media only screen and (max-width: $sp-width) {
+    .partials {
+        &__articleCard {
+            width: 100%;
+        }
+    }
+}

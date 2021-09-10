@@ -1,0 +1,48 @@
+{{ $link := .link }}
+<div class="partials__snsLinks">
+    {{ if $link.twitter }}
+        <a href="https://twitter.com/{{ $link.twitter }}" target="_blank" class="partials__snsLinks__link--twitter">
+            <i class="fa-lg fab fa-twitter"></i>
+        </a>
+    {{ end }}
+    {{ if $link.instagram }}
+        <a href="https://www.instagram.com/{{ $link.instagram }}" target="_blank" class="partials__snsLinks__link--instagram">
+            <i class="fa-lg fab fa-instagram"></i>
+        </a>
+    {{ end }}
+    {{ if $link.facebook }}
+        <a href="{{ $link.facebook }}" target="_blank" class="partials__snsLinks__link--facebook">
+            <i class="fa-lg fab fa-facebook-f"></i>
+        </a>
+    {{ end }}
+    {{ if $link.youtube }}
+        <a href="{{ $link.youtube }}" target="_blank" class="partials__snsLinks__link--youtube">
+            <i class="fa-lg fab fa-youtube"></i>
+        </a>
+    {{ end }}
+    {{ if $link.github }}
+        <a href="https://github.com/{{ $link.github }}" target="_blank" class="partials__snsLinks__link--github">
+            <i class="fa-lg fab fa-github"></i>
+        </a>
+    {{ end }}
+    {{ if $link.qiita }}
+        <a href="https://qiita.com/{{ $link.qiita }}" target="_blank" class="partials__snsLinks__link--qiita">
+            Q
+        </a>
+    {{ end }}
+    {{ if $link.zenn }}
+        <a href="https://zenn.dev/{{ $link.zenn }}" target="_blank" class="partials__snsLinks__link--zenn">
+            Z
+        </a>
+    {{ end }}
+    {{ if $link.email }}
+        <a href="mailto:{{ $link.email }}" target="_blank" class="partials__snsLinks__link--email">
+            <i class="fa-lg fas fa-envelope"></i>
+        </a>
+    {{ end }}
+    {{ if $link.other }}
+        <a href="{{ $link.other }}" target="_blank" class="partials__snsLinks__link--other">
+            <i class="fa-lg fas fa-link"></i>
+        </a>
+    {{ end }}
+</div>

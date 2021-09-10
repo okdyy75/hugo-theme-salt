@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    {{- partial "head.html" . -}}
+    {{- block "head" . -}}{{ end }}
+</head>
+<body class="body">
+    <div class="container">
+        <header class="header">
+            <div class="header__inner">
+                {{- partial "header.html" . -}}
+                {{- block "header" . -}}{{ end }}
+            </div>
+        </header>
+        <div class="content">
+            <main class="main">
+                <div class="main__inner">
+                    {{- block "main" . }}{{- end }}
+                </div>
+            </main>
+            <aside class="sidebar">
+                <div class="sidebar__inner">
+                    {{- partial "sidebar.html" . -}}
+                    {{- block "sidebar" . -}}{{ end }}
+                </div>
+            </aside>
+        </div>
+        <footer class="footer">
+            <div class="footer__inner">
+                {{- partial "footer.html" . -}}
+                {{- block "footer" . -}}{{ end }}
+            </div>
+        </footer>
+    </div>
+    {{- block "script" . -}}{{ end }}
+</body>
+</html>

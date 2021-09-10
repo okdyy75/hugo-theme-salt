@@ -1,0 +1,106 @@
+{{ define "sidebar" }}
+    <div class="partials__sidebar">
+        <nav class="partials__sidebar__profile">
+            <h3 class="partials__sidebar__profile__title">
+                プロフィール
+            </h3>
+            {{ $icon := resources.Get .Site.Params.profile.icon }}
+            {{ if $icon }}
+                {{ $icon = $icon.Fill "100x100 center webp" }}
+            {{ else }}
+                {{ $icon = resources.Get .Site.Params.dafaultNoimage }}
+                {{ $icon = $icon.Fill "100x100 center webp" }}
+            {{ end }}
+            <img src="{{ $icon.Permalink }}" alt="icon" class="partials__sidebar__profile__icon">
+            <div class="partials__sidebar__profile__name">
+                {{ .Site.Params.profile.name }}
+            </div>
+            <div class="partials__sidebar__profile__description">
+                {{ .Site.Params.profile.description }}
+            </div>
+            {{ partial "sns-links" (dict "link" .Site.Params.profile.link ) }}
+        </nav>
+
+        <nav class="partials__sidebar__information">
+            <h4 class="partials__sidebar__information__title">
+                お知らせ
+            </h4>
+            <a href="{{ "information" | relURL }}">
+                <div>
+                    {{ with .Site.GetPage "/information" }}{{ index (split .RawContent "\n\n") 0 }}{{ end }}
+                </div>
+            </a>
+        </nav>
+
+        <nav class="partials__sidebar__menu">
+            <ul class="partials__sidebar__menu__items">
+                {{ range .Site.Params.sideMenu }}
+                    <li class="partials__sidebar__menu__item">
+                        <a href="{{ .url | relURL }}" class="partials__sidebar__menu__itemLink">
+                            <div class="partials__sidebar__menu__itemIcon">
+                                <i class="{{ .icon }}"></i>
+                            </div>
+                            <div class="partials__sidebar__menu__itemTitle">
+                                {{ .title }}
+                            </div>
+                        </a>
+                    </li>
+                {{ end }}
+            </ul>
+        </nav>
+
+        <nav class="partials__sidebar__newArticle">
+            <h3 class="partials__sidebar__newArticle__title">
+                新着記事
+            </h3>
+            <ul class="partials__sidebar__newArticle__items">
+                {{ range first .Site.Params.newArticleLimit (where .Site.RegularPages.ByDate.Reverse ".Section" "==" "article") }}
+                    <li class="partials__sidebar__newArticle__item">
+                        <a href="{{ .Permalink }}" class="partials__sidebar__newArticle__itemLink">
+                            {{ $thumbnail := .Resources.Match "thumbnail.*" }}
+                            {{ if $thumbnail }}
+                                {{ $thumbnail = (index $thumbnail 0).Fill "192x108 center webp" }}
+                            {{ else }}
+                                {{ $thumbnail = resources.Get .Site.Params.dafaultNoimage }}
+                                {{ $thumbnail = $thumbnail.Fill "192x108 center webp" }}
+                            {{ end }}
+                            <img src='{{ $thumbnail.Permalink }}' alt="{{ .Title }}" loading="lazy" class="partials__sidebar__newArticle__itemThumbnail">
+                            <div class="partials__sidebar__newArticle__itemTitle">
+                                {{ .Title }}
+                            </div>
+                        </a>
+                    </li>
+                </li>
+              {{ end }}
+            </ul>
+        </nav>
+
+        <nav class="partials__sidebar__category">
+            <h3 class="partials__sidebar__category__title">
+                カテゴリー
+            </h3>
+            <ul class="partials__sidebar__category__items">
+                {{ range .Site.Taxonomies.categories.ByCount }}
+                    <li class="partials__sidebar__category__item">
+                        <a href="{{ "categories" | relURL }}/{{ .Term }}" class="partials__sidebar__category__itemLink">
+                            <div>
+                                <i class="fas fa-arrow-circle-right partials__sidebar__category__itemIcon"></i>
+                                {{ .Term }}
+                            </div>
+                            <div class="partials__sidebar__category__itemCount">
+                                {{ .Count }}
+                            </div>
+                        </a>
+                    </li>
+                {{ end }}
+            </ul>
+        </nav>
+
+        <nav class="partials__sidebar__tag">
+            <h3 class="partials__sidebar__tag__title">
+                タグ
+            </h3>
+            {{ partial "tag-list.html" (dict "tags" .Site.Taxonomies.tags.ByCount) }}
+        </nav>
+    </div>
+{{ end }}

@@ -1,0 +1,10 @@
+{{ $tags := .tags }}
+<ul class="partials__tagList">
+    {{ range $tags }}
+        <li class="partials__tagList__item">
+            <a href="{{ "tags" | relURL }}/{{ .Name | urlize }}" class="partials__tagList__itemLink">
+                <i class="fas fa-tag partials__tagList__itemIcon"></i>{{ .Name }}
+            </a>
+        </li>
+    {{ end }}
+</ul>

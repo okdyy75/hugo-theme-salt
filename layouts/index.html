@@ -1,0 +1,17 @@
+
+{{ define "main" }}
+    <section class="index">
+        <div class="index__inner">
+            <div class="index__titleWrapper">
+                <h1 class="index__title">新着</h1>
+            </div>
+            {{ $paginator := .Paginate (where (where .Site.Pages "Section" "article") "IsPage" "==" true) }}
+            <div class="index__articleCardList">
+                {{ range $page := $paginator.Pages }}
+                    {{ partial "article-card" . }}
+                {{ end }}
+            </div>
+            {{ template "_internal/pagination.html" . }}
+        </div>
+    </section>
+{{ end }}

@@ -1,0 +1,25 @@
+<article class="partials__articleCard">
+    <div class="partials__articleCard__inner">
+        <a href="{{ .Permalink }}" class="partials__articleCard__link"></a>
+        {{ $thumbnail := .Resources.Match "thumbnail.*" }}
+        {{ if $thumbnail }}
+            {{ $thumbnail = (index $thumbnail 0).Fill "320x180 center webp" }}
+        {{ else }}
+            {{ $thumbnail = resources.Get .Site.Params.dafaultNoimage }}
+            {{ $thumbnail = $thumbnail.Fill "320x180 center webp" }}
+        {{ end }}
+        <img src='{{ $thumbnail.Permalink  }}' alt="{{ .Title }}" loading="lazy" class="partials__articleCard__thumbnail">
+        <h4 class="partials__articleCard__title">
+            {{ .Title }}
+        </h4>
+
+        {{ $tags := .GetTerms "tags" }}
+        {{ if $tags }}
+            {{ partial "tag-list.html" (dict "tags" $tags) }}
+        {{ end }}
+
+        <div class="partials__articleCard__description">
+            {{ .Summary }}
+        </div>
+    </div>
+</article>

@@ -1,0 +1,22 @@
+{
+  "name": "hugo-theme-salt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/okdyy75/hugo-theme-salt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/okdyy75/hugo-theme-salt/issues"
+  },
+  "homepage": "https://gitlab.com/okdyy75/hugo-theme-salt#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4"
+  }
+}

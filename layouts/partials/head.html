@@ -1,0 +1,59 @@
+{{ define "head" }}
+    {{ $title := "" }}
+    {{ $description := "" }}
+    {{ $og_image_url := "" }}
+
+    {{- if .Description -}}
+        {{- $description = .Description -}}
+    {{- else if .IsPage -}}
+        {{- $description = .Summary -}}
+    {{- else -}}
+        {{- $description = .Site.Params.description -}}
+    {{- end -}}
+
+    {{- if .IsHome -}}
+        {{- $title = .Site.Title -}}
+    {{- else -}}
+        {{- $title = printf "%s | %s" .Title .Site.Title -}}
+    {{- end -}}
+
+    {{- if .IsHome -}}
+        {{- $image := resources.Get (index .Site.Params.images 0) -}}
+        {{- if $image -}}
+            {{- $og_image_url = ($image.Fill "1200x630 center webp q100").Permalink -}}
+        {{- end -}}
+    {{- else if .IsPage -}}
+        {{- $thumbnail := .Resources.Match "thumbnail.*" -}}
+        {{- if $thumbnail -}}
+            {{- $og_image_url = ((index $thumbnail 0).Fill "1200x630 center webp q100").Permalink -}}
+        {{- end -}}
+    {{- end -}}
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ $title }}</title>
+    <meta name='description' content='{{ $description }}'>
+    <meta property='og:title' content='{{ $title }}'>
+    <meta property='og:description' content='{{ $description }}'>
+    {{- if $og_image_url -}}
+        <meta property='og:image' content="{{ $og_image_url }}">
+    {{- end -}}
+    <meta property='og:url' content='{{ .Permalink }}'>
+    <meta property='og:site_name' content='{{ .Site.Title }}'>
+    <meta property='og:type' content='{{- if .IsHome -}}website{{- else -}}article{{- end -}}'>
+    <meta name="twitter:title" content="{{ $title }}">
+    <meta name="twitter:description" content="{{ $description }}">
+    {{- if $og_image_url -}}
+        <meta name="twitter:image" content="{{ $og_image_url }}">
+        <meta name="twitter:card" content="summary_large_image">
+    {{- end -}}
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <link rel="icon" href="{{ "favicon.ico" | absURL }}">
+    <link rel='canonical' href='{{ .Permalink }}'>
+    {{ $style := resources.Get "scss/style.scss" | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <link rel="stylesheet" href="/css/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+    {{ template "_internal/google_analytics.html" . }}
+{{ end }}

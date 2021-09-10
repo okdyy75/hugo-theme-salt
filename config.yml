@@ -1,0 +1,86 @@
+baseURL: https://example.com
+languageCode: ja
+title: Hugo用ブログテーマ「Salt」
+googleAnalytics: 
+
+taxonomies:
+  category: categories
+  tag: tags
+
+hasCJKLanguage: true
+summaryLength: 100
+paginate: 10
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+module:
+  mounts:
+    - source: static
+      target: static
+    - source: node_modules/@fortawesome/fontawesome-free/css/all.min.css
+      target: static/css/vendor/@fortawesome/fontawesome-free/css/all.min.css
+    - source: node_modules/@fortawesome/fontawesome-free/webfonts
+      target: static/css/vendor/@fortawesome/fontawesome-free/webfonts
+
+params:
+  description: このサイトはHugo用ブログテーマ「Salt」のサンプルサイトです
+  images:
+    - image/og_large.png
+  dafaultNoimage: image/default_noimage.png
+  newArticleLimit: 5
+  profile:
+    name: ユーザー名
+    description: プロフィール
+    icon: image/profile_icon.png
+    link:
+      twitter: twitter
+      instagram: instagram
+      facebook: https://www.facebook.com/facebook
+      youtube: https://www.youtube.com/user/YouTubeJapan
+      github: github
+      qiita: qiita
+      zenn: zenn
+      email: email@example.com
+      other: https://example.com
+  contactLink: mailto:email@example.com?subject=お問い合わせ
+  copyright:
+    author: 作者
+    link: https://example.com
+    year: 2021
+  topMenu:
+    - title: サンプル
+      url: /categories/サンプル
+    - title: テスト
+      url: /categories/テスト
+    - title: カテゴリー1
+      url: /categories/カテゴリー1
+    - title: カテゴリー2
+      url: /categories/カテゴリー2
+  sideMenu:
+    - title: サンプル
+      url: /categories/サンプル
+      icon: fa-2x fas fa-book
+    - title: テスト
+      url: /categories/テスト
+      icon: fa-2x fas fa-laptop-code
+    - title: カテゴリー1
+      url: /categories/カテゴリー1
+      icon: fa-2x fas fa-mobile-alt
+    - title: カテゴリー2
+      url: /categories/カテゴリー2
+      icon: fa-2x fab fa-safari
+    - title: タグ1
+      url: /tags/タグ1
+      icon: fa-2x fas fa-home
+    - title: タグ2
+      url: /tags/タグ2
+      icon: fa-2x fas fa-cog
+    - title: タグ3
+      url: /tags/タグ3
+      icon: fa-2x fas fa-tshirt
+    - title: タグ4
+      url: /tags/タグ4
+      icon: fa-2x far fa-calendar-alt

@@ -1,0 +1,5 @@
+{{- $.Scratch.Add "terms" slice -}}
+{{- range $term, $page := .Data.Terms -}}
+    {{- $.Scratch.Add "terms" $term -}}
+{{- end -}}
+{{- $.Scratch.Get "terms" | jsonify -}}

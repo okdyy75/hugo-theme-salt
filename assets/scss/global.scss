@@ -1,0 +1,48 @@
+
+.spShow {
+    display: none;
+}
+.pcShow {
+    display: block;
+}
+.pagination {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    margin: 20px auto 0;
+    li {
+        margin: 0 5px;
+        a {
+            padding: 6px 12px;
+            border: 1px solid $border;
+            background: #fff;
+        }
+        &.active a {
+            background: #333;
+            color: #fff;
+        }
+    }
+}
+
+@media only screen and (max-width: $sp-width) {
+    .spShow {
+        display: block;
+    }
+    .pcShow {
+        display: none;
+    }
+    .pagination {
+        li {
+            margin: 0 2px;
+            a {
+                padding: 8px 10px;
+                border: 1px solid $border;
+                background: #fff;
+            }
+            &.active a {
+                background: #333;
+                color: #fff;
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+<div class="partials__footer">
+    <div class="partials__footer__menu">
+        <ul class="partials__footer__menu__list">
+            <li><a href="{{ "about" | relURL }}">このサイトについて</a></li>
+            <li><a href="{{ "information" | relURL }}">お知らせ</a></li>
+        </ul>
+        <ul class="partials__footer__menu__list">
+            <li><a href="{{ "term" | relURL }}">利用規約・プライバシーポリシー</a></li>
+            <li><a href="{{ .Site.Params.contactLink }}">お問い合わせ</a></li>
+        </ul>
+    </div>
+    <p class="partials__footer__copyright">
+        {{ if .Site.Params.copyright.link }}
+            ©&nbsp;{{ .Site.Params.copyright.year }}&nbsp;<a href="{{ .Site.Params.copyright.link }}">{{ .Site.Params.copyright.author }}</a>
+        {{ else }}
+            ©&nbsp;{{ .Site.Params.copyright.year }}&nbsp;{{ .Site.Params.copyright.author }}
+        {{ end }}
+    </p>
+</div>

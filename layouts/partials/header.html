@@ -1,0 +1,38 @@
+{{ define "header" }}
+    <div class="partials__header">
+        <div class="partials__header__title">
+            <a href="{{ $.Site.BaseURL }}">
+                {{ $.Site.Title }}
+            </a>
+        </div>
+        <div id="hamburger" class="spShow close partials__header__hamburger">
+            <div class="partials__header__hamburger__line"></div>
+        </div>        
+        <nav id="hamburgerMenu" class="close partials__header__menu">
+            <ul class="partials__header__menu__items">
+                {{ range $item := $.Site.Params.topMenu }}
+                    <li class="partials__header__menu__item">
+                        <a href="{{ $item.url | relURL }}" class="partials__header__menu__itemLink">{{ $item.title }}</a>
+                    </li>
+                {{ end }}
+            </ul>
+        </nav>
+        <div id="hamburgerMenuOverlay" class="close partials__header__overlay"></div>
+    </div>
+{{ end }}
+
+{{ define "script" }}
+    <script>
+        document.querySelectorAll('#hamburger, #hamburgerMenuOverlay').forEach(ele => {
+            ele.addEventListener('click', function(ev) {
+                console.log('click')
+                document.querySelector('#hamburger').classList.toggle('open')
+                document.querySelector('#hamburger').classList.toggle('close')
+                document.querySelector('#hamburgerMenu').classList.toggle('open')
+                document.querySelector('#hamburgerMenu').classList.toggle('close')
+                document.querySelector('#hamburgerMenuOverlay').classList.toggle('open')
+                document.querySelector('#hamburgerMenuOverlay').classList.toggle('close')
+            })
+        })
+    </script>
+{{ end }}

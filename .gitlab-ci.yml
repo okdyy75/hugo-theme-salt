@@ -1,0 +1,18 @@
+stages:
+  - deploy
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+pages:
+  timeout: 5m
+  stage: deploy
+  image: registry.gitlab.com/pages/hugo:latest
+  script:
+    - mv exampleContent content
+    - hugo
+  artifacts:
+    paths:
+      - public
+  only:
+    - main

@@ -1,0 +1,157 @@
+.partials {
+    &__sidebar {
+        %__card {
+            margin-top: 20px;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid $border;
+        }
+        %__title {
+            margin-bottom: 15px;
+            padding-bottom: 2px;
+            border-bottom: 2px solid $title-border;
+        }
+        &__profile {
+            @extend %__card;
+            &__title {
+                @extend %__title;
+            }
+            &__icon {
+                width: 100px;
+                height: 100px;
+                margin: auto;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+            &__name {
+                margin: 10px auto;
+                text-align: center;
+            }
+            &__description {
+                margin: 10px auto;
+                text-align: center;
+                font-size: 12px;
+                color: $light-text;
+            }
+        }
+        &__information {
+            @extend %__card;
+            &__title {
+                @extend %__title;
+            }
+        }
+        &__menu {
+            @extend %__card;
+            &__title {
+                @extend %__title;
+            }
+            &__items {
+                list-style: none;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                width: 280px;
+                margin: auto;
+            }
+            &__item {
+                width: 120px;
+                height: 120px;
+                margin: 10px;
+                border: 1px solid $border;
+                border-radius: 10%;
+                box-shadow: 2px 3px 4px #ccc;
+                transition: 0.3s ease-in-out;
+                &:hover {
+                    transform: translate3d(2px, 3px, 1px);
+                    box-shadow: 0px 1px 2px #ccc;
+                }
+            }
+            &__itemLink {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                flex-direction: column;
+                margin-top: 3px;
+                &:hover, &:hover * {
+                    opacity: 1;
+                }
+            }
+            &__itemTitle {
+                margin-top: 2px;
+            }
+        }
+        &__newArticle {
+            @extend %__card;
+            &__title {
+                @extend %__title;
+            }
+            &__item {
+                list-style: none;
+            }
+            &__itemLink {
+                margin: 10px auto;
+                display: flex;
+            }
+            &__itemThumbnail {
+                width: 96px;
+                height: 54px;
+                object-fit: cover;
+            }
+            &__itemTitle {
+                flex: 1;
+                margin-left: 10px;
+                font-size: 13px;
+                font-weight: bold;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+                overflow: hidden;
+            }
+        }
+        &__category {
+            @extend %__card;
+            &__title {
+                @extend %__title;
+            }
+            &__items {
+                list-style: none;
+            }
+            &__item {
+                padding: 10px;
+            }
+            &__itemLink {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            &__itemIcon {
+                margin-right: 10px;
+            }
+            &__itemCount {
+                min-width: 30px;
+                padding: 1px 3px;
+                border: 1px solid $border;
+                text-align: center;
+                font-size: 10px;
+                color: #aaa;
+            }
+        }
+        &__tag {
+            @extend %__card;
+            &__title {
+                @extend %__title;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $sp-width) {
+    .partials {
+        &__sidebar {
+            width: 100%;
+        }
+    }
+}
