@@ -14,9 +14,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/okdyy75/hugo-theme-salt/issues"
+    "url": "https://github.com/okdyy75/hugo-theme-salt/issues"
   },
-  "homepage": "https://gitlab.com/okdyy75/hugo-theme-salt#readme",
+  "homepage": "https://github.com/okdyy75/hugo-theme-salt#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "hugo-bin": "^0.76.1"
