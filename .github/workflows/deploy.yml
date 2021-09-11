@@ -30,6 +30,8 @@ jobs:
 
     - name: Build
       run: |
+        mv config.org.yml config.yml
+        mv exampleContent content
         npm run build
 
     - name: Deploy
