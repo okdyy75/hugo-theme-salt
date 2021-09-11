@@ -47,7 +47,6 @@ params:
       zenn: zenn
       email: email@example.com
       other: https://example.com
-  contactLink: mailto:email@example.com?subject=お問い合わせ
   copyright:
     author: 作者
     link: https://example.com
@@ -86,3 +85,14 @@ params:
     - title: タグ4
       url: /tags/タグ4
       icon: fa-2x far fa-calendar-alt
+  footerMenu:
+    left:
+      - title: このサイトについて
+        url: /about
+      - title: お知らせ
+        url: /information
+    right:
+      - title: 利用規約・プライバシーポリシー
+        url: /term
+      - title: お問い合わせ
+        url: mailto:email@example.com?subject=お問い合わせ
