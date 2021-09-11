@@ -13,54 +13,46 @@
             justify-content: center;
             border-radius: 50%;
             margin: 10px;
+            color: #fff;
         }
         &__link {
             &--twitter {
                 @extend %__link;
                 background:#1da1f1;
-                color: #fff;
             }
             &--instagram {
                 @extend %__link;
                 background: linear-gradient(135deg, #4C64D3, #CF2E92, #F26939, #FFDD83);
-                color: #fff;
             }
             &--facebook {
                 @extend %__link;
                 background: #3b5998;
-                color: #fff;
             }
             &--youtube {
                 @extend %__link;
                 background: #ff0000;
-                color: #fff;
             }
             &--github {
                 @extend %__link;
                 background: #24292e;
-                color: #fff;
             }
             &--qiita {
                 @extend %__link;
                 background: #55c500;
                 font-size: 22px;
-                color: #fff;
             }
             &--zenn {
                 @extend %__link;
                 background: #3EA8FF;
                 font-size: 22px;
-                color: #fff;
             }
             &--email {
                 @extend %__link;
                 background: #16a184;
-                color: #fff;
             }
             &--other {
                 @extend %__link;
                 background: #555555;
-                color: #fff;
             }
         }
     }

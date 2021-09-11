@@ -14,8 +14,8 @@
         margin: 0 5px;
         a {
             padding: 6px 12px;
-            border: 1px solid $border;
-            background: #fff;
+            border: 1px solid $light-border;
+            background: $base-background;
         }
         &.active a {
             background: #333;
@@ -36,12 +36,6 @@
             margin: 0 2px;
             a {
                 padding: 8px 10px;
-                border: 1px solid $border;
-                background: #fff;
-            }
-            &.active a {
-                background: #333;
-                color: #fff;
             }
         }
     }

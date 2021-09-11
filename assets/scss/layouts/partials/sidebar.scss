@@ -3,8 +3,8 @@
         %__card {
             margin-top: 20px;
             padding: 20px;
-            background: #fff;
-            border: 1px solid $border;
+            background: $base-background;
+            border: 1px solid $light-border;
         }
         %__title {
             margin-bottom: 15px;
@@ -57,13 +57,13 @@
                 width: 120px;
                 height: 120px;
                 margin: 10px;
-                border: 1px solid $border;
+                border: 1px solid $light-border;
                 border-radius: 10%;
-                box-shadow: 2px 3px 4px #ccc;
+                box-shadow: 2px 3px 4px $border;
                 transition: 0.3s ease-in-out;
                 &:hover {
                     transform: translate3d(2px, 3px, 1px);
-                    box-shadow: 0px 1px 2px #ccc;
+                    box-shadow: 0px 1px 2px $border;
                 }
             }
             &__itemLink {
@@ -133,7 +133,7 @@
             &__itemCount {
                 min-width: 30px;
                 padding: 1px 3px;
-                border: 1px solid $border;
+                border: 1px solid $light-border;
                 text-align: center;
                 font-size: 10px;
                 color: #aaa;
@@ -152,6 +152,9 @@
     .partials {
         &__sidebar {
             width: 100%;
+            > :nth-child(1) {
+                margin-top: 0;
+            }
         }
     }
 }

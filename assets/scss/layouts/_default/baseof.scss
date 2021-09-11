@@ -1,9 +1,11 @@
-
+.body {
+    color: $base-font-color;
+}
 .header {
     box-shadow: 0 0 4px #111;
-    border-right: 1px solid #fff;
+    border-right: 1px solid $base-background;
     margin-bottom: 4px;
-    background: #fff;
+    background: $header-background;
     &__inner {
         width: 980px;
         margin: auto;
@@ -15,7 +17,7 @@
     justify-content: center;
     flex-direction: row;
     min-height: 400px;
-    background: $base-background;
+    background: $content-background;
 }
 .main {
     &__inner {
@@ -32,6 +34,7 @@
     }
 }
 .footer {
+    background: $footer-background;
     &__inner {
         width: 980px;
         margin: auto;

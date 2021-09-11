@@ -4,8 +4,8 @@
         min-height: 600px;
         margin-top: 20px;
         padding: 20px;
-        background: #fff;
-        border: 1px solid $border;
+        background: $base-background;
+        border: 1px solid $light-border;
         &__header {
             display: flex;
             justify-content: space-between;
@@ -112,8 +112,8 @@
             width: 47.5%;
             padding: 10px;
             padding-left: 30px;
-            background: #fff;
-            border: 1px solid $border;
+            background: $base-background;
+            border: 1px solid $light-border;
             display: flex;
             align-items: center;
             &::before {
@@ -130,8 +130,8 @@
             width: 47.5%;
             padding: 10px;
             padding-right: 30px;
-            background: #fff;
-            border: 1px solid $border;
+            background: $base-background;
+            border: 1px solid $light-border;
             display: flex;
             align-items: center;
             &::after {

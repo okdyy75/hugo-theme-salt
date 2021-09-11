@@ -3,15 +3,15 @@
         &__title {
             position: relative;
             padding: 20px 0;
-            font-size: 32px;
+            font-size: $site-title-font-size;
             font-weight: bold;
-            color: $site-title;
+            color: $site-title-color;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         &__hamburger {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
+            position: relative;
             width: 33px;
             height: 23px;
             &::before {
@@ -52,11 +52,10 @@
             }
         }
         &__menu {
+            padding: 10px 0;
             &__items {
                 list-style: none;
                 display: flex;
-                border-top: 8px solid #fff;
-                border-bottom: 8px solid #fff;
             }
             &__item {
                 flex: 1;
@@ -64,12 +63,12 @@
                 font-size: 18px;
             }
             &__item:not(:last-child) {
-                border-right: 2px solid #ccc;
+                border-right: 2px solid $border;
             }
             &__itemLink {
                 display: block;
                 font-weight: bold;
-                color: $header-menu;
+                color: $header-menu-color;
             }
         }
     }
@@ -80,16 +79,16 @@
         &__header {
             &__title {
                 padding: 0;
-                font-size: 25px;
+                font-size: $site-title-font-size * 0.65;
             }
             &__menu {
                 position: absolute;
                 width: 100%;
                 right: -100%;
                 margin-top: 14px;
-                background: #fff;
-                border-top: 1px solid $border;
-                border-bottom: 1px solid $border;
+                background: $base-background;
+                border-top: 1px solid $light-border;
+                border-bottom: 1px solid $light-border;
                 transition: 0.3s ease-in-out;
                 &.open {
                     right: 0;
@@ -105,7 +104,7 @@
                 }
                 &__item:not(:last-child) {
                     border-right: none;
-                    border-bottom: 1px solid #ccc;
+                    border-bottom: 1px solid $border;
                 }
             }
         }
