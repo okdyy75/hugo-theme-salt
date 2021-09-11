@@ -25,6 +25,8 @@ module:
       target: static/css/vendor/@fortawesome/fontawesome-free/css/all.min.css
     - source: node_modules/@fortawesome/fontawesome-free/webfonts
       target: static/css/vendor/@fortawesome/fontawesome-free/webfonts
+    - source: node_modules/github-markdown-css/github-markdown.css
+      target: static/css/vendor/github-markdown-css/github-markdown.css
 
 menu:
   header:

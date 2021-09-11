@@ -55,5 +55,8 @@
     {{ $style := resources.Get "scss/style.scss" | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
     <link rel="stylesheet" href="/css/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+    {{ if .IsPage }}
+        <link rel="stylesheet" href="/css/vendor/github-markdown-css/github-markdown.css">
+    {{ end }}
     {{ template "_internal/google_analytics.html" . }}
 {{ end }}
