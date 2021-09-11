@@ -29,6 +29,7 @@ params:
   description: このサイトはHugo用ブログテーマ「Salt」のサンプルサイトです
   images:
     - image/og_large.png
+  notFoundImage: image/404.png
   dafaultNoimage: image/default_noimage.png
   newArticleLimit: 5
   profile:
