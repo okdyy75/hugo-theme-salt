@@ -48,14 +48,13 @@
             &__items {
                 list-style: none;
                 display: flex;
-                justify-content: space-between;
+                justify-content: space-around;
                 flex-wrap: wrap;
-                width: 280px;
                 margin: auto;
             }
             &__item {
-                width: 120px;
-                height: 120px;
+                width: 100px;
+                height: 100px;
                 margin: 10px;
                 border: 1px solid $light-border;
                 border-radius: 10%;
@@ -154,6 +153,12 @@
             width: 100%;
             > :nth-child(1) {
                 margin-top: 0;
+            }
+            &__menu {
+                &__item {
+                    width: 120px;
+                    height: 120px;
+                }
             }
         }
     }
