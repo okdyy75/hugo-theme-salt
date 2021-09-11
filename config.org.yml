@@ -26,6 +26,75 @@ module:
     - source: node_modules/@fortawesome/fontawesome-free/webfonts
       target: static/css/vendor/@fortawesome/fontawesome-free/webfonts
 
+menu:
+  header:
+    - name: サンプル
+      url: /categories/サンプル
+      weight: -100
+    - name: テスト
+      url: /categories/テスト
+      weight: -90
+    - name: カテゴリー1
+      url: /categories/カテゴリー1
+      weight: -80
+    - name: カテゴリー2
+      url: /categories/カテゴリー2
+      weight: -70
+  sidebar:
+    - name: サンプル
+      url: /categories/サンプル
+      pre: <i class="fa-2x fas fa-book"></i>
+      weight: -100
+    - name: テスト
+      url: /categories/テスト
+      pre: <i class="fa-2x fas fa-laptop-code"></i>
+      weight: -90
+    - name: カテゴリー1
+      url: /categories/カテゴリー1
+      pre: <i class="fa-2x fas fa-mobile-alt"></i>
+      weight: -80
+    - name: カテゴリー2
+      url: /categories/カテゴリー2
+      pre: <i class="fa-2x fab fa-safari"></i>
+      weight: -70
+    - name: タグ1
+      url: /tags/タグ1
+      pre: <i class="fa-2x fas fa-home"></i>
+      weight: -60
+    - name: タグ2
+      url: /tags/タグ2
+      pre: <i class="fa-2x fas fa-cog"></i>
+      weight: -50
+    - name: タグ3
+      url: /tags/タグ3
+      pre: <i class="fa-2x fas fa-tshirt"></i>
+      weight: -40
+    - name: タグ4
+      url: /tags/タグ4
+      pre: <i class="fa-2x far fa-calendar-alt"></i>
+      weight: -30
+  footer:
+    - name: このサイトについて
+      url: /about
+      weight: -100
+      params:
+        position: left
+    - name: お知らせ
+      url: /information
+      weight: -90
+      params:
+        position: left
+    - name: 利用規約・プライバシーポリシー
+      url: /term
+      weight: -100
+      params:
+        position: right
+    - name: お問い合わせ
+      url: mailto:email@example.com?subject=お問い合わせ
+      weight: -90
+      params:
+        position: right
+
 params:
   description: このサイトはHugo用ブログテーマ「Salt」のサンプルサイトです
   images:
@@ -51,48 +120,3 @@ params:
     author: 作者
     link: https://example.com
     year: 2021
-  topMenu:
-    - title: サンプル
-      url: /categories/サンプル
-    - title: テスト
-      url: /categories/テスト
-    - title: カテゴリー1
-      url: /categories/カテゴリー1
-    - title: カテゴリー2
-      url: /categories/カテゴリー2
-  sideMenu:
-    - title: サンプル
-      url: /categories/サンプル
-      icon: fa-2x fas fa-book
-    - title: テスト
-      url: /categories/テスト
-      icon: fa-2x fas fa-laptop-code
-    - title: カテゴリー1
-      url: /categories/カテゴリー1
-      icon: fa-2x fas fa-mobile-alt
-    - title: カテゴリー2
-      url: /categories/カテゴリー2
-      icon: fa-2x fab fa-safari
-    - title: タグ1
-      url: /tags/タグ1
-      icon: fa-2x fas fa-home
-    - title: タグ2
-      url: /tags/タグ2
-      icon: fa-2x fas fa-cog
-    - title: タグ3
-      url: /tags/タグ3
-      icon: fa-2x fas fa-tshirt
-    - title: タグ4
-      url: /tags/タグ4
-      icon: fa-2x far fa-calendar-alt
-  footerMenu:
-    left:
-      - title: このサイトについて
-        url: /about
-      - title: お知らせ
-        url: /information
-    right:
-      - title: 利用規約・プライバシーポリシー
-        url: /term
-      - title: お問い合わせ
-        url: mailto:email@example.com?subject=お問い合わせ

@@ -41,14 +41,14 @@
                 メニュー
             </h3>
             <ul class="partials__sidebar__menu__items">
-                {{ range .Site.Params.sideMenu }}
+                {{ range .Site.Menus.sidebar }}
                     <li class="partials__sidebar__menu__item">
-                        <a href="{{ .url | relURL }}" class="partials__sidebar__menu__itemLink">
+                        <a href="{{ .URL }}" class="partials__sidebar__menu__itemLink">
                             <div class="partials__sidebar__menu__itemIcon">
-                                <i class="{{ .icon }}"></i>
+                                {{ .Pre }}
                             </div>
                             <div class="partials__sidebar__menu__itemTitle">
-                                {{ .title }}
+                                {{ .Name }}
                             </div>
                         </a>
                     </li>

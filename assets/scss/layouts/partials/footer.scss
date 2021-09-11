@@ -26,7 +26,7 @@
             &__menu {
                 display: flex;
                 flex-direction: column;
-                nav:not(:first-child) {
+                &__list:not(:first-child) {
                     margin-top: 5px;
                 }
             }
