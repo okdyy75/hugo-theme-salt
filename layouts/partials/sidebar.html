@@ -27,7 +27,11 @@
             </h4>
             <a href="{{ "information" | relURL }}">
                 <div>
-                    {{ with .Site.GetPage "/information" }}{{ index (split .RawContent "\n\n") 0 }}{{ end }}
+                    {{ with .Site.GetPage "/information" }}
+                        {{ if .Page.Content }}
+                            {{ index (split .RawContent "\n\n") 0 }}
+                        {{ end }}
+                    {{ end }}
                 </div>
             </a>
         </nav>
