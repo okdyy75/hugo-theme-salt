@@ -30,6 +30,7 @@ jobs:
 
     - name: Build
       run: |
+        echo 'hugo-theme-salt.okdyy75.com' > static/CNAME
         mv config.org.yml config.yml
         mv exampleContent content
         npm run build
