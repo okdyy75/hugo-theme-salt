@@ -38,6 +38,20 @@
         padding: 10px;
     }
 }
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100vh;
+    height: 100vh;
+    background: #000;
+    opacity: 0.2;
+    &.open {
+        display: block;
+    }
+}
 @media only screen and (max-width: $sp-width) {
     .header {
         position: fixed;
@@ -49,7 +63,6 @@
         }
     }
     .content {
-        padding-top: $sp-header-height;
         flex-direction: column;
     }
     .main {

@@ -12,6 +12,7 @@
                 {{- block "header" . -}}{{ end }}
             </div>
         </header>
+        <div id="headerBlock" class="spShow"></div>
         <div class="content">
             <main class="main">
                 <div class="main__inner">
@@ -32,6 +33,13 @@
             </div>
         </footer>
     </div>
-    {{- block "script" . -}}{{ end }}
+    <div id="overlay" class="close overlay"></div>
+    <script>
+        window.addEventListener('DOMContentLoaded', (ev) => {
+            document.querySelector('#headerBlock').style.width = document.querySelector('.header').offsetWidth + 'px'
+            document.querySelector('#headerBlock').style.height = document.querySelector('.header').offsetHeight + 'px'
+        })
+    </script>
+    {{- block "header-script" . -}}{{ end }}
 </body>
 </html>
