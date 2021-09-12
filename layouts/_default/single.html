@@ -26,7 +26,7 @@
 
             {{ $thumbnail := .Resources.Match "thumbnail.*" }}
             {{ if $thumbnail }}
-                {{ $thumbnail = (index $thumbnail 0).Fit "640x640 q100 webp" }}
+                {{ $thumbnail = (index $thumbnail 0).Fit (printf "640x640 q%d webp" .Site.Params.imageQuality) }}
                 <img src="{{ $thumbnail.RelPermalink  }}" alt="{{ .Title }}" loading="lazy" class="single__article__thumbnail">
             {{ end }}
             

@@ -6,10 +6,10 @@
             </h3>
             {{ $icon := resources.Get .Site.Params.profile.icon }}
             {{ if $icon }}
-                {{ $icon = $icon.Fill "100x100 center webp" }}
+                {{ $icon = $icon.Fill (printf "200x200 center q%d webp" .Site.Params.imageQuality) }}
             {{ else }}
                 {{ $icon = resources.Get .Site.Params.dafaultNoimage }}
-                {{ $icon = $icon.Fill "100x100 center webp" }}
+                {{ $icon = $icon.Fill (printf "200x200 center q%d webp" .Site.Params.imageQuality) }}
             {{ end }}
             <img src="{{ $icon.Permalink }}" alt="icon" class="partials__sidebar__profile__icon">
             <div class="partials__sidebar__profile__name">
@@ -66,10 +66,11 @@
                         <a href="{{ .Permalink }}" class="partials__sidebar__newArticle__itemLink">
                             {{ $thumbnail := .Resources.Match "thumbnail.*" }}
                             {{ if $thumbnail }}
-                                {{ $thumbnail = (index $thumbnail 0).Fill "192x108 center webp" }}
+                                {{ $thumbnail = (index $thumbnail 0).Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
                             {{ else }}
                                 {{ $thumbnail = resources.Get .Site.Params.dafaultNoimage }}
                                 {{ $thumbnail = $thumbnail.Fill "192x108 center webp" }}
+                                {{ $thumbnail = $thumbnail.Fill.Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
                             {{ end }}
                             <img src='{{ $thumbnail.Permalink }}' alt="{{ .Title }}" loading="lazy" class="partials__sidebar__newArticle__itemThumbnail">
                             <div class="partials__sidebar__newArticle__itemTitle">

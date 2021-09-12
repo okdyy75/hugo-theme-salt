@@ -3,10 +3,10 @@
         <a href="{{ .Permalink }}" class="partials__articleCard__link"></a>
         {{ $thumbnail := .Resources.Match "thumbnail.*" }}
         {{ if $thumbnail }}
-            {{ $thumbnail = (index $thumbnail 0).Fill "320x180 center webp" }}
+            {{ $thumbnail = (index $thumbnail 0).Fill (printf "640x360 center q%d webp" .Site.Params.imageQuality) }}
         {{ else }}
             {{ $thumbnail = resources.Get .Site.Params.dafaultNoimage }}
-            {{ $thumbnail = $thumbnail.Fill "320x180 center webp" }}
+            {{ $thumbnail = $thumbnail.Fill (printf "640x360 center q%d webp" .Site.Params.imageQuality) }}
         {{ end }}
         <img src='{{ $thumbnail.Permalink  }}' alt="{{ .Title }}" loading="lazy" class="partials__articleCard__thumbnail">
         <h4 class="partials__articleCard__title">

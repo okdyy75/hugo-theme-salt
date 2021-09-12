@@ -20,12 +20,12 @@
     {{- if .IsHome -}}
         {{- $image := resources.Get (index .Site.Params.images 0) -}}
         {{- if $image -}}
-            {{- $og_image_url = ($image.Fill "1200x630 center webp q100").Permalink -}}
+            {{- $og_image_url = ($image.Fill (printf "1200x630 center q%d webp" .Site.Params.imageQuality)).Permalink -}}
         {{- end -}}
     {{- else if .IsPage -}}
         {{- $thumbnail := .Resources.Match "thumbnail.*" -}}
         {{- if $thumbnail -}}
-            {{- $og_image_url = ((index $thumbnail 0).Fill "1200x630 center webp q100").Permalink -}}
+            {{- $og_image_url = ((index $thumbnail 0).Fill (printf "1200x630 center q%d webp" .Site.Params.imageQuality)).Permalink -}}
         {{- end -}}
     {{- end -}}
 

@@ -36,6 +36,7 @@ params:
   notFoundImage: image/404.png
   dafaultNoimage: image/default_noimage.png
   newArticleLimit: 5
+  imageQuality: 75
   profile:
     name: ユーザー名
     description: プロフィール
