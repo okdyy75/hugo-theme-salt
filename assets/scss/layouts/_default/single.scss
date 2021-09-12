@@ -24,7 +24,7 @@
             border-bottom: 3px solid $title-border;
         }
         &__shareLinks {
-            margin-bottom: 20px;
+            margin-bottom: 40px;
         }
         &__tag {
             &__items {
@@ -112,6 +112,7 @@
             width: 100%;
             min-height: 500px;
             margin-top: 10px;
+            padding: 12.5px;
             &__header {
                 display: block;
             }
@@ -124,7 +125,7 @@
                 margin-bottom: 5px;
             }
             &__content {
-                margin: 20px 10px;
+                margin: 20px 5px;
                 font-size: 16px;
                 line-height: 150%;
                 p {

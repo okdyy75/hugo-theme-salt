@@ -9,7 +9,7 @@ taxonomies:
   tag: tags
 
 hasCJKLanguage: true
-summaryLength: 100
+summaryLength: 200
 paginate: 10
 
 markup:

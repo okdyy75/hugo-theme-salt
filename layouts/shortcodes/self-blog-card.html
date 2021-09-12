@@ -1,0 +1,24 @@
+<div style="border: 1px solid #ccc;">
+    {{ if not (in .Page.Permalink (.Get 0))  }}
+        {{ with .Site.GetPage (.Get 0) }}
+            <a href="{{ .Permalink }}" style="color: #000;text-decoration: none;display: flex;align-items: center;" onMouseOver="this.style.opacity='0.9'">
+                {{ $thumbnail := .Resources.Match "thumbnail.*" }}
+                {{ if $thumbnail }}
+                    {{ $thumbnail = (index $thumbnail 0).Fill "96x54 center webp" }}
+                {{ else }}
+                    {{ $thumbnail = resources.Get .Site.Params.dafaultNoimage }}
+                    {{ $thumbnail = $thumbnail.Fill "96x54 center webp" }}
+                {{ end }}
+                <img src="{{ $thumbnail.Permalink }}" style="margin: 7.5px;">
+                <div>
+                    <h4 style="margin: 7.5px 0;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;overflow: hidden;">
+                        {{ .Title }}
+                    </h4>
+                    <div style="margin: 7.5px 0;max-height: 63px;font-size:14px;line-height: 150%;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;">
+                        {{ .Summary }}
+                    </div>
+                </div>
+            </a>
+        {{ end }}
+    {{ end }}
+</div>
