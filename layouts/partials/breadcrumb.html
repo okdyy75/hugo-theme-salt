@@ -4,11 +4,11 @@
             <i class="fas fa-home"></i>Home
         </a>
     </li>
-    {{ if .Params.categories }}
+    {{ with .Params.categories }}
         <li>/</li>
         <li>
-            <a href="{{ "categories" | relURL }}/{{ .Params.categories }}">
-                <i class="fas fa-folder"></i>{{ .Params.categories }}
+            <a href="{{ "categories" | relURL }}/{{ . | urlize }}">
+                <i class="fas fa-folder"></i>{{ . }}
             </a>
         </li>
     {{ end }}
