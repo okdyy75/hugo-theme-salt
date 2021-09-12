@@ -28,6 +28,32 @@ module:
     - source: node_modules/github-markdown-css/github-markdown.css
       target: static/css/vendor/github-markdown-css/github-markdown.css
 
+params:
+  description: このサイトはHugo用ブログテーマ「Salt」のサンプルサイトです
+  images:
+    - image/og_large.png
+  notFoundImage: image/404.png
+  dafaultNoimage: image/default_noimage.png
+  newArticleLimit: 5
+  profile:
+    name: ユーザー名
+    description: プロフィール
+    icon: image/profile_icon.png
+    link:
+      twitter: twitter
+      instagram: instagram
+      facebook: https://www.facebook.com/facebook
+      youtube: https://www.youtube.com/user/YouTubeJapan
+      github: github
+      qiita: qiita
+      zenn: zenn
+      email: email@example.com
+      other: https://example.com
+  copyright:
+    author: 作者
+    link: https://example.com
+    year: 2021
+
 menu:
   header:
     - name: サンプル
@@ -96,29 +122,3 @@ menu:
       weight: -90
       params:
         position: right
-
-params:
-  description: このサイトはHugo用ブログテーマ「Salt」のサンプルサイトです
-  images:
-    - image/og_large.png
-  notFoundImage: image/404.png
-  dafaultNoimage: image/default_noimage.png
-  newArticleLimit: 5
-  profile:
-    name: ユーザー名
-    description: プロフィール
-    icon: image/profile_icon.png
-    link:
-      twitter: twitter
-      instagram: instagram
-      facebook: https://www.facebook.com/facebook
-      youtube: https://www.youtube.com/user/YouTubeJapan
-      github: github
-      qiita: qiita
-      zenn: zenn
-      email: email@example.com
-      other: https://example.com
-  copyright:
-    author: 作者
-    link: https://example.com
-    year: 2021
