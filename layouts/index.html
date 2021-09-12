@@ -2,12 +2,25 @@
 {{ define "main" }}
     <section class="index">
         <div class="index__inner">
+            {{ $paginator := .Paginate (where (where (where .Site.Pages "Section" "article") "IsPage" "==" true) "Params.pickups" "!=" "top") }}
+            {{ if not $paginator.HasPrev  }}
+                {{ with .Site.Taxonomies.pickups.top  }}
+                    <div class="index__titleWrapper">
+                        <h1 class="index__title--pickup">Pick up</h1>
+                    </div>
+                    <div class="index__articleCardList">
+                        {{ range .Pages }}
+                            {{ partial "article-card" . }}
+                        {{ end }}
+                    </div>
+                {{ end }}
+            {{ end }}
+
             <div class="index__titleWrapper">
-                <h1 class="index__title">新着</h1>
+                <h1 class="index__title">New Article</h1>
             </div>
-            {{ $paginator := .Paginate (where (where .Site.Pages "Section" "article") "IsPage" "==" true) }}
             <div class="index__articleCardList">
-                {{ range $page := $paginator.Pages }}
+                {{ range $paginator.Pages }}
                     {{ partial "article-card" . }}
                 {{ end }}
             </div>

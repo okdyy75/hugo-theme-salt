@@ -1,11 +1,18 @@
 .index {
-    &__title {
+    %__title {
         margin: 20px 10px 10px 10px;
         padding: 5px 20px;
         box-shadow: 2px 1px 4px $border;
         background: $base-background;
-        border-left: 10px solid $title-border;
         font-size: 25px;
+    }
+    &__title {
+        @extend %__title;
+        border-left: 10px solid $title-border;
+        &--pickup {
+            @extend %__title;
+            border-left: 10px solid $pickup-title-border;
+        }
     }
     &__articleCardList {
         display: flex;

@@ -7,6 +7,7 @@ googleAnalytics:
 taxonomies:
   category: categories
   tag: tags
+  pickup: pickups
 
 hasCJKLanguage: true
 summaryLength: 200
