@@ -18,6 +18,18 @@ markup:
     renderer:
       unsafe: true
 
+related:
+  includeNewer: true
+  indices:
+  - name: keywords
+    weight: 100
+  - name: tags
+    weight: 90
+  - name: date
+    weight: 10
+  threshold: 80
+  toLower: false
+
 module:
   mounts:
     - source: static
@@ -36,6 +48,7 @@ params:
   notFoundImage: image/404.png
   dafaultNoimage: image/default_noimage.png
   newArticleLimit: 5
+  relatedArticleLimit: 2
   imageQuality: 75
   profile:
     name: ユーザー名
