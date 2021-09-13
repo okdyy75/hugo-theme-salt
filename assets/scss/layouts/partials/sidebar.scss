@@ -53,9 +53,9 @@
                 margin: auto;
             }
             &__item {
-                width: 100px;
-                height: 100px;
-                margin: 10px;
+                width: $menu-icon-size;
+                height: $menu-icon-size;
+                margin: 10px auto;
                 border: 1px solid $light-border;
                 border-radius: 10%;
                 box-shadow: 2px 3px 4px $border;
@@ -156,8 +156,8 @@
             }
             &__menu {
                 &__item {
-                    width: 120px;
-                    height: 120px;
+                    width: $sp-menu-icon-size;
+                    height: $sp-menu-icon-size;
                 }
             }
         }
