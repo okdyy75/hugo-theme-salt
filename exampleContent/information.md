@@ -6,5 +6,5 @@ draft: false
 share: false
 ---
 
-20xx年x月x日  
+2021年8月31日  
 サイトを作成しました
