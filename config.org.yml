@@ -71,51 +71,43 @@ params:
 
 menu:
   header:
+    - name: Saltの使い方
+      url: /categories/salt
+      weight: -100
     - name: サンプル
       url: /categories/サンプル
-      weight: -100
-    - name: テスト
-      url: /categories/テスト
       weight: -90
-    - name: カテゴリー1
-      url: /categories/カテゴリー1
+    - name: Hugo
+      url: /tags/Hugo
       weight: -80
-    - name: カテゴリー2
-      url: /categories/カテゴリー2
+    - name: Go言語
+      url: /categories/go
       weight: -70
   sidebar:
-    - name: サンプル
-      url: /categories/サンプル
+    - name: Saltの使い方
+      url: /categories/salt
       pre: <i class="fa-2x fas fa-book"></i>
       weight: -100
-    - name: テスト
-      url: /categories/テスト
-      pre: <i class="fa-2x fas fa-laptop-code"></i>
-      weight: -90
-    - name: カテゴリー1
-      url: /categories/カテゴリー1
-      pre: <i class="fa-2x fas fa-mobile-alt"></i>
-      weight: -80
-    - name: カテゴリー2
-      url: /categories/カテゴリー2
-      pre: <i class="fa-2x fab fa-safari"></i>
-      weight: -70
-    - name: タグ1
-      url: /tags/タグ1
-      pre: <i class="fa-2x fas fa-home"></i>
-      weight: -60
-    - name: タグ2
-      url: /tags/タグ2
+    - name: Hugo
+      url: /tags/Hugo
       pre: <i class="fa-2x fas fa-cog"></i>
+      weight: -90
+    - name: Go言語
+      url: /categories/go
+      pre: <i class="fa-2x fas fa-laptop-code"></i>
+      weight: -80
+    - name: Tips
+      url: /tags/tips
+      pre: <i class="fa-2x fas fa-mobile-alt"></i>
+      weight: -70
+    - name: shortcode
+      url: /tags/ショートコード
+      pre: <i class="fa-2x fas fa-wrench"></i>
+      weight: -60
+    - name: サンプル
+      url: /categories/サンプル
+      pre: <i class="fa-2x fab fa-safari"></i>
       weight: -50
-    - name: タグ3
-      url: /tags/タグ3
-      pre: <i class="fa-2x fas fa-tshirt"></i>
-      weight: -40
-    - name: タグ4
-      url: /tags/タグ4
-      pre: <i class="fa-2x far fa-calendar-alt"></i>
-      weight: -30
   footer:
     - name: このサイトについて
       url: /about
@@ -127,13 +119,13 @@ menu:
       weight: -90
       params:
         position: left
-    - name: 利用規約・プライバシーポリシー
-      url: /term
+    - name: プライバシーポリシー
+      url: /privacy-policy
       weight: -100
       params:
         position: right
     - name: お問い合わせ
-      url: mailto:email@example.com?subject=お問い合わせ
+      url: https://github.com/okdyy75/hugo-theme-salt/issues
       weight: -90
       params:
         position: right
