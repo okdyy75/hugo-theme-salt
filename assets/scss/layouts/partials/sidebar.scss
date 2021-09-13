@@ -1,5 +1,6 @@
 .partials {
     &__sidebar {
+        width: 300px;
         %__card {
             margin-top: 20px;
             padding: 20px;
@@ -86,6 +87,11 @@
             @extend %__card;
             &__title {
                 @extend %__title;
+                &--pickup {
+                    margin-bottom: 15px;
+                    padding-bottom: 2px;
+                    border-bottom: 2px solid $pickup-title-border;
+                }
             }
             &__item {
                 list-style: none;
