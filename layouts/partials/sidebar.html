@@ -56,24 +56,23 @@
             </ul>
         </nav>
 
-        <nav class="partials__sidebar__newArticle">
-            <h3 class="partials__sidebar__newArticle__title">
+        <nav class="partials__sidebar__article">
+            <h3 class="partials__sidebar__article__title">
                 新着記事
             </h3>
-            <ul class="partials__sidebar__newArticle__items">
+            <ul class="partials__sidebar__article__items">
                 {{ range first .Site.Params.newArticleLimit (where .Site.RegularPages.ByDate.Reverse ".Section" "==" "article") }}
-                    <li class="partials__sidebar__newArticle__item">
-                        <a href="{{ .Permalink }}" class="partials__sidebar__newArticle__itemLink">
+                    <li class="partials__sidebar__article__item">
+                        <a href="{{ .Permalink }}" class="partials__sidebar__article__itemLink">
                             {{ $thumbnail := .Resources.Match "thumbnail.*" }}
                             {{ if $thumbnail }}
                                 {{ $thumbnail = (index $thumbnail 0).Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
                             {{ else }}
                                 {{ $thumbnail = resources.Get .Site.Params.dafaultNoimage }}
-                                {{ $thumbnail = $thumbnail.Fill "192x108 center webp" }}
-                                {{ $thumbnail = $thumbnail.Fill.Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
+                                {{ $thumbnail = $thumbnail.Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
                             {{ end }}
-                            <img src='{{ $thumbnail.Permalink }}' alt="{{ .Title }}" loading="lazy" class="partials__sidebar__newArticle__itemThumbnail">
-                            <div class="partials__sidebar__newArticle__itemTitle">
+                            <img src='{{ $thumbnail.Permalink }}' alt="{{ .Title }}" loading="lazy" class="partials__sidebar__article__itemThumbnail">
+                            <div class="partials__sidebar__article__itemTitle">
                                 {{ .Title }}
                             </div>
                         </a>
@@ -82,6 +81,34 @@
               {{ end }}
             </ul>
         </nav>
+
+        {{ if .Site.Taxonomies.pickups.sidebar  }}
+            <nav class="partials__sidebar__article">
+                <h3 class="partials__sidebar__article__title">
+                    ピックアップ
+                </h3>
+                <ul class="partials__sidebar__article__items">
+                    {{ range .Site.Taxonomies.pickups.sidebar }}
+                        <li class="partials__sidebar__article__item">
+                            <a href="{{ .Permalink }}" class="partials__sidebar__article__itemLink">
+                                {{ $thumbnail := .Resources.Match "thumbnail.*" }}
+                                {{ if $thumbnail }}
+                                    {{ $thumbnail = (index $thumbnail 0).Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
+                                {{ else }}
+                                    {{ $thumbnail = resources.Get .Site.Params.dafaultNoimage }}
+                                    {{ $thumbnail = $thumbnail.Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
+                                {{ end }}
+                                <img src='{{ $thumbnail.Permalink }}' alt="{{ .Title }}" loading="lazy" class="partials__sidebar__article__itemThumbnail">
+                                <div class="partials__sidebar__article__itemTitle">
+                                    {{ .Title }}
+                                </div>
+                            </a>
+                        </li>
+                    </li>
+                {{ end }}
+                </ul>
+            </nav>
+        {{ end }}
 
         <nav class="partials__sidebar__category">
             <h3 class="partials__sidebar__category__title">

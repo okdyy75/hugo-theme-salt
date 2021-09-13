@@ -2,7 +2,19 @@
 {{ define "main" }}
     <section class="index">
         <div class="index__inner">
-            {{ $paginator := .Paginate (where (where (where .Site.Pages "Section" "article") "IsPage" "==" true) "Params.pickups" "!=" "top") }}
+            {{ $pages := slice }}
+            {{ range .Site.Pages }}
+                {{ $add := true }}
+                {{ range $term := .Params.pickups }}
+                    {{ if eq $term "top" }}
+                        {{ $add = false }}
+                    {{ end }}
+                {{ end }}
+                {{ if and $add .IsPage (eq .Section "article") }}
+                    {{ $pages = $pages | append . }}
+                {{ end }}
+            {{ end }}
+            {{ $paginator := .Paginate $pages }}
             {{ if not $paginator.HasPrev  }}
                 {{ with .Site.Taxonomies.pickups.top  }}
                     <div class="index__titleWrapper">
