@@ -12,6 +12,7 @@ pages:
   before_script:
     - npm ci --cache .npm --prefer-offline
   script:
+    - mv config.org.yml config.yml
     - mv exampleContent content
     - npm run build
   artifacts:
