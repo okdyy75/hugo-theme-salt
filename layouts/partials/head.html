@@ -58,5 +58,6 @@
     {{ if .IsPage }}
         <link rel="stylesheet" href="/css/vendor/github-markdown-css/github-markdown.css">
     {{ end }}
+    {{- partial "head-script.html" . -}}
     {{ template "_internal/google_analytics.html" . }}
 {{ end }}
