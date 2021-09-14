@@ -11,10 +11,12 @@ pages:
       - .npm/
   before_script:
     - npm ci --cache .npm --prefer-offline
-  script:
-    - mv config.org.yml config.yml
-    - mv exampleContent content
-    - npm run build
+  script: |
+    mv exampleContent content
+    mv config.org.yml config.yml
+    sed -ie "s|baseURL:.*|baseURL: https://okdyy75.com|" config.yml
+    echo '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6143606071173887" crossorigin="anonymous"></script>' >> ./layouts/partials/head-script.html
+    npm run build
   artifacts:
     paths:
       - public
