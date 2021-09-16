@@ -21,14 +21,12 @@ Image Processingについてはこちらをチェック
 https://gohugo.io/content-management/image-processing/
 
 
-※バックスラッシュ（\）は外してください
-
 ```
-\{\{<custom-figure src="image.png" title="Resize スイカ" Resize="320x180" >\}\}
+{{</* custom-figure src="image.png" title="Resize スイカ" Resize="320x180" */>}}
 
-\{\{<custom-figure src="image.png" title="Fit スイカ" Fit="320x180" >\}\}
+{{</* custom-figure src="image.png" title="Fit スイカ" Fit="320x180" */>}}
 
-\{\{<custom-figure src="image.png" title="Fill スイカ" Fill="320x180" >\}\}
+{{</* custom-figure src="image.png" title="Fill スイカ" Fill="320x180" */>}}
 
 ```
 

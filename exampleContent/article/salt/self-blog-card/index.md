@@ -18,11 +18,9 @@ share: true
 - 自記事のブログカードは表示できません。
 - 日本語だとconfig.ymlの`summaryLength: 200`以上推奨です
 
-※バックスラッシュ（\）は外してください
-
 ```
 
-\{\{< self-blog-card "/article/salt/custom-figure" >\}\}
+{{</* self-blog-card "/article/salt/custom-figure" */>}}
 
 ```
 
