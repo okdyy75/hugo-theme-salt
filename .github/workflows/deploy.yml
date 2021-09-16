@@ -32,7 +32,7 @@ jobs:
       run: |
         echo 'hugo-theme-salt.okdyy75.com' > static/CNAME
         mv config.org.yml config.yml
-        sed -ie "s|googleAnalytics:*|googleAnalytics: G-LR5GBHW5M5|" config.yml
+        sed -ie "s|googleAnalytics:.*|googleAnalytics: G-LR5GBHW5M5|" config.yml
         sed -ie "s|name: ユーザー名|name: okdyy75|" config.yml
         sed -ie "s|description: プロフィール|description: Hugo用ブログテーマ「Salt」を作りました|" config.yml
         sed -ie "s|twitter: twitter|twitter: okdyy75|" config.yml
