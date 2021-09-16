@@ -1,22 +1,23 @@
 .partials {
     &__sidebar {
         width: 300px;
-        %__card {
+        &__card {
             margin-top: 20px;
             padding: 20px;
             background: $base-background;
             border: 1px solid $light-border;
         }
-        %__title {
+        &__title {
             margin-bottom: 15px;
             padding-bottom: 2px;
             border-bottom: 2px solid $title-border;
+            &--pickup {
+                margin-bottom: 15px;
+                padding-bottom: 2px;
+                border-bottom: 2px solid $pickup-title-border;
+            }
         }
         &__profile {
-            @extend %__card;
-            &__title {
-                @extend %__title;
-            }
             &__icon {
                 width: 100px;
                 height: 100px;
@@ -35,17 +36,7 @@
                 color: $light-text;
             }
         }
-        &__information {
-            @extend %__card;
-            &__title {
-                @extend %__title;
-            }
-        }
         &__menu {
-            @extend %__card;
-            &__title {
-                @extend %__title;
-            }
             &__items {
                 list-style: none;
                 display: flex;
@@ -84,15 +75,6 @@
             }
         }
         &__article {
-            @extend %__card;
-            &__title {
-                @extend %__title;
-                &--pickup {
-                    margin-bottom: 15px;
-                    padding-bottom: 2px;
-                    border-bottom: 2px solid $pickup-title-border;
-                }
-            }
             &__item {
                 list-style: none;
             }
@@ -117,10 +99,6 @@
             }
         }
         &__category {
-            @extend %__card;
-            &__title {
-                @extend %__title;
-            }
             &__items {
                 list-style: none;
             }
@@ -142,12 +120,6 @@
                 text-align: center;
                 font-size: 10px;
                 color: #aaa;
-            }
-        }
-        &__tag {
-            @extend %__card;
-            &__title {
-                @extend %__title;
             }
         }
     }
