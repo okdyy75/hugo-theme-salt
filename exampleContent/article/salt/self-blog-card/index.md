@@ -5,7 +5,7 @@ date: 2021-09-12T13:21:49+09:00
 lastmod: 2021-09-12T13:21:49+09:00
 draft: false
 tags: ["Hugo", "ショートコード"]
-categories: "salt"
+categories: "Saltの使い方"
 pickups: ["sidebar"]
 pickups_weight: -80
 share: true

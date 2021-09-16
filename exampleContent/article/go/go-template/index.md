@@ -5,7 +5,7 @@ date: 2021-09-13T11:59:12+09:00
 lastmod: 2021-09-13T11:59:12+09:00
 draft: false
 tags: ["go", "Hugo", "go-template", "tips"]
-categories: "go"
+categories: "Go言語"
 share: true
 ---
 

@@ -9,6 +9,7 @@ taxonomies:
   tag: tags
   pickup: pickups
 
+disablePathToLower: true
 hasCJKLanguage: true
 summaryLength: 200
 paginate: 10
@@ -72,7 +73,7 @@ params:
 menu:
   header:
     - name: Saltの使い方
-      url: /categories/salt
+      url: /categories/Saltの使い方
       weight: -100
     - name: サンプル
       url: /categories/サンプル
@@ -81,11 +82,11 @@ menu:
       url: /tags/Hugo
       weight: -80
     - name: Go言語
-      url: /categories/go
+      url: /categories/Go言語
       weight: -70
   sidebar:
     - name: Saltの使い方
-      url: /categories/salt
+      url: /categories/Saltの使い方
       pre: <i class="fa-2x fas fa-book"></i>
       weight: -100
     - name: Hugo
@@ -93,7 +94,7 @@ menu:
       pre: <i class="fa-2x fas fa-cog"></i>
       weight: -90
     - name: Go言語
-      url: /categories/go
+      url: /categories/Go言語
       pre: <i class="fa-2x fas fa-laptop-code"></i>
       weight: -80
     - name: Tips

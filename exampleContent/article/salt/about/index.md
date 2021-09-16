@@ -5,7 +5,7 @@ date: 2021-09-12T15:07:11+09:00
 lastmod: 2021-09-12T15:07:11+09:00
 draft: false
 tags: ["Hugo", "Hugoテーマ"]
-categories: "salt"
+categories: "Saltの使い方"
 pickups: ["top", "sidebar"]
 pickups_weight: -100
 share: true
