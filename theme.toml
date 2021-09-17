@@ -4,7 +4,7 @@
 name = "Salt"
 license = "MIT"
 licenselink = "https://github.com/okdyy75/hugo-theme-salt/blob/main/LICENSE"
-description = "シンプルなHugo用ブログテーマ「Satl」"
+description = "シンプルなHugoブログテーマ「Salt」"
 homepage = "https://hugo-theme-salt.okdyy75.com"
 tags = [
   "blog",
