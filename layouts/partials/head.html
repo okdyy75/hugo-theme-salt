@@ -50,6 +50,7 @@
     {{- end -}}
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
+    {{ .Hugo.Generator }}
     <link rel="icon" href="{{ "favicon.ico" | absURL }}">
     <link rel='canonical' href='{{ .Permalink }}'>
     {{ $style := resources.Get "scss/style.scss" | toCSS | minify | fingerprint }}
