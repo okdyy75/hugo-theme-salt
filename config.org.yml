@@ -1,7 +1,7 @@
 baseURL: https://hugo-theme-salt.okdyy75.com
 languageCode: ja
 # theme: hugo-theme-salt
-title: シンプルなHugoブログテーマ「Salt」
+title: Hugoブログテーマ「Salt」
 googleAnalytics: G-XXXXXXXXXX
 
 taxonomies:

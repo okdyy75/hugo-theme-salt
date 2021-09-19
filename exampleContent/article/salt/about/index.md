@@ -1,5 +1,5 @@
 ---
-title: "シンプルなHugoブログテーマ「Salt」とは？"
+title: "Hugoブログテーマ「Salt」とは？"
 description: ""
 date: 2021-09-12T15:07:11+09:00
 lastmod: 2021-09-17T21:04:11+09:00
