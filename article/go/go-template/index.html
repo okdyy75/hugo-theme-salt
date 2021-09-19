@@ -3,13 +3,13 @@
 <meta charset=utf-8>
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1">
-<title>Go言語Tips② Hugoで使われるlayoutの正体 | シンプルなHugoブログテーマ「Salt」</title>
+<title>Go言語Tips② Hugoで使われるlayoutの正体 | Hugoブログテーマ「Salt」</title>
 <meta name=description content="Hugoで使われるlayoutですが実態はgo-templateという、いわゆるテンプレートエンジンです https://pkg.go.dev/text/template テンプレート内のハイフンありなしの違い たまにHugoテンプレート内で{{ .Title }}や{{- .Title -}}で書いてるものを見かけます この違いはハイフンを付けることで前後の空白を除去したい場合に使われます ちなみに公式ドキュメントにあります https://pkg.go.dev/text/template#hdr-Text_and_spaces 配列や連想配列の空チェック Hugoを使う際、空ではない文字列or配列">
-<meta property="og:title" content="Go言語Tips② Hugoで使われるlayoutの正体 | シンプルなHugoブログテーマ「Salt」">
+<meta property="og:title" content="Go言語Tips② Hugoで使われるlayoutの正体 | Hugoブログテーマ「Salt」">
 <meta property="og:description" content="Hugoで使われるlayoutですが実態はgo-templateという、いわゆるテンプレートエンジンです https://pkg.go.dev/text/template テンプレート内のハイフンありなしの違い たまにHugoテンプレート内で{{ .Title }}や{{- .Title -}}で書いてるものを見かけます この違いはハイフンを付けることで前後の空白を除去したい場合に使われます ちなみに公式ドキュメントにあります https://pkg.go.dev/text/template#hdr-Text_and_spaces 配列や連想配列の空チェック Hugoを使う際、空ではない文字列or配列"><meta property="og:image" content="https://hugo-theme-salt.okdyy75.com/article/go/go-template/thumbnail_hu2cc68145f3781b3dc807c5718be0f3c2_1960_1200x630_fill_q75_h2_box_center_3.webp"><meta property="og:url" content="https://hugo-theme-salt.okdyy75.com/article/go/go-template/">
-<meta property="og:site_name" content="シンプルなHugoブログテーマ「Salt」">
+<meta property="og:site_name" content="Hugoブログテーマ「Salt」">
 <meta property="og:type" content="article">
-<meta name=twitter:title content="Go言語Tips② Hugoで使われるlayoutの正体 | シンプルなHugoブログテーマ「Salt」">
+<meta name=twitter:title content="Go言語Tips② Hugoで使われるlayoutの正体 | Hugoブログテーマ「Salt」">
 <meta name=twitter:description content="Hugoで使われるlayoutですが実態はgo-templateという、いわゆるテンプレートエンジンです https://pkg.go.dev/text/template テンプレート内のハイフンありなしの違い たまにHugoテンプレート内で{{ .Title }}や{{- .Title -}}で書いてるものを見かけます この違いはハイフンを付けることで前後の空白を除去したい場合に使われます ちなみに公式ドキュメントにあります https://pkg.go.dev/text/template#hdr-Text_and_spaces 配列や連想配列の空チェック Hugoを使う際、空ではない文字列or配列"><meta name=twitter:image content="https://hugo-theme-salt.okdyy75.com/article/go/go-template/thumbnail_hu2cc68145f3781b3dc807c5718be0f3c2_1960_1200x630_fill_q75_h2_box_center_3.webp">
 <meta name=twitter:card content="summary_large_image"><meta name=robots content="index,follow">
 <meta name=googlebot content="index,follow">
@@ -29,7 +29,7 @@
 <div class=partials__header>
 <div class=partials__header__title>
 <a href=https://hugo-theme-salt.okdyy75.com>
-シンプルなHugoブログテーマ「Salt」
+Hugoブログテーマ「Salt」
 </a>
 <div id=hamburger class="spShow close partials__header__hamburger">
 <div class=partials__header__hamburger__line></div>
@@ -423,9 +423,9 @@ Hugoでできること
 </li>
 <li class=partials__sidebar__article__item>
 <a href=https://hugo-theme-salt.okdyy75.com/article/salt/about/ class=partials__sidebar__article__itemLink>
-<img src=https://hugo-theme-salt.okdyy75.com/article/salt/about/thumbnail_huc1633a480d1f14d3ad339ce0d839c0d3_2170_192x108_fill_q75_h2_box_center_3.webp alt=シンプルなHugoブログテーマ「Salt」とは？ loading=lazy class=partials__sidebar__article__itemThumbnail>
+<img src=https://hugo-theme-salt.okdyy75.com/article/salt/about/thumbnail_huc1633a480d1f14d3ad339ce0d839c0d3_2170_192x108_fill_q75_h2_box_center_3.webp alt=Hugoブログテーマ「Salt」とは？ loading=lazy class=partials__sidebar__article__itemThumbnail>
 <div class=partials__sidebar__article__itemTitle>
-シンプルなHugoブログテーマ「Salt」とは？
+Hugoブログテーマ「Salt」とは？
 </div>
 </a>
 </li>
@@ -441,9 +441,9 @@ Hugoでできること
 <ul class=partials__sidebar__article__items>
 <li class=partials__sidebar__article__item>
 <a href=https://hugo-theme-salt.okdyy75.com/article/salt/about/ class=partials__sidebar__article__itemLink>
-<img src=https://hugo-theme-salt.okdyy75.com/article/salt/about/thumbnail_huc1633a480d1f14d3ad339ce0d839c0d3_2170_192x108_fill_q75_h2_box_center_3.webp alt=シンプルなHugoブログテーマ「Salt」とは？ loading=lazy class=partials__sidebar__article__itemThumbnail>
+<img src=https://hugo-theme-salt.okdyy75.com/article/salt/about/thumbnail_huc1633a480d1f14d3ad339ce0d839c0d3_2170_192x108_fill_q75_h2_box_center_3.webp alt=Hugoブログテーマ「Salt」とは？ loading=lazy class=partials__sidebar__article__itemThumbnail>
 <div class=partials__sidebar__article__itemTitle>
-シンプルなHugoブログテーマ「Salt」とは？
+Hugoブログテーマ「Salt」とは？
 </div>
 </a>
 </li>
