@@ -3,9 +3,10 @@
     font-family: $base-font;
 }
 .header {
+    position: relative;
+    z-index: 10;
     box-shadow: 0 0 4px #111;
     border-right: 1px solid $base-background;
-    margin-bottom: 4px;
     background: $header-background;
     &__inner {
         width: 980px;
