@@ -68,7 +68,7 @@
             </h3>
             <nav class="partials__sidebar__article">
                 <ul class="partials__sidebar__article__items">
-                    {{ range first .Site.Params.newArticleLimit (where .Site.RegularPages.ByDate.Reverse ".Section" "==" "article") }}
+                    {{ range first .Site.Params.newArticleLimit (where .Site.RegularPages.ByLastmod.Reverse ".Section" "==" "article") }}
                         <li class="partials__sidebar__article__item">
                             <a href="{{ .Permalink }}" class="partials__sidebar__article__itemLink">
                                 {{ $thumbnail := .Resources.Match "thumbnail.*" }}
