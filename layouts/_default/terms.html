@@ -1,0 +1,19 @@
+{{ define "main" }}
+    <section class="terms">
+        <div class="terms__inner">
+            <h1 class="terms__title">{{ .Title }}</h1>
+            <div class="terms__list">
+                {{ range .Pages }}
+                    <h2 class="terms__list__title">{{ .Title }}</h2>
+                    {{ range .Pages }}
+                        <ul class="terms__list__pages">
+                            <li class="terms__list__pageItem">
+                                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                            </li>
+                        </ul>
+                    {{ end }}
+                {{ end }}
+            </div>
+        </div>
+    </section>
+{{ end }}
