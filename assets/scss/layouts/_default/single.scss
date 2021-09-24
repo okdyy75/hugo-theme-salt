@@ -1,8 +1,8 @@
 .single {
     &__article {
-        width: 760px;
+        width: 740px;
         min-height: 600px;
-        margin-top: 20px;
+        margin: 20px auto auto;
         padding: 20px;
         background: $base-background;
         border: 1px solid $light-border;
@@ -62,7 +62,7 @@
     }
     &__relatedArticleList {
         &__title {
-            margin-top: 20px;
+            margin: 20px 10px 10px;
             padding: 5px 20px;
             box-shadow: 2px 1px 4px $border;
             background: $base-background;
@@ -71,7 +71,8 @@
         }
     }
     &__navigation {
-        margin-top: 20px;
+        margin-top: 10px;
+        margin-bottom: 20px;
         display: flex;
         justify-content: space-between;
         &__prev {
@@ -145,10 +146,11 @@
         }
         &__relatedArticleList {
             &__title {
-                margin-bottom: 10px;
+                margin: 20px 0 5px;
             }
         }
         &__navigation {
+            margin-bottom: 0;
             font-size: 14px;
         }
     }
