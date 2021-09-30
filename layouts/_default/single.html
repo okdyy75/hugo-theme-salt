@@ -33,6 +33,10 @@
             <div class="single__article__content markdown-body">
                 {{ .Content }}
             </div>
+
+            <div class="single__article__comment">
+                {{ template "_internal/disqus.html" . }}
+            </div>
         </article>
 
         {{ $related := .Site.RegularPages.Related . | first .Site.Params.relatedArticleLimit }}

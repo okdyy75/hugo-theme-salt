@@ -3,6 +3,7 @@ languageCode: ja
 # theme: hugo-theme-salt
 title: Hugoブログテーマ「Salt」
 googleAnalytics: G-XXXXXXXXXX
+disqusShortname:
 
 taxonomies:
   category: categories
