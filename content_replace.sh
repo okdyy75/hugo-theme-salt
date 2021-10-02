@@ -70,8 +70,8 @@ if [ "$PARAM_VAL" = "archives" ]; then
                         if (has_archive == 0) {
                             print param, archives, "\n"
                         }
-                        print "---", "\n"
                     } else {
+                        print "---", "\n"
                         print $0, "\n"
                     }
                 }
