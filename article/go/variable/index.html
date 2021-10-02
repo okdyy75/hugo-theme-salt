@@ -232,6 +232,8 @@ if内などで新しく変数を定義するとifブロック内での変数に�
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#a6e22e>site_tile</span> <span style=color:#f92672>:=</span> <span style=color:#e6db74>&#34;タイトル&#34;</span>
 </code></pre></div><p>とgo言語の入門本で学びましたが、タイトルを忘れてしまいました。。</p>
 </div>
+<div class=single__article__comment>
+</div>
 </article>
 <div class=single__relatedArticleList>
 <h3 class=single__relatedArticleList__title>関連記事</h3>
@@ -626,6 +628,27 @@ Hugo
 </ul>
 </nav>
 </div>
+<div class=partials__sidebar__card>
+<h3 class=partials__sidebar__title>
+アーカイブ
+</h3>
+<nav class=partials__sidebar__archive>
+<ul class=partials__sidebar__archive__yearList>
+<li class="close archive-accordion partials__sidebar__archive__yearItem">
+<div class=partials__sidebar__archive__yearItemTitle>2021年</div>
+<div class="archive-accordion-child-wrapper partials__sidebar__archive__monthListWrapper">
+<ul class="archive-accordion-child partials__sidebar__archive__monthList">
+<li class="archive-accordion-child partials__sidebar__archive__monthItem">
+<a href=/archives/2021%E5%B9%B49%E6%9C%88 class=partials__sidebar__archive__monthItemLink>
+2021年9月（12）
+</a>
+</li>
+</ul>
+</div>
+</li>
+</nav>
+</div>
+<script>document.querySelectorAll('.archive-accordion').forEach(function(a){a.addEventListener('click',function(a){if(a.target.tagName==='A')return;a.currentTarget.classList.toggle('open'),a.currentTarget.classList.toggle('close'),a.currentTarget.classList.contains('open')?a.currentTarget.querySelector('.archive-accordion-child-wrapper').style.height=a.currentTarget.querySelector('.archive-accordion-child').offsetHeight+'px':a.currentTarget.querySelector('.archive-accordion-child-wrapper').style.height='0'})})</script>
 </div>
 </div>
 </aside>

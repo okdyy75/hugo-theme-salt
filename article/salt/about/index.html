@@ -265,6 +265,8 @@ fontawsomeが使用可能なので、サイドメニューのアイコンに最�
 <h2 id=9-記事ページに関連記事を自動で表示>9. 記事ページに関連記事を自動で表示</h2>
 <p>関連記事の表示はもちろん、関連させたい要素（タグやカテゴリー）を設定することも可能です</p>
 </div>
+<div class=single__article__comment>
+</div>
 </article>
 <div class=single__relatedArticleList>
 <h3 class=single__relatedArticleList__title>関連記事</h3>
@@ -659,6 +661,27 @@ Hugo
 </ul>
 </nav>
 </div>
+<div class=partials__sidebar__card>
+<h3 class=partials__sidebar__title>
+アーカイブ
+</h3>
+<nav class=partials__sidebar__archive>
+<ul class=partials__sidebar__archive__yearList>
+<li class="close archive-accordion partials__sidebar__archive__yearItem">
+<div class=partials__sidebar__archive__yearItemTitle>2021年</div>
+<div class="archive-accordion-child-wrapper partials__sidebar__archive__monthListWrapper">
+<ul class="archive-accordion-child partials__sidebar__archive__monthList">
+<li class="archive-accordion-child partials__sidebar__archive__monthItem">
+<a href=/archives/2021%E5%B9%B49%E6%9C%88 class=partials__sidebar__archive__monthItemLink>
+2021年9月（12）
+</a>
+</li>
+</ul>
+</div>
+</li>
+</nav>
+</div>
+<script>document.querySelectorAll('.archive-accordion').forEach(function(a){a.addEventListener('click',function(a){if(a.target.tagName==='A')return;a.currentTarget.classList.toggle('open'),a.currentTarget.classList.toggle('close'),a.currentTarget.classList.contains('open')?a.currentTarget.querySelector('.archive-accordion-child-wrapper').style.height=a.currentTarget.querySelector('.archive-accordion-child').offsetHeight+'px':a.currentTarget.querySelector('.archive-accordion-child-wrapper').style.height='0'})})</script>
 </div>
 </div>
 </aside>
