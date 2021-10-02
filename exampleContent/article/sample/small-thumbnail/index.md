@@ -7,6 +7,7 @@ draft: false
 tags: []
 categories: "サンプル"
 share: true
+archives: ["2021年9月"]
 ---
 
 小さいサムネイルの場合の記事です

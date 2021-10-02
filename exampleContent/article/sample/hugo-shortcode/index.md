@@ -7,6 +7,7 @@ draft: false
 tags: ["Hugo", "ショートコード"]
 categories: "サンプル"
 share: true
+archives: ["2021年9月"]
 ---
 
 Hugoで用意されているショートコード使用時の表示サンプルです

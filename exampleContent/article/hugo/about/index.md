@@ -9,6 +9,7 @@ categories: "Hugo"
 pickups: ["top"]
 pickups_weight: -90
 share: true
+archives: ["2021年9月"]
 ---
 
 最近はSSG（静的サイトジェネレータ）全盛期の時代で、サーバー代をかけずにブログが作れる時代になりました。
