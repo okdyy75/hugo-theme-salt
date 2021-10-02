@@ -45,7 +45,7 @@ if [ "$PARAM_VAL" = "archives" ]; then
         exit 1;
     fi
 
-    files=`find $REPLACE_DIR -type f -name *.md`
+    files=`find "$REPLACE_DIR" -type f -name "*.md"`
     for file in $files; do
         echo $file
         front_matter=`awk 'BEGIN { RS="---\n"; FS="\n" } NR == 2 { print $0 }' ${file}`
