@@ -53,6 +53,9 @@
     {{ hugo.Generator }}
     <link rel="icon" href="{{ "favicon.ico" | absURL }}">
     <link rel='canonical' href='{{ .Permalink }}'>
+    {{ with .OutputFormats.Get "rss" -}}
+        {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
     {{ $style := resources.Get "scss/style.scss" | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
     <link rel="stylesheet" href="/css/vendor/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'">
