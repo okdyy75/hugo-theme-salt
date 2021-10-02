@@ -7,6 +7,9 @@
             background: $base-background;
             border: 1px solid $light-border;
         }
+        &__card:last-of-type {
+            margin-bottom: 20px;
+        }
         &__title {
             margin-bottom: 15px;
             padding-bottom: 2px;
@@ -98,6 +101,60 @@
                 overflow: hidden;
             }
         }
+        &__archive {
+            margin: 10px;
+            &__yearList {
+                border: 1px solid $border;
+                list-style-type: none;
+            }
+            &__yearItem {
+                position: relative;
+                margin: 10px 0;
+                border-bottom: 1px solid $border;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            &__yearItem:last-child {
+                margin-bottom: 0;
+                border-bottom: none;
+            }
+            &__yearItem::after {
+                content: "";
+                width: 10px;
+                height: 10px;
+                border-right: 1px solid #333;
+                border-bottom: 1px solid #333;
+                position: absolute;
+                right: 20px;
+                top: 5px;
+                transform: rotate(45deg);
+                transition: 0.3s ease-in-out;
+            }
+            &__yearItem.open::after {
+                top: 10px;
+                transform: rotate(225deg);
+            }
+            &__yearItemTitle {
+                margin-bottom: 10px;
+                margin-left: 20px;
+            }
+            &__monthListWrapper {
+                height: 0;
+                overflow: hidden;
+                transition: 0.3s ease-in-out;
+            }
+            &__monthList {
+                list-style-type: none;
+            }
+            &__monthItemLink {
+                display: block;
+                padding-top: 10px;
+                padding-left: 40px;
+                padding-bottom: 10px;
+                border-top: 1px solid $border;
+            }
+        }
         &__category {
             &__items {
                 list-style: none;
@@ -136,6 +193,13 @@
                 &__item {
                     width: $sp-menu-icon-size;
                     height: $sp-menu-icon-size;
+                }
+            }
+            &__archive {
+                &__yearItem {
+                    &:hover {
+                        cursor: none;
+                    }
                 }
             }
         }

@@ -9,6 +9,7 @@ taxonomies:
   category: categories
   tag: tags
   pickup: pickups
+  archive: archives
 
 disablePathToLower: true
 hasCJKLanguage: true
