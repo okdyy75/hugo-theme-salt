@@ -7,6 +7,7 @@ draft: false
 tags: []
 categories: ""
 share: true
+comment: true
 archives: ["2021年9月"]
 ---
 

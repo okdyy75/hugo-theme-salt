@@ -7,6 +7,7 @@ draft: false
 tags: ["マークダウン"]
 categories: "サンプル"
 share: true
+comment: true
 archives: ["2021年9月"]
 ---
 

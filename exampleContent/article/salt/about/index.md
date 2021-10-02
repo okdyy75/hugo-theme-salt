@@ -9,6 +9,7 @@ categories: "Saltの使い方"
 pickups: ["top", "sidebar"]
 pickups_weight: -100
 share: true
+comment: true
 archives: ["2021年9月"]
 ---
 
