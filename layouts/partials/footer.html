@@ -14,10 +14,7 @@
         </div>
     {{ end }}
     <p class="partials__footer__copyright">
-        {{ if .Site.Params.copyright.link }}
-            ©&nbsp;{{ .Site.Params.copyright.year }}&nbsp;<a href="{{ .Site.Params.copyright.link }}">{{ .Site.Params.copyright.author }}</a>
-        {{ else }}
-            ©&nbsp;{{ .Site.Params.copyright.year }}&nbsp;{{ .Site.Params.copyright.author }}
-        {{ end }}
+        {{ with .Site.Copyright }}{{ . }}{{ end }}<br>
+        Powered by <a href="https://gohugo.io/" target="_blank" >Hugo</a> | Hugo Theme Salt
     </p>
 </div>
