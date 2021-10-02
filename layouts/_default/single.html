@@ -34,9 +34,11 @@
                 {{ .Content }}
             </div>
 
-            <div class="single__article__comment">
-                {{ template "_internal/disqus.html" . }}
-            </div>
+            {{ if .Params.comment }}
+                <div class="single__article__comment">
+                    {{ template "_internal/disqus.html" . }}
+                </div>
+            {{ end }}
         </article>
 
         {{ $related := .Site.RegularPages.Related . | first .Site.Params.relatedArticleLimit }}
