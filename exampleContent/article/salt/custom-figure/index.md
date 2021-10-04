@@ -9,6 +9,8 @@ categories: "Saltの使い方"
 pickups: ["sidebar"]
 pickups_weight: -90
 share: true
+comment: true
+archives: ["2021年9月"]
 ---
 
 このテーマ内で画像のリサイズ・トリミングができる「custom-figure」というショートコードを作成しました。

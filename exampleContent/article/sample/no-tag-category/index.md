@@ -7,6 +7,8 @@ draft: false
 tags: []
 categories: ""
 share: true
+comment: true
+archives: ["2021年9月"]
 ---
 
 タグとカテゴリーが設定されていない場合の記事です

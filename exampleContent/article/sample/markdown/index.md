@@ -7,6 +7,8 @@ draft: false
 tags: ["マークダウン"]
 categories: "サンプル"
 share: true
+comment: true
+archives: ["2021年9月"]
 ---
 
 マークダウンで記事作成時の表示サンプルです
@@ -125,6 +127,7 @@ hoge
 hoge
 ___
 hoge
+
 ---
 ```
 
@@ -133,6 +136,7 @@ hoge
 hoge
 ___
 hoge
+
 ---
 
 # Lists

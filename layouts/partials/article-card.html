@@ -12,6 +12,17 @@
         <h4 class="partials__articleCard__title">
             {{ .Title }}
         </h4>
+        <div class="partials__articleCard__detail">
+            {{ with .Params.categories }}
+                <a href="{{ "categories" | relURL }}/{{ . | urlize }}">
+                    <i class="fas fa-folder"></i>&nbsp;{{ . }}
+                </a>
+            {{ end }}
+            <div class="partials__articleCard__detail__center"></div>
+            <div>
+                <i class="fas fa-clock"></i>&nbsp;{{ .Lastmod.Format "2006-01-02" }}
+            </div>
+        </div>
 
         {{ $tags := .GetTerms "tags" }}
         {{ if $tags }}

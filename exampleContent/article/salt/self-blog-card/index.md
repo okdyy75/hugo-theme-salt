@@ -9,6 +9,8 @@ categories: "Saltの使い方"
 pickups: ["sidebar"]
 pickups_weight: -80
 share: true
+comment: true
+archives: ["2021年9月"]
 ---
 
 このテーマ内でサイト内ブログカードを作れる「self-blog-card」というショートコードを作成しました。

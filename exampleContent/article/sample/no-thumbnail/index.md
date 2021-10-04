@@ -7,6 +7,8 @@ draft: false
 tags: []
 categories: "サンプル"
 share: true
+comment: true
+archives: ["2021年9月"]
 ---
 
 サムネイルが設定されていない場合の記事です

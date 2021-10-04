@@ -1,13 +1,16 @@
 baseURL: https://hugo-theme-salt.okdyy75.com
 languageCode: ja
 # theme: hugo-theme-salt
-title: シンプルなHugoブログテーマ「Salt」
-googleAnalytics: G-XXXXXXXXXX
+title: Hugoブログテーマ「Salt」
+copyright: © 2021 my_name
+googleAnalytics:
+disqusShortname:
 
 taxonomies:
   category: categories
   tag: tags
   pickup: pickups
+  archive: archives
 
 disablePathToLower: true
 hasCJKLanguage: true
@@ -65,10 +68,6 @@ params:
       zenn: zenn
       email: email@example.com
       other: https://example.com
-  copyright:
-    author: 作者
-    link: https://example.com
-    year: 2021
 
 menu:
   header:

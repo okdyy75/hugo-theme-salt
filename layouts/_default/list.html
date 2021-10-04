@@ -5,7 +5,7 @@
             <h1 class="list__title">{{ .Title }}</h1>
         </div>
         <div class="list__articleCardList">
-            {{ range .Paginator.Pages }}
+            {{ range (.Paginate .RegularPages).Pages.ByLastmod.Reverse }}
                 {{ partial "article-card" . }}
             {{ end }}
         </div>

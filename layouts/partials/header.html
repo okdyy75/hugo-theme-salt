@@ -8,15 +8,36 @@
                 <div class="partials__header__hamburger__line"></div>
             </div>
         </div>
-        <nav id="hamburgerMenu" class="close partials__header__menu">
-            <ul class="partials__header__menu__items">
-                {{ range .Site.Menus.header }}
-                    <li class="partials__header__menu__item">
-                        <a href="{{ .URL }}" class="partials__header__menu__itemLink">{{ .Name }}</a>
-                    </li>
-                {{ end }}
-            </ul>
-        </nav>
+        <div id="hamburgerMenu" class="close partials__header__menu">
+            <nav class="partials__header__menu__topMenu">
+                <ul class="partials__header__menu__topMenu__items">
+                    {{ range .Site.Menus.header }}
+                        <li class="partials__header__menu__topMenu__item">
+                            <a href="{{ .URL }}" class="partials__header__menu__topMenu__itemLink">{{ .Name }}</a>
+                        </li>
+                    {{ end }}
+                </ul>
+            </nav>
+            <nav class="spShow partials__header__menu__sideMenu">
+                <h3 class="partials__header__menu__sideMenu__title">
+                    メニュー
+                </h3>
+                <ul class="partials__header__menu__sideMenu__items">
+                    {{ range .Site.Menus.sidebar }}
+                        <li class="partials__header__menu__sideMenu__item">
+                            <a href="{{ .URL }}" class="partials__header__menu__sideMenu__itemLink">
+                                <div class="partials__header__menu__sideMenu__itemIcon">
+                                    {{ .Pre }}
+                                </div>
+                                <div class="partials__header__menu__sideMenu__itemTitle">
+                                    {{ .Name }}
+                                </div>
+                            </a>
+                        </li>
+                    {{ end }}
+                </ul>
+            </nav>
+        </div>
     </div>
 {{ end }}
 

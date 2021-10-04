@@ -1,0 +1,53 @@
+.terms {
+    &__inner {
+        width: 740px;
+        min-height: 600px;
+        margin: 20px auto auto;
+        padding: 20px;
+        background: $base-background;
+        border: 1px solid $light-border;
+    }
+    &__title {
+        margin-bottom: 15px;
+        padding-bottom: 2px;
+        border-bottom: 3px solid $title-border;
+    }
+    &__list {
+        margin: 0 10px 20px;
+        &__title {
+            margin-top: 50px;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            border-left: 10px solid $title-border;
+            &:first-child {
+                margin-top: 30px;
+            }
+        }
+        &__pages {
+            padding-left: 30px;
+        }
+        &__pageItem {
+            margin: 5px 0;
+        }
+    }
+}
+
+@media only screen and (max-width: $sp-width) {
+    .terms {
+        &__inner {
+            width: 100%;
+            min-height: 500px;
+            margin-top: 10px;
+            padding: 12.5px;
+        }
+        &__list {
+            margin-left: 10px;
+            &__title {
+                margin-top: 30px;
+                &:first-child {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}

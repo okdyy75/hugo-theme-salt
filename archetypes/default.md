@@ -6,5 +6,7 @@ lastmod: {{ .Date }}
 draft: false
 tags: []
 categories: ""
+archives: ["{{ dateFormat "2006年1月" .Date }}"]
 share: true
+comment: true
 ---

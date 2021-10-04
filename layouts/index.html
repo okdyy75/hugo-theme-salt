@@ -3,7 +3,7 @@
     <section class="index">
         <div class="index__inner">
             {{ $pages := slice }}
-            {{ range .Site.Pages }}
+            {{ range .Site.RegularPages.ByLastmod.Reverse }}
                 {{ $add := true }}
                 {{ range $term := .Params.pickups }}
                     {{ if eq $term "top" }}

@@ -2,9 +2,10 @@
 .partials {
     &__relatedArticle {
         display: block;
-        width: 760px;
-        font-size: 14px;
+        width: 740px;
+        margin: auto;
         padding: 10px 0;
+        font-size: 14px;
         &__inner {
             position: relative;
             width: 100%;
@@ -47,6 +48,7 @@
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 4;
             overflow: hidden;
+            word-break: break-all;
         }
     }
 }

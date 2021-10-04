@@ -35,6 +35,16 @@
             padding-bottom: 2px;
             border-bottom: 2px solid $title-border
         }
+        &__detail {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            color: #333;
+            &__center {
+                margin: auto;
+            }
+        }
         &__description {
             margin-left: 5px;
             margin-top: 5px;

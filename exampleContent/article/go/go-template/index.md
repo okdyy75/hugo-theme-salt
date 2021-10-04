@@ -7,6 +7,8 @@ draft: false
 tags: ["go", "Hugo", "go-template", "tips"]
 categories: "Go言語"
 share: true
+comment: true
+archives: ["2021年9月"]
 ---
 
 <br>
