@@ -32,6 +32,8 @@ jobs:
     - name: Build
       run: |
         echo 'hugo-theme-salt.okdyy75.com' > static/CNAME
+        echo 'google.com, pub-9459277760652211, DIRECT, f08c47fec0942fa0' > static/ads.txt
+        echo '<script data-ad-client="ca-pub-9459277760652211" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>' >> ./layouts/partials/head-add.html
         mv config.org.yml config.yml
         sed -ie "s|googleAnalytics:.*|googleAnalytics: G-LR5GBHW5M5|" config.yml
         sed -ie "s|name: ユーザー名|name: okdyy75|" config.yml
