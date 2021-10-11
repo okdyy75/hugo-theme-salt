@@ -37,7 +37,7 @@ Hugo標準のショートコードを使用することで、TwitterやYouTube�
 
 {{< self-blog-card "article/sample/hugo-shortcode" >}}
 
-#### もちろん自サイト内のブログカードにも対応しています
+**もちろん自サイト内のブログカードにも対応しています**
 
 {{< self-blog-card "article/salt/self-blog-card" >}}
 
