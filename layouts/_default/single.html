@@ -29,6 +29,13 @@
                 {{ $thumbnail = (index $thumbnail 0).Fit (printf "640x640 q%d webp" .Site.Params.imageQuality) }}
                 <img src="{{ $thumbnail.RelPermalink  }}" alt="{{ .Title }}" loading="lazy" class="single__article__thumbnail">
             {{ end }}
+
+            {{ if .Params.toc }}
+                <aside class="single__article__toc">
+                    <h3 class="single__article__toc__title"><i class="fas fa-list-ul"></i>目次</h3>
+                    {{ .TableOfContents }}
+                </aside>
+            {{ end }}
             
             <div class="single__article__content markdown-body">
                 {{ .Content }}
