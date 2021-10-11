@@ -8,6 +8,7 @@ tags: ["Hugo", "tips"]
 categories: "Hugo"
 pickups: ["sidebar"]
 share: true
+toc: true
 comment: true
 archives: ["2021年9月"]
 ---

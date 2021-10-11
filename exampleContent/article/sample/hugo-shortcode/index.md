@@ -7,6 +7,7 @@ draft: false
 tags: ["Hugo", "ショートコード"]
 categories: "サンプル"
 share: true
+toc: true
 comment: true
 archives: ["2021年9月"]
 ---
