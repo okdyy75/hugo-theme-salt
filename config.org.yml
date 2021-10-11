@@ -68,6 +68,7 @@ params:
       zenn: zenn
       email: email@example.com
       other: https://example.com
+  twitterTimeline: twitter
 
 menu:
   header:

@@ -23,6 +23,17 @@
             </nav>
         </div>
 
+        {{ with .Site.Params.twitterTimeline }}
+            <div class="partials__sidebar__card">
+                <h3 class="partials__sidebar__title">
+                    タイムライン
+                </h3>
+                <nav class="partials__sidebar__twitterTimeline">
+                    <a class="twitter-timeline" href="https://twitter.com/{{ . }}">Tweets by {{ . }}</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </nav>
+            </div>
+        {{ end }}
+
         <div class="partials__sidebar__card">
             <h4 class="partials__sidebar__title">
                 お知らせ
