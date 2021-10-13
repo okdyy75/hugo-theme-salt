@@ -193,7 +193,7 @@
                                             {{ range $year_list }}
                                                 <li class="archive-accordion-child partials__sidebar__archive__monthItem">
                                                     {{ range $month, $month_list := . }}
-                                                        <a href="{{ "archives" | relURL }}/{{ printf "%s年%s月" $year $month | urlize  }}" class="partials__sidebar__archive__monthItemLink">
+                                                        <a href="{{ "archives" | relURL }}/{{ printf "%s年%s月" $year $month }}" class="partials__sidebar__archive__monthItemLink">
                                                             {{ printf "%s年%s月" $year $month }}（{{ len $month_list }}）
                                                         </a>
                                                     {{ end }}
