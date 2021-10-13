@@ -44,6 +44,15 @@ module:
       target: static/css/vendor/@fortawesome/fontawesome-free/webfonts
     - source: node_modules/github-markdown-css/github-markdown.css
       target: static/css/vendor/github-markdown-css/github-markdown.css
+    # 検索に必要
+    - source: node_modules/lunr/lunr.min.js
+      target: static/js/vendor/lunr/lunr.min.js
+    - source: node_modules/lunr-languages/lunr.stemmer.support.js
+      target: static/js/vendor/lunr-languages/lunr.stemmer.support.js
+    - source: node_modules/lunr-languages/tinyseg.js
+      target: static/js/vendor/lunr-languages/tinyseg.js
+    - source: node_modules/lunr-languages/lunr.ja.js
+      target: static/js/vendor/lunr-languages/lunr.ja.js
 
 params:
   description: このサイトはHugo用ブログテーマ「Salt」のサンプルサイトです
