@@ -16,7 +16,7 @@
 <meta name=generator content="Hugo 0.88.1">
 <link rel=icon href=https://hugo-theme-salt.okdyy75.com/favicon.ico>
 <link rel=canonical href=https://hugo-theme-salt.okdyy75.com/article/go/go-template/>
-<link rel=stylesheet href=https://hugo-theme-salt.okdyy75.com/scss/style.min.48c82505d9f36010fc6a7c1563c7f571aaa83ac405d94dc805be61bbf8e0097c.css>
+<link rel=stylesheet href=https://hugo-theme-salt.okdyy75.com/scss/style.min.df993d918c7046158526e22e35aab12bb668a5e1725f1f6b4b85c8e51ad305d0.css>
 <link rel=stylesheet href=/css/vendor/@fortawesome/fontawesome-free/css/all.min.css media=print onload="this.media='all'">
 <link rel=stylesheet href=/css/vendor/github-markdown-css/github-markdown.css media=print onload="this.media='all'">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LR5GBHW5M5"></script>
@@ -36,6 +36,14 @@ Hugoブログテーマ「Salt」
 </div>
 </div>
 <div id=hamburgerMenu class="close partials__header__menu">
+<nav class="spShow partials__header__menu__search">
+<form action=/search class=partials__header__menu__search__form>
+<input type=text name=query id=search class=partials__header__menu__search__query>
+<button type=submit class=partials__header__menu__search__button>
+<i class="fas fa-search"></i>
+</button>
+</form>
+</nav>
 <nav class=partials__header__menu__topMenu>
 <ul class=partials__header__menu__topMenu__items>
 <li class=partials__header__menu__topMenu__item>
@@ -138,7 +146,7 @@ shortcode
 </li>
 <li>/</li>
 <li>
-<a href=/categories/Go%E8%A8%80%E8%AA%9E>
+<a href=/categories/Go%e8%a8%80%e8%aa%9e>
 <i class="fas fa-folder"></i>Go言語
 </a>
 </li>
@@ -334,6 +342,19 @@ Go言語Tips① 変数について
 <aside class=sidebar>
 <div class=sidebar__inner>
 <div class=partials__sidebar>
+<div class="pcShow partials__sidebar__card">
+<h4 class=partials__sidebar__title>
+検索
+</h4>
+<nav class=partials__sidebar__search>
+<form action=/search class=partials__sidebar__search__form>
+<input type=text name=query id=search class=partials__sidebar__search__query>
+<button type=submit class=partials__sidebar__search__button>
+<i class="fas fa-search"></i>
+</button>
+</form>
+</nav>
+</div>
 <div class=partials__sidebar__card>
 <h3 class=partials__sidebar__title>
 プロフィール
@@ -619,7 +640,7 @@ Hugo
 </a>
 </li>
 <li class=partials__tagList__item>
-<a href=/tags/%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%B3%E3%83%BC%E3%83%89 class=partials__tagList__itemLink>
+<a href=/tags/%e3%82%b7%e3%83%a7%e3%83%bc%e3%83%88%e3%82%b3%e3%83%bc%e3%83%89 class=partials__tagList__itemLink>
 <i class="fas fa-tag partials__tagList__itemIcon"></i>ショートコード
 </a>
 </li>
@@ -634,17 +655,17 @@ Hugo
 </a>
 </li>
 <li class=partials__tagList__item>
-<a href=/tags/Hugo%E3%83%86%E3%83%BC%E3%83%9E class=partials__tagList__itemLink>
+<a href=/tags/Hugo%e3%83%86%e3%83%bc%e3%83%9e class=partials__tagList__itemLink>
 <i class="fas fa-tag partials__tagList__itemIcon"></i>Hugoテーマ
 </a>
 </li>
 <li class=partials__tagList__item>
-<a href=/tags/%E3%81%BE%E3%81%A8%E3%82%81 class=partials__tagList__itemLink>
+<a href=/tags/%e3%81%be%e3%81%a8%e3%82%81 class=partials__tagList__itemLink>
 <i class="fas fa-tag partials__tagList__itemIcon"></i>まとめ
 </a>
 </li>
 <li class=partials__tagList__item>
-<a href=/tags/%E3%83%9E%E3%83%BC%E3%82%AF%E3%83%80%E3%82%A6%E3%83%B3 class=partials__tagList__itemLink>
+<a href=/tags/%e3%83%9e%e3%83%bc%e3%82%af%e3%83%80%e3%82%a6%e3%83%b3 class=partials__tagList__itemLink>
 <i class="fas fa-tag partials__tagList__itemIcon"></i>マークダウン
 </a>
 </li>
@@ -662,13 +683,14 @@ Hugo
 <div class="archive-accordion-child-wrapper partials__sidebar__archive__monthListWrapper">
 <ul class="archive-accordion-child partials__sidebar__archive__monthList">
 <li class="archive-accordion-child partials__sidebar__archive__monthItem">
-<a href=/archives/2021%E5%B9%B49%E6%9C%88 class=partials__sidebar__archive__monthItemLink>
+<a href=/archives/2021%e5%b9%b49%e6%9c%88 class=partials__sidebar__archive__monthItemLink>
 2021年9月（12）
 </a>
 </li>
 </ul>
 </div>
 </li>
+</ul>
 </nav>
 </div>
 <script>document.querySelectorAll('.archive-accordion').forEach(function(a){a.addEventListener('click',function(a){if(a.target.tagName==='A')return;a.currentTarget.classList.toggle('open'),a.currentTarget.classList.toggle('close'),a.currentTarget.classList.contains('open')?a.currentTarget.querySelector('.archive-accordion-child-wrapper').style.height=a.currentTarget.querySelector('.archive-accordion-child').offsetHeight+'px':a.currentTarget.querySelector('.archive-accordion-child-wrapper').style.height='0'})})</script>
