@@ -2,9 +2,9 @@
 <section class="list">
     <div class="list__inner">
         <div class="list__titleWrapper">
-            <h1 class="list__title">{{ .Title }}</h1>
+            <h1 id="list-title" class="list__title">{{ .Title }}</h1>
         </div>
-        <div class="list__articleCardList">
+        <div id="results" class="list__articleCardList">
             {{ range (.Paginate .RegularPages).Pages.ByLastmod.Reverse }}
                 {{ partial "article-card" . }}
             {{ end }}

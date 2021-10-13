@@ -9,6 +9,14 @@
             </div>
         </div>
         <div id="hamburgerMenu" class="close partials__header__menu">
+            <nav class="spShow partials__header__menu__search">
+                <form action="{{ "search" | relURL }}" class="partials__header__menu__search__form">
+                    <input type="text" name="query" id="search" class="partials__header__menu__search__query">
+                    <button type="submit" class="partials__header__menu__search__button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </nav>
             <nav class="partials__header__menu__topMenu">
                 <ul class="partials__header__menu__topMenu__items">
                     {{ range .Site.Menus.header }}

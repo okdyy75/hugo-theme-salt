@@ -62,6 +62,13 @@
     {{ if .IsPage }}
         <link rel="stylesheet" href="/css/vendor/github-markdown-css/github-markdown.css" media="print" onload="this.media='all'">
     {{ end }}
+    {{ if eq .Section "search" }}
+        <script type="text/javascript" src="/js/vendor/lunr/lunr.min.js"></script>
+        <script type="text/javascript" src="/js/vendor/lunr-languages/lunr.stemmer.support.js"></script>
+        <script type="text/javascript" src="/js/vendor/lunr-languages/tinyseg.js"></script>
+        <script type="text/javascript" src="/js/vendor/lunr-languages/lunr.ja.js"></script>
+        <script type="text/javascript" src="{{ with  resources.Get "js/search.js" | minify }}{{ .RelPermalink }}{{ end }}"></script>
+    {{ end }}
     {{- partial "head-add.html" . -}}
     {{ template "_internal/google_analytics.html" . }}
 {{ end }}

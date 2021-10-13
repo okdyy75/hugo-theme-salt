@@ -20,6 +20,23 @@
                 border-bottom: 2px solid $pickup-title-border;
             }
         }
+        &__search {
+            &__form {
+                height: 32px;
+                display: flex;
+            }
+            &__query {
+                width: 85%;
+                border: 1px solid $border;
+                padding: 10px;
+            }
+            &__button {
+                width: 15%;
+                margin-left: -1px;
+                border: 1px solid $border;
+                color: $light-text;
+            }
+        }
         &__profile {
             &__icon {
                 width: 100px;
@@ -190,7 +207,7 @@
     .partials {
         &__sidebar {
             width: 100%;
-            > :nth-child(1) {
+            &__card:nth-child(2) {
                 margin-top: 0;
             }
             &__menu {
