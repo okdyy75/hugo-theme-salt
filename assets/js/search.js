@@ -1,21 +1,17 @@
 //vanilla js version of https://gist.github.com/sebz/efddfc8fdcb6b480f567
 
-var lunrIndex,
-    $results,
-    pagesIndex,
-    tinySegmenter;
+var lunrIndex, $results, pagesIndex, tinySegmenter;
 
 // Initialize lunrjs using our generated index file
 function initLunr() {
-    tinySegmenter = new lunr.TinySegmenter()
+    tinySegmenter = new lunr.TinySegmenter();
 
     return new Promise((resolve, reject) => {
         var request = new XMLHttpRequest();
-        request.open('GET', 'index.json', true);
+        request.open("GET", "index.json", true);
 
         request.onload = function () {
             if (request.status >= 200 && request.status < 400) {
-
                 pagesIndex = JSON.parse(request.responseText);
                 console.log("index:", pagesIndex);
 
@@ -24,7 +20,7 @@ function initLunr() {
                 lunrIndex = lunr(function () {
                     this.use(lunr.ja);
                     this.field("title", {
-                        boost: 10
+                        boost: 10,
                     });
                     this.field("categories");
                     this.field("tags");
@@ -45,7 +41,7 @@ function initLunr() {
         };
 
         request.send();
-    })
+    });
 }
 
 // Nothing crazy here, just hook up a event handler on the input field
@@ -71,19 +67,19 @@ function initUI() {
  * @return {Array}  results
  */
 function search(query) {
-    var segs = tinySegmenter.segment(query)
+    var segs = tinySegmenter.segment(query);
     segs = segs.map(function (seg) {
-        seg = seg.trim()
+        seg = seg.trim();
         if (seg.length) {
             // 空でなければ、AND検索であいまい検索
-            seg = `+*${seg}*`
+            seg = `+*${seg}*`;
         }
-        return seg
-    })
-    query = segs.join(' ').replace(/\s+/g, ' ').trim();
+        return seg;
+    });
+    query = segs.join(" ").replace(/\s+/g, " ").trim();
 
     // Find the item in our index corresponding to the lunr one to have more info
-    // Lunr result: 
+    // Lunr result:
     //  {ref: "/section/page1", score: 0.2725657778206127}
     // Our result:
     //  {title:"Page1", href:"/section/page1", ...}
@@ -108,16 +104,16 @@ function renderResults(results) {
     // Only show the ten first results
     $results = document.getElementById("results");
     results.slice(0, 10).forEach(function (result) {
-        var div = document.createElement('div')
-        var category = ''
+        var div = document.createElement("div");
+        var category = "";
         if (result.categories) {
             category = `
                 <a href="/categories/${result.categories}">
                     <i class="fas fa-folder"></i>&nbsp;${result.categories}
                 </a>
-            `
+            `;
         }
-        var tag = ''
+        var tag = "";
         if (result.tags) {
             var list = result.tags.map(function (val) {
                 return `
@@ -126,13 +122,13 @@ function renderResults(results) {
                             <i class="fas fa-tag partials__tagList__itemIcon"></i>${val}
                         </a>
                     </li>
-                `
-            })
+                `;
+            });
             tag = `
                 <ul class="partials__tagList">
-                    ${list.join('')}
+                    ${list.join("")}
                 </ul>
-            `
+            `;
         }
         div.innerHTML = `
             <article class="partials__articleCard">
@@ -155,25 +151,25 @@ function renderResults(results) {
                     </div>
                 </div>
             </article>
-        `
+        `;
         $results.appendChild(div);
     });
 }
 
 // Let's get started
 initLunr().then(function () {
-    var query = getQuery()['query'] || ''
+    var query = getQuery()["query"] || "";
     query = decodeURI(query);
     var results = search(query);
     renderResults(results);
     if (query.length) {
-        document.getElementById("list-title").innerText = `「${query}」を検索`
+        document.getElementById("list-title").innerText = `「${query}」を検索`;
     }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
     // initUI();
-})
+});
 
 function getQuery() {
     var queryString = window.location.search;
