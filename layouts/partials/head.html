@@ -34,14 +34,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $title }}</title>
     <meta name='description' content='{{ $description }}'>
+    {{- if $og_image_url -}}
+        <meta name="thumbnail" content="{{ $og_image_url }}">
+    {{- end -}}
+    <meta property="og:locale" content="ja_JP">
     <meta property='og:title' content='{{ $title }}'>
     <meta property='og:description' content='{{ $description }}'>
     {{- if $og_image_url -}}
         <meta property='og:image' content="{{ $og_image_url }}">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
     {{- end -}}
     <meta property='og:url' content='{{ .Permalink }}'>
     <meta property='og:site_name' content='{{ .Site.Title }}'>
     <meta property='og:type' content='{{- if .IsHome -}}website{{- else -}}article{{- end -}}'>
+    {{- if .IsPage -}}
+        {{- with .Date -}}
+            <meta property="article:published_time" content="{{- .Format "2006-01-02T15:04:05-0700" -}}">
+        {{- end -}}
+        {{- with .Lastmod -}}
+            <meta property="article:modified_time" content="{{- .Format "2006-01-02T15:04:05-0700" -}}">
+        {{- end -}}
+        {{- with .ExpiryDate -}}
+            <meta property="article:expiration_time" content="{{- .Format "2006-01-02T15:04:05-0700" -}}">
+        {{- end -}}
+        {{- with .Site.Author.Name -}}
+            <meta property="article:author" content="{{- .Site.Author.Name -}}">
+        {{- end -}}
+        {{- with .Params.categories -}}
+            <meta property="article:section" content="{{- . -}}">
+        {{- end -}}
+        {{- range .Params.tags -}}
+            <meta property="article:tag" content="{{- . -}}">
+        {{- end -}}
+    {{- end -}}
     <meta name="twitter:title" content="{{ $title }}">
     <meta name="twitter:description" content="{{ $description }}">
     {{- if $og_image_url -}}
@@ -52,6 +78,11 @@
     <meta name="googlebot" content="index,follow">
     {{ hugo.Generator }}
     <link rel="icon" href="{{ "favicon.ico" | absURL }}">
+    {{- with resources.Get .Site.Params.icon -}}
+        <link rel="apple-touch-icon" href="{{- .Permalink -}}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{- (.Fit "180x180 png").Permalink -}}">
+        <meta name="msapplication-TileImage" content="{{- (.Fit "144x144 center png").Permalink -}}">
+    {{- end -}}
     <link rel='canonical' href='{{ .Permalink }}'>
     {{ with .OutputFormats.Get "rss" -}}
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}

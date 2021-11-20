@@ -3,6 +3,9 @@ languageCode: ja
 # theme: hugo-theme-salt
 title: Hugoブログテーマ「Salt」
 copyright: © 2021 my_name
+author:
+  name: my_name
+  email:
 googleAnalytics:
 disqusShortname:
 
@@ -56,6 +59,7 @@ module:
 
 params:
   description: このサイトはHugo用ブログテーマ「Salt」のサンプルサイトです
+  icon: image/icon.png
   images:
     - image/og_large.png
   notFoundImage: image/404.png
