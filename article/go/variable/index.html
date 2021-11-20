@@ -4,18 +4,20 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1">
 <title>Go言語Tips① 変数について | Hugoブログテーマ「Salt」</title>
-<meta name=description content="変数定義 Hugoのテンプレート内で{{ $title := .Title }}や{{ $title = .Title }} のようにコロンをつけたり、付けなかったりする記述を見ます。 これはgo言語の書き方の特徴で、変数を定義する場合の省略記法です title := &#34;タイトル&#34; 省略しない場合はこうなります var title string = &#34;タイトル&#34; 変数のスコープ go言語の変数スコープはif、for、switchなどのブロック内で有効です if内などで新しく変数を定義す">
+<meta name=description content="変数定義 Hugoのテンプレート内で{{ $title := .Title }}や{{ $title = .Title }} のようにコロンをつけたり、付けなかったりする記述を見ます。 これはgo言語の書き方の特徴で、変数を定義する場合の省略記法です title := &#34;タイトル&#34; 省略しない場合はこうなります var title string = &#34;タイトル&#34; 変数のスコープ go言語の変数スコープはif、for、switchなどのブロック内で有効です if内などで新しく変数を定義す"><meta name=thumbnail content="https://hugo-theme-salt.okdyy75.com/article/go/variable/thumbnail_hu9b587e2c909b0d2c1d0529e80b52e0ee_2906_1200x630_fill_q75_h2_box_center_3.webp"><meta property="og:locale" content="ja_JP">
 <meta property="og:title" content="Go言語Tips① 変数について | Hugoブログテーマ「Salt」">
-<meta property="og:description" content="変数定義 Hugoのテンプレート内で{{ $title := .Title }}や{{ $title = .Title }} のようにコロンをつけたり、付けなかったりする記述を見ます。 これはgo言語の書き方の特徴で、変数を定義する場合の省略記法です title := &#34;タイトル&#34; 省略しない場合はこうなります var title string = &#34;タイトル&#34; 変数のスコープ go言語の変数スコープはif、for、switchなどのブロック内で有効です if内などで新しく変数を定義す"><meta property="og:image" content="https://hugo-theme-salt.okdyy75.com/article/go/variable/thumbnail_hu9b587e2c909b0d2c1d0529e80b52e0ee_2906_1200x630_fill_q75_h2_box_center_3.webp"><meta property="og:url" content="https://hugo-theme-salt.okdyy75.com/article/go/variable/">
+<meta property="og:description" content="変数定義 Hugoのテンプレート内で{{ $title := .Title }}や{{ $title = .Title }} のようにコロンをつけたり、付けなかったりする記述を見ます。 これはgo言語の書き方の特徴で、変数を定義する場合の省略記法です title := &#34;タイトル&#34; 省略しない場合はこうなります var title string = &#34;タイトル&#34; 変数のスコープ go言語の変数スコープはif、for、switchなどのブロック内で有効です if内などで新しく変数を定義す"><meta property="og:image" content="https://hugo-theme-salt.okdyy75.com/article/go/variable/thumbnail_hu9b587e2c909b0d2c1d0529e80b52e0ee_2906_1200x630_fill_q75_h2_box_center_3.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630"><meta property="og:url" content="https://hugo-theme-salt.okdyy75.com/article/go/variable/">
 <meta property="og:site_name" content="Hugoブログテーマ「Salt」">
-<meta property="og:type" content="article">
-<meta name=twitter:title content="Go言語Tips① 変数について | Hugoブログテーマ「Salt」">
+<meta property="og:type" content="article"><meta property="article:published_time" content="2021-09-13T10:39:48+0900"><meta property="article:modified_time" content="2021-09-13T10:39:48+0900"><meta property="article:section" content="Go言語"><meta property="article:tag" content="go"><meta property="article:tag" content="tips"><meta name=twitter:title content="Go言語Tips① 変数について | Hugoブログテーマ「Salt」">
 <meta name=twitter:description content="変数定義 Hugoのテンプレート内で{{ $title := .Title }}や{{ $title = .Title }} のようにコロンをつけたり、付けなかったりする記述を見ます。 これはgo言語の書き方の特徴で、変数を定義する場合の省略記法です title := &#34;タイトル&#34; 省略しない場合はこうなります var title string = &#34;タイトル&#34; 変数のスコープ go言語の変数スコープはif、for、switchなどのブロック内で有効です if内などで新しく変数を定義す"><meta name=twitter:image content="https://hugo-theme-salt.okdyy75.com/article/go/variable/thumbnail_hu9b587e2c909b0d2c1d0529e80b52e0ee_2906_1200x630_fill_q75_h2_box_center_3.webp">
 <meta name=twitter:card content="summary_large_image"><meta name=robots content="index,follow">
 <meta name=googlebot content="index,follow">
-<meta name=generator content="Hugo 0.88.1">
-<link rel=icon href=https://hugo-theme-salt.okdyy75.com/favicon.ico>
-<link rel=canonical href=https://hugo-theme-salt.okdyy75.com/article/go/variable/>
+<meta name=generator content="Hugo 0.89.4">
+<link rel=icon href=https://hugo-theme-salt.okdyy75.com/favicon.ico><link rel=apple-touch-icon href=https://hugo-theme-salt.okdyy75.com/image/icon.png>
+<link rel=apple-touch-icon sizes=180x180 href=https://hugo-theme-salt.okdyy75.com/image/icon_hu1521aad69fc65a528f1288721147084d_17714_180x180_fit_box_3.png>
+<meta name=msapplication-TileImage content="https://hugo-theme-salt.okdyy75.com/image/icon_hu1521aad69fc65a528f1288721147084d_17714_144x144_fit_box_3.png"><link rel=canonical href=https://hugo-theme-salt.okdyy75.com/article/go/variable/>
 <link rel=stylesheet href=https://hugo-theme-salt.okdyy75.com/scss/style.min.df993d918c7046158526e22e35aab12bb668a5e1725f1f6b4b85c8e51ad305d0.css>
 <link rel=stylesheet href=/css/vendor/@fortawesome/fontawesome-free/css/all.min.css media=print onload="this.media='all'">
 <link rel=stylesheet href=/css/vendor/github-markdown-css/github-markdown.css media=print onload="this.media='all'">
@@ -384,7 +386,7 @@ Z
 <a href=mailto:okdyy75@gmail.com target=_blank class=partials__snsLinks__link--email>
 <i class="fa-lg fas fa-envelope"></i>
 </a>
-<a href=https://example.com target=_blank class=partials__snsLinks__link--other>
+<a href=https://github.com/okdyy75 target=_blank class=partials__snsLinks__link--other>
 <i class="fa-lg fas fa-link"></i>
 </a>
 </div>
@@ -716,7 +718,7 @@ Go言語
 <li><a href=https://github.com/okdyy75/hugo-theme-salt/issues>お問い合わせ</a></li></ul>
 </div>
 <p class=partials__footer__copyright>
-© 2021 my_name<br>
+© 2021 okdyy75<br>
 Powered by <a href=https://gohugo.io/ target=_blank>Hugo</a> | Hugo Theme Salt
 </p>
 </div>
