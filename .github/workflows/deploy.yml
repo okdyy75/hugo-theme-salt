@@ -32,8 +32,10 @@ jobs:
     - name: Build
       run: |
         echo 'hugo-theme-salt.okdyy75.com' > static/CNAME
+        mv exampleContent content
         mv config.org.yml config.yml
         sed -ie "s|googleAnalytics:.*|googleAnalytics: G-LR5GBHW5M5|" config.yml
+        sed -ie "s|my_name|okdyy75|" config.yml
         sed -ie "s|name: ユーザー名|name: okdyy75|" config.yml
         sed -ie "s|description: プロフィール|description: Hugo用ブログテーマ「Salt」を作りました|" config.yml
         sed -ie "s|twitter: twitter|twitter: okdyy75|" config.yml
@@ -41,9 +43,7 @@ jobs:
         sed -ie "s|qiita: qiita|qiita: okdyy75|" config.yml
         sed -ie "s|zenn: zenn|zenn: okdyy75|" config.yml
         sed -ie "s|email: email@example.com|email: okdyy75@gmail.com|" config.yml
-        sed -ie "s|author: 作者|author: okdyy75|" config.yml
-        sed -ie "s|link: https://example.com|link: https://github.com/okdyy75|" config.yml
-        mv exampleContent content
+        sed -ie "s|other: https://example.com|other: https://github.com/okdyy75|" config.yml
         npm run build
 
     - name: Deploy
