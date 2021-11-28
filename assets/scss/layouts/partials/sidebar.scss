@@ -29,12 +29,15 @@
                 width: 85%;
                 border: 1px solid $border;
                 padding: 10px;
+                outline: 0;
             }
             &__button {
                 width: 15%;
                 margin-left: -1px;
                 border: 1px solid $border;
+                background: $light-background;
                 color: $light-text;
+                cursor: pointer;
             }
         }
         &__profile {
