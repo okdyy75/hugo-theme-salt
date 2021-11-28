@@ -7,7 +7,7 @@
     {{ with .Params.categories }}
         <li>/</li>
         <li>
-            <a href="{{ "categories" | relURL }}/{{ . | urlize }}">
+            <a href="{{ "categories" | relURL }}/{{ . }}">
                 <i class="fas fa-folder"></i>{{ . }}
             </a>
         </li>

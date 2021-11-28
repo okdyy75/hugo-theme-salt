@@ -98,7 +98,27 @@
                 &.open {
                     right: 0;
                 }
+                &__search {
+                    &__form {
+                        height: 36px;
+                        display: flex;
+                    }
+                    &__query {
+                        width: 85%;
+                        border: 1px solid $border;
+                        padding: 10px;
+                        outline: 0;
+                    }
+                    &__button {
+                        width: 15%;
+                        margin-left: -3px;
+                        border: 1px solid $border;
+                        background: $light-background;
+                        color: $light-text;
+                    }
+                }
                 &__topMenu {
+                    margin-top: 10px;
                     &__items {
                         display: flex;
                         flex-direction: column;

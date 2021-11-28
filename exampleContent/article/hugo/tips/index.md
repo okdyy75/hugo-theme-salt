@@ -1,5 +1,5 @@
 ---
-title: "Hugoを使い始めた人に捧げるTips12選"
+title: "Hugoを使い始めた人に捧げるTips11選"
 description: ""
 date: 2021-09-16T23:10:23+09:00
 lastmod: 2021-09-16T23:10:23+09:00
@@ -8,6 +8,7 @@ tags: ["Hugo", "tips"]
 categories: "Hugo"
 pickups: ["sidebar"]
 share: true
+toc: true
 comment: true
 archives: ["2021年9月"]
 ---

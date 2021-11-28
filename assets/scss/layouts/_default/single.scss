@@ -49,6 +49,34 @@
         &__thumbnail {
             margin: 20px auto;
         }
+        &__toc {
+            margin: 10px;
+            padding: 20px 10px;
+            border: 1px solid $border;
+            border-radius: 4px;
+            &__title {
+                margin-left: 10px;
+                margin-bottom: 10px;
+                i {
+                    margin-right: 15px;
+                }
+            }
+            #TableOfContents {
+                margin-left: 20px;
+                > ul {
+                    margin-left: 20px;
+                    > li {
+                        margin: 3px;
+                        > ul {
+                            margin-left: 20px;
+                            > li {
+                                margin: 3px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
         &__content {
             margin: 40px 10px;
             font-size: 16px;
@@ -134,6 +162,29 @@
             &__title {
                 margin-top: 20px;
                 margin-bottom: 5px;
+            }
+            &__toc {
+                margin: 0;
+                padding: 15px 10px;
+                &__title {
+                    margin-left: 5px;
+                    margin-bottom: 10px;
+                }
+                #TableOfContents {
+                    margin-left: 15px;
+                    > ul {
+                        margin-left: 15px;
+                        > li {
+                            margin: 5px;
+                            > ul {
+                                margin-left: 15px;
+                                > li {
+                                    margin: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
             }
             &__content {
                 margin: 20px 5px;

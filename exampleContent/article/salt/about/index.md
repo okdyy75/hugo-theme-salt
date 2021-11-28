@@ -9,6 +9,7 @@ categories: "Saltの使い方"
 pickups: ["top", "sidebar"]
 pickups_weight: -100
 share: true
+toc: true
 comment: true
 archives: ["2021年9月"]
 ---
@@ -37,7 +38,7 @@ Hugo標準のショートコードを使用することで、TwitterやYouTube�
 
 {{< self-blog-card "article/sample/hugo-shortcode" >}}
 
-#### もちろん自サイト内のブログカードにも対応しています
+**もちろん自サイト内のブログカードにも対応しています**
 
 {{< self-blog-card "article/salt/self-blog-card" >}}
 

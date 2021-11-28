@@ -3,6 +3,9 @@ languageCode: ja
 # theme: hugo-theme-salt
 title: Hugoブログテーマ「Salt」
 copyright: © 2021 my_name
+author:
+  name: my_name
+  email:
 googleAnalytics:
 disqusShortname:
 
@@ -44,9 +47,19 @@ module:
       target: static/css/vendor/@fortawesome/fontawesome-free/webfonts
     - source: node_modules/github-markdown-css/github-markdown.css
       target: static/css/vendor/github-markdown-css/github-markdown.css
+    # 検索に必要
+    - source: node_modules/lunr/lunr.min.js
+      target: static/js/vendor/lunr/lunr.min.js
+    - source: node_modules/lunr-languages/lunr.stemmer.support.js
+      target: static/js/vendor/lunr-languages/lunr.stemmer.support.js
+    - source: node_modules/lunr-languages/tinyseg.js
+      target: static/js/vendor/lunr-languages/tinyseg.js
+    - source: node_modules/lunr-languages/lunr.ja.js
+      target: static/js/vendor/lunr-languages/lunr.ja.js
 
 params:
   description: このサイトはHugo用ブログテーマ「Salt」のサンプルサイトです
+  icon: image/icon.png
   images:
     - image/og_large.png
   notFoundImage: image/404.png
@@ -68,6 +81,7 @@ params:
       zenn: zenn
       email: email@example.com
       other: https://example.com
+  twitterTimeline:
 
 menu:
   header:

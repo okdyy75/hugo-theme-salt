@@ -14,7 +14,7 @@
         </h4>
         <div class="partials__articleCard__detail">
             {{ with .Params.categories }}
-                <a href="{{ "categories" | relURL }}/{{ . | urlize }}">
+                <a href="{{ "categories" | relURL }}/{{ . }}">
                     <i class="fas fa-folder"></i>&nbsp;{{ . }}
                 </a>
             {{ end }}

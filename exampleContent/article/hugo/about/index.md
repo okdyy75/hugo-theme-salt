@@ -9,6 +9,7 @@ categories: "Hugo"
 pickups: ["top"]
 pickups_weight: -90
 share: true
+toc: true
 comment: true
 archives: ["2021年9月"]
 ---
@@ -53,6 +54,7 @@ date: 2021-08-31T22:30:41+09:00
 lastmod: 2021-08-31T22:30:41+09:00
 draft: false
 share: true
+toc: true
 comment: true
 ---
 

@@ -7,6 +7,7 @@ draft: false
 tags: ["Hugo", "ショートコード"]
 categories: "サンプル"
 share: true
+toc: true
 comment: true
 archives: ["2021年9月"]
 ---
@@ -41,7 +42,7 @@ Hugoで用意されているショートコード使用時の表示サンプル�
 
 ## tweet
 
-{{< tweet 877500564405444608 >}}
+{{< tweet user="SanDiegoZoo" id="1453110110599868418" >}}
 
 ## vimeo
 

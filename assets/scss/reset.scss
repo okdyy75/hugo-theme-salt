@@ -62,6 +62,18 @@ select {
   font: inherit;
 }
 
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ * 
+ * @link: https://github.com/necolas/normalize.css/blob/master/normalize.css
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
