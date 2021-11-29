@@ -78,11 +78,13 @@
     <meta name="googlebot" content="index,follow">
     {{ hugo.Generator }}
     <link rel="icon" href="{{ "favicon.ico" | absURL }}">
-    {{- with resources.Get .Site.Params.icon -}}
-        <link rel="apple-touch-icon" href="{{- .Permalink -}}">
-        <link rel="apple-touch-icon" sizes="180x180" href="{{- (.Fit "180x180 png").Permalink -}}">
-        <meta name="msapplication-TileImage" content="{{- (.Fit "144x144 center png").Permalink -}}">
-    {{- end -}}
+    {{ if .Site.Params.icon }}
+        {{- with resources.Get .Site.Params.icon -}}
+            <link rel="apple-touch-icon" href="{{- .Permalink -}}">
+            <link rel="apple-touch-icon" sizes="180x180" href="{{- (.Fit "180x180 png").Permalink -}}">
+            <meta name="msapplication-TileImage" content="{{- (.Fit "144x144 center png").Permalink -}}">
+        {{- end -}}
+    {{ end }}
     <link rel='canonical' href='{{ .Permalink }}'>
     {{ with .OutputFormats.Get "rss" -}}
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
