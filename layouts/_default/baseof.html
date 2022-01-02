@@ -3,6 +3,7 @@
 <head>
     {{- partial "head.html" . -}}
     {{- block "head" . -}}{{ end }}
+    {{- partial "head-add.html" . -}}
 </head>
 <body class="body">
     <div class="container">
@@ -40,5 +41,6 @@
         })
     </script>
     {{- block "header-script" . -}}{{ end }}
+    {{- partial "body-add.html" . -}}
 </body>
 </html>
