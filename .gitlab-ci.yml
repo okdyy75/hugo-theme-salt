@@ -26,7 +26,7 @@ pages:
     sed -ie "s|email: email@example.com|email: okdyy75@gmail.com|" config.yml
     sed -ie "s|other: https://example.com|other: https://github.com/okdyy75|" config.yml
     echo 'google.com, pub-9459277760652211, DIRECT, f08c47fec0942fa0' > static/ads.txt
-    echo '<script data-ad-client="ca-pub-9459277760652211" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>' >> ./layouts/partials/head-add.html
+    echo '<script> let isLoaded = false; window.addEventListener("scroll", function () { if ((document.documentElement.scrollTop != 0 && isLoaded === false) || (document.body.scrollTop != 0 && isLoaded === false)) { (function () { let e = document.createElement("script"); e.type = "text/javascript"; e.crossorigin = "anonymous"; e.async = true; e.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9459277760652211"; document.body.appendChild(e); })(); isLoaded = true; } }, true); </script>' >> ./layouts/partials/body-add.html
     npm run build
   artifacts:
     paths:
