@@ -148,7 +148,7 @@
         {{ end }}
 
         {{ $ranking := slice }}
-        {{ range $item := sort .Site.Data.ranking "pv" "desc" }}
+        {{ range $item := sort .Site.Data.ranking.items "pv" "desc" }}
             {{ with $page := $.Site.GetPage (path.Clean $item.pagePath) }}
                 {{ if eq .Section "article" }}
                     {{ $ranking = $ranking | append (dict "page" $page "pv" $item.pv) }}

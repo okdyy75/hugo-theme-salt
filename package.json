@@ -21,6 +21,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@google-analytics/data": "^2.8.0",
+    "dayjs": "^1.10.7",
     "github-markdown-css": "^4.0.0",
     "hugo-bin": "^0.77.4",
     "lunr": "^2.3.9",
