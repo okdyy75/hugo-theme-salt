@@ -104,8 +104,10 @@
                                     {{ $thumbnail = $thumbnail.Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
                                 {{ end }}
                                 <img src='{{ $thumbnail.Permalink }}' alt="{{ .Title }}" loading="lazy" class="partials__sidebar__article__itemThumbnail">
-                                <div class="partials__sidebar__article__itemTitle">
-                                    {{ .Title }}
+                                <div class="partials__sidebar__article__itemDetail">
+                                    <div class="partials__sidebar__article__itemTitle--line3">
+                                        {{ .Title }}
+                                    </div>
                                 </div>
                             </a>
                         </li>
@@ -132,11 +134,58 @@
                                         {{ $thumbnail = $thumbnail.Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
                                     {{ end }}
                                     <img src='{{ $thumbnail.Permalink }}' alt="{{ .Title }}" loading="lazy" class="partials__sidebar__article__itemThumbnail">
-                                    <div class="partials__sidebar__article__itemTitle">
-                                        {{ .Title }}
+                                    <div class="partials__sidebar__article__itemDetail">
+                                        <div class="partials__sidebar__article__itemTitle--line3">
+                                            {{ .Title }}
+                                        </div>
                                     </div>
                                 </a>
                             </li>
+                        {{ end }}
+                    </ul>
+                </nav>
+            </div>
+        {{ end }}
+
+        {{ $ranking := slice }}
+        {{ range $item := sort .Site.Data.ranking "pv" "desc" }}
+            {{ with $page := $.Site.GetPage (path.Clean $item.pagePath) }}
+                {{ if eq .Section "article" }}
+                    {{ $ranking = $ranking | append (dict "page" $page "pv" $item.pv) }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+        {{ if ge (len $ranking) .Site.Params.rankingArticleLimit }}
+            <div class="partials__sidebar__card">
+                <h3 class="partials__sidebar__title--ranking">
+                    ランキング
+                </h3>
+                <nav class="partials__sidebar__article">
+                    <ul class="partials__sidebar__article__items">
+                        {{ range first .Site.Params.rankingArticleLimit $ranking }}
+                            {{ $pv := .pv }}
+                            {{ with .page }}
+                                <li class="partials__sidebar__article__item">
+                                    <a href="{{ .Permalink }}" class="partials__sidebar__article__itemLink">
+                                        {{ $thumbnail := .Resources.Match "thumbnail.*" }}
+                                        {{ if $thumbnail }}
+                                            {{ $thumbnail = (index $thumbnail 0).Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
+                                        {{ else }}
+                                            {{ $thumbnail = resources.Get .Site.Params.dafaultNoimage }}
+                                            {{ $thumbnail = $thumbnail.Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
+                                        {{ end }}
+                                        <img src='{{ $thumbnail.Permalink }}' alt="{{ .Title }}" loading="lazy" class="partials__sidebar__article__itemThumbnail">
+                                        <div class="partials__sidebar__article__itemDetail">
+                                            <div class="partials__sidebar__article__itemTitle--line2">
+                                                {{ .Title }}
+                                            </div>
+                                            <div class="partials__sidebar__article__itemPv">
+                                                {{ $pv }}pv
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            {{ end }}
                         {{ end }}
                     </ul>
                 </nav>

@@ -65,6 +65,7 @@ params:
   notFoundImage: image/404.png
   dafaultNoimage: image/default_noimage.png
   newArticleLimit: 5
+  rankingArticleLimit: 5
   relatedArticleLimit: 2
   imageQuality: 75
   profile:
