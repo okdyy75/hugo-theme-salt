@@ -12,4 +12,5 @@ $RECYCLE.BIN/
 # OSX
 .DS_Store
 
+.gcp
 .ssh
