@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "create-ranking": "node scripts/create-ranking.js",
     "build": "hugo --minify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,6 +20,7 @@
   "homepage": "https://github.com/okdyy75/hugo-theme-salt#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
+    "@google-analytics/data": "^2.8.0",
     "github-markdown-css": "^4.0.0",
     "hugo-bin": "^0.77.4",
     "lunr": "^2.3.9",
