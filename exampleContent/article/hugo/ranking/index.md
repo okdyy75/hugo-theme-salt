@@ -196,6 +196,9 @@ ranking.json
 ## 4. CIで定期的にpv取得スクリプトを起動させる
 
 あとは毎日CIで実行させればOK。
+
+### GitHub Actions
+
 gcpからDLした鍵の内容をGitHubのsercretsに`GOOGLE_ANALYTICS_CREDENTIALS`として保存してください。
 
 .github/workflows/create_ranking.yml
@@ -250,3 +253,72 @@ jobs:
           git push origin HEAD
 
 ```
+
+
+### GitLab CI
+GitLabのプロジェクトを選択し、設定 > CI/CD > 変数に下記を設定
+- `GITLAB_USER_EMAIL`はGitLabで使っているemail
+- `GITLAB_USER_NAME`はGitLabで使っているuser name
+- `SSH_PRIVATE_KEY`はGitLab CIからpushする用のssh key
+- `GOOGLE_ANALYTICS_CREDENTIALS`はGCPから落としてきた鍵の中身
+
+`SSH_PRIVATE_KEY`はssh-keygenコマンドから作成した秘密鍵をセットしてください
+```
+mkdir ./.ssh
+ssh-keygen
+> ./.ssh/gitlab_id_rsa
+> Enter
+> Enter
+Your identification has been saved in .ssh/gitlab_id_rsa
+Your public key has been saved in .ssh/gitlab_id_rsa.pub
+```
+
+GitLabのユーザー設定 > SSH鍵に公開鍵を登録するのをお忘れなく！
+
+.gitlab-ci.yml
+
+```yml
+stages:
+  - build
+  - deploy
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+create-ranking:
+  timeout: 5m
+  stage: build
+  image: node:14
+  before_script:
+    - eval `ssh-agent`
+    - ssh-add <(echo "$SSH_PRIVATE_KEY")
+    - mkdir .gcp
+    - echo "$GOOGLE_ANALYTICS_CREDENTIALS" > .gcp/google-analytics_credentials.json
+  script:
+    - git config --global user.email $GITLAB_USER_EMAIL
+    - git config --global user.name $GITLAB_USER_NAME
+    - git remote set-url origin git@$CI_SERVER_HOST:$CI_PROJECT_PATH.git
+    - git checkout $CI_COMMIT_REF_NAME
+    - npm ci
+    - npm run create-ranking
+    - git add ./data
+    - git commit -am "Create Ranking"
+    - git -c core.sshCommand="ssh -oStrictHostKeyChecking=no" push origin ${CI_COMMIT_REF_NAME}
+  only:
+    - schedules
+
+pages:
+  timeout: 5m
+  stage: deploy
+  image: node:14
+  script: |
+    npm ci
+    npm run build
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+```
+
+最後にCI/CD > スケジュールから新規スケジュールを追加してください
