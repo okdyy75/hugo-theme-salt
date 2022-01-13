@@ -2,46 +2,74 @@
     "items": [
         {
             "pagePath": "/",
-            "pv": "49"
+            "pv": "85"
         },
         {
             "pagePath": "/article/salt/about/",
-            "pv": "14"
+            "pv": "22"
         },
         {
-            "pagePath": "/article/hugo/archive/",
-            "pv": "11"
-        },
-        {
-            "pagePath": "/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/",
-            "pv": "11"
+            "pagePath": "/article/sample/hugo-shortcode/",
+            "pv": "16"
         },
         {
             "pagePath": "/article/salt/custom-figure/",
-            "pv": "8"
+            "pv": "15"
+        },
+        {
+            "pagePath": "/article/hugo/tips/",
+            "pv": "13"
+        },
+        {
+            "pagePath": "/article/hugo/archive/",
+            "pv": "12"
+        },
+        {
+            "pagePath": "/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/",
+            "pv": "12"
+        },
+        {
+            "pagePath": "/article/hugo/about/",
+            "pv": "10"
+        },
+        {
+            "pagePath": "/article/salt/self-blog-card/",
+            "pv": "10"
+        },
+        {
+            "pagePath": "/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/",
+            "pv": "9"
         },
         {
             "pagePath": "/about/",
             "pv": "7"
         },
         {
-            "pagePath": "/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/",
-            "pv": "7"
-        },
-        {
-            "pagePath": "/article/hugo/tips/",
-            "pv": "6"
-        },
-        {
-            "pagePath": "/article/salt/self-blog-card/",
+            "pagePath": "/article/hugo/search/",
             "pv": "5"
         },
         {
-            "pagePath": "/article/sample/hugo-shortcode/",
+            "pagePath": "/article/sample/markdown/",
+            "pv": "5"
+        },
+        {
+            "pagePath": "/article/hugo/fontawsome/",
             "pv": "4"
         },
         {
-            "pagePath": "/article/hugo/search/",
+            "pagePath": "/tags/Hugo/",
+            "pv": "4"
+        },
+        {
+            "pagePath": "/article/go/go-template/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/article/go/variable/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/article/hugo/ranking/",
             "pv": "3"
         },
         {
@@ -49,35 +77,19 @@
             "pv": "3"
         },
         {
-            "pagePath": "/tags/Hugo/",
+            "pagePath": "/tags/tips/",
             "pv": "3"
-        },
-        {
-            "pagePath": "/article/go/go-template/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/go/variable/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/hugo/about/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/sample/markdown/",
-            "pv": "2"
         },
         {
             "pagePath": "/information/",
             "pv": "2"
         },
         {
-            "pagePath": "/tags/tips/",
-            "pv": "2"
+            "pagePath": "/article/sample/no-thumbnail/",
+            "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/fontawsome/",
+            "pagePath": "/article/sample/small-thumbnail/",
             "pv": "1"
         },
         {
@@ -89,9 +101,17 @@
             "pv": "1"
         },
         {
-            "pagePath": "/tags/%E3%81%BE%E3%81%A8%E3%82%81/",
+            "pagePath": "/tags/%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/tags/%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%B3%E3%83%BC%E3%83%89/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/tags/Hugo%E3%83%86%E3%83%BC%E3%83%9E/",
             "pv": "1"
         }
     ],
-    "createdAt": "2022-01-12T09:00:57.958Z"
+    "createdAt": "2022-01-13T00:22:19.809Z"
 }
