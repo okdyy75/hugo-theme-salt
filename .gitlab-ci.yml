@@ -10,6 +10,8 @@ create-ranking:
   stage: build
   image: node:14
   before_script:
+    - eval `ssh-agent`
+    - ssh-add <(echo "$SSH_PRIVATE_KEY")
     - mkdir .gcp
     - echo "$GOOGLE_ANALYTICS_CREDENTIALS" > .gcp/google-analytics_credentials.json
   script:
