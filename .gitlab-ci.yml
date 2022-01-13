@@ -1,9 +1,33 @@
+stages:
+  - build
+  - deploy
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
+create-ranking:
+  timeout: 5m
+  stage: build
+  image: node:14
+  before_script:
+    - mkdir .gcp
+    - echo "$GOOGLE_ANALYTICS_CREDENTIALS" > .gcp/google-analytics_credentials.json
+  script:
+    - git config --global user.email $GITLAB_USER_EMAIL
+    - git config --global user.name $GITLAB_USER_NAME
+    - git remote set-url origin git@$CI_SERVER_HOST:$CI_PROJECT_PATH.git
+    - git checkout $CI_COMMIT_REF_NAME
+    - npm ci
+    - npm run create-ranking
+    - git add ./data
+    - git commit -am "Create Ranking"
+    - git -c core.sshCommand="ssh -oStrictHostKeyChecking=no" push origin ${CI_COMMIT_REF_NAME}
+  only:
+    - schedules
+
 pages:
   timeout: 5m
+  stage: deploy
   image: node:14
   cache:
     key: ${CI_COMMIT_REF_SLUG}
