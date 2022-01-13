@@ -227,7 +227,12 @@ Hugoでランキングを作る方法
 <li><a href=#1-gcpから鍵を作成しgoogle-analyticsで権限を付与>1. GCPから鍵を作成し、Google Analyticsで権限を付与</a></li>
 <li><a href=#2-google-analytics-data-apiからpv取得スクリプトをnodeで作成>2. Google Analytics Data APIからpv取得スクリプトをnodeで作成</a></li>
 <li><a href=#3-保存したpvデータを元にhugoからランキング作成>3. 保存したpvデータを元にHugoからランキング作成</a></li>
-<li><a href=#4-ciで定期的にpv取得スクリプトを起動させる>4. CIで定期的にpv取得スクリプトを起動させる</a></li>
+<li><a href=#4-ciで定期的にpv取得スクリプトを起動させる>4. CIで定期的にpv取得スクリプトを起動させる</a>
+<ul>
+<li><a href=#github-actions>GitHub Actions</a></li>
+<li><a href=#gitlab-ci>GitLab CI</a></li>
+</ul>
+</li>
 </ul>
 </nav>
 </aside>
@@ -378,8 +383,9 @@ Hugoでランキングを作る方法
 ]
 </code></pre><br>
 <h2 id=4-ciで定期的にpv取得スクリプトを起動させる>4. CIで定期的にpv取得スクリプトを起動させる</h2>
-<p>あとは毎日CIで実行させればOK。
-gcpからDLした鍵の内容をGitHubのsercretsに<code>GOOGLE_ANALYTICS_CREDENTIALS</code>として保存してください。</p>
+<p>あとは毎日CIで実行させればOK。</p>
+<h3 id=github-actions>GitHub Actions</h3>
+<p>gcpからDLした鍵の内容をGitHubのsercretsに<code>GOOGLE_ANALYTICS_CREDENTIALS</code>として保存してください。</p>
 <p>.github/workflows/create_ranking.yml</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>name</span>: <span style=color:#ae81ff>Create Ranking</span>
 
@@ -429,7 +435,66 @@ gcpからDLした鍵の内容をGitHubのsercretsに<code>GOOGLE_ANALYTICS_CREDE
 </span><span style=color:#e6db74>          git commit -am &#34;Create Ranking&#34;
 </span><span style=color:#e6db74>          git push origin HEAD</span>          
 
-</code></pre></div>
+</code></pre></div><h3 id=gitlab-ci>GitLab CI</h3>
+<p>GitLabのプロジェクトを選択し、設定 > CI/CD > 変数に下記を設定</p>
+<ul>
+<li><code>GITLAB_USER_EMAIL</code>はGitLabで使っているemail</li>
+<li><code>GITLAB_USER_NAME</code>はGitLabで使っているuser name</li>
+<li><code>SSH_PRIVATE_KEY</code>はGitLab CIからpushする用のssh key</li>
+<li><code>GOOGLE_ANALYTICS_CREDENTIALS</code>はGCPから落としてきた鍵の中身</li>
+</ul>
+<p><code>SSH_PRIVATE_KEY</code>はssh-keygenコマンドから作成した秘密鍵をセットしてください</p>
+<pre tabindex=0><code>mkdir ./.ssh
+ssh-keygen
+&gt; ./.ssh/gitlab_id_rsa
+&gt; Enter
+&gt; Enter
+Your identification has been saved in .ssh/gitlab_id_rsa
+Your public key has been saved in .ssh/gitlab_id_rsa.pub
+</code></pre><p>GitLabのユーザー設定 > SSH鍵に公開鍵を登録するのをお忘れなく！</p>
+<p>.gitlab-ci.yml</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>stages</span>:
+  - <span style=color:#ae81ff>build</span>
+  - <span style=color:#ae81ff>deploy</span>
+
+<span style=color:#f92672>variables</span>:
+  <span style=color:#f92672>GIT_SUBMODULE_STRATEGY</span>: <span style=color:#ae81ff>recursive</span>
+
+<span style=color:#f92672>create-ranking</span>:
+  <span style=color:#f92672>timeout</span>: <span style=color:#ae81ff>5m</span>
+  <span style=color:#f92672>stage</span>: <span style=color:#ae81ff>build</span>
+  <span style=color:#f92672>image</span>: <span style=color:#ae81ff>node:14</span>
+  <span style=color:#f92672>before_script</span>:
+    - <span style=color:#ae81ff>eval `ssh-agent`</span>
+    - <span style=color:#ae81ff>ssh-add &lt;(echo &#34;$SSH_PRIVATE_KEY&#34;)</span>
+    - <span style=color:#ae81ff>mkdir .gcp</span>
+    - <span style=color:#ae81ff>echo &#34;$GOOGLE_ANALYTICS_CREDENTIALS&#34; &gt; .gcp/google-analytics_credentials.json</span>
+  <span style=color:#f92672>script</span>:
+    - <span style=color:#ae81ff>git config --global user.email $GITLAB_USER_EMAIL</span>
+    - <span style=color:#ae81ff>git config --global user.name $GITLAB_USER_NAME</span>
+    - <span style=color:#ae81ff>git remote set-url origin git@$CI_SERVER_HOST:$CI_PROJECT_PATH.git</span>
+    - <span style=color:#ae81ff>git checkout $CI_COMMIT_REF_NAME</span>
+    - <span style=color:#ae81ff>npm ci</span>
+    - <span style=color:#ae81ff>npm run create-ranking</span>
+    - <span style=color:#ae81ff>git add ./data</span>
+    - <span style=color:#ae81ff>git commit -am &#34;Create Ranking&#34;</span>
+    - <span style=color:#ae81ff>git -c core.sshCommand=&#34;ssh -oStrictHostKeyChecking=no&#34; push origin ${CI_COMMIT_REF_NAME}</span>
+  <span style=color:#f92672>only</span>:
+    - <span style=color:#ae81ff>schedules</span>
+
+<span style=color:#f92672>pages</span>:
+  <span style=color:#f92672>timeout</span>: <span style=color:#ae81ff>5m</span>
+  <span style=color:#f92672>stage</span>: <span style=color:#ae81ff>deploy</span>
+  <span style=color:#f92672>image</span>: <span style=color:#ae81ff>node:14</span>
+  <span style=color:#f92672>script</span>: |<span style=color:#e6db74>
+</span><span style=color:#e6db74>    npm ci
+</span><span style=color:#e6db74>    npm run build</span>    
+  <span style=color:#f92672>artifacts</span>:
+    <span style=color:#f92672>paths</span>:
+      - <span style=color:#ae81ff>public</span>
+  <span style=color:#f92672>only</span>:
+    - <span style=color:#ae81ff>main</span>
+</code></pre></div><p>最後にCI/CD > スケジュールから新規スケジュールを追加してください</p>
 </div>
 <div class=single__article__comment>
 </div>
@@ -769,20 +834,20 @@ Hugoを使い始めた人に捧げるTips11選
 Hugoブログテーマ「Salt」とは？
 </div>
 <div class=partials__sidebar__article__itemPv>
-14pv
+22pv
 </div>
 </div>
 </a>
 </li>
 <li class=partials__sidebar__article__item>
-<a href=https://hugo-theme-salt.okdyy75.com/article/hugo/archive/ class=partials__sidebar__article__itemLink>
-<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/archive/thumbnail_hu5726299922efdf47da26d7ebb7472693_4871_192x108_fill_q75_h2_box_center_3.webp alt=Hugoでアーカイブを作る方法 loading=lazy class=partials__sidebar__article__itemThumbnail>
+<a href=https://hugo-theme-salt.okdyy75.com/article/sample/hugo-shortcode/ class=partials__sidebar__article__itemLink>
+<img src=https://hugo-theme-salt.okdyy75.com/article/sample/hugo-shortcode/thumbnail_hu3e76b4d1d3cd4901770e54ca242e78fa_5891_192x108_fill_q75_h2_box_center_3.webp alt=Hugo標準のショートコード表示サンプル loading=lazy class=partials__sidebar__article__itemThumbnail>
 <div class=partials__sidebar__article__itemDetail>
 <div class=partials__sidebar__article__itemTitle--line2>
-Hugoでアーカイブを作る方法
+Hugo標準のショートコード表示サンプル
 </div>
 <div class=partials__sidebar__article__itemPv>
-11pv
+16pv
 </div>
 </div>
 </a>
@@ -795,7 +860,7 @@ Hugoでアーカイブを作る方法
 画像のリサイズ・トリミング可能な自作ショートコード
 </div>
 <div class=partials__sidebar__article__itemPv>
-8pv
+15pv
 </div>
 </div>
 </a>
@@ -808,20 +873,20 @@ Hugoでアーカイブを作る方法
 Hugoを使い始めた人に捧げるTips11選
 </div>
 <div class=partials__sidebar__article__itemPv>
-6pv
+13pv
 </div>
 </div>
 </a>
 </li>
 <li class=partials__sidebar__article__item>
-<a href=https://hugo-theme-salt.okdyy75.com/article/salt/self-blog-card/ class=partials__sidebar__article__itemLink>
-<img src=https://hugo-theme-salt.okdyy75.com/article/salt/self-blog-card/thumbnail_hu887fde30b154802a30332967b448fbb6_8526_192x108_fill_q75_h2_box_center_3.webp alt=サイト内ブログカードを作る自作ショートコード loading=lazy class=partials__sidebar__article__itemThumbnail>
+<a href=https://hugo-theme-salt.okdyy75.com/article/hugo/archive/ class=partials__sidebar__article__itemLink>
+<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/archive/thumbnail_hu5726299922efdf47da26d7ebb7472693_4871_192x108_fill_q75_h2_box_center_3.webp alt=Hugoでアーカイブを作る方法 loading=lazy class=partials__sidebar__article__itemThumbnail>
 <div class=partials__sidebar__article__itemDetail>
 <div class=partials__sidebar__article__itemTitle--line2>
-サイト内ブログカードを作る自作ショートコード
+Hugoでアーカイブを作る方法
 </div>
 <div class=partials__sidebar__article__itemPv>
-5pv
+12pv
 </div>
 </div>
 </a>
