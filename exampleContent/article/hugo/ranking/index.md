@@ -12,7 +12,7 @@ toc: true
 comment: true
 ---
 
-HugoとGoogle Analyticsを使ってランキングを作る方法を紹介します
+HugoとGoogle Analyticsを使って人気記事のランキングを作る方法を紹介します
 
 ステップとしては
 1. GCPから鍵を作成し、Google Analyticsで権限を付与
@@ -34,7 +34,14 @@ HugoとGoogle Analyticsを使ってランキングを作る方法を紹介しま
 
 ## 2. Google Analytics Data APIからpv取得スクリプトをnodeで作成
 
-pv取得スクリプトを作成します。`propertyId`にはgoogle analyticsのプロパティIDを、`process.env.GOOGLE_APPLICATION_CREDENTIALS`には上記の記事で作成したcredentialsファイルを指定します。
+まずは必要なnpmライブラリをinstallします
+
+```bash
+npm install @google-analytics/data
+npm install dayjs
+```
+
+次にpv取得スクリプトを作成します。`propertyId`にはgoogle analyticsのプロパティIDを、`process.env.GOOGLE_APPLICATION_CREDENTIALS`には上記の記事で作成したcredentialsファイルを指定します。
 
 scripts/create-ranking.js
 
