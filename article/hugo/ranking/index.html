@@ -4,14 +4,14 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1">
 <title>Hugoでランキングを作る方法 | Hugoブログテーマ「Salt」</title>
-<meta name=description content="HugoとGoogle Analyticsを使ってランキングを作る方法を紹介します ステップとしては GCPから鍵を作成し、Google Analyticsで権限を付与 Google Analytics Data APIからpv取得スクリプトをnodeで作成 保存したpvデータを元にHugoからランキング作成 CIで定期的にpv取得スクリプトを起動させる 1. GCPから鍵を作成し、Google Analyticsで権限を付与 基本的にはdevelopers"><meta name=thumbnail content="https://hugo-theme-salt.okdyy75.com/article/hugo/ranking/thumbnail_hue62fd672beaa75a2609baf58cf75dd4b_3561_1200x630_fill_q75_h2_box_center_3.webp"><meta property="og:locale" content="ja_JP">
+<meta name=description content="HugoとGoogle Analyticsを使って人気記事のランキングを作る方法を紹介します ステップとしては GCPから鍵を作成し、Google Analyticsで権限を付与 Google Analytics Data APIからpv取得スクリプトをnodeで作成 保存したpvデータを元にHugoからランキング作成 CIで定期的にpv取得スクリプトを起動させる 1. GCPから鍵を作成し、Google Analyticsで権限を付与 基本的にはdevel"><meta name=thumbnail content="https://hugo-theme-salt.okdyy75.com/article/hugo/ranking/thumbnail_hue62fd672beaa75a2609baf58cf75dd4b_3561_1200x630_fill_q75_h2_box_center_3.webp"><meta property="og:locale" content="ja_JP">
 <meta property="og:title" content="Hugoでランキングを作る方法 | Hugoブログテーマ「Salt」">
-<meta property="og:description" content="HugoとGoogle Analyticsを使ってランキングを作る方法を紹介します ステップとしては GCPから鍵を作成し、Google Analyticsで権限を付与 Google Analytics Data APIからpv取得スクリプトをnodeで作成 保存したpvデータを元にHugoからランキング作成 CIで定期的にpv取得スクリプトを起動させる 1. GCPから鍵を作成し、Google Analyticsで権限を付与 基本的にはdevelopers"><meta property="og:image" content="https://hugo-theme-salt.okdyy75.com/article/hugo/ranking/thumbnail_hue62fd672beaa75a2609baf58cf75dd4b_3561_1200x630_fill_q75_h2_box_center_3.webp">
+<meta property="og:description" content="HugoとGoogle Analyticsを使って人気記事のランキングを作る方法を紹介します ステップとしては GCPから鍵を作成し、Google Analyticsで権限を付与 Google Analytics Data APIからpv取得スクリプトをnodeで作成 保存したpvデータを元にHugoからランキング作成 CIで定期的にpv取得スクリプトを起動させる 1. GCPから鍵を作成し、Google Analyticsで権限を付与 基本的にはdevel"><meta property="og:image" content="https://hugo-theme-salt.okdyy75.com/article/hugo/ranking/thumbnail_hue62fd672beaa75a2609baf58cf75dd4b_3561_1200x630_fill_q75_h2_box_center_3.webp">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630"><meta property="og:url" content="https://hugo-theme-salt.okdyy75.com/article/hugo/ranking/">
 <meta property="og:site_name" content="Hugoブログテーマ「Salt」">
 <meta property="og:type" content="article"><meta property="article:published_time" content="2022-01-12T15:34:42+0900"><meta property="article:modified_time" content="2022-01-12T15:34:42+0900"><meta property="article:section" content="Hugo"><meta property="article:tag" content="ランキング"><meta property="article:tag" content="tips"><meta name=twitter:title content="Hugoでランキングを作る方法 | Hugoブログテーマ「Salt」">
-<meta name=twitter:description content="HugoとGoogle Analyticsを使ってランキングを作る方法を紹介します ステップとしては GCPから鍵を作成し、Google Analyticsで権限を付与 Google Analytics Data APIからpv取得スクリプトをnodeで作成 保存したpvデータを元にHugoからランキング作成 CIで定期的にpv取得スクリプトを起動させる 1. GCPから鍵を作成し、Google Analyticsで権限を付与 基本的にはdevelopers"><meta name=twitter:image content="https://hugo-theme-salt.okdyy75.com/article/hugo/ranking/thumbnail_hue62fd672beaa75a2609baf58cf75dd4b_3561_1200x630_fill_q75_h2_box_center_3.webp">
+<meta name=twitter:description content="HugoとGoogle Analyticsを使って人気記事のランキングを作る方法を紹介します ステップとしては GCPから鍵を作成し、Google Analyticsで権限を付与 Google Analytics Data APIからpv取得スクリプトをnodeで作成 保存したpvデータを元にHugoからランキング作成 CIで定期的にpv取得スクリプトを起動させる 1. GCPから鍵を作成し、Google Analyticsで権限を付与 基本的にはdevel"><meta name=twitter:image content="https://hugo-theme-salt.okdyy75.com/article/hugo/ranking/thumbnail_hue62fd672beaa75a2609baf58cf75dd4b_3561_1200x630_fill_q75_h2_box_center_3.webp">
 <meta name=twitter:card content="summary_large_image"><meta name=robots content="index,follow">
 <meta name=googlebot content="index,follow">
 <meta name=generator content="Hugo 0.89.4">
@@ -237,7 +237,7 @@ Hugoでランキングを作る方法
 </nav>
 </aside>
 <div class="single__article__content markdown-body">
-<p>HugoとGoogle Analyticsを使ってランキングを作る方法を紹介します</p>
+<p>HugoとGoogle Analyticsを使って人気記事のランキングを作る方法を紹介します</p>
 <p>ステップとしては</p>
 <ol>
 <li>GCPから鍵を作成し、Google Analyticsで権限を付与</li>
@@ -252,7 +252,10 @@ Hugoでランキングを作る方法
 <p><a href=https://dev.classmethod.jp/articles/ga-api-v4/>アナリティクス Reporting API v4を使ってGoogle Analyticsのデータを取得する</a></p>
 <br>
 <h2 id=2-google-analytics-data-apiからpv取得スクリプトをnodeで作成>2. Google Analytics Data APIからpv取得スクリプトをnodeで作成</h2>
-<p>pv取得スクリプトを作成します。<code>propertyId</code>にはgoogle analyticsのプロパティIDを、<code>process.env.GOOGLE_APPLICATION_CREDENTIALS</code>には上記の記事で作成したcredentialsファイルを指定します。</p>
+<p>まずは必要なnpmライブラリをinstallします</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>npm install @google-analytics/data
+npm install dayjs
+</code></pre></div><p>次にpv取得スクリプトを作成します。<code>propertyId</code>にはgoogle analyticsのプロパティIDを、<code>process.env.GOOGLE_APPLICATION_CREDENTIALS</code>には上記の記事で作成したcredentialsファイルを指定します。</p>
 <p>scripts/create-ranking.js</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>try</span> {
     <span style=color:#75715e>/**
@@ -834,7 +837,7 @@ Hugoを使い始めた人に捧げるTips11選
 Hugoブログテーマ「Salt」とは？
 </div>
 <div class=partials__sidebar__article__itemPv>
-22pv
+18pv
 </div>
 </div>
 </a>
@@ -847,7 +850,7 @@ Hugoブログテーマ「Salt」とは？
 Hugo標準のショートコード表示サンプル
 </div>
 <div class=partials__sidebar__article__itemPv>
-16pv
+15pv
 </div>
 </div>
 </a>
@@ -860,7 +863,7 @@ Hugo標準のショートコード表示サンプル
 画像のリサイズ・トリミング可能な自作ショートコード
 </div>
 <div class=partials__sidebar__article__itemPv>
-15pv
+12pv
 </div>
 </div>
 </a>
@@ -873,20 +876,20 @@ Hugo標準のショートコード表示サンプル
 Hugoを使い始めた人に捧げるTips11選
 </div>
 <div class=partials__sidebar__article__itemPv>
-13pv
+10pv
 </div>
 </div>
 </a>
 </li>
 <li class=partials__sidebar__article__item>
-<a href=https://hugo-theme-salt.okdyy75.com/article/hugo/archive/ class=partials__sidebar__article__itemLink>
-<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/archive/thumbnail_hu5726299922efdf47da26d7ebb7472693_4871_192x108_fill_q75_h2_box_center_3.webp alt=Hugoでアーカイブを作る方法 loading=lazy class=partials__sidebar__article__itemThumbnail>
+<a href=https://hugo-theme-salt.okdyy75.com/article/salt/self-blog-card/ class=partials__sidebar__article__itemLink>
+<img src=https://hugo-theme-salt.okdyy75.com/article/salt/self-blog-card/thumbnail_hu887fde30b154802a30332967b448fbb6_8526_192x108_fill_q75_h2_box_center_3.webp alt=サイト内ブログカードを作る自作ショートコード loading=lazy class=partials__sidebar__article__itemThumbnail>
 <div class=partials__sidebar__article__itemDetail>
 <div class=partials__sidebar__article__itemTitle--line2>
-Hugoでアーカイブを作る方法
+サイト内ブログカードを作る自作ショートコード
 </div>
 <div class=partials__sidebar__article__itemPv>
-12pv
+9pv
 </div>
 </div>
 </a>
