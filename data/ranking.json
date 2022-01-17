@@ -2,11 +2,11 @@
     "items": [
         {
             "pagePath": "/",
-            "pv": "88"
+            "pv": "89"
         },
         {
             "pagePath": "/article/salt/about/",
-            "pv": "17"
+            "pv": "18"
         },
         {
             "pagePath": "/article/sample/hugo-shortcode/",
@@ -18,7 +18,7 @@
         },
         {
             "pagePath": "/article/salt/custom-figure/",
-            "pv": "11"
+            "pv": "12"
         },
         {
             "pagePath": "/article/hugo/tips/",
@@ -113,5 +113,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2022-01-16T00:21:08.474Z"
+    "createdAt": "2022-01-17T00:20:09.080Z"
 }
