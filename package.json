@@ -26,5 +26,8 @@
     "hugo-bin": "^0.77.4",
     "lunr": "^2.3.9",
     "lunr-languages": "^1.9.0"
+  },
+  "hugo-bin": {
+    "buildTags": "extended"
   }
 }
