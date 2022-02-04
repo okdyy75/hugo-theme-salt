@@ -6,15 +6,15 @@
         },
         {
             "pagePath": "/article/hugo/search/",
-            "pv": "17"
+            "pv": "10"
+        },
+        {
+            "pagePath": "/article/hugo/tips/",
+            "pv": "5"
         },
         {
             "pagePath": "/article/salt/about/",
             "pv": "5"
-        },
-        {
-            "pagePath": "/article/hugo/tips/",
-            "pv": "4"
         },
         {
             "pagePath": "/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/",
@@ -61,5 +61,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2022-02-03T00:19:09.657Z"
+    "createdAt": "2022-02-04T00:18:50.226Z"
 }
