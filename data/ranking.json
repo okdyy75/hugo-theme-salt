@@ -1,31 +1,51 @@
 {
     "items": [
         {
+            "pagePath": "/",
+            "pv": "9"
+        },
+        {
             "pagePath": "/article/hugo/tips/",
-            "pv": "8"
+            "pv": "9"
         },
         {
             "pagePath": "/article/hugo/search/",
-            "pv": "7"
-        },
-        {
-            "pagePath": "/",
-            "pv": "6"
+            "pv": "8"
         },
         {
             "pagePath": "/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/",
-            "pv": "4"
+            "pv": "7"
         },
         {
             "pagePath": "/article/salt/about/",
-            "pv": "3"
+            "pv": "4"
+        },
+        {
+            "pagePath": "/tags/Hugo/",
+            "pv": "4"
         },
         {
             "pagePath": "/article/hugo/about/",
-            "pv": "2"
+            "pv": "3"
+        },
+        {
+            "pagePath": "/article/sample/markdown/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/",
+            "pv": "3"
         },
         {
             "pagePath": "/article/salt/self-blog-card/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/sample/no-thumbnail/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/sample/small-thumbnail/",
             "pv": "2"
         },
         {
@@ -33,11 +53,19 @@
             "pv": "2"
         },
         {
-            "pagePath": "/tags/Hugo/",
-            "pv": "2"
+            "pagePath": "/article/go/go-template/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/go/variable/",
+            "pv": "1"
         },
         {
             "pagePath": "/article/hugo/build-error/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/hugo/fontawsome/",
             "pv": "1"
         },
         {
@@ -49,21 +77,17 @@
             "pv": "1"
         },
         {
-            "pagePath": "/article/sample/markdown/",
+            "pagePath": "/article/sample/hugo-shortcode/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/sample/no-thumbnail/",
+            "pagePath": "/page/2/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/sample/small-thumbnail/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/",
+            "pagePath": "/tags/tips/",
             "pv": "1"
         }
     ],
-    "createdAt": "2022-02-08T00:19:06.954Z"
+    "createdAt": "2022-02-09T00:18:53.977Z"
 }
