@@ -30,7 +30,7 @@
         },
         {
             "pagePath": "/article/hugo/search/",
-            "pv": "5"
+            "pv": "6"
         },
         {
             "pagePath": "/article/hugo/ranking/",
@@ -105,5 +105,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2022-02-14T00:20:01.817Z"
+    "createdAt": "2022-02-15T00:19:50.991Z"
 }
