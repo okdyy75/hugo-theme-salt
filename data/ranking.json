@@ -1,16 +1,12 @@
 {
     "items": [
         {
-            "pagePath": "/",
-            "pv": "18"
-        },
-        {
             "pagePath": "/article/salt/about/",
-            "pv": "14"
+            "pv": "13"
         },
         {
-            "pagePath": "/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/",
-            "pv": "6"
+            "pagePath": "/",
+            "pv": "12"
         },
         {
             "pagePath": "/article/hugo/search/",
@@ -21,35 +17,31 @@
             "pv": "5"
         },
         {
-            "pagePath": "/tags/Hugo/",
-            "pv": "5"
-        },
-        {
             "pagePath": "/article/hugo/about/",
-            "pv": "4"
+            "pv": "3"
         },
         {
             "pagePath": "/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/",
-            "pv": "4"
+            "pv": "3"
+        },
+        {
+            "pagePath": "/tags/Hugo/",
+            "pv": "3"
         },
         {
             "pagePath": "/article/hugo/ranking/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/article/salt/self-blog-card/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/article/go/go-template/",
             "pv": "2"
         },
         {
-            "pagePath": "/article/hugo/fontawsome/",
+            "pagePath": "/article/salt/self-blog-card/",
             "pv": "2"
         },
         {
             "pagePath": "/article/sample/hugo-shortcode/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/",
             "pv": "2"
         },
         {
@@ -61,19 +53,7 @@
             "pv": "2"
         },
         {
-            "pagePath": "/tags/tips/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/about/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/hugo/build-error/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/salt/custom-figure/",
+            "pagePath": "/article/hugo/fontawsome/",
             "pv": "1"
         },
         {
@@ -83,11 +63,7 @@
         {
             "pagePath": "/categories/Hugo/",
             "pv": "1"
-        },
-        {
-            "pagePath": "/information/",
-            "pv": "1"
         }
     ],
-    "createdAt": "2022-02-17T00:19:13.331Z"
+    "createdAt": "2022-02-18T00:23:05.703Z"
 }
