@@ -86,6 +86,10 @@
                 padding-left: 20px;
                 border-left: 10px solid $title-border;
             }
+            table{
+                overflow: auto;
+                white-space: nowrap;
+            }
         }
     }
     &__relatedArticleList {
