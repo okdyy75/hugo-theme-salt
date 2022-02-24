@@ -57,7 +57,9 @@
                     <div>
                         {{ with .Site.GetPage "/information" }}
                             {{ if .Page.Content }}
-                                {{ index (split .RawContent "\n\n") 0 }}
+                                {{ range split (index (split .RawContent "\n\n") 0) "  " }}
+                                    {{ . }}<br>
+                                {{ end }}
                             {{ end }}
                         {{ end }}
                     </div>
