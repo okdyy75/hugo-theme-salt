@@ -5,12 +5,8 @@
             "pv": "5"
         },
         {
-            "pagePath": "/article/hugo/search/",
-            "pv": "4"
-        },
-        {
             "pagePath": "/article/hugo/tips/",
-            "pv": "4"
+            "pv": "5"
         },
         {
             "pagePath": "/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/",
@@ -19,6 +15,10 @@
         {
             "pagePath": "/article/salt/self-blog-card/",
             "pv": "3"
+        },
+        {
+            "pagePath": "/article/hugo/search/",
+            "pv": "2"
         },
         {
             "pagePath": "/article/salt/about/",
@@ -69,5 +69,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2022-02-24T00:24:17.943Z"
+    "createdAt": "2022-02-25T00:24:18.661Z"
 }
