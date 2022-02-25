@@ -3,15 +3,15 @@
 <meta charset=utf-8>
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1">
-<title>Hugoでランキングを作る方法 | Hugoブログテーマ「Salt」</title>
-<meta name=description content="HugoとGoogle Analyticsを使って人気記事のランキングを作る方法を紹介します ステップとしては GCPから鍵を作成し、Google Analyticsで権限を付与 Google Analytics Data APIからpv取得スクリプトをnodeで作成 保存したpvデータを元にHugoからランキング作成 CIで定期的にpv取得スクリプトを起動させる 1. GCPから鍵を作成し、Google Analyticsで権限を付与 基本的にはdevel"><meta name=thumbnail content="https://hugo-theme-salt.okdyy75.com/article/hugo/ranking/thumbnail_hue62fd672beaa75a2609baf58cf75dd4b_3561_1200x630_fill_q75_h2_box_center_3.webp"><meta property="og:locale" content="ja_JP">
-<meta property="og:title" content="Hugoでランキングを作る方法 | Hugoブログテーマ「Salt」">
-<meta property="og:description" content="HugoとGoogle Analyticsを使って人気記事のランキングを作る方法を紹介します ステップとしては GCPから鍵を作成し、Google Analyticsで権限を付与 Google Analytics Data APIからpv取得スクリプトをnodeで作成 保存したpvデータを元にHugoからランキング作成 CIで定期的にpv取得スクリプトを起動させる 1. GCPから鍵を作成し、Google Analyticsで権限を付与 基本的にはdevel"><meta property="og:image" content="https://hugo-theme-salt.okdyy75.com/article/hugo/ranking/thumbnail_hue62fd672beaa75a2609baf58cf75dd4b_3561_1200x630_fill_q75_h2_box_center_3.webp">
+<title>Hugoで一週間のPV数順の人気記事を作る方法 | Hugoブログテーマ「Salt」</title>
+<meta name=description content="HugoとGoogle Analyticsを使って人気記事のランキングを作る方法を紹介します ステップとしては GCPから鍵を作成し、Google Analyticsで権限を付与 Google Analytics Data APIからpv数を取得するスクリプトを作成 保存したpvデータを元にHugoからランキング作成 CIで定期的にpv取得スクリプトを起動させる 1. GCPから鍵を作成し、Google Analyticsで権限を付与 基本的にはdevelo"><meta name=thumbnail content="https://hugo-theme-salt.okdyy75.com/article/hugo/ranking/thumbnail_hue62fd672beaa75a2609baf58cf75dd4b_3561_1200x630_fill_q75_h2_box_center_3.webp"><meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="Hugoで一週間のPV数順の人気記事を作る方法 | Hugoブログテーマ「Salt」">
+<meta property="og:description" content="HugoとGoogle Analyticsを使って人気記事のランキングを作る方法を紹介します ステップとしては GCPから鍵を作成し、Google Analyticsで権限を付与 Google Analytics Data APIからpv数を取得するスクリプトを作成 保存したpvデータを元にHugoからランキング作成 CIで定期的にpv取得スクリプトを起動させる 1. GCPから鍵を作成し、Google Analyticsで権限を付与 基本的にはdevelo"><meta property="og:image" content="https://hugo-theme-salt.okdyy75.com/article/hugo/ranking/thumbnail_hue62fd672beaa75a2609baf58cf75dd4b_3561_1200x630_fill_q75_h2_box_center_3.webp">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630"><meta property="og:url" content="https://hugo-theme-salt.okdyy75.com/article/hugo/ranking/">
 <meta property="og:site_name" content="Hugoブログテーマ「Salt」">
-<meta property="og:type" content="article"><meta property="article:published_time" content="2022-01-12T15:34:42+0900"><meta property="article:modified_time" content="2022-01-12T15:34:42+0900"><meta property="article:section" content="Hugo"><meta property="article:tag" content="ランキング"><meta property="article:tag" content="tips"><meta name=twitter:title content="Hugoでランキングを作る方法 | Hugoブログテーマ「Salt」">
-<meta name=twitter:description content="HugoとGoogle Analyticsを使って人気記事のランキングを作る方法を紹介します ステップとしては GCPから鍵を作成し、Google Analyticsで権限を付与 Google Analytics Data APIからpv取得スクリプトをnodeで作成 保存したpvデータを元にHugoからランキング作成 CIで定期的にpv取得スクリプトを起動させる 1. GCPから鍵を作成し、Google Analyticsで権限を付与 基本的にはdevel"><meta name=twitter:image content="https://hugo-theme-salt.okdyy75.com/article/hugo/ranking/thumbnail_hue62fd672beaa75a2609baf58cf75dd4b_3561_1200x630_fill_q75_h2_box_center_3.webp">
+<meta property="og:type" content="article"><meta property="article:published_time" content="2022-01-12T15:34:42+0900"><meta property="article:modified_time" content="2022-01-12T15:34:42+0900"><meta property="article:section" content="Hugo"><meta property="article:tag" content="人気記事"><meta property="article:tag" content="ランキング"><meta property="article:tag" content="GA"><meta property="article:tag" content="tips"><meta name=twitter:title content="Hugoで一週間のPV数順の人気記事を作る方法 | Hugoブログテーマ「Salt」">
+<meta name=twitter:description content="HugoとGoogle Analyticsを使って人気記事のランキングを作る方法を紹介します ステップとしては GCPから鍵を作成し、Google Analyticsで権限を付与 Google Analytics Data APIからpv数を取得するスクリプトを作成 保存したpvデータを元にHugoからランキング作成 CIで定期的にpv取得スクリプトを起動させる 1. GCPから鍵を作成し、Google Analyticsで権限を付与 基本的にはdevelo"><meta name=twitter:image content="https://hugo-theme-salt.okdyy75.com/article/hugo/ranking/thumbnail_hue62fd672beaa75a2609baf58cf75dd4b_3561_1200x630_fill_q75_h2_box_center_3.webp">
 <meta name=twitter:card content="summary_large_image"><meta name=robots content="index,follow">
 <meta name=googlebot content="index,follow">
 <meta name=generator content="Hugo 0.89.4">
@@ -158,7 +158,7 @@ shortcode
 </li>
 <li>/</li>
 <li>
-Hugoでランキングを作る方法
+Hugoで一週間のPV数順の人気記事を作る方法
 </li>
 </ol>
 <div class="pcShow single__article__date">
@@ -166,7 +166,7 @@ Hugoでランキングを作る方法
  / <i class="fas fa-history"></i>2022-01-12
 </div>
 </div>
-<h1 class=single__article__title>Hugoでランキングを作る方法</h1>
+<h1 class=single__article__title>Hugoで一週間のPV数順の人気記事を作る方法</h1>
 <div class="spShow single__article__date">
 <i class="far fa-clock"></i>2022-01-12
  / <i class="fas fa-history"></i>2022-01-12
@@ -174,27 +174,27 @@ Hugoでランキングを作る方法
 <section class=single__article__shareLinks>
 <ul class=partials__shareLinks>
 <li class=partials__shareLinks__item>
-<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fhugo-theme-salt.okdyy75.com%2farticle%2fhugo%2franking%2f&text=Hugo%e3%81%a7%e3%83%a9%e3%83%b3%e3%82%ad%e3%83%b3%e3%82%b0%e3%82%92%e4%bd%9c%e3%82%8b%e6%96%b9%e6%b3%95" target=_blank title=Tweet class=partials__shareLinks__itemLink--twitter>
+<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fhugo-theme-salt.okdyy75.com%2farticle%2fhugo%2franking%2f&text=Hugo%e3%81%a7%e4%b8%80%e9%80%b1%e9%96%93%e3%81%aePV%e6%95%b0%e9%a0%86%e3%81%ae%e4%ba%ba%e6%b0%97%e8%a8%98%e4%ba%8b%e3%82%92%e4%bd%9c%e3%82%8b%e6%96%b9%e6%b3%95" target=_blank title=Tweet class=partials__shareLinks__itemLink--twitter>
 <i class="fab fa-twitter"></i>Twitter
 </a>
 </li>
 <li class=partials__shareLinks__item>
-<a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fhugo-theme-salt.okdyy75.com%2farticle%2fhugo%2franking%2f&t=Hugo%e3%81%a7%e3%83%a9%e3%83%b3%e3%82%ad%e3%83%b3%e3%82%b0%e3%82%92%e4%bd%9c%e3%82%8b%e6%96%b9%e6%b3%95" target=_blank title=Facebook class=partials__shareLinks__itemLink--facebook>
+<a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fhugo-theme-salt.okdyy75.com%2farticle%2fhugo%2franking%2f&t=Hugo%e3%81%a7%e4%b8%80%e9%80%b1%e9%96%93%e3%81%aePV%e6%95%b0%e9%a0%86%e3%81%ae%e4%ba%ba%e6%b0%97%e8%a8%98%e4%ba%8b%e3%82%92%e4%bd%9c%e3%82%8b%e6%96%b9%e6%b3%95" target=_blank title=Facebook class=partials__shareLinks__itemLink--facebook>
 <i class="fab fa-facebook"></i>Facebook
 </a>
 </li>
 <li class=partials__shareLinks__item>
-<a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fhugo-theme-salt.okdyy75.com%2farticle%2fhugo%2franking%2f&title=Hugo%e3%81%a7%e3%83%a9%e3%83%b3%e3%82%ad%e3%83%b3%e3%82%b0%e3%82%92%e4%bd%9c%e3%82%8b%e6%96%b9%e6%b3%95" target=_blank title=hatena class=partials__shareLinks__itemLink--hatena>
+<a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fhugo-theme-salt.okdyy75.com%2farticle%2fhugo%2franking%2f&title=Hugo%e3%81%a7%e4%b8%80%e9%80%b1%e9%96%93%e3%81%aePV%e6%95%b0%e9%a0%86%e3%81%ae%e4%ba%ba%e6%b0%97%e8%a8%98%e4%ba%8b%e3%82%92%e4%bd%9c%e3%82%8b%e6%96%b9%e6%b3%95" target=_blank title=hatena class=partials__shareLinks__itemLink--hatena>
 はてブ
 </a>
 </li>
 <li class=partials__shareLinks__item>
-<a href="http://getpocket.com/edit?url=https%3a%2f%2fhugo-theme-salt.okdyy75.com%2farticle%2fhugo%2franking%2f&title=Hugo%e3%81%a7%e3%83%a9%e3%83%b3%e3%82%ad%e3%83%b3%e3%82%b0%e3%82%92%e4%bd%9c%e3%82%8b%e6%96%b9%e6%b3%95" target=_blank title=pocket class=partials__shareLinks__itemLink--pocket>
+<a href="http://getpocket.com/edit?url=https%3a%2f%2fhugo-theme-salt.okdyy75.com%2farticle%2fhugo%2franking%2f&title=Hugo%e3%81%a7%e4%b8%80%e9%80%b1%e9%96%93%e3%81%aePV%e6%95%b0%e9%a0%86%e3%81%ae%e4%ba%ba%e6%b0%97%e8%a8%98%e4%ba%8b%e3%82%92%e4%bd%9c%e3%82%8b%e6%96%b9%e6%b3%95" target=_blank title=pocket class=partials__shareLinks__itemLink--pocket>
 <i class="fab fa-get-pocket"></i>Pocket
 </a>
 </li>
 <li class=partials__shareLinks__item>
-<a href=https://line.me/R/msg/text/?Hugo%e3%81%a7%e3%83%a9%e3%83%b3%e3%82%ad%e3%83%b3%e3%82%b0%e3%82%92%e4%bd%9c%e3%82%8b%e6%96%b9%e6%b3%95%0D%0Ahttps%3a%2f%2fhugo-theme-salt.okdyy75.com%2farticle%2fhugo%2franking%2f target=_blank title=line class=partials__shareLinks__itemLink--line>
+<a href=https://line.me/R/msg/text/?Hugo%e3%81%a7%e4%b8%80%e9%80%b1%e9%96%93%e3%81%aePV%e6%95%b0%e9%a0%86%e3%81%ae%e4%ba%ba%e6%b0%97%e8%a8%98%e4%ba%8b%e3%82%92%e4%bd%9c%e3%82%8b%e6%96%b9%e6%b3%95%0D%0Ahttps%3a%2f%2fhugo-theme-salt.okdyy75.com%2farticle%2fhugo%2franking%2f target=_blank title=line class=partials__shareLinks__itemLink--line>
 <i class="fab fa-line"></i>Line
 </a>
 </li>
@@ -207,8 +207,18 @@ Hugoでランキングを作る方法
 </section>
 <ul class=partials__tagList>
 <li class=partials__tagList__item>
+<a href=/tags/%e4%ba%ba%e6%b0%97%e8%a8%98%e4%ba%8b class=partials__tagList__itemLink>
+<i class="fas fa-tag partials__tagList__itemIcon"></i>人気記事
+</a>
+</li>
+<li class=partials__tagList__item>
 <a href=/tags/%e3%83%a9%e3%83%b3%e3%82%ad%e3%83%b3%e3%82%b0 class=partials__tagList__itemLink>
 <i class="fas fa-tag partials__tagList__itemIcon"></i>ランキング
+</a>
+</li>
+<li class=partials__tagList__item>
+<a href=/tags/GA class=partials__tagList__itemLink>
+<i class="fas fa-tag partials__tagList__itemIcon"></i>GA
 </a>
 </li>
 <li class=partials__tagList__item>
@@ -217,13 +227,13 @@ Hugoでランキングを作る方法
 </a>
 </li>
 </ul>
-<img src=/article/hugo/ranking/thumbnail_hue62fd672beaa75a2609baf58cf75dd4b_3561_640x640_fit_q75_h2_box_3.webp alt=Hugoでランキングを作る方法 class=single__article__thumbnail>
+<img src=/article/hugo/ranking/thumbnail_hue62fd672beaa75a2609baf58cf75dd4b_3561_640x640_fit_q75_h2_box_3.webp alt=Hugoで一週間のPV数順の人気記事を作る方法 class=single__article__thumbnail>
 <aside class=single__article__toc>
 <h3 class=single__article__toc__title><i class="fas fa-list-ul"></i>目次</h3>
 <nav id=TableOfContents>
 <ul>
 <li><a href=#1-gcpから鍵を作成しgoogle-analyticsで権限を付与>1. GCPから鍵を作成し、Google Analyticsで権限を付与</a></li>
-<li><a href=#2-google-analytics-data-apiからpv取得スクリプトをnodeで作成>2. Google Analytics Data APIからpv取得スクリプトをnodeで作成</a></li>
+<li><a href=#2-google-analytics-data-apiからpv数を取得するスクリプトを作成>2. Google Analytics Data APIからpv数を取得するスクリプトを作成</a></li>
 <li><a href=#3-保存したpvデータを元にhugoからランキング作成>3. 保存したpvデータを元にHugoからランキング作成</a></li>
 <li><a href=#4-ciで定期的にpv取得スクリプトを起動させる>4. CIで定期的にpv取得スクリプトを起動させる</a>
 <ul>
@@ -239,7 +249,7 @@ Hugoでランキングを作る方法
 <p>ステップとしては</p>
 <ol>
 <li>GCPから鍵を作成し、Google Analyticsで権限を付与</li>
-<li>Google Analytics Data APIからpv取得スクリプトをnodeで作成</li>
+<li>Google Analytics Data APIからpv数を取得するスクリプトを作成</li>
 <li>保存したpvデータを元にHugoからランキング作成</li>
 <li>CIで定期的にpv取得スクリプトを起動させる</li>
 </ol>
@@ -249,7 +259,7 @@ Hugoでランキングを作る方法
 <p>2020年10月以降はGA4が使われるようになったので「Google Analytics Data API」を使います。そちらを有効にしてください。</p>
 <p><a href=https://dev.classmethod.jp/articles/ga-api-v4/>アナリティクス Reporting API v4を使ってGoogle Analyticsのデータを取得する</a></p>
 <br>
-<h2 id=2-google-analytics-data-apiからpv取得スクリプトをnodeで作成>2. Google Analytics Data APIからpv取得スクリプトをnodeで作成</h2>
+<h2 id=2-google-analytics-data-apiからpv数を取得するスクリプトを作成>2. Google Analytics Data APIからpv数を取得するスクリプトを作成</h2>
 <p>まずは必要なnpmライブラリをinstallします</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>npm install @google-analytics/data
 npm install dayjs
@@ -505,10 +515,10 @@ Your public key has been saved in .ssh/gitlab_id_rsa.pub
 <article class=partials__relatedArticle>
 <div class=partials__relatedArticle__inner>
 <a href=https://hugo-theme-salt.okdyy75.com/article/hugo/build-error/ class=partials__relatedArticle__link></a>
-<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/build-error/thumbnail_hu35a2922253720ea632397e348d85ecee_4260_576x324_fill_q75_h2_box_center_3.webp alt=Hugoでたまにビルドエラーになる原因 loading=lazy class=partials__relatedArticle__thumbnail>
+<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/build-error/thumbnail_hu35a2922253720ea632397e348d85ecee_4260_576x324_fill_q75_h2_box_center_3.webp alt=HugoでCIからビルド際にたまにエラーになる原因 loading=lazy class=partials__relatedArticle__thumbnail>
 <div class=partials__relatedArticle__content>
 <h4 class=partials__relatedArticle__title>
-Hugoでたまにビルドエラーになる原因
+HugoでCIからビルド際にたまにエラーになる原因
 </h4>
 <ul class=partials__tagList>
 <li class=partials__tagList__item>
@@ -536,10 +546,10 @@ Hugoでたまにビルドエラーになる原因
 <article class=partials__relatedArticle>
 <div class=partials__relatedArticle__inner>
 <a href=https://hugo-theme-salt.okdyy75.com/article/hugo/archive/ class=partials__relatedArticle__link></a>
-<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/archive/thumbnail_hu5726299922efdf47da26d7ebb7472693_4871_576x324_fill_q75_h2_box_center_3.webp alt=Hugoでアーカイブを作る方法 loading=lazy class=partials__relatedArticle__thumbnail>
+<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/archive/thumbnail_hu5726299922efdf47da26d7ebb7472693_4871_576x324_fill_q75_h2_box_center_3.webp alt=Hugoで年月別のアーカイブを作る方法 loading=lazy class=partials__relatedArticle__thumbnail>
 <div class=partials__relatedArticle__content>
 <h4 class=partials__relatedArticle__title>
-Hugoでアーカイブを作る方法
+Hugoで年月別のアーカイブを作る方法
 </h4>
 <ul class=partials__tagList>
 <li class=partials__tagList__item>
@@ -561,9 +571,9 @@ Hugoでアーカイブを作るには2種類ほど方法があります ①タ�
 </article>
 </div>
 <div class=single__navigation>
-<a href=https://hugo-theme-salt.okdyy75.com/article/hugo/archive/ class=single__navigation__prev>Hugoでアーカイブを作る方法</a>
+<a href=https://hugo-theme-salt.okdyy75.com/article/hugo/archive/ class=single__navigation__prev>Hugoで年月別のアーカイブを作る方法</a>
 <div class=single__navigation__center></div>
-<a href=https://hugo-theme-salt.okdyy75.com/article/hugo/build-error/ class=single__navigation__next>Hugoでたまにビルドエラーになる原因</a>
+<a href=https://hugo-theme-salt.okdyy75.com/article/hugo/build-error/ class=single__navigation__next>HugoでCIからビルド際にたまにエラーになる原因</a>
 </div>
 </section>
 </div>
@@ -717,40 +727,40 @@ shortcode
 <ul class=partials__sidebar__article__items>
 <li class=partials__sidebar__article__item>
 <a href=https://hugo-theme-salt.okdyy75.com/article/hugo/build-error/ class=partials__sidebar__article__itemLink>
-<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/build-error/thumbnail_hu35a2922253720ea632397e348d85ecee_4260_192x108_fill_q75_h2_box_center_3.webp alt=Hugoでたまにビルドエラーになる原因 loading=lazy class=partials__sidebar__article__itemThumbnail>
+<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/build-error/thumbnail_hu35a2922253720ea632397e348d85ecee_4260_192x108_fill_q75_h2_box_center_3.webp alt=HugoでCIからビルド際にたまにエラーになる原因 loading=lazy class=partials__sidebar__article__itemThumbnail>
 <div class=partials__sidebar__article__itemDetail>
 <div class=partials__sidebar__article__itemTitle--line3>
-Hugoでたまにビルドエラーになる原因
+HugoでCIからビルド際にたまにエラーになる原因
 </div>
 </div>
 </a>
 </li>
 <li class=partials__sidebar__article__item>
 <a href=https://hugo-theme-salt.okdyy75.com/article/hugo/ranking/ class=partials__sidebar__article__itemLink>
-<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/ranking/thumbnail_hue62fd672beaa75a2609baf58cf75dd4b_3561_192x108_fill_q75_h2_box_center_3.webp alt=Hugoでランキングを作る方法 loading=lazy class=partials__sidebar__article__itemThumbnail>
+<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/ranking/thumbnail_hue62fd672beaa75a2609baf58cf75dd4b_3561_192x108_fill_q75_h2_box_center_3.webp alt=Hugoで一週間のPV数順の人気記事を作る方法 loading=lazy class=partials__sidebar__article__itemThumbnail>
 <div class=partials__sidebar__article__itemDetail>
 <div class=partials__sidebar__article__itemTitle--line3>
-Hugoでランキングを作る方法
+Hugoで一週間のPV数順の人気記事を作る方法
 </div>
 </div>
 </a>
 </li>
 <li class=partials__sidebar__article__item>
 <a href=https://hugo-theme-salt.okdyy75.com/article/hugo/archive/ class=partials__sidebar__article__itemLink>
-<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/archive/thumbnail_hu5726299922efdf47da26d7ebb7472693_4871_192x108_fill_q75_h2_box_center_3.webp alt=Hugoでアーカイブを作る方法 loading=lazy class=partials__sidebar__article__itemThumbnail>
+<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/archive/thumbnail_hu5726299922efdf47da26d7ebb7472693_4871_192x108_fill_q75_h2_box_center_3.webp alt=Hugoで年月別のアーカイブを作る方法 loading=lazy class=partials__sidebar__article__itemThumbnail>
 <div class=partials__sidebar__article__itemDetail>
 <div class=partials__sidebar__article__itemTitle--line3>
-Hugoでアーカイブを作る方法
+Hugoで年月別のアーカイブを作る方法
 </div>
 </div>
 </a>
 </li>
 <li class=partials__sidebar__article__item>
-<a href=https://hugo-theme-salt.okdyy75.com/article/hugo/fontawsome/ class=partials__sidebar__article__itemLink>
-<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/fontawsome/thumbnail_hu1d18fa1c515742002d9fbc7177b77ebf_6131_192x108_fill_q75_h2_box_center_3.webp alt=HugoでFontawsomeを使う方法 loading=lazy class=partials__sidebar__article__itemThumbnail>
+<a href=https://hugo-theme-salt.okdyy75.com/article/hugo/fontawesome/ class=partials__sidebar__article__itemLink>
+<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/fontawesome/thumbnail_hu1d18fa1c515742002d9fbc7177b77ebf_6131_192x108_fill_q75_h2_box_center_3.webp alt=HugoでFontAwesomeを使う方法 loading=lazy class=partials__sidebar__article__itemThumbnail>
 <div class=partials__sidebar__article__itemDetail>
 <div class=partials__sidebar__article__itemTitle--line3>
-HugoでFontawsomeを使う方法
+HugoでFontAwesomeを使う方法
 </div>
 </div>
 </a>
@@ -824,19 +834,6 @@ Hugoを使い始めた人に捧げるTips11選
 <nav class=partials__sidebar__article>
 <ul class=partials__sidebar__article__items>
 <li class=partials__sidebar__article__item>
-<a href=https://hugo-theme-salt.okdyy75.com/article/hugo/search/ class=partials__sidebar__article__itemLink>
-<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/search/thumbnail_hu7a253d997b511fbff22929f86311ed19_4626_192x108_fill_q75_h2_box_center_3.webp alt=Hugoに検索機能を追加しよう loading=lazy class=partials__sidebar__article__itemThumbnail>
-<div class=partials__sidebar__article__itemDetail>
-<div class=partials__sidebar__article__itemTitle--line2>
-Hugoに検索機能を追加しよう
-</div>
-<div class=partials__sidebar__article__itemPv>
-4pv
-</div>
-</div>
-</a>
-</li>
-<li class=partials__sidebar__article__item>
 <a href=https://hugo-theme-salt.okdyy75.com/article/hugo/tips/ class=partials__sidebar__article__itemLink>
 <img src=https://hugo-theme-salt.okdyy75.com/article/hugo/tips/thumbnail_hu850c6f5958680582ad131d7609fc6b2a_2666_192x108_fill_q75_h2_box_center_3.webp alt=Hugoを使い始めた人に捧げるTips11選 loading=lazy class=partials__sidebar__article__itemThumbnail>
 <div class=partials__sidebar__article__itemDetail>
@@ -844,7 +841,7 @@ Hugoに検索機能を追加しよう
 Hugoを使い始めた人に捧げるTips11選
 </div>
 <div class=partials__sidebar__article__itemPv>
-4pv
+5pv
 </div>
 </div>
 </a>
@@ -858,6 +855,19 @@ Hugoを使い始めた人に捧げるTips11選
 </div>
 <div class=partials__sidebar__article__itemPv>
 3pv
+</div>
+</div>
+</a>
+</li>
+<li class=partials__sidebar__article__item>
+<a href=https://hugo-theme-salt.okdyy75.com/article/hugo/search/ class=partials__sidebar__article__itemLink>
+<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/search/thumbnail_hu7a253d997b511fbff22929f86311ed19_4626_192x108_fill_q75_h2_box_center_3.webp alt=Hugoに検索機能を追加しよう loading=lazy class=partials__sidebar__article__itemThumbnail>
+<div class=partials__sidebar__article__itemDetail>
+<div class=partials__sidebar__article__itemTitle--line2>
+Hugoに検索機能を追加しよう
+</div>
+<div class=partials__sidebar__article__itemPv>
+2pv
 </div>
 </div>
 </a>
@@ -976,8 +986,13 @@ Go言語
 </a>
 </li>
 <li class=partials__tagList__item>
-<a href=/tags/Fontawsome class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>Fontawsome
+<a href=/tags/FontAwesome class=partials__tagList__itemLink>
+<i class="fas fa-tag partials__tagList__itemIcon"></i>FontAwesome
+</a>
+</li>
+<li class=partials__tagList__item>
+<a href=/tags/GA class=partials__tagList__itemLink>
+<i class="fas fa-tag partials__tagList__itemIcon"></i>GA
 </a>
 </li>
 <li class=partials__tagList__item>
@@ -1028,6 +1043,11 @@ Go言語
 <li class=partials__tagList__item>
 <a href=/tags/%e3%83%a9%e3%83%b3%e3%82%ad%e3%83%b3%e3%82%b0 class=partials__tagList__itemLink>
 <i class="fas fa-tag partials__tagList__itemIcon"></i>ランキング
+</a>
+</li>
+<li class=partials__tagList__item>
+<a href=/tags/%e4%ba%ba%e6%b0%97%e8%a8%98%e4%ba%8b class=partials__tagList__itemLink>
+<i class="fas fa-tag partials__tagList__itemIcon"></i>人気記事
 </a>
 </li>
 <li class=partials__tagList__item>
