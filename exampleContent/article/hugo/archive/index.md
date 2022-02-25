@@ -1,5 +1,5 @@
 ---
-title: "Hugoでアーカイブを作る方法"
+title: "Hugoで年月別のアーカイブを作る方法"
 description: ""
 date: 2021-12-28T10:32:02+09:00
 lastmod: 2021-12-28T10:32:02+09:00
@@ -34,7 +34,7 @@ archives: ["2021年12月"]
     {{ .Site.Taxonomies.archives.Alphabetical.Reverse }}
 
     [
-        {2021年12月 [WeightedPage(0,"Hugoでアーカイブを作る方法") WeightedPage(0,"HugoでFontawsomeを使う方法")]}
+        {2021年12月 [WeightedPage(0,"Hugoで年月別のアーカイブを作る方法") WeightedPage(0,"HugoでFontawsomeを使う方法")]}
         {2021年10月 [WeightedPage(0,"Hugoに検索機能を追加しよう")]}
         {2021年9月 [WeightedPage(0,"Hugoを使い始めた人に捧げるTips11選") WeightedPage(0,"Go言語Tips② Hugoで使われるlayoutの正体")]}
     ]

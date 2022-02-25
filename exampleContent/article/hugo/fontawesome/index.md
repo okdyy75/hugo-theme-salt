@@ -1,10 +1,10 @@
 ---
-title: "HugoでFontawsomeを使う方法"
+title: "HugoでFontAwesomeを使う方法"
 description: ""
 date: 2021-12-04T10:11:36+09:00
 lastmod: 2021-12-04T10:11:36+09:00
 draft: false
-tags: ["tips", "アイコン", "ライブラリ", "Fontawsome"]
+tags: ["tips", "アイコン", "ライブラリ", "FontAwesome"]
 categories: "Hugo"
 archives: ["2021年12月"]
 share: true
@@ -12,9 +12,9 @@ toc: true
 comment: true
 ---
 
-HugoにFontawsomeを使う場合はHugoの機能であるモジュールを使うと簡単に実現できます！
+HugoにFontAwesomeを使う場合はHugoの機能であるモジュールを使うと簡単に実現できます！
 
-## 1. npmでfontawsomeをインストール
+## 1. npmでFontAwesomeをインストール
 package.jsonがない場合は`npm init`してください
 
 ```
@@ -42,4 +42,4 @@ module:
     <link rel="stylesheet" href="/css/vendor/@fortawesome/fontawesome-free/css/all.min.css">
 ```
  
- Fontawsome以外のライブラリでもいけるので、是非使ってみてください！
+ FontAwesome以外のライブラリでもいけるので、是非使ってみてください！

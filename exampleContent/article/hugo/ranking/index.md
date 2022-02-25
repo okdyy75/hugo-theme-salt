@@ -1,10 +1,10 @@
 ---
-title: "Hugoでランキングを作る方法"
+title: "Hugoで一週間のPV数順の人気記事を作る方法"
 description: ""
 date: 2022-01-12T15:34:42+09:00
 lastmod: 2022-01-12T15:34:42+09:00
 draft: false
-tags: ["ランキング", "tips"]
+tags: ["人気記事", "ランキング", "GA", "tips"]
 categories: "Hugo"
 archives: ["2022年1月"]
 share: true
@@ -16,7 +16,7 @@ HugoとGoogle Analyticsを使って人気記事のランキングを作る方法
 
 ステップとしては
 1. GCPから鍵を作成し、Google Analyticsで権限を付与
-2. Google Analytics Data APIからpv取得スクリプトをnodeで作成
+2. Google Analytics Data APIからpv数を取得するスクリプトを作成
 3. 保存したpvデータを元にHugoからランキング作成
 4. CIで定期的にpv取得スクリプトを起動させる
 
@@ -32,7 +32,7 @@ HugoとGoogle Analyticsを使って人気記事のランキングを作る方法
 
 <br>
 
-## 2. Google Analytics Data APIからpv取得スクリプトをnodeで作成
+## 2. Google Analytics Data APIからpv数を取得するスクリプトを作成
 
 まずは必要なnpmライブラリをinstallします
 
