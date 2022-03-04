@@ -1,11 +1,15 @@
 {
     "items": [
         {
-            "pagePath": "/article/hugo/search/",
+            "pagePath": "/",
             "pv": "6"
         },
         {
             "pagePath": "/article/hugo/about/",
+            "pv": "5"
+        },
+        {
+            "pagePath": "/article/hugo/search/",
             "pv": "5"
         },
         {
@@ -18,11 +22,7 @@
         },
         {
             "pagePath": "/article/sample/hugo-shortcode/",
-            "pv": "4"
-        },
-        {
-            "pagePath": "/",
-            "pv": "3"
+            "pv": "5"
         },
         {
             "pagePath": "/article/salt/custom-figure/",
@@ -65,5 +65,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2022-03-03T00:31:40.564Z"
+    "createdAt": "2022-03-04T00:28:49.550Z"
 }
