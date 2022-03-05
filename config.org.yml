@@ -29,12 +29,12 @@ markup:
 related:
   includeNewer: true
   indices:
-  - name: keywords
-    weight: 100
-  - name: tags
-    weight: 90
-  - name: date
-    weight: 10
+    - name: keywords
+      weight: 100
+    - name: tags
+      weight: 90
+    - name: date
+      weight: 10
   threshold: 80
   toLower: false
 
