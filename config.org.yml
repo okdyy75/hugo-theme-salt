@@ -5,7 +5,8 @@ title: Hugoブログテーマ「Salt」
 copyright: © 2021 my_name
 author:
   name: my_name
-  email:
+  email: my_email@example.com
+  url: https://example.com/my_url
 googleAnalytics:
 disqusShortname:
 
@@ -80,9 +81,17 @@ params:
       github: github
       qiita: qiita
       zenn: zenn
-      email: email@example.com
-      other: https://example.com
-  twitterTimeline:
+      email: my_email@example.com
+      other: https://example.com/my_url
+  publisher:
+    type: Organization
+    name: my_organization
+    url: https://example.com/publisher
+    image: image/icon.png
+    description: organization_description
+    sameAs:
+      - https://example.com/sameAs
+  twitterTimeline: twitter
 
 menu:
   header:

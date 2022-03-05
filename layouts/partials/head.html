@@ -106,5 +106,6 @@
         <script type="text/javascript" src="/js/vendor/lunr-languages/lunr.ja.js"></script>
         <script type="text/javascript" src="{{ with  resources.Get "js/search.js" | minify }}{{ .RelPermalink }}{{ end }}"></script>
     {{ end }}
+    {{ partial "jsonld.html" . }}
     {{ template "_internal/google_analytics.html" . }}
 {{ end }}
