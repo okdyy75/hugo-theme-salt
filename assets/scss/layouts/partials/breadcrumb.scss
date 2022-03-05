@@ -13,7 +13,6 @@
             max-width: 250px;
             overflow: hidden;
             text-overflow: ellipsis;
-            white-space: nowrap;
         }
         & i {
             margin-right: 6px;
@@ -24,8 +23,15 @@
 
 @media only screen and (max-width: $sp-width) {
     .partials {
-        &__articleCard {
-            width: 100%;
+        &__breadcrumb {
+            overflow-x: auto;
+            padding-bottom: 8px;
+            margin-bottom: -8px;
+            & li:last-child {
+                max-width: 250px;
+                overflow: initial;
+                text-overflow: initial;
+            }
         }
     }
 }
