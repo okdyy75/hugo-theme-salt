@@ -1,0 +1,147 @@
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": {{ printf "%s#website" .Site.BaseURL }},
+                "name": {{ .Site.Title }},
+                "url": {{ .Site.BaseURL }},
+                "potentialAction":{
+                    "@type": "SearchAction",
+                    "target": {{ printf "%ssearch/?query={search_term_string}" .Site.BaseURL }},
+                    "query-input": "required name=search_term_string"
+                },
+                "publisher":{
+                    "@id": {{ printf "%s#publisher" .Site.BaseURL }}
+                }
+            },
+            {{ if .IsHome }}
+                {
+                    "@type": "WebPage",
+                    "@id": {{ printf "%s#webpage" .Site.BaseURL }},
+                    "url": {{ .Site.BaseURL }},
+                    "inLanguage": {{ .Site.LanguageCode }},
+                    "name": {{ .Site.Title }},
+                    "description": {{ .Site.Params.description }},
+                    {{ with $image := resources.Get (index .Site.Params.images 0) }}
+                        "image": {{ ($image.Fill (printf "1280x720 center q%d webp" $.Site.Params.imageQuality)).Permalink }},
+                    {{ end }}
+                    "datePublished": {{ now.Format "2006-01-02T15:04:05-07:00" }},
+                    "dateModified": {{ now.Format "2006-01-02T15:04:05-07:00" }},
+                    "isPartOf": {
+                        "@id": {{ printf "%s#website" .Site.BaseURL }}
+                    },
+                    "breadcrumb": {
+                        "@id": {{ printf "%s#breadcrumb" .Site.BaseURL }}
+                    }
+                },
+            {{ else if .IsPage }}
+                {
+                    "@type": "Article",
+                    "headline": {{ .Title }},
+                    "description": {{ .Summary | plainify | safeHTML }},
+                    {{ with $image := .Resources.Match "thumbnail.*" }}
+                        "image": {{ ((index . 0).Fill (printf "1280x720 center q%d webp" $.Site.Params.imageQuality)).Permalink }},
+                    {{ end }}
+                    {{ if .Params.tags }}
+                        "keywords": [
+                            {{ range $i, $tag := .Params.tags }}
+                                {{ if $i }}, {{ end }}{{ $tag }}
+                            {{ end }}
+                        ],
+                    {{ end }}
+                    {{ if .Site.Author.name }}
+                        "author": {
+                            "@type": "Person",
+                            {{ with .Site.Author.url }}
+                                "url": {{ . }},
+                            {{ end }}
+                            "name": {{ .Site.Author.name }}
+                        },
+                    {{ end }}
+                    {{ if .Site.Params.publisher }}
+                        "publisher": {
+                            "@id": {{ printf "%s#publisher" .Site.BaseURL }}
+                        },
+                    {{ end }}
+                    {{ with .Date }}
+                        "datePublished": {{ .Format "2006-01-02T15:04:05-07:00" }},
+                    {{ end }}
+                    {{ with .Lastmod }}
+                        "dateModified": {{ .Format "2006-01-02T15:04:05-07:00" }},
+                    {{ end }}
+                    "mainEntityOfPage": {
+                        "@type": "WebPage",
+                        "@id": {{ .Permalink }}
+                    },
+                    "isPartOf": {
+                        "@id": {{ printf "%s#website" .Site.BaseURL }}
+                    },
+                    "breadcrumb": {
+                        "@id": {{ printf "%s#breadcrumb" .Site.BaseURL }}
+                    }
+                },
+            {{ end }}
+            {{ if .Site.Params.publisher }}
+                {
+                    "@type": {{ .Site.Params.publisher.type }},
+                    "@id": {{ printf "%s#publisher" .Site.BaseURL }},
+                    "name": {{ .Site.Params.publisher.name }},
+                    "url": {{ .Site.Params.publisher.url }},
+                    {{ if .Site.Params.publisher.sameAs }}
+                        "sameAs": [
+                            {{ range $i, $tag := .Site.Params.publisher.sameAs }}
+                                {{ if $i }}, {{ end }}{{ $tag }}
+                            {{ end }}
+                        ],
+                    {{ end }}
+                    {{ with $image := resources.Get .Site.Params.publisher.image }}
+                        {{ if eq $.Site.Params.publisher.type "Organization" }}
+                            "logo": {
+                                "@type": "ImageObject",
+                                "@id": {{ printf "%s#logo" $.Site.BaseURL }},
+                                "url": {{ ($image.Fit "120x120 center png").Permalink }},
+                                "width": 120,
+                                "height": 120
+                            },
+                            "image": {
+                                "@id": {{ printf "%s#logo" $.Site.BaseURL }}
+                            },
+                        {{ else if eq $.Site.Params.publisher.type "Person" }}
+                            "image": {
+                                "@type": "ImageObject",
+                                "@id": {{ printf "%s#logo" $.Site.BaseURL }},
+                                "url": {{ ($image.Fit "120x120 center png").Permalink }},
+                                "width": 120,
+                                "height": 120
+                            },
+                        {{ end }}
+                    {{ end }}
+                    "description": {{ .Site.Params.publisher.description }}
+                },
+            {{ end }}
+            {
+                "@type": "BreadcrumbList",
+                "@id": {{ "#breadcrumb" | absURL  }},
+                "name": "パンくずリスト",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": {{ .Site.BaseURL }}
+                    }
+                    {{ with .Params.categories }}
+                        ,{
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": {{ . }},
+                            "item": {{ printf "categories/%s" . | absURL }}
+                        }
+                    {{ end }}
+                ]
+            }
+        ]
+    }
+</script>
