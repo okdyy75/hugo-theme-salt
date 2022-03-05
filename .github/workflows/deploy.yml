@@ -43,7 +43,7 @@ jobs:
         sed -ie "s|github: github|github: okdyy75|" config.yml
         sed -ie "s|qiita: qiita|qiita: okdyy75|" config.yml
         sed -ie "s|zenn: zenn|zenn: okdyy75|" config.yml
-        sed -ie "s|name: my_organization|name: okdyy|" config.yml
+        sed -ie "s|name: my_organization|name: okdyy75|" config.yml
         sed -ie "s|url: https://example.com/publisher|url: https://github.com/okdyy75|" config.yml
         sed -ie "s|description: organization_description|description: Hugo用ブログテーマ「Salt」を作りました|" config.yml
         sed -ie "s|https://example.com/sameAs|https://twitter.com/okdyy75|" config.yml
