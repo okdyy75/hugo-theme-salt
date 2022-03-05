@@ -50,16 +50,16 @@
     <meta property='og:type' content='{{- if .IsHome -}}website{{- else -}}article{{- end -}}'>
     {{- if .IsPage -}}
         {{- with .Date -}}
-            <meta property="article:published_time" content="{{- .Format "2006-01-02T15:04:05-0700" -}}">
+            <meta property="article:published_time" content="{{- .Format "2006-01-02T15:04:05-07:00" -}}">
         {{- end -}}
         {{- with .Lastmod -}}
-            <meta property="article:modified_time" content="{{- .Format "2006-01-02T15:04:05-0700" -}}">
+            <meta property="article:modified_time" content="{{- .Format "2006-01-02T15:04:05-07:00" -}}">
         {{- end -}}
         {{- with .ExpiryDate -}}
-            <meta property="article:expiration_time" content="{{- .Format "2006-01-02T15:04:05-0700" -}}">
+            <meta property="article:expiration_time" content="{{- .Format "2006-01-02T15:04:05-07:00" -}}">
         {{- end -}}
-        {{- with .Site.Author.Name -}}
-            <meta property="article:author" content="{{- .Site.Author.Name -}}">
+        {{- with .Site.Author.name -}}
+            <meta property="article:author" content="{{- . -}}">
         {{- end -}}
         {{- with .Params.categories -}}
             <meta property="article:section" content="{{- . -}}">
