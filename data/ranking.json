@@ -5,32 +5,32 @@
             "pv": "10"
         },
         {
-            "pagePath": "/article/hugo/tips/",
+            "pagePath": "/article/salt/self-blog-card/",
             "pv": "9"
+        },
+        {
+            "pagePath": "/article/hugo/tips/",
+            "pv": "7"
         },
         {
             "pagePath": "/article/sample/hugo-shortcode/",
-            "pv": "9"
-        },
-        {
-            "pagePath": "/article/hugo/about/",
-            "pv": "6"
+            "pv": "7"
         },
         {
             "pagePath": "/article/salt/about/",
             "pv": "6"
         },
         {
-            "pagePath": "/article/salt/self-blog-card/",
-            "pv": "6"
+            "pagePath": "/article/hugo/about/",
+            "pv": "4"
         },
         {
             "pagePath": "/article/hugo/search/",
-            "pv": "4"
+            "pv": "3"
         },
         {
             "pagePath": "/article/salt/custom-figure/",
-            "pv": "4"
+            "pv": "3"
         },
         {
             "pagePath": "/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/",
@@ -41,15 +41,7 @@
             "pv": "3"
         },
         {
-            "pagePath": "/article/go/go-template/",
-            "pv": "2"
-        },
-        {
             "pagePath": "/article/hugo/ranking/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/sample/markdown/",
             "pv": "2"
         },
         {
@@ -65,6 +57,10 @@
             "pv": "1"
         },
         {
+            "pagePath": "/article/go/go-template/",
+            "pv": "1"
+        },
+        {
             "pagePath": "/article/go/variable/",
             "pv": "1"
         },
@@ -73,7 +69,11 @@
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/fontawesome/",
+            "pagePath": "/article/hugo/build-error/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/sample/markdown/",
             "pv": "1"
         },
         {
@@ -81,5 +81,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2022-03-06T00:24:28.939Z"
+    "createdAt": "2022-03-07T00:24:48.737Z"
 }
