@@ -2,11 +2,11 @@
     "items": [
         {
             "pagePath": "/",
-            "pv": "16"
+            "pv": "18"
         },
         {
             "pagePath": "/article/salt/about/",
-            "pv": "10"
+            "pv": "9"
         },
         {
             "pagePath": "/article/hugo/ranking/",
@@ -17,15 +17,15 @@
             "pv": "3"
         },
         {
-            "pagePath": "/archives/2022%E5%B9%B41%E6%9C%88/",
-            "pv": "2"
-        },
-        {
             "pagePath": "/article/hugo/archive/",
             "pv": "2"
         },
         {
             "pagePath": "/article/hugo/tips/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/salt/custom-figure/",
             "pv": "2"
         },
         {
@@ -37,15 +37,15 @@
             "pv": "1"
         },
         {
+            "pagePath": "/archives/2022%E5%B9%B41%E6%9C%88/",
+            "pv": "1"
+        },
+        {
             "pagePath": "/article/hugo/build-error/",
             "pv": "1"
         },
         {
             "pagePath": "/article/hugo/search/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/salt/custom-figure/",
             "pv": "1"
         },
         {
@@ -65,5 +65,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2022-03-17T00:24:26.447Z"
+    "createdAt": "2022-03-18T00:25:30.812Z"
 }
