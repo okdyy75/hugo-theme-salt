@@ -2,7 +2,7 @@
     "items": [
         {
             "pagePath": "/",
-            "pv": "16"
+            "pv": "17"
         },
         {
             "pagePath": "/article/salt/about/",
@@ -73,5 +73,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2022-03-20T00:25:48.152Z"
+    "createdAt": "2022-03-21T00:26:08.083Z"
 }
