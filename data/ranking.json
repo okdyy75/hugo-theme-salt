@@ -2,11 +2,11 @@
     "items": [
         {
             "pagePath": "/",
-            "pv": "12"
+            "pv": "11"
         },
         {
             "pagePath": "/article/salt/about/",
-            "pv": "6"
+            "pv": "4"
         },
         {
             "pagePath": "/article/hugo/archive/",
@@ -22,10 +22,6 @@
         },
         {
             "pagePath": "/article/go/go-template/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/hugo/ranking/",
             "pv": "2"
         },
         {
@@ -57,5 +53,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2022-03-23T00:30:33.702Z"
+    "createdAt": "2022-03-24T00:25:25.284Z"
 }
