@@ -2,11 +2,11 @@
     "items": [
         {
             "pagePath": "/",
-            "pv": "8"
+            "pv": "9"
         },
         {
             "pagePath": "/article/salt/self-blog-card/",
-            "pv": "3"
+            "pv": "4"
         },
         {
             "pagePath": "/article/hugo/archive/",
@@ -45,5 +45,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2022-03-27T00:30:50.072Z"
+    "createdAt": "2022-03-28T00:26:45.965Z"
 }
