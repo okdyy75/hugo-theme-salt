@@ -10,6 +10,14 @@
         },
         {
             "pagePath": "/article/hugo/archive/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/article/hugo/tips/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/page/2/",
             "pv": "2"
         },
         {
@@ -39,11 +47,7 @@
         {
             "pagePath": "/article/sample/markdown/",
             "pv": "1"
-        },
-        {
-            "pagePath": "/page/2/",
-            "pv": "1"
         }
     ],
-    "createdAt": "2022-03-28T00:26:45.965Z"
+    "createdAt": "2022-03-29T00:31:22.840Z"
 }
