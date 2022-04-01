@@ -2,11 +2,15 @@
     "items": [
         {
             "pagePath": "/",
-            "pv": "10"
+            "pv": "13"
         },
         {
             "pagePath": "/article/hugo/tips/",
-            "pv": "5"
+            "pv": "6"
+        },
+        {
+            "pagePath": "/article/hugo/archive/",
+            "pv": "3"
         },
         {
             "pagePath": "/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/",
@@ -17,7 +21,7 @@
             "pv": "3"
         },
         {
-            "pagePath": "/article/hugo/archive/",
+            "pagePath": "/article/hugo/ranking/",
             "pv": "2"
         },
         {
@@ -41,11 +45,11 @@
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/fontawesome/",
+            "pagePath": "/article/hugo/build-error/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/ranking/",
+            "pagePath": "/article/hugo/fontawesome/",
             "pv": "1"
         },
         {
@@ -69,5 +73,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2022-03-31T00:26:56.172Z"
+    "createdAt": "2022-04-01T00:30:33.371Z"
 }
