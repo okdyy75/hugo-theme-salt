@@ -1,4 +1,4 @@
-# Huog Theme Salt
+# Hugo Theme Salt
 シンプルなHugo用ブログテーマ「Salt」です
 
 詳しい使い方はこちら  
