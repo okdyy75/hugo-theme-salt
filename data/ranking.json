@@ -2,7 +2,7 @@
     "items": [
         {
             "pagePath": "/",
-            "pv": "16"
+            "pv": "18"
         },
         {
             "pagePath": "/article/hugo/tips/",
@@ -89,5 +89,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2022-04-09T00:27:31.429Z"
+    "createdAt": "2022-04-10T00:27:01.020Z"
 }
