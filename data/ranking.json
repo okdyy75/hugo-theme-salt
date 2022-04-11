@@ -2,18 +2,14 @@
     "items": [
         {
             "pagePath": "/",
-            "pv": "18"
+            "pv": "17"
         },
         {
             "pagePath": "/article/hugo/tips/",
-            "pv": "10"
-        },
-        {
-            "pagePath": "/article/salt/about/",
             "pv": "8"
         },
         {
-            "pagePath": "/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/",
+            "pagePath": "/article/salt/about/",
             "pv": "6"
         },
         {
@@ -29,10 +25,6 @@
             "pv": "3"
         },
         {
-            "pagePath": "/article/hugo/search/",
-            "pv": "3"
-        },
-        {
             "pagePath": "/article/go/go-template/",
             "pv": "2"
         },
@@ -45,7 +37,15 @@
             "pv": "2"
         },
         {
+            "pagePath": "/article/hugo/search/",
+            "pv": "2"
+        },
+        {
             "pagePath": "/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/",
             "pv": "2"
         },
         {
@@ -61,15 +61,7 @@
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/fontawesome/",
-            "pv": "1"
-        },
-        {
             "pagePath": "/article/hugo/fontawsome/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/sample/hugo-shortcode/",
             "pv": "1"
         },
         {
@@ -89,5 +81,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2022-04-10T00:27:01.020Z"
+    "createdAt": "2022-04-11T00:28:19.612Z"
 }
