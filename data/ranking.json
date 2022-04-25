@@ -2,35 +2,27 @@
     "items": [
         {
             "pagePath": "/",
-            "pv": "18"
-        },
-        {
-            "pagePath": "/article/hugo/search/",
-            "pv": "7"
-        },
-        {
-            "pagePath": "/article/hugo/tips/",
-            "pv": "7"
+            "pv": "14"
         },
         {
             "pagePath": "/article/hugo/archive/",
             "pv": "6"
         },
         {
-            "pagePath": "/article/salt/about/",
+            "pagePath": "/article/hugo/search/",
             "pv": "6"
         },
         {
-            "pagePath": "/article/hugo/about/",
+            "pagePath": "/article/hugo/tips/",
+            "pv": "6"
+        },
+        {
+            "pagePath": "/article/salt/about/",
             "pv": "3"
         },
         {
             "pagePath": "/article/salt/self-blog-card/",
             "pv": "3"
-        },
-        {
-            "pagePath": "/article/salt/custom-figure/",
-            "pv": "2"
         },
         {
             "pagePath": "/article/sample/hugo-shortcode/",
@@ -49,11 +41,19 @@
             "pv": "1"
         },
         {
+            "pagePath": "/article/hugo/about/",
+            "pv": "1"
+        },
+        {
             "pagePath": "/article/hugo/build-error/",
             "pv": "1"
         },
         {
             "pagePath": "/article/hugo/ranking/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/salt/custom-figure/",
             "pv": "1"
         },
         {
@@ -69,5 +69,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2022-04-24T00:27:59.243Z"
+    "createdAt": "2022-04-25T00:26:46.068Z"
 }
