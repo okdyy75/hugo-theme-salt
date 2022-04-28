@@ -2,7 +2,7 @@
     "items": [
         {
             "pagePath": "/",
-            "pv": "18"
+            "pv": "19"
         },
         {
             "pagePath": "/article/salt/self-blog-card/",
@@ -13,11 +13,11 @@
             "pv": "7"
         },
         {
-            "pagePath": "/article/hugo/archive/",
-            "pv": "6"
+            "pagePath": "/article/hugo/tips/",
+            "pv": "7"
         },
         {
-            "pagePath": "/article/hugo/tips/",
+            "pagePath": "/article/hugo/archive/",
             "pv": "6"
         },
         {
@@ -69,5 +69,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2022-04-27T00:35:24.564Z"
+    "createdAt": "2022-04-28T00:44:28.395Z"
 }
