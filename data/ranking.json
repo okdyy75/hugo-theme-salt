@@ -21,12 +21,16 @@
             "pv": "6"
         },
         {
-            "pagePath": "/article/salt/about/",
-            "pv": "3"
+            "pagePath": "/article/sample/hugo-shortcode/",
+            "pv": "5"
         },
         {
-            "pagePath": "/article/sample/hugo-shortcode/",
-            "pv": "3"
+            "pagePath": "/article/salt/about/",
+            "pv": "4"
+        },
+        {
+            "pagePath": "/article/salt/custom-figure/",
+            "pv": "4"
         },
         {
             "pagePath": "/page/2/",
@@ -34,6 +38,10 @@
         },
         {
             "pagePath": "/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/tags/Hugo/",
             "pv": "2"
         },
         {
@@ -57,10 +65,6 @@
             "pv": "1"
         },
         {
-            "pagePath": "/article/salt/custom-figure/",
-            "pv": "1"
-        },
-        {
             "pagePath": "/article/sample/markdown/",
             "pv": "1"
         },
@@ -69,5 +73,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2022-04-28T00:44:28.395Z"
+    "createdAt": "2022-04-29T00:30:43.645Z"
 }
