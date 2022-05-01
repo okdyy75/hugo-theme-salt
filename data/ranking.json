@@ -2,7 +2,7 @@
     "items": [
         {
             "pagePath": "/",
-            "pv": "15"
+            "pv": "13"
         },
         {
             "pagePath": "/article/salt/self-blog-card/",
@@ -37,7 +37,7 @@
             "pv": "3"
         },
         {
-            "pagePath": "/article/hugo/archive/",
+            "pagePath": "/article/hugo/about/",
             "pv": "2"
         },
         {
@@ -53,7 +53,7 @@
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/about/",
+            "pagePath": "/article/hugo/archive/",
             "pv": "1"
         },
         {
@@ -65,5 +65,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2022-04-30T00:34:57.985Z"
+    "createdAt": "2022-05-01T00:38:36.374Z"
 }
