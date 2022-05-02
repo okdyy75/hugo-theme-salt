@@ -2,38 +2,30 @@
     "items": [
         {
             "pagePath": "/",
-            "pv": "13"
+            "pv": "11"
         },
         {
             "pagePath": "/article/salt/self-blog-card/",
-            "pv": "8"
-        },
-        {
-            "pagePath": "/article/hugo/tips/",
-            "pv": "5"
-        },
-        {
-            "pagePath": "/article/sample/hugo-shortcode/",
-            "pv": "5"
-        },
-        {
-            "pagePath": "/article/salt/about/",
-            "pv": "4"
-        },
-        {
-            "pagePath": "/article/salt/custom-figure/",
-            "pv": "4"
+            "pv": "6"
         },
         {
             "pagePath": "/article/hugo/search/",
             "pv": "3"
         },
         {
-            "pagePath": "/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/",
+            "pagePath": "/article/hugo/tips/",
             "pv": "3"
         },
         {
-            "pagePath": "/page/2/",
+            "pagePath": "/article/salt/about/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/article/salt/custom-figure/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/article/sample/hugo-shortcode/",
             "pv": "3"
         },
         {
@@ -41,7 +33,7 @@
             "pv": "2"
         },
         {
-            "pagePath": "/article/sample/markdown/",
+            "pagePath": "/page/2/",
             "pv": "2"
         },
         {
@@ -49,21 +41,13 @@
             "pv": "2"
         },
         {
-            "pagePath": "/article/go/go-template/",
+            "pagePath": "/article/sample/markdown/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/archive/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/hugo/ranking/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/",
+            "pagePath": "/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/",
             "pv": "1"
         }
     ],
-    "createdAt": "2022-05-01T00:38:36.374Z"
+    "createdAt": "2022-05-02T00:30:36.114Z"
 }
