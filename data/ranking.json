@@ -17,10 +17,6 @@
             "pv": "3"
         },
         {
-            "pagePath": "/article/hugo/tips/",
-            "pv": "3"
-        },
-        {
             "pagePath": "/article/salt/custom-figure/",
             "pv": "3"
         },
@@ -30,6 +26,10 @@
         },
         {
             "pagePath": "/article/hugo/search/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/hugo/tips/",
             "pv": "2"
         },
         {
@@ -49,5 +49,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2022-05-05T00:30:15.044Z"
+    "createdAt": "2022-05-06T00:29:43.185Z"
 }
