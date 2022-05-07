@@ -1,24 +1,26 @@
-<div style="border: 1px solid #ccc;">
-    {{- if not (in .Page.Permalink (.Get 0))  -}}
-        {{- with .Site.GetPage (.Get 0) -}}
-            <a href="{{- .Permalink -}}" style="color: #000;text-decoration: none;display: flex;align-items: center;" onMouseOver="this.style.opacity='0.9'">
-                {{- $thumbnail := .Resources.Match "thumbnail.*" -}}
-                {{- if $thumbnail -}}
-                    {{- $thumbnail = (index $thumbnail 0).Fill "96x54 center webp" -}}
-                {{- else -}}
-                    {{- $thumbnail = resources.Get .Site.Params.dafaultNoimage -}}
-                    {{- $thumbnail = $thumbnail.Fill "96x54 center webp" -}}
-                {{- end -}}
-                <img src="{{- $thumbnail.Permalink -}}" style="margin: 7.5px;">
-                <div>
-                    <h4 style="margin: 7.5px 0;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;overflow: hidden;">
-                        {{- .Title -}}
-                    </h4>
-                    <div style="margin: 7.5px 0;max-height: 63px;font-size:14px;line-height: 150%;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;">
-                        {{- .Summary -}}
-                    </div>
+{{ $url := .Get 0 }}
+{{/* 自記事のブログカードを表示しようとすると無限ループになるのを回避 */}}
+{{- if not (in .Page.Permalink $url) -}}
+    {{- with $.Site.GetPage $url -}}
+        <a href="{{- .Permalink -}}" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: #000;" onMouseOver="this.style.opacity='0.9'">
+            {{- $thumbnail := .Resources.Match "thumbnail.*" -}}
+            {{- if $thumbnail -}}
+                {{- $thumbnail = (index $thumbnail 0).Fit (printf "200x200 center q%d webp" $.Site.Params.imageQuality) -}}
+            {{- else -}}
+                {{- $thumbnail = resources.Get $.Site.Params.dafaultNoimage -}}
+                {{- $thumbnail = $thumbnail.Fit (printf "200x200 center q%d webp" $.Site.Params.imageQuality) -}}
+            {{- end -}}
+            <div style="flex-shrink: 0;">
+                <img src="{{- $thumbnail.Permalink -}}" alt="{{ .Title }}" width="100" height="100" style="object-fit: contain;">
+            </div>
+            <div style="margin-left: 10px;">
+                <h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">
+                    {{- .Title -}}
+                </h2>
+                <div style="margin: 0;font-size: 13px;">
+                    {{- .Summary | plainify | safeHTML -}}
                 </div>
-            </a>
-        {{- end -}}
+            </div>
+        </a>
     {{- end -}}
-</div>
+{{- end -}}
