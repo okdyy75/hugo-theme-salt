@@ -1,1187 +1,286 @@
-<!doctype html><html lang=ja>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1">
-<title>Hugoに検索機能を追加しよう | Hugoブログテーマ「Salt」</title>
-<meta name=description content="このサイトにも実装されているんですが、Hugoにlunaを使った検索機能を実装する方法を紹介します。 基本的には公式で紹介されているgistを参考に実装します。（コメント下の方にvanilla js版を作ってくれた方がいました！感謝！） こちらのサイトも参考にさせて頂きました。 1. lunrのセットアップ npm install lunr lunr-languagesを実行してパッケージをインストールし、config.ymlに下記を追加"><meta name=thumbnail content="https://hugo-theme-salt.okdyy75.com/article/hugo/search/thumbnail_hu7a253d997b511fbff22929f86311ed19_4626_1200x630_fill_q75_h2_box_center_3.webp"><meta property="og:locale" content="ja_JP">
-<meta property="og:title" content="Hugoに検索機能を追加しよう | Hugoブログテーマ「Salt」">
-<meta property="og:description" content="このサイトにも実装されているんですが、Hugoにlunaを使った検索機能を実装する方法を紹介します。 基本的には公式で紹介されているgistを参考に実装します。（コメント下の方にvanilla js版を作ってくれた方がいました！感謝！） こちらのサイトも参考にさせて頂きました。 1. lunrのセットアップ npm install lunr lunr-languagesを実行してパッケージをインストールし、config.ymlに下記を追加"><meta property="og:image" content="https://hugo-theme-salt.okdyy75.com/article/hugo/search/thumbnail_hu7a253d997b511fbff22929f86311ed19_4626_1200x630_fill_q75_h2_box_center_3.webp">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630"><meta property="og:url" content="https://hugo-theme-salt.okdyy75.com/article/hugo/search/">
-<meta property="og:site_name" content="Hugoブログテーマ「Salt」">
-<meta property="og:type" content="article"><meta property="article:published_time" content="2021-10-15T21:35:10+09:00"><meta property="article:modified_time" content="2021-10-15T21:35:10+09:00"><meta property="article:author" content="okdyy75"><meta property="article:section" content="Hugo"><meta property="article:tag" content="tips"><meta property="article:tag" content="検索"><meta property="article:tag" content="lunr"><meta name=twitter:title content="Hugoに検索機能を追加しよう | Hugoブログテーマ「Salt」">
-<meta name=twitter:description content="このサイトにも実装されているんですが、Hugoにlunaを使った検索機能を実装する方法を紹介します。 基本的には公式で紹介されているgistを参考に実装します。（コメント下の方にvanilla js版を作ってくれた方がいました！感謝！） こちらのサイトも参考にさせて頂きました。 1. lunrのセットアップ npm install lunr lunr-languagesを実行してパッケージをインストールし、config.ymlに下記を追加"><meta name=twitter:image content="https://hugo-theme-salt.okdyy75.com/article/hugo/search/thumbnail_hu7a253d997b511fbff22929f86311ed19_4626_1200x630_fill_q75_h2_box_center_3.webp">
-<meta name=twitter:card content="summary_large_image"><meta name=robots content="index,follow">
-<meta name=googlebot content="index,follow">
-<meta name=generator content="Hugo 0.89.4">
-<link rel=icon href=https://hugo-theme-salt.okdyy75.com/favicon.ico>
-<link rel=apple-touch-icon href=https://hugo-theme-salt.okdyy75.com/image/icon.png>
-<link rel=apple-touch-icon sizes=180x180 href=https://hugo-theme-salt.okdyy75.com/image/icon_hufcfbdcc219ffada1cbabf236b1db3300_1050873_180x180_fit_box_3.png>
-<meta name=msapplication-TileImage content="https://hugo-theme-salt.okdyy75.com/image/icon_hufcfbdcc219ffada1cbabf236b1db3300_1050873_144x144_fit_box_3.png">
-<link rel=canonical href=https://hugo-theme-salt.okdyy75.com/article/hugo/search/>
-<link rel=preload href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as=style>
-<link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" media=print onload="this.media='all'">
-<link rel=stylesheet href=https://hugo-theme-salt.okdyy75.com/scss/style.min.7b905bee8269514d767645ef3b8fef29fd424a4e8773ae34778f687fc4f34b08.css>
-<link rel=preload href=/css/vendor/@fortawesome/fontawesome-free/css/all.min.css as=style>
-<link rel=stylesheet href=/css/vendor/@fortawesome/fontawesome-free/css/all.min.css media=print onload="this.media='all'">
-<link rel=preload href=/css/vendor/github-markdown-css/github-markdown.css as=style>
-<link rel=stylesheet href=/css/vendor/github-markdown-css/github-markdown.css media=print onload="this.media='all'">
-<script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://hugo-theme-salt.okdyy75.com/#website","name":"Hugoブログテーマ「Salt」","url":"https://hugo-theme-salt.okdyy75.com/","potentialAction":{"@type":"SearchAction","target":"https://hugo-theme-salt.okdyy75.com/search/?query={search_term_string}","query-input":"required name=search_term_string"},"publisher":{"@id":"https://hugo-theme-salt.okdyy75.com/#publisher"}},{"@type":"Article","headline":"Hugoに検索機能を追加しよう","description":"このサイトにも実装されているんですが、Hugoにlunaを使った検索機能を実装する方法を紹介します。 基本的には公式で紹介されているgistを参考に実装します。（コメント下の方にvanilla js版を作ってくれた方がいました！感謝！） こちらのサイトも参考にさせて頂きました。 1. lunrのセットアップ npm install lunr lunr-languagesを実行してパッケージをインストールし、config.ymlに下記を追加","image":"https://hugo-theme-salt.okdyy75.com/article/hugo/search/thumbnail_hu7a253d997b511fbff22929f86311ed19_4626_1280x720_fill_q75_h2_box_center_3.webp","keywords":["tips","検索","lunr"],"author":{"@type":"Person","url":"https://github.com/okdyy75","name":"okdyy75"},"publisher":{"@id":"https://hugo-theme-salt.okdyy75.com/#publisher"},"datePublished":"2021-10-15T21:35:10+09:00","dateModified":"2021-10-15T21:35:10+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://hugo-theme-salt.okdyy75.com/article/hugo/search/"},"isPartOf":{"@id":"https://hugo-theme-salt.okdyy75.com/#website"},"breadcrumb":{"@id":"https://hugo-theme-salt.okdyy75.com/#breadcrumb"}},{"@type":"Organization","@id":"https://hugo-theme-salt.okdyy75.com/#publisher","name":"okdyy75","url":"https://github.com/okdyy75","sameAs":["https://twitter.com/okdyy75"],"logo":{"@type":"ImageObject","@id":"https://hugo-theme-salt.okdyy75.com/#logo","url":"https://hugo-theme-salt.okdyy75.com/image/icon_hufcfbdcc219ffada1cbabf236b1db3300_1050873_120x120_fit_box_3.png","width":120,"height":120},"image":{"@id":"https://hugo-theme-salt.okdyy75.com/#logo"},"description":"Hugo用ブログテーマ「Salt」を作りました"},{"@type":"BreadcrumbList","@id":"https://hugo-theme-salt.okdyy75.com/","name":"パンくずリスト","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hugo-theme-salt.okdyy75.com/"},{"@type":"ListItem","position":2,"name":"Hugo","item":"https://hugo-theme-salt.okdyy75.com/categories/Hugo"}]}]}</script>
-</head>
-<body class=body>
-<div class=container>
-<header class=header>
-<div class=header__inner>
-<div class=partials__header>
-<div class=partials__header__title>
-<a href=https://hugo-theme-salt.okdyy75.com/>
-Hugoブログテーマ「Salt」
-</a>
-<div id=hamburger class="spShow close partials__header__hamburger">
-<div class=partials__header__hamburger__line></div>
-</div>
-</div>
-<div id=hamburgerMenu class="close partials__header__menu">
-<nav class="spShow partials__header__menu__search">
-<form action=/search class=partials__header__menu__search__form>
-<input type=text name=query id=search class=partials__header__menu__search__query>
+<!doctype html><html lang=ja><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>Hugoに検索機能を追加しよう | Hugoブログテーマ「Salt」</title><meta name=description content="このサイトにも実装されているんですが、Hugoにlunaを使った検索機能を実装する方法を紹介します。 基本的には公式で紹介されているgistを参考に実装します。（コメント下の方にvanilla js版を作ってくれた方がいました！感謝！） こちらのサイトも参考にさせて頂きました。 1. lunrのセットアップ npm install lunr lunr-languagesを実行してパッケージをインストールし、config.ymlに下記を追加"><meta name=thumbnail content="https://hugo-theme-salt.okdyy75.com/article/hugo/search/thumbnail_hu7a253d997b511fbff22929f86311ed19_4626_1200x630_fill_q75_h2_box_center_3.webp"><meta property="og:locale" content="ja_JP"><meta property="og:title" content="Hugoに検索機能を追加しよう | Hugoブログテーマ「Salt」"><meta property="og:description" content="このサイトにも実装されているんですが、Hugoにlunaを使った検索機能を実装する方法を紹介します。 基本的には公式で紹介されているgistを参考に実装します。（コメント下の方にvanilla js版を作ってくれた方がいました！感謝！） こちらのサイトも参考にさせて頂きました。 1. lunrのセットアップ npm install lunr lunr-languagesを実行してパッケージをインストールし、config.ymlに下記を追加"><meta property="og:image" content="https://hugo-theme-salt.okdyy75.com/article/hugo/search/thumbnail_hu7a253d997b511fbff22929f86311ed19_4626_1200x630_fill_q75_h2_box_center_3.webp"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:url" content="https://hugo-theme-salt.okdyy75.com/article/hugo/search/"><meta property="og:site_name" content="Hugoブログテーマ「Salt」"><meta property="og:type" content="article"><meta property="article:published_time" content="2021-10-15T21:35:10+09:00"><meta property="article:modified_time" content="2021-10-15T21:35:10+09:00"><meta property="article:author" content="okdyy75"><meta property="article:section" content="Hugo"><meta property="article:tag" content="tips"><meta property="article:tag" content="検索"><meta property="article:tag" content="lunr"><meta name=twitter:title content="Hugoに検索機能を追加しよう | Hugoブログテーマ「Salt」"><meta name=twitter:description content="このサイトにも実装されているんですが、Hugoにlunaを使った検索機能を実装する方法を紹介します。 基本的には公式で紹介されているgistを参考に実装します。（コメント下の方にvanilla js版を作ってくれた方がいました！感謝！） こちらのサイトも参考にさせて頂きました。 1. lunrのセットアップ npm install lunr lunr-languagesを実行してパッケージをインストールし、config.ymlに下記を追加"><meta name=twitter:image content="https://hugo-theme-salt.okdyy75.com/article/hugo/search/thumbnail_hu7a253d997b511fbff22929f86311ed19_4626_1200x630_fill_q75_h2_box_center_3.webp"><meta name=twitter:card content="summary_large_image"><meta name=robots content="index,follow"><meta name=googlebot content="index,follow"><meta name=generator content="Hugo 0.98.0"><link rel=icon href=https://hugo-theme-salt.okdyy75.com/favicon.ico><link rel=apple-touch-icon href=https://hugo-theme-salt.okdyy75.com/image/icon.png><link rel=apple-touch-icon sizes=180x180 href=https://hugo-theme-salt.okdyy75.com/image/icon_hufcfbdcc219ffada1cbabf236b1db3300_1050873_180x180_fit_box_3.png><meta name=msapplication-TileImage content="https://hugo-theme-salt.okdyy75.com/image/icon_hufcfbdcc219ffada1cbabf236b1db3300_1050873_144x144_fit_box_3.png"><link rel=canonical href=https://hugo-theme-salt.okdyy75.com/article/hugo/search/><link rel=preload href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as=style><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" media=print onload='this.media="all"'><link rel=stylesheet href=https://hugo-theme-salt.okdyy75.com/scss/style.min.7b905bee8269514d767645ef3b8fef29fd424a4e8773ae34778f687fc4f34b08.css><link rel=preload href=/css/vendor/@fortawesome/fontawesome-free/css/all.min.css as=style><link rel=stylesheet href=/css/vendor/@fortawesome/fontawesome-free/css/all.min.css media=print onload='this.media="all"'><link rel=preload href=/css/vendor/github-markdown-css/github-markdown.css as=style><link rel=stylesheet href=/css/vendor/github-markdown-css/github-markdown.css media=print onload='this.media="all"'><script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://hugo-theme-salt.okdyy75.com/#website","name":"Hugoブログテーマ「Salt」","url":"https://hugo-theme-salt.okdyy75.com/","potentialAction":{"@type":"SearchAction","target":"https://hugo-theme-salt.okdyy75.com/search/?query={search_term_string}","query-input":"required name=search_term_string"},"publisher":{"@id":"https://hugo-theme-salt.okdyy75.com/#publisher"}},{"@type":"Article","headline":"Hugoに検索機能を追加しよう","description":"このサイトにも実装されているんですが、Hugoにlunaを使った検索機能を実装する方法を紹介します。 基本的には公式で紹介されているgistを参考に実装します。（コメント下の方にvanilla js版を作ってくれた方がいました！感謝！） こちらのサイトも参考にさせて頂きました。 1. lunrのセットアップ npm install lunr lunr-languagesを実行してパッケージをインストールし、config.ymlに下記を追加","image":"https://hugo-theme-salt.okdyy75.com/article/hugo/search/thumbnail_hu7a253d997b511fbff22929f86311ed19_4626_1280x720_fill_q75_h2_box_center_3.webp","keywords":["tips","検索","lunr"],"author":{"@type":"Person","url":"https://github.com/okdyy75","name":"okdyy75"},"publisher":{"@id":"https://hugo-theme-salt.okdyy75.com/#publisher"},"datePublished":"2021-10-15T21:35:10+09:00","dateModified":"2021-10-15T21:35:10+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://hugo-theme-salt.okdyy75.com/article/hugo/search/"},"isPartOf":{"@id":"https://hugo-theme-salt.okdyy75.com/#website"},"breadcrumb":{"@id":"https://hugo-theme-salt.okdyy75.com/#breadcrumb"}},{"@type":"Organization","@id":"https://hugo-theme-salt.okdyy75.com/#publisher","name":"okdyy75","url":"https://github.com/okdyy75","sameAs":["https://twitter.com/okdyy75"],"logo":{"@type":"ImageObject","@id":"https://hugo-theme-salt.okdyy75.com/#logo","url":"https://hugo-theme-salt.okdyy75.com/image/icon_hufcfbdcc219ffada1cbabf236b1db3300_1050873_120x120_fit_box_3.png","width":120,"height":120},"image":{"@id":"https://hugo-theme-salt.okdyy75.com/#logo"},"description":"Hugo用ブログテーマ「Salt」を作りました"},{"@type":"BreadcrumbList","@id":"https://hugo-theme-salt.okdyy75.com/","name":"パンくずリスト","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hugo-theme-salt.okdyy75.com/"},{"@type":"ListItem","position":2,"name":"Hugo","item":"https://hugo-theme-salt.okdyy75.com/categories/Hugo"}]}]}</script></head><body class=body><div class=container><header class=header><div class=header__inner><div class=partials__header><div class=partials__header__title><a href=https://hugo-theme-salt.okdyy75.com/>Hugoブログテーマ「Salt」</a><div id=hamburger class="spShow close partials__header__hamburger"><div class=partials__header__hamburger__line></div></div></div><div id=hamburgerMenu class="close partials__header__menu"><nav class="spShow partials__header__menu__search"><form action=/search class=partials__header__menu__search__form><input type=text name=query id=search class=partials__header__menu__search__query>
 <button type=submit class=partials__header__menu__search__button>
-<i class="fas fa-search"></i>
-</button>
-</form>
-</nav>
-<nav class=partials__header__menu__topMenu>
-<ul class=partials__header__menu__topMenu__items>
-<li class=partials__header__menu__topMenu__item>
-<a href=/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9 class=partials__header__menu__topMenu__itemLink>Saltの使い方</a>
-</li>
-<li class=partials__header__menu__topMenu__item>
-<a href=/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB class=partials__header__menu__topMenu__itemLink>サンプル</a>
-</li>
-<li class=partials__header__menu__topMenu__item>
-<a href=/tags/Hugo class=partials__header__menu__topMenu__itemLink>Hugo</a>
-</li>
-<li class=partials__header__menu__topMenu__item>
-<a href=/categories/Go%E8%A8%80%E8%AA%9E class=partials__header__menu__topMenu__itemLink>Go言語</a>
-</li>
-</ul>
-</nav>
-<nav class="spShow partials__header__menu__sideMenu">
-<h3 class=partials__header__menu__sideMenu__title>
-メニュー
-</h3>
-<ul class=partials__header__menu__sideMenu__items>
-<li class=partials__header__menu__sideMenu__item>
-<a href=/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9 class=partials__header__menu__sideMenu__itemLink>
-<div class=partials__header__menu__sideMenu__itemIcon>
-<i class="fa-2x fas fa-book"></i>
-</div>
-<div class=partials__header__menu__sideMenu__itemTitle>
-Saltの使い方
-</div>
-</a>
-</li>
-<li class=partials__header__menu__sideMenu__item>
-<a href=/tags/Hugo class=partials__header__menu__sideMenu__itemLink>
-<div class=partials__header__menu__sideMenu__itemIcon>
-<i class="fa-2x fas fa-cog"></i>
-</div>
-<div class=partials__header__menu__sideMenu__itemTitle>
-Hugo
-</div>
-</a>
-</li>
-<li class=partials__header__menu__sideMenu__item>
-<a href=/categories/Go%E8%A8%80%E8%AA%9E class=partials__header__menu__sideMenu__itemLink>
-<div class=partials__header__menu__sideMenu__itemIcon>
-<i class="fa-2x fas fa-laptop-code"></i>
-</div>
-<div class=partials__header__menu__sideMenu__itemTitle>
-Go言語
-</div>
-</a>
-</li>
-<li class=partials__header__menu__sideMenu__item>
-<a href=/tags/tips class=partials__header__menu__sideMenu__itemLink>
-<div class=partials__header__menu__sideMenu__itemIcon>
-<i class="fa-2x fas fa-mobile-alt"></i>
-</div>
-<div class=partials__header__menu__sideMenu__itemTitle>
-Tips
-</div>
-</a>
-</li>
-<li class=partials__header__menu__sideMenu__item>
-<a href=/tags/%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%B3%E3%83%BC%E3%83%89 class=partials__header__menu__sideMenu__itemLink>
-<div class=partials__header__menu__sideMenu__itemIcon>
-<i class="fa-2x fas fa-wrench"></i>
-</div>
-<div class=partials__header__menu__sideMenu__itemTitle>
-shortcode
-</div>
-</a>
-</li>
-<li class=partials__header__menu__sideMenu__item>
-<a href=/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB class=partials__header__menu__sideMenu__itemLink>
-<div class=partials__header__menu__sideMenu__itemIcon>
-<i class="fa-2x fab fa-safari"></i>
-</div>
-<div class=partials__header__menu__sideMenu__itemTitle>
-サンプル
-</div>
-</a>
-</li>
-</ul>
-</nav>
-</div>
-</div>
-</div>
-</header>
-<div id=headerBlock class=spShow></div>
-<div class=content>
-<main class=main>
-<div class=main__inner>
-<section class=single>
-<article class=single__article>
-<div class=single__article__header>
-<ol class=partials__breadcrumb>
-<li>
-<a href=https://hugo-theme-salt.okdyy75.com/>
-<i class="fas fa-home"></i>Home
-</a>
-</li>
-<li>/</li>
-<li>
-<a href=/categories/Hugo>
-<i class="fas fa-folder"></i>Hugo
-</a>
-</li>
-<li>/</li>
-<li>
-Hugoに検索機能を追加しよう
-</li>
-</ol>
-<div class="pcShow single__article__date">
-<i class="far fa-clock"></i>2021-10-15
- / <i class="fas fa-history"></i>2021-10-15
-</div>
-</div>
-<h1 class=single__article__title>Hugoに検索機能を追加しよう</h1>
-<div class="spShow single__article__date">
-<i class="far fa-clock"></i>2021-10-15
- / <i class="fas fa-history"></i>2021-10-15
-</div>
-<section class=single__article__shareLinks>
-<ul class=partials__shareLinks>
-<li class=partials__shareLinks__item>
-<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fhugo-theme-salt.okdyy75.com%2farticle%2fhugo%2fsearch%2f&text=Hugo%e3%81%ab%e6%a4%9c%e7%b4%a2%e6%a9%9f%e8%83%bd%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%97%e3%82%88%e3%81%86" target=_blank title=Tweet class=partials__shareLinks__itemLink--twitter>
-<i class="fab fa-twitter"></i>Twitter
-</a>
-</li>
-<li class=partials__shareLinks__item>
-<a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fhugo-theme-salt.okdyy75.com%2farticle%2fhugo%2fsearch%2f&t=Hugo%e3%81%ab%e6%a4%9c%e7%b4%a2%e6%a9%9f%e8%83%bd%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%97%e3%82%88%e3%81%86" target=_blank title=Facebook class=partials__shareLinks__itemLink--facebook>
-<i class="fab fa-facebook"></i>Facebook
-</a>
-</li>
-<li class=partials__shareLinks__item>
-<a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fhugo-theme-salt.okdyy75.com%2farticle%2fhugo%2fsearch%2f&title=Hugo%e3%81%ab%e6%a4%9c%e7%b4%a2%e6%a9%9f%e8%83%bd%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%97%e3%82%88%e3%81%86" target=_blank title=hatena class=partials__shareLinks__itemLink--hatena>
-はてブ
-</a>
-</li>
-<li class=partials__shareLinks__item>
-<a href="http://getpocket.com/edit?url=https%3a%2f%2fhugo-theme-salt.okdyy75.com%2farticle%2fhugo%2fsearch%2f&title=Hugo%e3%81%ab%e6%a4%9c%e7%b4%a2%e6%a9%9f%e8%83%bd%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%97%e3%82%88%e3%81%86" target=_blank title=pocket class=partials__shareLinks__itemLink--pocket>
-<i class="fab fa-get-pocket"></i>Pocket
-</a>
-</li>
-<li class=partials__shareLinks__item>
-<a href=https://line.me/R/msg/text/?Hugo%e3%81%ab%e6%a4%9c%e7%b4%a2%e6%a9%9f%e8%83%bd%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%97%e3%82%88%e3%81%86%0D%0Ahttps%3a%2f%2fhugo-theme-salt.okdyy75.com%2farticle%2fhugo%2fsearch%2f target=_blank title=line class=partials__shareLinks__itemLink--line>
-<i class="fab fa-line"></i>Line
-</a>
-</li>
-<li class=partials__shareLinks__item>
-<a href=javascript:void(0) onclick="navigator.clipboard.writeText('https://hugo-theme-salt.okdyy75.com/article/hugo/search/'),alert('URLをコピーしました')" title=line class=partials__shareLinks__itemLink--copy>
-<i class="far fa-copy"></i>URL
-</a>
-</li>
-</ul>
-</section>
-<ul class=partials__tagList>
-<li class=partials__tagList__item>
-<a href=/tags/tips class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>tips
-</a>
-</li>
-<li class=partials__tagList__item>
-<a href=/tags/%e6%a4%9c%e7%b4%a2 class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>検索
-</a>
-</li>
-<li class=partials__tagList__item>
-<a href=/tags/lunr class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>lunr
-</a>
-</li>
-</ul>
-<img src=/article/hugo/search/thumbnail_hu7a253d997b511fbff22929f86311ed19_4626_640x640_fit_q75_h2_box_3.webp alt=Hugoに検索機能を追加しよう class=single__article__thumbnail>
-<aside class=single__article__toc>
-<h3 class=single__article__toc__title><i class="fas fa-list-ul"></i>目次</h3>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#1-lunrのセットアップ>1. lunrのセットアップ</a></li>
-<li><a href=#2-検索処理の実装>2. 検索処理の実装</a>
-<ul>
-<li><a href=#検索ロジック>検索ロジック</a></li>
-</ul>
-</li>
-<li><a href=#3-検索フォームを設置>3. 検索フォームを設置</a></li>
-</ul>
-</nav>
-</aside>
-<div class="single__article__content markdown-body">
-<p>このサイトにも実装されているんですが、Hugoにlunaを使った検索機能を実装する方法を紹介します。</p>
-<p>基本的には公式で紹介されているgistを参考に実装します。（コメント下の方にvanilla js版を作ってくれた方がいました！感謝！）</p>
-<iframe src="https://hatenablog-parts.com/embed?url=https://gohugo.io/tools/search/" title="Search for your Hugo Website | Hugo" class="embed-card embed-blogcard" scrolling=no frameborder=0 style="display:block;width:100%;height:190px;max-width:680px;margin:10px 0"></iframe>
-<iframe src="https://hatenablog-parts.com/embed?url=https://gist.github.com/sebz/efddfc8fdcb6b480f567" title="hugo + gruntjs + lunrjs = <3 search" class="embed-card embed-blogcard" scrolling=no frameborder=0 style="display:block;width:100%;height:190px;max-width:680px;margin:10px 0"></iframe>
-<p>こちらのサイトも参考にさせて頂きました。</p>
-<iframe src="https://hatenablog-parts.com/embed?url=https://blog.unigiri.net/article/hugo-lunr%E3%81%AB%E3%82%88%E3%82%8B%E6%97%A5%E6%9C%AC%E8%AA%9E%E5%85%A8%E6%96%87%E6%A4%9C%E7%B4%A2/" title="Hugo + Lunrによる日本語全文検索 | Unigiri" class="embed-card embed-blogcard" scrolling=no frameborder=0 style="display:block;width:100%;height:190px;max-width:680px;margin:10px 0"></iframe>
-<h2 id=1-lunrのセットアップ>1. lunrのセットアップ</h2>
-<p><code>npm install lunr lunr-languages</code>を実行してパッケージをインストールし、config.ymlに下記を追加します</p>
-<p>config.yml</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>module</span>:
-  <span style=color:#f92672>mounts</span>:
-    - <span style=color:#f92672>source</span>: <span style=color:#ae81ff>static</span>
-      <span style=color:#f92672>target</span>: <span style=color:#ae81ff>static</span>
-    <span style=color:#75715e># 検索に必要</span>
-    - <span style=color:#f92672>source</span>: <span style=color:#ae81ff>node_modules/lunr/lunr.min.js</span>
-      <span style=color:#f92672>target</span>: <span style=color:#ae81ff>static/js/vendor/lunr/lunr.min.js</span>
-    - <span style=color:#f92672>source</span>: <span style=color:#ae81ff>node_modules/lunr-languages/lunr.stemmer.support.js</span>
-      <span style=color:#f92672>target</span>: <span style=color:#ae81ff>static/js/vendor/lunr-languages/lunr.stemmer.support.js</span>
-    - <span style=color:#f92672>source</span>: <span style=color:#ae81ff>node_modules/lunr-languages/tinyseg.js</span>
-      <span style=color:#f92672>target</span>: <span style=color:#ae81ff>static/js/vendor/lunr-languages/tinyseg.js</span>
-    - <span style=color:#f92672>source</span>: <span style=color:#ae81ff>node_modules/lunr-languages/lunr.ja.js</span>
-      <span style=color:#f92672>target</span>: <span style=color:#ae81ff>static/js/vendor/lunr-languages/lunr.ja.js</span>
-</code></pre></div><p>headでlunrを読み込みます</p>
-<p>head.html</p>
-<pre tabindex=0><code class=language-go-template data-lang=go-template>    {{ if eq .Section &quot;search&quot; }}
-        &lt;script type=&quot;text/javascript&quot; src=&quot;/js/vendor/lunr/lunr.min.js&quot;&gt;&lt;/script&gt;
-        &lt;script type=&quot;text/javascript&quot; src=&quot;/js/vendor/lunr-languages/lunr.stemmer.support.js&quot;&gt;&lt;/script&gt;
-        &lt;script type=&quot;text/javascript&quot; src=&quot;/js/vendor/lunr-languages/tinyseg.js&quot;&gt;&lt;/script&gt;
-        &lt;script type=&quot;text/javascript&quot; src=&quot;/js/vendor/lunr-languages/lunr.ja.js&quot;&gt;&lt;/script&gt;
-        &lt;script type=&quot;text/javascript&quot; src=&quot;{{ with  resources.Get &quot;js/search.js&quot; | minify }}{{ .RelPermalink }}{{ end }}&quot;&gt;&lt;/script&gt;
+<i class="fas fa-search"></i></button></form></nav><nav class=partials__header__menu__topMenu><ul class=partials__header__menu__topMenu__items><li class=partials__header__menu__topMenu__item><a href=/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9 class=partials__header__menu__topMenu__itemLink>Saltの使い方</a></li><li class=partials__header__menu__topMenu__item><a href=/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB class=partials__header__menu__topMenu__itemLink>サンプル</a></li><li class=partials__header__menu__topMenu__item><a href=/tags/Hugo class=partials__header__menu__topMenu__itemLink>Hugo</a></li><li class=partials__header__menu__topMenu__item><a href=/categories/Go%E8%A8%80%E8%AA%9E class=partials__header__menu__topMenu__itemLink>Go言語</a></li></ul></nav><nav class="spShow partials__header__menu__sideMenu"><h3 class=partials__header__menu__sideMenu__title>メニュー</h3><ul class=partials__header__menu__sideMenu__items><li class=partials__header__menu__sideMenu__item><a href=/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9 class=partials__header__menu__sideMenu__itemLink><div class=partials__header__menu__sideMenu__itemIcon><i class="fa-2x fas fa-book"></i></div><div class=partials__header__menu__sideMenu__itemTitle>Saltの使い方</div></a></li><li class=partials__header__menu__sideMenu__item><a href=/tags/Hugo class=partials__header__menu__sideMenu__itemLink><div class=partials__header__menu__sideMenu__itemIcon><i class="fa-2x fas fa-cog"></i></div><div class=partials__header__menu__sideMenu__itemTitle>Hugo</div></a></li><li class=partials__header__menu__sideMenu__item><a href=/categories/Go%E8%A8%80%E8%AA%9E class=partials__header__menu__sideMenu__itemLink><div class=partials__header__menu__sideMenu__itemIcon><i class="fa-2x fas fa-laptop-code"></i></div><div class=partials__header__menu__sideMenu__itemTitle>Go言語</div></a></li><li class=partials__header__menu__sideMenu__item><a href=/tags/tips class=partials__header__menu__sideMenu__itemLink><div class=partials__header__menu__sideMenu__itemIcon><i class="fa-2x fas fa-mobile-alt"></i></div><div class=partials__header__menu__sideMenu__itemTitle>Tips</div></a></li><li class=partials__header__menu__sideMenu__item><a href=/tags/%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%B3%E3%83%BC%E3%83%89 class=partials__header__menu__sideMenu__itemLink><div class=partials__header__menu__sideMenu__itemIcon><i class="fa-2x fas fa-wrench"></i></div><div class=partials__header__menu__sideMenu__itemTitle>shortcode</div></a></li><li class=partials__header__menu__sideMenu__item><a href=/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB class=partials__header__menu__sideMenu__itemLink><div class=partials__header__menu__sideMenu__itemIcon><i class="fa-2x fab fa-safari"></i></div><div class=partials__header__menu__sideMenu__itemTitle>サンプル</div></a></li></ul></nav></div></div></div></header><div id=headerBlock class=spShow></div><div class=content><main class=main><div class=main__inner><section class=single><article class=single__article><div class=single__article__header><ol class=partials__breadcrumb><li><a href=https://hugo-theme-salt.okdyy75.com/><i class="fas fa-home"></i>Home</a></li><li>/</li><li><a href=/categories/Hugo><i class="fas fa-folder"></i>Hugo</a></li><li>/</li><li>Hugoに検索機能を追加しよう</li></ol><div class="pcShow single__article__date"><i class="far fa-clock"></i>2021-10-15
+ / <i class="fas fa-history"></i>2021-10-15</div></div><h1 class=single__article__title>Hugoに検索機能を追加しよう</h1><div class="spShow single__article__date"><i class="far fa-clock"></i>2021-10-15
+ / <i class="fas fa-history"></i>2021-10-15</div><section class=single__article__shareLinks><ul class=partials__shareLinks><li class=partials__shareLinks__item><a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fhugo-theme-salt.okdyy75.com%2farticle%2fhugo%2fsearch%2f&text=Hugo%e3%81%ab%e6%a4%9c%e7%b4%a2%e6%a9%9f%e8%83%bd%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%97%e3%82%88%e3%81%86" target=_blank title=Tweet class=partials__shareLinks__itemLink--twitter><i class="fab fa-twitter"></i>Twitter</a></li><li class=partials__shareLinks__item><a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fhugo-theme-salt.okdyy75.com%2farticle%2fhugo%2fsearch%2f&t=Hugo%e3%81%ab%e6%a4%9c%e7%b4%a2%e6%a9%9f%e8%83%bd%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%97%e3%82%88%e3%81%86" target=_blank title=Facebook class=partials__shareLinks__itemLink--facebook><i class="fab fa-facebook"></i>Facebook</a></li><li class=partials__shareLinks__item><a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fhugo-theme-salt.okdyy75.com%2farticle%2fhugo%2fsearch%2f&title=Hugo%e3%81%ab%e6%a4%9c%e7%b4%a2%e6%a9%9f%e8%83%bd%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%97%e3%82%88%e3%81%86" target=_blank title=hatena class=partials__shareLinks__itemLink--hatena>はてブ</a></li><li class=partials__shareLinks__item><a href="http://getpocket.com/edit?url=https%3a%2f%2fhugo-theme-salt.okdyy75.com%2farticle%2fhugo%2fsearch%2f&title=Hugo%e3%81%ab%e6%a4%9c%e7%b4%a2%e6%a9%9f%e8%83%bd%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%97%e3%82%88%e3%81%86" target=_blank title=pocket class=partials__shareLinks__itemLink--pocket><i class="fab fa-get-pocket"></i>Pocket</a></li><li class=partials__shareLinks__item><a href=https://line.me/R/msg/text/?Hugo%e3%81%ab%e6%a4%9c%e7%b4%a2%e6%a9%9f%e8%83%bd%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%97%e3%82%88%e3%81%86%0D%0Ahttps%3a%2f%2fhugo-theme-salt.okdyy75.com%2farticle%2fhugo%2fsearch%2f target=_blank title=line class=partials__shareLinks__itemLink--line><i class="fab fa-line"></i>Line</a></li><li class=partials__shareLinks__item><a href=javascript:void(0) onclick='navigator.clipboard.writeText("https://hugo-theme-salt.okdyy75.com/article/hugo/search/"),alert("URLをコピーしました")' title=line class=partials__shareLinks__itemLink--copy><i class="far fa-copy"></i>URL</a></li></ul></section><ul class=partials__tagList><li class=partials__tagList__item><a href=/tags/tips class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>tips</a></li><li class=partials__tagList__item><a href=/tags/%e6%a4%9c%e7%b4%a2 class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>検索</a></li><li class=partials__tagList__item><a href=/tags/lunr class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>lunr</a></li></ul><img src=/article/hugo/search/thumbnail_hu7a253d997b511fbff22929f86311ed19_4626_640x640_fit_q75_h2_box_3.webp alt=Hugoに検索機能を追加しよう class=single__article__thumbnail><aside class=single__article__toc><h3 class=single__article__toc__title><i class="fas fa-list-ul"></i>目次</h3><nav id=TableOfContents><ul><li><a href=#1-lunrのセットアップ>1. lunrのセットアップ</a></li><li><a href=#2-検索処理の実装>2. 検索処理の実装</a><ul><li><a href=#検索ロジック>検索ロジック</a></li></ul></li><li><a href=#3-検索フォームを設置>3. 検索フォームを設置</a></li></ul></nav></aside><div class="single__article__content markdown-body"><p>このサイトにも実装されているんですが、Hugoにlunaを使った検索機能を実装する方法を紹介します。</p><p>基本的には公式で紹介されているgistを参考に実装します。（コメント下の方にvanilla js版を作ってくれた方がいました！感謝！）</p><iframe src="https://hatenablog-parts.com/embed?url=https://gohugo.io/tools/search/" title="Search for your Hugo Website | Hugo" class="embed-card embed-blogcard" scrolling=no frameborder=0 style="display:block;width:100%;height:190px;max-width:680px;margin:10px 0"></iframe>
+<iframe src="https://hatenablog-parts.com/embed?url=https://gist.github.com/sebz/efddfc8fdcb6b480f567" title="hugo + gruntjs + lunrjs = <3 search" class="embed-card embed-blogcard" scrolling=no frameborder=0 style="display:block;width:100%;height:190px;max-width:680px;margin:10px 0"></iframe><p>こちらのサイトも参考にさせて頂きました。</p><iframe src="https://hatenablog-parts.com/embed?url=https://blog.unigiri.net/article/hugo-lunr%E3%81%AB%E3%82%88%E3%82%8B%E6%97%A5%E6%9C%AC%E8%AA%9E%E5%85%A8%E6%96%87%E6%A4%9C%E7%B4%A2/" title="Hugo + Lunrによる日本語全文検索 | Unigiri" class="embed-card embed-blogcard" scrolling=no frameborder=0 style="display:block;width:100%;height:190px;max-width:680px;margin:10px 0"></iframe><h2 id=1-lunrのセットアップ>1. lunrのセットアップ</h2><p><code>npm install lunr lunr-languages</code>を実行してパッケージをインストールし、config.ymlに下記を追加します</p><p>config.yml</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span><span style=color:#f92672>module</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>mounts</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>source</span>: <span style=color:#ae81ff>static</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>target</span>: <span style=color:#ae81ff>static</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 検索に必要</span>
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>source</span>: <span style=color:#ae81ff>node_modules/lunr/lunr.min.js</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>target</span>: <span style=color:#ae81ff>static/js/vendor/lunr/lunr.min.js</span>
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>source</span>: <span style=color:#ae81ff>node_modules/lunr-languages/lunr.stemmer.support.js</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>target</span>: <span style=color:#ae81ff>static/js/vendor/lunr-languages/lunr.stemmer.support.js</span>
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>source</span>: <span style=color:#ae81ff>node_modules/lunr-languages/tinyseg.js</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>target</span>: <span style=color:#ae81ff>static/js/vendor/lunr-languages/tinyseg.js</span>
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>source</span>: <span style=color:#ae81ff>node_modules/lunr-languages/lunr.ja.js</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>target</span>: <span style=color:#ae81ff>static/js/vendor/lunr-languages/lunr.ja.js</span>
+</span></span></code></pre></div><p>headでlunrを読み込みます</p><p>head.html</p><pre tabindex=0><code class=language-go-template data-lang=go-template>    {{ if eq .Section &#34;search&#34; }}
+        &lt;script type=&#34;text/javascript&#34; src=&#34;/js/vendor/lunr/lunr.min.js&#34;&gt;&lt;/script&gt;
+        &lt;script type=&#34;text/javascript&#34; src=&#34;/js/vendor/lunr-languages/lunr.stemmer.support.js&#34;&gt;&lt;/script&gt;
+        &lt;script type=&#34;text/javascript&#34; src=&#34;/js/vendor/lunr-languages/tinyseg.js&#34;&gt;&lt;/script&gt;
+        &lt;script type=&#34;text/javascript&#34; src=&#34;/js/vendor/lunr-languages/lunr.ja.js&#34;&gt;&lt;/script&gt;
+        &lt;script type=&#34;text/javascript&#34; src=&#34;{{ with  resources.Get &#34;js/search.js&#34; | minify }}{{ .RelPermalink }}{{ end }}&#34;&gt;&lt;/script&gt;
     {{ end }}
-</code></pre><p>searchのsectionを作成し、検索結果ページ（一覧ページ）を作ります</p>
-<p>content/search/_index.md</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-md data-lang=md>---
-title: &#34;検索&#34;
-date: 2021-10-13T00:51:05+9:00
-draft: false
-outputs:
-    <span style=color:#66d9ef>-</span> html
-    <span style=color:#66d9ef>-</span> json
----
-</code></pre></div><p>検索に使用するインデックス用jsonを作成します</p>
-<p>layouts/search/list.json</p>
-<pre tabindex=0><code class=language-go-template data-lang=go-template>{{- $.Scratch.Add &quot;index&quot; slice -}}
-{{- range where .Site.RegularPages &quot;.Section&quot; &quot;==&quot; &quot;article&quot; -}}
-    {{- $thumbnail := .Resources.Match &quot;thumbnail.*&quot; -}}
+</code></pre><p>searchのsectionを作成し、検索結果ページ（一覧ページ）を作ります</p><p>content/search/_index.md</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-md data-lang=md><span style=display:flex><span>---
+</span></span><span style=display:flex><span>title: &#34;検索&#34;
+</span></span><span style=display:flex><span>date: 2021-10-13T00:51:05+9:00
+</span></span><span style=display:flex><span>draft: false
+</span></span><span style=display:flex><span>outputs:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>-</span> html
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>-</span> json
+</span></span><span style=display:flex><span>---
+</span></span></code></pre></div><p>検索に使用するインデックス用jsonを作成します</p><p>layouts/search/list.json</p><pre tabindex=0><code class=language-go-template data-lang=go-template>{{- $.Scratch.Add &#34;index&#34; slice -}}
+{{- range where .Site.RegularPages &#34;.Section&#34; &#34;==&#34; &#34;article&#34; -}}
+    {{- $thumbnail := .Resources.Match &#34;thumbnail.*&#34; -}}
     {{- if $thumbnail -}}
-        {{- $thumbnail = (index $thumbnail 0).Fill (printf &quot;640x360 center q%d webp&quot; .Site.Params.imageQuality) -}}
+        {{- $thumbnail = (index $thumbnail 0).Fill (printf &#34;640x360 center q%d webp&#34; .Site.Params.imageQuality) -}}
     {{- else -}}
         {{- $thumbnail = resources.Get .Site.Params.dafaultNoimage -}}
-        {{- $thumbnail = $thumbnail.Fill (printf &quot;640x360 center q%d webp&quot; .Site.Params.imageQuality) -}}
+        {{- $thumbnail = $thumbnail.Fill (printf &#34;640x360 center q%d webp&#34; .Site.Params.imageQuality) -}}
     {{- end -}}
-    {{- $.Scratch.Add &quot;index&quot; (
-        dict &quot;title&quot; .Title
-            &quot;description&quot; .Description
-            &quot;thumbnail&quot; $thumbnail.Permalink
-            &quot;summary&quot; .Summary
-            &quot;date&quot; (.Date.Format &quot;2006-01-02&quot;)
-            &quot;lastmod&quot; (.Lastmod.Format &quot;2006-01-02&quot;)
-            &quot;tags&quot; .Params.tags
-            &quot;categories&quot; .Params.categories
-            &quot;href&quot; .Permalink
+    {{- $.Scratch.Add &#34;index&#34; (
+        dict &#34;title&#34; .Title
+            &#34;description&#34; .Description
+            &#34;thumbnail&#34; $thumbnail.Permalink
+            &#34;summary&#34; .Summary
+            &#34;date&#34; (.Date.Format &#34;2006-01-02&#34;)
+            &#34;lastmod&#34; (.Lastmod.Format &#34;2006-01-02&#34;)
+            &#34;tags&#34; .Params.tags
+            &#34;categories&#34; .Params.categories
+            &#34;href&#34; .Permalink
     ) -}}
 {{- end -}}
-{{- $.Scratch.Get &quot;index&quot; | jsonify -}}
-</code></pre><h2 id=2-検索処理の実装>2. 検索処理の実装</h2>
-<p>検索処理本体を実装します。実際のソースは下記の通りです</p>
-<p>assets/js/search.js</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#75715e>//vanilla js version of https://gist.github.com/sebz/efddfc8fdcb6b480f567
-</span><span style=color:#75715e></span>
-<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>lunrIndex</span>, <span style=color:#a6e22e>$results</span>, <span style=color:#a6e22e>pagesIndex</span>, <span style=color:#a6e22e>tinySegmenter</span>;
-
-<span style=color:#75715e>// Initialize lunrjs using our generated index file
-</span><span style=color:#75715e></span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>initLunr</span>() {
-    <span style=color:#a6e22e>tinySegmenter</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>lunr</span>.<span style=color:#a6e22e>TinySegmenter</span>();
-
-    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> Promise((<span style=color:#a6e22e>resolve</span>, <span style=color:#a6e22e>reject</span>) =&gt; {
-        <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>request</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>XMLHttpRequest</span>();
-        <span style=color:#a6e22e>request</span>.<span style=color:#a6e22e>open</span>(<span style=color:#e6db74>&#34;GET&#34;</span>, <span style=color:#e6db74>&#34;index.json&#34;</span>, <span style=color:#66d9ef>true</span>);
-
-        <span style=color:#a6e22e>request</span>.<span style=color:#a6e22e>onload</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span> () {
-            <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>request</span>.<span style=color:#a6e22e>status</span> <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>200</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#a6e22e>request</span>.<span style=color:#a6e22e>status</span> <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>400</span>) {
-                <span style=color:#a6e22e>pagesIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>JSON</span>.<span style=color:#a6e22e>parse</span>(<span style=color:#a6e22e>request</span>.<span style=color:#a6e22e>responseText</span>);
-                <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;index:&#34;</span>, <span style=color:#a6e22e>pagesIndex</span>);
-
-                <span style=color:#75715e>// Set up lunrjs by declaring the fields we use
-</span><span style=color:#75715e></span>                <span style=color:#75715e>// Also provide their boost level for the ranking
-</span><span style=color:#75715e></span>                <span style=color:#a6e22e>lunrIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>lunr</span>(<span style=color:#66d9ef>function</span> () {
-                    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>use</span>(<span style=color:#a6e22e>lunr</span>.<span style=color:#a6e22e>ja</span>);
-                    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>field</span>(<span style=color:#e6db74>&#34;title&#34;</span>, {
-                        <span style=color:#a6e22e>boost</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>10</span>,
-                    });
-                    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>field</span>(<span style=color:#e6db74>&#34;categories&#34;</span>);
-                    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>field</span>(<span style=color:#e6db74>&#34;tags&#34;</span>);
-                    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>field</span>(<span style=color:#e6db74>&#34;description&#34;</span>);
-
-                    <span style=color:#75715e>// ref is the result item identifier (I chose the page URL)
-</span><span style=color:#75715e></span>                    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>ref</span>(<span style=color:#e6db74>&#34;href&#34;</span>);
-                    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>pagesIndex</span>.<span style=color:#a6e22e>length</span>; <span style=color:#f92672>++</span><span style=color:#a6e22e>i</span>) {
-                        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>add</span>(<span style=color:#a6e22e>pagesIndex</span>[<span style=color:#a6e22e>i</span>]);
-                    }
-                    <span style=color:#a6e22e>resolve</span>();
-                });
-            } <span style=color:#66d9ef>else</span> {
-                <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>err</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>textStatus</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;, &#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>error</span>;
-                <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;Error getting Hugo index flie:&#34;</span>, <span style=color:#a6e22e>err</span>);
-                <span style=color:#a6e22e>reject</span>(<span style=color:#a6e22e>err</span>);
-            }
-        };
-
-        <span style=color:#a6e22e>request</span>.<span style=color:#a6e22e>send</span>();
-    });
-}
-
-<span style=color:#75715e>// Nothing crazy here, just hook up a event handler on the input field
-</span><span style=color:#75715e></span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>initUI</span>() {
-    <span style=color:#a6e22e>$results</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>getElementById</span>(<span style=color:#e6db74>&#34;results&#34;</span>);
-    <span style=color:#a6e22e>$search</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>getElementById</span>(<span style=color:#e6db74>&#34;search&#34;</span>);
-    <span style=color:#a6e22e>$search</span>.<span style=color:#a6e22e>onkeyup</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span> () {
-        <span style=color:#66d9ef>while</span> (<span style=color:#a6e22e>$results</span>.<span style=color:#a6e22e>firstChild</span>) {
-            <span style=color:#a6e22e>$results</span>.<span style=color:#a6e22e>removeChild</span>(<span style=color:#a6e22e>$results</span>.<span style=color:#a6e22e>firstChild</span>);
-        }
-
-        <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>query</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>$search</span>.<span style=color:#a6e22e>value</span>;
-        <span style=color:#a6e22e>query</span> <span style=color:#f92672>=</span> decodeURI(<span style=color:#a6e22e>query</span>);
-        <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>results</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>search</span>(<span style=color:#a6e22e>query</span>);
-        <span style=color:#a6e22e>renderResults</span>(<span style=color:#a6e22e>results</span>);
-    };
-}
-
-<span style=color:#75715e>/**
-</span><span style=color:#75715e> * Trigger a search in lunr and transform the result
-</span><span style=color:#75715e> *
-</span><span style=color:#75715e> * @param  {String} query
-</span><span style=color:#75715e> * @return {Array}  results
-</span><span style=color:#75715e> */</span>
-<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>search</span>(<span style=color:#a6e22e>query</span>) {
-    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>segs</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>tinySegmenter</span>.<span style=color:#a6e22e>segment</span>(<span style=color:#a6e22e>query</span>);
-    <span style=color:#a6e22e>segs</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>segs</span>.<span style=color:#a6e22e>map</span>(<span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>seg</span>) {
-        <span style=color:#a6e22e>seg</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>seg</span>.<span style=color:#a6e22e>trim</span>();
-        <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>seg</span>.<span style=color:#a6e22e>length</span>) {
-            <span style=color:#75715e>// 空でなければ、AND検索であいまい検索
-</span><span style=color:#75715e></span>            <span style=color:#a6e22e>seg</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`+*</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>seg</span><span style=color:#e6db74>}</span><span style=color:#e6db74>*`</span>;
-        }
-        <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>seg</span>;
-    });
-    <span style=color:#a6e22e>query</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>segs</span>.<span style=color:#a6e22e>join</span>(<span style=color:#e6db74>&#34; &#34;</span>).<span style=color:#a6e22e>replace</span>(<span style=color:#e6db74>/\s+/g</span>, <span style=color:#e6db74>&#34; &#34;</span>).<span style=color:#a6e22e>trim</span>();
-
-    <span style=color:#75715e>// Find the item in our index corresponding to the lunr one to have more info
-</span><span style=color:#75715e></span>    <span style=color:#75715e>// Lunr result:
-</span><span style=color:#75715e></span>    <span style=color:#75715e>//  {ref: &#34;/section/page1&#34;, score: 0.2725657778206127}
-</span><span style=color:#75715e></span>    <span style=color:#75715e>// Our result:
-</span><span style=color:#75715e></span>    <span style=color:#75715e>//  {title:&#34;Page1&#34;, href:&#34;/section/page1&#34;, ...}
-</span><span style=color:#75715e></span>    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;search:&#34;</span>, <span style=color:#a6e22e>query</span>);
-    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>lunrIndex</span>.<span style=color:#a6e22e>search</span>(<span style=color:#a6e22e>query</span>).<span style=color:#a6e22e>map</span>(<span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>result</span>) {
-        <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>pagesIndex</span>.<span style=color:#a6e22e>filter</span>(<span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>page</span>) {
-            <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>page</span>.<span style=color:#a6e22e>href</span> <span style=color:#f92672>===</span> <span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>ref</span>;
-        })[<span style=color:#ae81ff>0</span>];
-    });
-}
-
-<span style=color:#75715e>/**
-</span><span style=color:#75715e> * Display the 10 first results
-</span><span style=color:#75715e> *
-</span><span style=color:#75715e> * @param  {Array} results to display
-</span><span style=color:#75715e> */</span>
-<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>renderResults</span>(<span style=color:#a6e22e>results</span>) {
-    <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>results</span>.<span style=color:#a6e22e>length</span>) {
-        <span style=color:#66d9ef>return</span>;
-    }
-
-    <span style=color:#75715e>// Only show the ten first results
-</span><span style=color:#75715e></span>    <span style=color:#a6e22e>$results</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>getElementById</span>(<span style=color:#e6db74>&#34;results&#34;</span>);
-    <span style=color:#a6e22e>results</span>.<span style=color:#a6e22e>slice</span>(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>10</span>).<span style=color:#a6e22e>forEach</span>(<span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>result</span>) {
-        <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>div</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#34;div&#34;</span>);
-        <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>category</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>;
-        <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>categories</span>) {
-            <span style=color:#a6e22e>category</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`
-</span><span style=color:#e6db74>                &lt;a href=&#34;/categories/</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>categories</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;&gt;
-</span><span style=color:#e6db74>                    &lt;i class=&#34;fas fa-folder&#34;&gt;&lt;/i&gt;&amp;nbsp;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>categories</span><span style=color:#e6db74>}</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>                &lt;/a&gt;
-</span><span style=color:#e6db74>            `</span>;
-        }
-        <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>tag</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>;
-        <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>tags</span>) {
-            <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>list</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>tags</span>.<span style=color:#a6e22e>map</span>(<span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>val</span>) {
-                <span style=color:#66d9ef>return</span> <span style=color:#e6db74>`
-</span><span style=color:#e6db74>                    &lt;li class=&#34;partials__tagList__item&#34;&gt;
-</span><span style=color:#e6db74>                        &lt;a href=&#34;/tags/</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>val</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#34; class=&#34;partials__tagList__itemLink&#34;&gt;
-</span><span style=color:#e6db74>                            &lt;i class=&#34;fas fa-tag partials__tagList__itemIcon&#34;&gt;&lt;/i&gt;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>val</span><span style=color:#e6db74>}</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>                        &lt;/a&gt;
-</span><span style=color:#e6db74>                    &lt;/li&gt;
-</span><span style=color:#e6db74>                `</span>;
-            });
-            <span style=color:#a6e22e>tag</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`
-</span><span style=color:#e6db74>                &lt;ul class=&#34;partials__tagList&#34;&gt;
-</span><span style=color:#e6db74>                    </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>list</span>.<span style=color:#a6e22e>join</span>(<span style=color:#e6db74>&#34;&#34;</span>)<span style=color:#e6db74>}</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>                &lt;/ul&gt;
-</span><span style=color:#e6db74>            `</span>;
-        }
-        <span style=color:#a6e22e>div</span>.<span style=color:#a6e22e>innerHTML</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`
-</span><span style=color:#e6db74>            &lt;article class=&#34;partials__articleCard&#34;&gt;
-</span><span style=color:#e6db74>                &lt;div class=&#34;partials__articleCard__inner&#34;&gt;
-</span><span style=color:#e6db74>                    &lt;a href=&#34;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>href</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#34; class=&#34;partials__articleCard__link&#34;&gt;&lt;/a&gt;
-</span><span style=color:#e6db74>                    &lt;img src=&#39;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>thumbnail</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#39; alt=&#34;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>title</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#34; loading=&#34;lazy&#34; class=&#34;partials__articleCard__thumbnail&#34;&gt;
-</span><span style=color:#e6db74>                    &lt;h4 class=&#34;partials__articleCard__title&#34;&gt;
-</span><span style=color:#e6db74>                        </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>title</span><span style=color:#e6db74>}</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>                    &lt;/h4&gt;
-</span><span style=color:#e6db74>                    &lt;div class=&#34;partials__articleCard__detail&#34;&gt;
-</span><span style=color:#e6db74>                        </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>category</span><span style=color:#e6db74>}</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>                        &lt;div class=&#34;partials__articleCard__detail__center&#34;&gt;&lt;/div&gt;
-</span><span style=color:#e6db74>                        &lt;div&gt;
-</span><span style=color:#e6db74>                            &lt;i class=&#34;fas fa-clock&#34;&gt;&lt;/i&gt;&amp;nbsp;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>lastmod</span><span style=color:#e6db74>}</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>                        &lt;/div&gt;
-</span><span style=color:#e6db74>                    &lt;/div&gt;
-</span><span style=color:#e6db74>                    </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>tag</span><span style=color:#e6db74>}</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>                    &lt;div class=&#34;partials__articleCard__description&#34;&gt;
-</span><span style=color:#e6db74>                        </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>summary</span><span style=color:#e6db74>}</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>                    &lt;/div&gt;
-</span><span style=color:#e6db74>                &lt;/div&gt;
-</span><span style=color:#e6db74>            &lt;/article&gt;
-</span><span style=color:#e6db74>        `</span>;
-        <span style=color:#a6e22e>$results</span>.<span style=color:#a6e22e>appendChild</span>(<span style=color:#a6e22e>div</span>);
-    });
-}
-
-<span style=color:#75715e>// Let&#39;s get started
-</span><span style=color:#75715e></span><span style=color:#a6e22e>initLunr</span>().<span style=color:#a6e22e>then</span>(<span style=color:#66d9ef>function</span> () {
-    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>query</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>getQuery</span>()[<span style=color:#e6db74>&#34;query&#34;</span>] <span style=color:#f92672>||</span> <span style=color:#e6db74>&#34;&#34;</span>;
-    <span style=color:#a6e22e>query</span> <span style=color:#f92672>=</span> decodeURI(<span style=color:#a6e22e>query</span>);
-    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>results</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>search</span>(<span style=color:#a6e22e>query</span>);
-    <span style=color:#a6e22e>renderResults</span>(<span style=color:#a6e22e>results</span>);
-    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>query</span>.<span style=color:#a6e22e>length</span>) {
-        document.<span style=color:#a6e22e>getElementById</span>(<span style=color:#e6db74>&#34;list-title&#34;</span>).<span style=color:#a6e22e>innerText</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`「</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>query</span><span style=color:#e6db74>}</span><span style=color:#e6db74>」を検索`</span>;
-    }
-});
-
-document.<span style=color:#a6e22e>addEventListener</span>(<span style=color:#e6db74>&#34;DOMContentLoaded&#34;</span>, <span style=color:#66d9ef>function</span> () {
-    <span style=color:#75715e>// initUI();
-</span><span style=color:#75715e></span>});
-
-<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>getQuery</span>() {
-    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>queryString</span> <span style=color:#f92672>=</span> window.<span style=color:#a6e22e>location</span>.<span style=color:#a6e22e>search</span>;
-    <span style=color:#a6e22e>queryString</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>queryString</span>.<span style=color:#a6e22e>slice</span>(<span style=color:#ae81ff>1</span>); <span style=color:#75715e>// 文頭?を除外
-</span><span style=color:#75715e></span>
-    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>queries</span> <span style=color:#f92672>=</span> {};
-    <span style=color:#a6e22e>queryString</span>.<span style=color:#a6e22e>split</span>(<span style=color:#e6db74>&#34;&amp;&#34;</span>).<span style=color:#a6e22e>forEach</span>(<span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>item</span>) {
-        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>q</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>item</span>.<span style=color:#a6e22e>split</span>(<span style=color:#e6db74>&#34;=&#34;</span>);
-        <span style=color:#a6e22e>queries</span>[<span style=color:#a6e22e>q</span>[<span style=color:#ae81ff>0</span>]] <span style=color:#f92672>=</span> <span style=color:#a6e22e>q</span>[<span style=color:#ae81ff>1</span>];
-    });
-
-    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>queries</span>;
-}
-</code></pre></div><h3 id=検索ロジック>検索ロジック</h3>
-<p>基本的にはHugo公式のgistを使っていますが、そのままでは思ったような検索結果を得られないので検索ロジックを修正します。</p>
-<p>検索ロジックを修正するにはまず、下記を知る必要があります。</p>
-<ol>
-<li>記事のインデックスがどのように作成されているか</li>
-<li>lunrの検索方法</li>
-</ol>
-<h4 id=1-記事のインデックスがどのように作成されているか>1. 記事のインデックスがどのように作成されているか</h4>
-<p>日本語では下記ライブラリを使って日本語を分かち書きし、記事のインデックスが作成されます。<br>
-<a href=http://chasen.org/~taku/software/TinySegmenter/>http://chasen.org/~taku/software/TinySegmenter/</a></p>
-<p>このような記事タイトルの場合</p>
-<pre tabindex=0><code>サイト内ブログカードを作る自作ショートコード
-</code></pre><p>こんな風にインデックスが作成される訳です</p>
-<pre tabindex=0><code>サイト | 内 | ブログカード | を | 作る | 自作 | ショートコード |
-</code></pre><p>なのでHugo公式にあるgistの検索ロジックそのままでは、「サイト内ブログ」といったワードで検索しても引っ掛からないのです。</p>
-<p>それを解決するために、一度検索キーワードも分かち書きをする必要があります</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#a6e22e>tinySegmenter</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>lunr</span>.<span style=color:#a6e22e>TinySegmenter</span>();
-<span style=color:#960050;background-color:#1e0010>〜</span>
-<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>segs</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>tinySegmenter</span>.<span style=color:#a6e22e>segment</span>(<span style=color:#a6e22e>query</span>);
-</code></pre></div><h4 id=2-lunrの検索方法>2. lunrの検索方法</h4>
-<p>公式ドキュメントにありますが<br>
-<a href=https://lunrjs.com/guides/searching.html>https://lunrjs.com/guides/searching.html</a></p>
-<h5 id=簡単にまとめると>簡単にまとめると</h5>
-<p>「foo」を持つインデックスを持つ記事を検索する場合</p>
-<pre tabindex=0><code>idx.search('foo')
-</code></pre><p>「foo」または「bar」を持つインデックスを持つ記事を検索する場合</p>
-<pre tabindex=0><code>idx.search('foo bar')
-</code></pre><p>「foo」を含むインデックスを持つ記事を検索する場合</p>
-<pre tabindex=0><code>idx.search('*foo*')
-</code></pre><p>フィールドで絞りたい場合</p>
-<pre tabindex=0><code>idx.search('title:foo')
-</code></pre><p>「foo」に対して関連スコアを上げたい（重みつけ10倍）場合</p>
-<pre tabindex=0><code>idx.search('foo^10 bar')
-</code></pre><p>「foo」の編集距離が1（「fooo」や「fo」や「boo」）のインデックスを持つ記事を検索する場合</p>
-<pre tabindex=0><code>idx.search('foo~1')
-</code></pre><p>AND検索の場合</p>
-<pre tabindex=0><code>idx.search(&quot;+foo +bar&quot;)
-</code></pre><p>「bar」を含まない検索</p>
-<pre tabindex=0><code>idx.search(&quot;foo -bar&quot;)
-</code></pre><h5 id=上記を踏まえて>上記を踏まえて</h5>
-<ul>
-<li>できるだけ検索ワードを記事に引っ掛ける</li>
-<li>スペースの場合はAND検索とする</li>
-</ul>
-<p>とすると、検索ロジックが下記のようになります</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js>    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>segs</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>tinySegmenter</span>.<span style=color:#a6e22e>segment</span>(<span style=color:#a6e22e>query</span>);
-    <span style=color:#a6e22e>segs</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>segs</span>.<span style=color:#a6e22e>map</span>(<span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>seg</span>) {
-        <span style=color:#a6e22e>seg</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>seg</span>.<span style=color:#a6e22e>trim</span>();
-        <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>seg</span>.<span style=color:#a6e22e>length</span>) {
-            <span style=color:#75715e>// 空でなければ、AND検索であいまい検索
-</span><span style=color:#75715e></span>            <span style=color:#a6e22e>seg</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`+*</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>seg</span><span style=color:#e6db74>}</span><span style=color:#e6db74>*`</span>;
-        }
-        <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>seg</span>;
-    });
-    <span style=color:#a6e22e>query</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>segs</span>.<span style=color:#a6e22e>join</span>(<span style=color:#e6db74>&#34; &#34;</span>).<span style=color:#a6e22e>replace</span>(<span style=color:#e6db74>/\s+/g</span>, <span style=color:#e6db74>&#34; &#34;</span>).<span style=color:#a6e22e>trim</span>();
-</code></pre></div><h2 id=3-検索フォームを設置>3. 検索フォームを設置</h2>
-<p>あとは検索フォームを設置して、検索ページに飛ばすだけです</p>
-<pre tabindex=0><code class=language-go-template data-lang=go-template>&lt;form action=&quot;{{ &quot;search&quot; | relURL }}&quot; class=&quot;partials__sidebar__search__form&quot;&gt;
-    &lt;input type=&quot;text&quot; name=&quot;query&quot; id=&quot;search&quot; class=&quot;partials__sidebar__search__query&quot;&gt;
-    &lt;button type=&quot;submit&quot; class=&quot;partials__sidebar__search__button&quot;&gt;
-        &lt;i class=&quot;fas fa-search&quot;&gt;&lt;/i&gt;
+{{- $.Scratch.Get &#34;index&#34; | jsonify -}}
+</code></pre><h2 id=2-検索処理の実装>2. 検索処理の実装</h2><p>検索処理本体を実装します。実際のソースは下記の通りです</p><p>assets/js/search.js</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#75715e>//vanilla js version of https://gist.github.com/sebz/efddfc8fdcb6b480f567
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>lunrIndex</span>, <span style=color:#a6e22e>$results</span>, <span style=color:#a6e22e>pagesIndex</span>, <span style=color:#a6e22e>tinySegmenter</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Initialize lunrjs using our generated index file
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>initLunr</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>tinySegmenter</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>lunr</span>.<span style=color:#a6e22e>TinySegmenter</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> Promise((<span style=color:#a6e22e>resolve</span>, <span style=color:#a6e22e>reject</span>) =&gt; {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>request</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>XMLHttpRequest</span>();
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>request</span>.<span style=color:#a6e22e>open</span>(<span style=color:#e6db74>&#34;GET&#34;</span>, <span style=color:#e6db74>&#34;index.json&#34;</span>, <span style=color:#66d9ef>true</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>request</span>.<span style=color:#a6e22e>onload</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span> () {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>request</span>.<span style=color:#a6e22e>status</span> <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>200</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#a6e22e>request</span>.<span style=color:#a6e22e>status</span> <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>400</span>) {
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>pagesIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>JSON</span>.<span style=color:#a6e22e>parse</span>(<span style=color:#a6e22e>request</span>.<span style=color:#a6e22e>responseText</span>);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;index:&#34;</span>, <span style=color:#a6e22e>pagesIndex</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>                <span style=color:#75715e>// Set up lunrjs by declaring the fields we use
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>                <span style=color:#75715e>// Also provide their boost level for the ranking
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>                <span style=color:#a6e22e>lunrIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>lunr</span>(<span style=color:#66d9ef>function</span> () {
+</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>use</span>(<span style=color:#a6e22e>lunr</span>.<span style=color:#a6e22e>ja</span>);
+</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>field</span>(<span style=color:#e6db74>&#34;title&#34;</span>, {
+</span></span><span style=display:flex><span>                        <span style=color:#a6e22e>boost</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>10</span>,
+</span></span><span style=display:flex><span>                    });
+</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>field</span>(<span style=color:#e6db74>&#34;categories&#34;</span>);
+</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>field</span>(<span style=color:#e6db74>&#34;tags&#34;</span>);
+</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>field</span>(<span style=color:#e6db74>&#34;description&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>                    <span style=color:#75715e>// ref is the result item identifier (I chose the page URL)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>                    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>ref</span>(<span style=color:#e6db74>&#34;href&#34;</span>);
+</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>pagesIndex</span>.<span style=color:#a6e22e>length</span>; <span style=color:#f92672>++</span><span style=color:#a6e22e>i</span>) {
+</span></span><span style=display:flex><span>                        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>add</span>(<span style=color:#a6e22e>pagesIndex</span>[<span style=color:#a6e22e>i</span>]);
+</span></span><span style=display:flex><span>                    }
+</span></span><span style=display:flex><span>                    <span style=color:#a6e22e>resolve</span>();
+</span></span><span style=display:flex><span>                });
+</span></span><span style=display:flex><span>            } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>err</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>textStatus</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;, &#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>error</span>;
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;Error getting Hugo index flie:&#34;</span>, <span style=color:#a6e22e>err</span>);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>reject</span>(<span style=color:#a6e22e>err</span>);
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        };
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>request</span>.<span style=color:#a6e22e>send</span>();
+</span></span><span style=display:flex><span>    });
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Nothing crazy here, just hook up a event handler on the input field
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>initUI</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>$results</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>getElementById</span>(<span style=color:#e6db74>&#34;results&#34;</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>$search</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>getElementById</span>(<span style=color:#e6db74>&#34;search&#34;</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>$search</span>.<span style=color:#a6e22e>onkeyup</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span> () {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>while</span> (<span style=color:#a6e22e>$results</span>.<span style=color:#a6e22e>firstChild</span>) {
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>$results</span>.<span style=color:#a6e22e>removeChild</span>(<span style=color:#a6e22e>$results</span>.<span style=color:#a6e22e>firstChild</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>query</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>$search</span>.<span style=color:#a6e22e>value</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>query</span> <span style=color:#f92672>=</span> decodeURI(<span style=color:#a6e22e>query</span>);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>results</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>search</span>(<span style=color:#a6e22e>query</span>);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>renderResults</span>(<span style=color:#a6e22e>results</span>);
+</span></span><span style=display:flex><span>    };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * Trigger a search in lunr and transform the result
+</span></span></span><span style=display:flex><span><span style=color:#75715e> *
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param  {String} query
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @return {Array}  results
+</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>search</span>(<span style=color:#a6e22e>query</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>segs</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>tinySegmenter</span>.<span style=color:#a6e22e>segment</span>(<span style=color:#a6e22e>query</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>segs</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>segs</span>.<span style=color:#a6e22e>map</span>(<span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>seg</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>seg</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>seg</span>.<span style=color:#a6e22e>trim</span>();
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>seg</span>.<span style=color:#a6e22e>length</span>) {
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// 空でなければ、AND検索であいまい検索
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            <span style=color:#a6e22e>seg</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`+*</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>seg</span><span style=color:#e6db74>}</span><span style=color:#e6db74>*`</span>;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>seg</span>;
+</span></span><span style=display:flex><span>    });
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>query</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>segs</span>.<span style=color:#a6e22e>join</span>(<span style=color:#e6db74>&#34; &#34;</span>).<span style=color:#a6e22e>replace</span>(<span style=color:#e6db74>/\s+/g</span>, <span style=color:#e6db74>&#34; &#34;</span>).<span style=color:#a6e22e>trim</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Find the item in our index corresponding to the lunr one to have more info
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// Lunr result:
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>//  {ref: &#34;/section/page1&#34;, score: 0.2725657778206127}
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// Our result:
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>//  {title:&#34;Page1&#34;, href:&#34;/section/page1&#34;, ...}
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;search:&#34;</span>, <span style=color:#a6e22e>query</span>);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>lunrIndex</span>.<span style=color:#a6e22e>search</span>(<span style=color:#a6e22e>query</span>).<span style=color:#a6e22e>map</span>(<span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>result</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>pagesIndex</span>.<span style=color:#a6e22e>filter</span>(<span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>page</span>) {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>page</span>.<span style=color:#a6e22e>href</span> <span style=color:#f92672>===</span> <span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>ref</span>;
+</span></span><span style=display:flex><span>        })[<span style=color:#ae81ff>0</span>];
+</span></span><span style=display:flex><span>    });
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * Display the 10 first results
+</span></span></span><span style=display:flex><span><span style=color:#75715e> *
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param  {Array} results to display
+</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>renderResults</span>(<span style=color:#a6e22e>results</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>results</span>.<span style=color:#a6e22e>length</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Only show the ten first results
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>$results</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>getElementById</span>(<span style=color:#e6db74>&#34;results&#34;</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>results</span>.<span style=color:#a6e22e>slice</span>(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>10</span>).<span style=color:#a6e22e>forEach</span>(<span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>result</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>div</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#34;div&#34;</span>);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>category</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>categories</span>) {
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>category</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                &lt;a href=&#34;/categories/</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>categories</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    &lt;i class=&#34;fas fa-folder&#34;&gt;&lt;/i&gt;&amp;nbsp;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>categories</span><span style=color:#e6db74>}</span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                &lt;/a&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            `</span>;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>tag</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>tags</span>) {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>list</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>tags</span>.<span style=color:#a6e22e>map</span>(<span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>val</span>) {
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>return</span> <span style=color:#e6db74>`
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    &lt;li class=&#34;partials__tagList__item&#34;&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                        &lt;a href=&#34;/tags/</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>val</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#34; class=&#34;partials__tagList__itemLink&#34;&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                            &lt;i class=&#34;fas fa-tag partials__tagList__itemIcon&#34;&gt;&lt;/i&gt;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>val</span><span style=color:#e6db74>}</span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                        &lt;/a&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    &lt;/li&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                `</span>;
+</span></span><span style=display:flex><span>            });
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>tag</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                &lt;ul class=&#34;partials__tagList&#34;&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>list</span>.<span style=color:#a6e22e>join</span>(<span style=color:#e6db74>&#34;&#34;</span>)<span style=color:#e6db74>}</span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                &lt;/ul&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            `</span>;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>div</span>.<span style=color:#a6e22e>innerHTML</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            &lt;article class=&#34;partials__articleCard&#34;&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                &lt;div class=&#34;partials__articleCard__inner&#34;&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    &lt;a href=&#34;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>href</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#34; class=&#34;partials__articleCard__link&#34;&gt;&lt;/a&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    &lt;img src=&#39;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>thumbnail</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#39; alt=&#34;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>title</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#34; loading=&#34;lazy&#34; class=&#34;partials__articleCard__thumbnail&#34;&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    &lt;h4 class=&#34;partials__articleCard__title&#34;&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                        </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>title</span><span style=color:#e6db74>}</span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    &lt;/h4&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    &lt;div class=&#34;partials__articleCard__detail&#34;&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                        </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>category</span><span style=color:#e6db74>}</span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                        &lt;div class=&#34;partials__articleCard__detail__center&#34;&gt;&lt;/div&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                        &lt;div&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                            &lt;i class=&#34;fas fa-clock&#34;&gt;&lt;/i&gt;&amp;nbsp;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>lastmod</span><span style=color:#e6db74>}</span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                        &lt;/div&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    &lt;/div&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>tag</span><span style=color:#e6db74>}</span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    &lt;div class=&#34;partials__articleCard__description&#34;&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                        </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>summary</span><span style=color:#e6db74>}</span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    &lt;/div&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                &lt;/div&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            &lt;/article&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        `</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>$results</span>.<span style=color:#a6e22e>appendChild</span>(<span style=color:#a6e22e>div</span>);
+</span></span><span style=display:flex><span>    });
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Let&#39;s get started
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>initLunr</span>().<span style=color:#a6e22e>then</span>(<span style=color:#66d9ef>function</span> () {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>query</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>getQuery</span>()[<span style=color:#e6db74>&#34;query&#34;</span>] <span style=color:#f92672>||</span> <span style=color:#e6db74>&#34;&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>query</span> <span style=color:#f92672>=</span> decodeURI(<span style=color:#a6e22e>query</span>);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>results</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>search</span>(<span style=color:#a6e22e>query</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>renderResults</span>(<span style=color:#a6e22e>results</span>);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>query</span>.<span style=color:#a6e22e>length</span>) {
+</span></span><span style=display:flex><span>        document.<span style=color:#a6e22e>getElementById</span>(<span style=color:#e6db74>&#34;list-title&#34;</span>).<span style=color:#a6e22e>innerText</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`「</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>query</span><span style=color:#e6db74>}</span><span style=color:#e6db74>」を検索`</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>});
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>document.<span style=color:#a6e22e>addEventListener</span>(<span style=color:#e6db74>&#34;DOMContentLoaded&#34;</span>, <span style=color:#66d9ef>function</span> () {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// initUI();
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>});
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>getQuery</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>queryString</span> <span style=color:#f92672>=</span> window.<span style=color:#a6e22e>location</span>.<span style=color:#a6e22e>search</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>queryString</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>queryString</span>.<span style=color:#a6e22e>slice</span>(<span style=color:#ae81ff>1</span>); <span style=color:#75715e>// 文頭?を除外
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>queries</span> <span style=color:#f92672>=</span> {};
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>queryString</span>.<span style=color:#a6e22e>split</span>(<span style=color:#e6db74>&#34;&amp;&#34;</span>).<span style=color:#a6e22e>forEach</span>(<span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>item</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>q</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>item</span>.<span style=color:#a6e22e>split</span>(<span style=color:#e6db74>&#34;=&#34;</span>);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>queries</span>[<span style=color:#a6e22e>q</span>[<span style=color:#ae81ff>0</span>]] <span style=color:#f92672>=</span> <span style=color:#a6e22e>q</span>[<span style=color:#ae81ff>1</span>];
+</span></span><span style=display:flex><span>    });
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>queries</span>;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h3 id=検索ロジック>検索ロジック</h3><p>基本的にはHugo公式のgistを使っていますが、そのままでは思ったような検索結果を得られないので検索ロジックを修正します。</p><p>検索ロジックを修正するにはまず、下記を知る必要があります。</p><ol><li>記事のインデックスがどのように作成されているか</li><li>lunrの検索方法</li></ol><h4 id=1-記事のインデックスがどのように作成されているか>1. 記事のインデックスがどのように作成されているか</h4><p>日本語では下記ライブラリを使って日本語を分かち書きし、記事のインデックスが作成されます。<br><a href=http://chasen.org/~taku/software/TinySegmenter/>http://chasen.org/~taku/software/TinySegmenter/</a></p><p>このような記事タイトルの場合</p><pre tabindex=0><code>サイト内ブログカードを作る自作ショートコード
+</code></pre><p>こんな風にインデックスが作成される訳です</p><pre tabindex=0><code>サイト | 内 | ブログカード | を | 作る | 自作 | ショートコード |
+</code></pre><p>なのでHugo公式にあるgistの検索ロジックそのままでは、「サイト内ブログ」といったワードで検索しても引っ掛からないのです。</p><p>それを解決するために、一度検索キーワードも分かち書きをする必要があります</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#a6e22e>tinySegmenter</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>lunr</span>.<span style=color:#a6e22e>TinySegmenter</span>();
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>〜</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>segs</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>tinySegmenter</span>.<span style=color:#a6e22e>segment</span>(<span style=color:#a6e22e>query</span>);
+</span></span></code></pre></div><h4 id=2-lunrの検索方法>2. lunrの検索方法</h4><p>公式ドキュメントにありますが<br><a href=https://lunrjs.com/guides/searching.html>https://lunrjs.com/guides/searching.html</a></p><h5 id=簡単にまとめると>簡単にまとめると</h5><p>「foo」を持つインデックスを持つ記事を検索する場合</p><pre tabindex=0><code>idx.search(&#39;foo&#39;)
+</code></pre><p>「foo」または「bar」を持つインデックスを持つ記事を検索する場合</p><pre tabindex=0><code>idx.search(&#39;foo bar&#39;)
+</code></pre><p>「foo」を含むインデックスを持つ記事を検索する場合</p><pre tabindex=0><code>idx.search(&#39;*foo*&#39;)
+</code></pre><p>フィールドで絞りたい場合</p><pre tabindex=0><code>idx.search(&#39;title:foo&#39;)
+</code></pre><p>「foo」に対して関連スコアを上げたい（重みつけ10倍）場合</p><pre tabindex=0><code>idx.search(&#39;foo^10 bar&#39;)
+</code></pre><p>「foo」の編集距離が1（「fooo」や「fo」や「boo」）のインデックスを持つ記事を検索する場合</p><pre tabindex=0><code>idx.search(&#39;foo~1&#39;)
+</code></pre><p>AND検索の場合</p><pre tabindex=0><code>idx.search(&#34;+foo +bar&#34;)
+</code></pre><p>「bar」を含まない検索</p><pre tabindex=0><code>idx.search(&#34;foo -bar&#34;)
+</code></pre><h5 id=上記を踏まえて>上記を踏まえて</h5><ul><li>できるだけ検索ワードを記事に引っ掛ける</li><li>スペースの場合はAND検索とする</li></ul><p>とすると、検索ロジックが下記のようになります</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span>    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>segs</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>tinySegmenter</span>.<span style=color:#a6e22e>segment</span>(<span style=color:#a6e22e>query</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>segs</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>segs</span>.<span style=color:#a6e22e>map</span>(<span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>seg</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>seg</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>seg</span>.<span style=color:#a6e22e>trim</span>();
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>seg</span>.<span style=color:#a6e22e>length</span>) {
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// 空でなければ、AND検索であいまい検索
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            <span style=color:#a6e22e>seg</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`+*</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>seg</span><span style=color:#e6db74>}</span><span style=color:#e6db74>*`</span>;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>seg</span>;
+</span></span><span style=display:flex><span>    });
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>query</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>segs</span>.<span style=color:#a6e22e>join</span>(<span style=color:#e6db74>&#34; &#34;</span>).<span style=color:#a6e22e>replace</span>(<span style=color:#e6db74>/\s+/g</span>, <span style=color:#e6db74>&#34; &#34;</span>).<span style=color:#a6e22e>trim</span>();
+</span></span></code></pre></div><h2 id=3-検索フォームを設置>3. 検索フォームを設置</h2><p>あとは検索フォームを設置して、検索ページに飛ばすだけです</p><pre tabindex=0><code class=language-go-template data-lang=go-template>&lt;form action=&#34;{{ &#34;search&#34; | relURL }}&#34; class=&#34;partials__sidebar__search__form&#34;&gt;
+    &lt;input type=&#34;text&#34; name=&#34;query&#34; id=&#34;search&#34; class=&#34;partials__sidebar__search__query&#34;&gt;
+    &lt;button type=&#34;submit&#34; class=&#34;partials__sidebar__search__button&#34;&gt;
+        &lt;i class=&#34;fas fa-search&#34;&gt;&lt;/i&gt;
     &lt;/button&gt;
 &lt;/form&gt;
-</code></pre><p>検索結果を表示するため、htmlタグに「id=results」を設定するのをお忘れなく！</p>
-</div>
-<div class=single__article__comment>
-</div>
-</article>
-<div class=single__relatedArticleList>
-<h3 class=single__relatedArticleList__title>関連記事</h3>
-<article class=partials__relatedArticle>
-<div class=partials__relatedArticle__inner>
-<a href=https://hugo-theme-salt.okdyy75.com/article/hugo/archive/ class=partials__relatedArticle__link></a>
-<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/archive/thumbnail_hu5726299922efdf47da26d7ebb7472693_4871_576x324_fill_q75_h2_box_center_3.webp alt=Hugoで年月別のアーカイブを作る方法 loading=lazy class=partials__relatedArticle__thumbnail>
-<div class=partials__relatedArticle__content>
-<h4 class=partials__relatedArticle__title>
-Hugoで年月別のアーカイブを作る方法
-</h4>
-<ul class=partials__tagList>
-<li class=partials__tagList__item>
-<a href=/tags/%e3%82%a2%e3%83%bc%e3%82%ab%e3%82%a4%e3%83%96 class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>アーカイブ
-</a>
-</li>
-<li class=partials__tagList__item>
-<a href=/tags/tips class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>tips
-</a>
-</li>
-</ul>
-<div class=partials__relatedArticle__description>
-Hugoでアーカイブを作るには2種類ほど方法があります ①タグやカテゴリと同様にタクソノミーを設定する config.ymlにarchiveを追加し taxonomies: archive: archives 記事のフロントマターに年月を設定してあげれば archives: ["2021年12月"] こんな感じのデータが作成されます。この時「yyyy年mm月」の形式でないと年月でソートされないので注意です {{ .Site.Taxonomies.archives.Alphabetical.Reverse }} [ {2021年12月 [WeightedPage(0,
-</div>
-</div>
-</div>
-</article>
-<article class=partials__relatedArticle>
-<div class=partials__relatedArticle__inner>
-<a href=https://hugo-theme-salt.okdyy75.com/article/hugo/fontawesome/ class=partials__relatedArticle__link></a>
-<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/fontawesome/thumbnail_hu1d18fa1c515742002d9fbc7177b77ebf_6131_576x324_fill_q75_h2_box_center_3.webp alt=HugoでFontAwesomeを使う方法 loading=lazy class=partials__relatedArticle__thumbnail>
-<div class=partials__relatedArticle__content>
-<h4 class=partials__relatedArticle__title>
-HugoでFontAwesomeを使う方法
-</h4>
-<ul class=partials__tagList>
-<li class=partials__tagList__item>
-<a href=/tags/tips class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>tips
-</a>
-</li>
-<li class=partials__tagList__item>
-<a href=/tags/%e3%82%a2%e3%82%a4%e3%82%b3%e3%83%b3 class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>アイコン
-</a>
-</li>
-<li class=partials__tagList__item>
-<a href=/tags/%e3%83%a9%e3%82%a4%e3%83%96%e3%83%a9%e3%83%aa class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>ライブラリ
-</a>
-</li>
-<li class=partials__tagList__item>
-<a href=/tags/FontAwesome class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>FontAwesome
-</a>
-</li>
-</ul>
-<div class=partials__relatedArticle__description>
-HugoにFontAwesomeを使う場合はHugoの機能であるモジュールを使うと簡単に実現できます！ 1. npmでFontAwesomeをインストール package.jsonがない場合はnpm initしてください npm install -D @fortawesome/fontawesome-free 2. config.ymlのmoduleに使いたいjsファイルをmounts 注意点としてmountすると、デフォルトであるtargetのルートディレクトリが無視されるので明示的に追加する
-</div>
-</div>
-</div>
-</article>
-</div>
-<div class=single__navigation>
-<a href=https://hugo-theme-salt.okdyy75.com/article/hugo/tips/ class=single__navigation__prev>Hugoを使い始めた人に捧げるTips11選</a>
-<div class=single__navigation__center></div>
-<a href=https://hugo-theme-salt.okdyy75.com/article/hugo/fontawesome/ class=single__navigation__next>HugoでFontAwesomeを使う方法</a>
-</div>
-</section>
-</div>
-</main>
-<aside class=sidebar>
-<div class=sidebar__inner>
-<div class=partials__sidebar>
-<div class="pcShow partials__sidebar__card">
-<h4 class=partials__sidebar__title>
-検索
-</h4>
-<nav class=partials__sidebar__search>
-<form action=/search class=partials__sidebar__search__form>
-<input type=text name=query id=search class=partials__sidebar__search__query>
+</code></pre><p>検索結果を表示するため、htmlタグに「id=results」を設定するのをお忘れなく！</p></div><div class=single__article__comment></div></article><div class=single__relatedArticleList><h3 class=single__relatedArticleList__title>関連記事</h3><article class=partials__relatedArticle><div class=partials__relatedArticle__inner><a href=https://hugo-theme-salt.okdyy75.com/article/hugo/archive/ class=partials__relatedArticle__link></a>
+<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/archive/thumbnail_hu5726299922efdf47da26d7ebb7472693_4871_576x324_fill_q75_h2_box_center_3.webp alt=Hugoで年月別のアーカイブを作る方法 loading=lazy class=partials__relatedArticle__thumbnail><div class=partials__relatedArticle__content><h4 class=partials__relatedArticle__title>Hugoで年月別のアーカイブを作る方法</h4><ul class=partials__tagList><li class=partials__tagList__item><a href=/tags/%e3%82%a2%e3%83%bc%e3%82%ab%e3%82%a4%e3%83%96 class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>アーカイブ</a></li><li class=partials__tagList__item><a href=/tags/tips class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>tips</a></li></ul><div class=partials__relatedArticle__description>Hugoでアーカイブを作るには2種類ほど方法があります ①タグやカテゴリと同様にタクソノミーを設定する config.ymlにarchiveを追加し taxonomies: archive: archives 記事のフロントマターに年月を設定してあげれば archives: ["2021年12月"] こんな感じのデータが作成されます。この時「yyyy年mm月」の形式でないと年月でソートされないので注意です {{ .Site.Taxonomies.archives.Alphabetical.Reverse }} [ {2021年12月 [WeightedPage(0,</div></div></div></article><article class=partials__relatedArticle><div class=partials__relatedArticle__inner><a href=https://hugo-theme-salt.okdyy75.com/article/hugo/fontawesome/ class=partials__relatedArticle__link></a>
+<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/fontawesome/thumbnail_hu1d18fa1c515742002d9fbc7177b77ebf_6131_576x324_fill_q75_h2_box_center_3.webp alt=HugoでFontAwesomeを使う方法 loading=lazy class=partials__relatedArticle__thumbnail><div class=partials__relatedArticle__content><h4 class=partials__relatedArticle__title>HugoでFontAwesomeを使う方法</h4><ul class=partials__tagList><li class=partials__tagList__item><a href=/tags/tips class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>tips</a></li><li class=partials__tagList__item><a href=/tags/%e3%82%a2%e3%82%a4%e3%82%b3%e3%83%b3 class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>アイコン</a></li><li class=partials__tagList__item><a href=/tags/%e3%83%a9%e3%82%a4%e3%83%96%e3%83%a9%e3%83%aa class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>ライブラリ</a></li><li class=partials__tagList__item><a href=/tags/FontAwesome class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>FontAwesome</a></li></ul><div class=partials__relatedArticle__description>HugoにFontAwesomeを使う場合はHugoの機能であるモジュールを使うと簡単に実現できます！ 1. npmでFontAwesomeをインストール package.jsonがない場合はnpm initしてください npm install -D @fortawesome/fontawesome-free 2. config.ymlのmoduleに使いたいjsファイルをmounts 注意点としてmountすると、デフォルトであるtargetのルートディレクトリが無視されるので明示的に追加する</div></div></div></article></div><div class=single__navigation><a href=https://hugo-theme-salt.okdyy75.com/article/hugo/tips/ class=single__navigation__prev>Hugoを使い始めた人に捧げるTips11選</a><div class=single__navigation__center></div><a href=https://hugo-theme-salt.okdyy75.com/article/hugo/fontawesome/ class=single__navigation__next>HugoでFontAwesomeを使う方法</a></div></section></div></main><aside class=sidebar><div class=sidebar__inner><div class=partials__sidebar><div class="pcShow partials__sidebar__card"><h4 class=partials__sidebar__title>検索</h4><nav class=partials__sidebar__search><form action=/search class=partials__sidebar__search__form><input type=text name=query id=search class=partials__sidebar__search__query>
 <button type=submit class=partials__sidebar__search__button>
-<i class="fas fa-search"></i>
-</button>
-</form>
-</nav>
-</div>
-<div class=partials__sidebar__card>
-<h3 class=partials__sidebar__title>
-プロフィール
-</h3>
-<nav class=partials__sidebar__profile>
-<img src=https://hugo-theme-salt.okdyy75.com/image/profile_icon_hu4744dbaf07a887c7366e50ea4ac12e19_14416_200x200_fill_q75_h2_box_center_3.webp alt=icon class=partials__sidebar__profile__icon>
-<div class=partials__sidebar__profile__name>
-okdyy75
-</div>
-<div class=partials__sidebar__profile__description>
-Hugo用ブログテーマ「Salt」を作りました
-</div>
-<div class=partials__snsLinks>
-<a href=https://twitter.com/okdyy75 target=_blank class=partials__snsLinks__link--twitter>
-<i class="fa-lg fab fa-twitter"></i>
-</a>
-<a href=https://www.instagram.com/instagram target=_blank class=partials__snsLinks__link--instagram>
-<i class="fa-lg fab fa-instagram"></i>
-</a>
-<a href=https://www.facebook.com/facebook target=_blank class=partials__snsLinks__link--facebook>
-<i class="fa-lg fab fa-facebook-f"></i>
-</a>
-<a href=https://www.youtube.com/user/YouTubeJapan target=_blank class=partials__snsLinks__link--youtube>
-<i class="fa-lg fab fa-youtube"></i>
-</a>
-<a href=https://github.com/okdyy75 target=_blank class=partials__snsLinks__link--github>
-<i class="fa-lg fab fa-github"></i>
-</a>
-<a href=https://qiita.com/okdyy75 target=_blank class=partials__snsLinks__link--qiita>
-Q
-</a>
-<a href=https://zenn.dev/okdyy75 target=_blank class=partials__snsLinks__link--zenn>
-Z
-</a>
-<a href=mailto:okdyy75@gmail.com target=_blank class=partials__snsLinks__link--email>
-<i class="fa-lg fas fa-envelope"></i>
-</a>
-<a href=https://github.com/okdyy75 target=_blank class=partials__snsLinks__link--other>
-<i class="fa-lg fas fa-link"></i>
-</a>
-</div>
-</nav>
-</div>
-<div class=partials__sidebar__card>
-<h4 class=partials__sidebar__title>
-お知らせ
-</h4>
-<nav class=partials__sidebar__information>
-<a href=/information>
-<div>
-2022年1月12日<br>
-ランキングを追加しました<br>
-</div>
-</a>
-</nav>
-</div>
-<div class=partials__sidebar__card>
-<h3 class=partials__sidebar__title>
-メニュー
-</h3>
-<nav class=partials__sidebar__menu>
-<ul class=partials__sidebar__menu__items>
-<li class=partials__sidebar__menu__item>
-<a href=/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9 class=partials__sidebar__menu__itemLink>
-<div class=partials__sidebar__menu__itemIcon>
-<i class="fa-2x fas fa-book"></i>
-</div>
-<div class=partials__sidebar__menu__itemTitle>
-Saltの使い方
-</div>
-</a>
-</li>
-<li class=partials__sidebar__menu__item>
-<a href=/tags/Hugo class=partials__sidebar__menu__itemLink>
-<div class=partials__sidebar__menu__itemIcon>
-<i class="fa-2x fas fa-cog"></i>
-</div>
-<div class=partials__sidebar__menu__itemTitle>
-Hugo
-</div>
-</a>
-</li>
-<li class=partials__sidebar__menu__item>
-<a href=/categories/Go%E8%A8%80%E8%AA%9E class=partials__sidebar__menu__itemLink>
-<div class=partials__sidebar__menu__itemIcon>
-<i class="fa-2x fas fa-laptop-code"></i>
-</div>
-<div class=partials__sidebar__menu__itemTitle>
-Go言語
-</div>
-</a>
-</li>
-<li class=partials__sidebar__menu__item>
-<a href=/tags/tips class=partials__sidebar__menu__itemLink>
-<div class=partials__sidebar__menu__itemIcon>
-<i class="fa-2x fas fa-mobile-alt"></i>
-</div>
-<div class=partials__sidebar__menu__itemTitle>
-Tips
-</div>
-</a>
-</li>
-<li class=partials__sidebar__menu__item>
-<a href=/tags/%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%B3%E3%83%BC%E3%83%89 class=partials__sidebar__menu__itemLink>
-<div class=partials__sidebar__menu__itemIcon>
-<i class="fa-2x fas fa-wrench"></i>
-</div>
-<div class=partials__sidebar__menu__itemTitle>
-shortcode
-</div>
-</a>
-</li>
-<li class=partials__sidebar__menu__item>
-<a href=/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB class=partials__sidebar__menu__itemLink>
-<div class=partials__sidebar__menu__itemIcon>
-<i class="fa-2x fab fa-safari"></i>
-</div>
-<div class=partials__sidebar__menu__itemTitle>
-サンプル
-</div>
-</a>
-</li>
-</ul>
-</nav>
-</div>
-<div class=partials__sidebar__card>
-<h3 class=partials__sidebar__title>
-新着記事
-</h3>
-<nav class=partials__sidebar__article>
-<ul class=partials__sidebar__article__items>
-<li class=partials__sidebar__article__item>
-<a href=https://hugo-theme-salt.okdyy75.com/article/hugo/build-error/ class=partials__sidebar__article__itemLink>
-<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/build-error/thumbnail_hu35a2922253720ea632397e348d85ecee_4260_192x108_fill_q75_h2_box_center_3.webp alt=HugoでCIからビルド際にたまにエラーになる原因 loading=lazy class=partials__sidebar__article__itemThumbnail>
-<div class=partials__sidebar__article__itemDetail>
-<div class=partials__sidebar__article__itemTitle--line3>
-HugoでCIからビルド際にたまにエラーになる原因
-</div>
-</div>
-</a>
-</li>
-<li class=partials__sidebar__article__item>
-<a href=https://hugo-theme-salt.okdyy75.com/article/hugo/ranking/ class=partials__sidebar__article__itemLink>
-<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/ranking/thumbnail_hue62fd672beaa75a2609baf58cf75dd4b_3561_192x108_fill_q75_h2_box_center_3.webp alt=Hugoで一週間のPV数順の人気記事を作る方法 loading=lazy class=partials__sidebar__article__itemThumbnail>
-<div class=partials__sidebar__article__itemDetail>
-<div class=partials__sidebar__article__itemTitle--line3>
-Hugoで一週間のPV数順の人気記事を作る方法
-</div>
-</div>
-</a>
-</li>
-<li class=partials__sidebar__article__item>
-<a href=https://hugo-theme-salt.okdyy75.com/article/hugo/archive/ class=partials__sidebar__article__itemLink>
-<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/archive/thumbnail_hu5726299922efdf47da26d7ebb7472693_4871_192x108_fill_q75_h2_box_center_3.webp alt=Hugoで年月別のアーカイブを作る方法 loading=lazy class=partials__sidebar__article__itemThumbnail>
-<div class=partials__sidebar__article__itemDetail>
-<div class=partials__sidebar__article__itemTitle--line3>
-Hugoで年月別のアーカイブを作る方法
-</div>
-</div>
-</a>
-</li>
-<li class=partials__sidebar__article__item>
-<a href=https://hugo-theme-salt.okdyy75.com/article/hugo/fontawesome/ class=partials__sidebar__article__itemLink>
-<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/fontawesome/thumbnail_hu1d18fa1c515742002d9fbc7177b77ebf_6131_192x108_fill_q75_h2_box_center_3.webp alt=HugoでFontAwesomeを使う方法 loading=lazy class=partials__sidebar__article__itemThumbnail>
-<div class=partials__sidebar__article__itemDetail>
-<div class=partials__sidebar__article__itemTitle--line3>
-HugoでFontAwesomeを使う方法
-</div>
-</div>
-</a>
-</li>
-<li class=partials__sidebar__article__item>
-<a href=https://hugo-theme-salt.okdyy75.com/article/hugo/search/ class=partials__sidebar__article__itemLink>
-<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/search/thumbnail_hu7a253d997b511fbff22929f86311ed19_4626_192x108_fill_q75_h2_box_center_3.webp alt=Hugoに検索機能を追加しよう loading=lazy class=partials__sidebar__article__itemThumbnail>
-<div class=partials__sidebar__article__itemDetail>
-<div class=partials__sidebar__article__itemTitle--line3>
-Hugoに検索機能を追加しよう
-</div>
-</div>
-</a>
-</li>
-</ul>
-</nav>
-</div>
-<div class=partials__sidebar__card>
-<h3 class=partials__sidebar__title--pickup>
-ピックアップ
-</h3>
-<nav class=partials__sidebar__article>
-<ul class=partials__sidebar__article__items>
-<li class=partials__sidebar__article__item>
-<a href=https://hugo-theme-salt.okdyy75.com/article/salt/about/ class=partials__sidebar__article__itemLink>
-<img src=https://hugo-theme-salt.okdyy75.com/article/salt/about/thumbnail_huc1633a480d1f14d3ad339ce0d839c0d3_2170_192x108_fill_q75_h2_box_center_3.webp alt=Hugoブログテーマ「Salt」とは？ loading=lazy class=partials__sidebar__article__itemThumbnail>
-<div class=partials__sidebar__article__itemDetail>
-<div class=partials__sidebar__article__itemTitle--line3>
-Hugoブログテーマ「Salt」とは？
-</div>
-</div>
-</a>
-</li>
-<li class=partials__sidebar__article__item>
-<a href=https://hugo-theme-salt.okdyy75.com/article/salt/custom-figure/ class=partials__sidebar__article__itemLink>
-<img src=https://hugo-theme-salt.okdyy75.com/article/salt/custom-figure/thumbnail_huabbb313cfc6fe0189548b2f94140ad9f_14559_192x108_fill_q75_h2_box_center_3.webp alt=画像のリサイズ・トリミング可能な自作ショートコード loading=lazy class=partials__sidebar__article__itemThumbnail>
-<div class=partials__sidebar__article__itemDetail>
-<div class=partials__sidebar__article__itemTitle--line3>
-画像のリサイズ・トリミング可能な自作ショートコード
-</div>
-</div>
-</a>
-</li>
-<li class=partials__sidebar__article__item>
-<a href=https://hugo-theme-salt.okdyy75.com/article/salt/self-blog-card/ class=partials__sidebar__article__itemLink>
-<img src=https://hugo-theme-salt.okdyy75.com/article/salt/self-blog-card/thumbnail_hu887fde30b154802a30332967b448fbb6_8526_192x108_fill_q75_h2_box_center_3.webp alt=サイト内ブログカードを作る自作ショートコード loading=lazy class=partials__sidebar__article__itemThumbnail>
-<div class=partials__sidebar__article__itemDetail>
-<div class=partials__sidebar__article__itemTitle--line3>
-サイト内ブログカードを作る自作ショートコード
-</div>
-</div>
-</a>
-</li>
-<li class=partials__sidebar__article__item>
-<a href=https://hugo-theme-salt.okdyy75.com/article/hugo/tips/ class=partials__sidebar__article__itemLink>
-<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/tips/thumbnail_hu850c6f5958680582ad131d7609fc6b2a_2666_192x108_fill_q75_h2_box_center_3.webp alt=Hugoを使い始めた人に捧げるTips11選 loading=lazy class=partials__sidebar__article__itemThumbnail>
-<div class=partials__sidebar__article__itemDetail>
-<div class=partials__sidebar__article__itemTitle--line3>
-Hugoを使い始めた人に捧げるTips11選
-</div>
-</div>
-</a>
-</li>
-</ul>
-</nav>
-</div>
-<div class=partials__sidebar__card>
-<h3 class=partials__sidebar__title--ranking>
-ランキング
-</h3>
-<nav class=partials__sidebar__article>
-<ul class=partials__sidebar__article__items>
-<li class=partials__sidebar__article__item>
-<a href=https://hugo-theme-salt.okdyy75.com/article/salt/about/ class=partials__sidebar__article__itemLink>
-<img src=https://hugo-theme-salt.okdyy75.com/article/salt/about/thumbnail_huc1633a480d1f14d3ad339ce0d839c0d3_2170_192x108_fill_q75_h2_box_center_3.webp alt=Hugoブログテーマ「Salt」とは？ loading=lazy class=partials__sidebar__article__itemThumbnail>
-<div class=partials__sidebar__article__itemDetail>
-<div class=partials__sidebar__article__itemTitle--line2>
-Hugoブログテーマ「Salt」とは？
-</div>
-<div class=partials__sidebar__article__itemPv>
-7pv
-</div>
-</div>
-</a>
-</li>
-<li class=partials__sidebar__article__item>
-<a href=https://hugo-theme-salt.okdyy75.com/article/hugo/about/ class=partials__sidebar__article__itemLink>
-<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/about/thumbnail_hu3631644e14d4f47f03ef96281b561b50_4022_192x108_fill_q75_h2_box_center_3.webp alt=Hugoでできること loading=lazy class=partials__sidebar__article__itemThumbnail>
-<div class=partials__sidebar__article__itemDetail>
-<div class=partials__sidebar__article__itemTitle--line2>
-Hugoでできること
-</div>
-<div class=partials__sidebar__article__itemPv>
-4pv
-</div>
-</div>
-</a>
-</li>
-<li class=partials__sidebar__article__item>
-<a href=https://hugo-theme-salt.okdyy75.com/article/hugo/search/ class=partials__sidebar__article__itemLink>
-<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/search/thumbnail_hu7a253d997b511fbff22929f86311ed19_4626_192x108_fill_q75_h2_box_center_3.webp alt=Hugoに検索機能を追加しよう loading=lazy class=partials__sidebar__article__itemThumbnail>
-<div class=partials__sidebar__article__itemDetail>
-<div class=partials__sidebar__article__itemTitle--line2>
-Hugoに検索機能を追加しよう
-</div>
-<div class=partials__sidebar__article__itemPv>
-4pv
-</div>
-</div>
-</a>
-</li>
-<li class=partials__sidebar__article__item>
-<a href=https://hugo-theme-salt.okdyy75.com/article/hugo/tips/ class=partials__sidebar__article__itemLink>
-<img src=https://hugo-theme-salt.okdyy75.com/article/hugo/tips/thumbnail_hu850c6f5958680582ad131d7609fc6b2a_2666_192x108_fill_q75_h2_box_center_3.webp alt=Hugoを使い始めた人に捧げるTips11選 loading=lazy class=partials__sidebar__article__itemThumbnail>
-<div class=partials__sidebar__article__itemDetail>
-<div class=partials__sidebar__article__itemTitle--line2>
-Hugoを使い始めた人に捧げるTips11選
-</div>
-<div class=partials__sidebar__article__itemPv>
-4pv
-</div>
-</div>
-</a>
-</li>
-<li class=partials__sidebar__article__item>
-<a href=https://hugo-theme-salt.okdyy75.com/article/sample/hugo-shortcode/ class=partials__sidebar__article__itemLink>
-<img src=https://hugo-theme-salt.okdyy75.com/article/sample/hugo-shortcode/thumbnail_hu3e76b4d1d3cd4901770e54ca242e78fa_5891_192x108_fill_q75_h2_box_center_3.webp alt=Hugo標準のショートコード表示サンプル loading=lazy class=partials__sidebar__article__itemThumbnail>
-<div class=partials__sidebar__article__itemDetail>
-<div class=partials__sidebar__article__itemTitle--line2>
-Hugo標準のショートコード表示サンプル
-</div>
-<div class=partials__sidebar__article__itemPv>
-2pv
-</div>
-</div>
-</a>
-</li>
-</ul>
-</nav>
-</div>
-<div class=partials__sidebar__card>
-<h3 class=partials__sidebar__title>
-カテゴリー
-</h3>
-<nav class=partials__sidebar__category>
-<ul class=partials__sidebar__category__items>
-<li class=partials__sidebar__category__item>
-<a href=/categories/Hugo class=partials__sidebar__category__itemLink>
-<div>
-<i class="fas fa-arrow-circle-right partials__sidebar__category__itemIcon"></i>
-Hugo
-</div>
-<div class=partials__sidebar__category__itemCount>
-7
-</div>
-</a>
-</li>
-<li class=partials__sidebar__category__item>
-<a href=/categories/%e3%82%b5%e3%83%b3%e3%83%97%e3%83%ab class=partials__sidebar__category__itemLink>
-<div>
-<i class="fas fa-arrow-circle-right partials__sidebar__category__itemIcon"></i>
-サンプル
-</div>
-<div class=partials__sidebar__category__itemCount>
-4
-</div>
-</a>
-</li>
-<li class=partials__sidebar__category__item>
-<a href=/categories/Salt%e3%81%ae%e4%bd%bf%e3%81%84%e6%96%b9 class=partials__sidebar__category__itemLink>
-<div>
-<i class="fas fa-arrow-circle-right partials__sidebar__category__itemIcon"></i>
-Saltの使い方
-</div>
-<div class=partials__sidebar__category__itemCount>
-3
-</div>
-</a>
-</li>
-<li class=partials__sidebar__category__item>
-<a href=/categories/Go%e8%a8%80%e8%aa%9e class=partials__sidebar__category__itemLink>
-<div>
-<i class="fas fa-arrow-circle-right partials__sidebar__category__itemIcon"></i>
-Go言語
-</div>
-<div class=partials__sidebar__category__itemCount>
-2
-</div>
-</a>
-</li>
-</ul>
-</nav>
-</div>
-<div class=partials__sidebar__card>
-<h3 class=partials__sidebar__title>
-タグ
-</h3>
-<nav class=partials__sidebar__tag>
-<ul class=partials__tagList>
-<li class=partials__tagList__item>
-<a href=/tags/tips class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>tips
-</a>
-</li>
-<li class=partials__tagList__item>
-<a href=/tags/Hugo class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>Hugo
-</a>
-</li>
-<li class=partials__tagList__item>
-<a href=/tags/%e3%82%b7%e3%83%a7%e3%83%bc%e3%83%88%e3%82%b3%e3%83%bc%e3%83%89 class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>ショートコード
-</a>
-</li>
-<li class=partials__tagList__item>
-<a href=/tags/go class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>go
-</a>
-</li>
-<li class=partials__tagList__item>
-<a href=/tags/CI class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>CI
-</a>
-</li>
-<li class=partials__tagList__item>
-<a href=/tags/FontAwesome class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>FontAwesome
-</a>
-</li>
-<li class=partials__tagList__item>
-<a href=/tags/GA class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>GA
-</a>
-</li>
-<li class=partials__tagList__item>
-<a href=/tags/go-template class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>go-template
-</a>
-</li>
-<li class=partials__tagList__item>
-<a href=/tags/Hugo%e3%83%86%e3%83%bc%e3%83%9e class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>Hugoテーマ
-</a>
-</li>
-<li class=partials__tagList__item>
-<a href=/tags/lunr class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>lunr
-</a>
-</li>
-<li class=partials__tagList__item>
-<a href=/tags/%e3%81%be%e3%81%a8%e3%82%81 class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>まとめ
-</a>
-</li>
-<li class=partials__tagList__item>
-<a href=/tags/%e3%82%a2%e3%82%a4%e3%82%b3%e3%83%b3 class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>アイコン
-</a>
-</li>
-<li class=partials__tagList__item>
-<a href=/tags/%e3%82%a2%e3%83%bc%e3%82%ab%e3%82%a4%e3%83%96 class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>アーカイブ
-</a>
-</li>
-<li class=partials__tagList__item>
-<a href=/tags/%e3%83%87%e3%83%97%e3%83%ad%e3%82%a4 class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>デプロイ
-</a>
-</li>
-<li class=partials__tagList__item>
-<a href=/tags/%e3%83%9e%e3%83%bc%e3%82%af%e3%83%80%e3%82%a6%e3%83%b3 class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>マークダウン
-</a>
-</li>
-<li class=partials__tagList__item>
-<a href=/tags/%e3%83%a9%e3%82%a4%e3%83%96%e3%83%a9%e3%83%aa class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>ライブラリ
-</a>
-</li>
-<li class=partials__tagList__item>
-<a href=/tags/%e3%83%a9%e3%83%b3%e3%82%ad%e3%83%b3%e3%82%b0 class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>ランキング
-</a>
-</li>
-<li class=partials__tagList__item>
-<a href=/tags/%e4%ba%ba%e6%b0%97%e8%a8%98%e4%ba%8b class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>人気記事
-</a>
-</li>
-<li class=partials__tagList__item>
-<a href=/tags/%e6%a4%9c%e7%b4%a2 class=partials__tagList__itemLink>
-<i class="fas fa-tag partials__tagList__itemIcon"></i>検索
-</a>
-</li>
-</ul>
-</nav>
-</div>
-<div class=partials__sidebar__card>
-<h3 class=partials__sidebar__title>
-アーカイブ
-</h3>
-<nav class=partials__sidebar__archive>
-<ul class=partials__sidebar__archive__yearList>
-<li class="close archive-accordion partials__sidebar__archive__yearItem">
-<div class=partials__sidebar__archive__yearItemTitle>2022年</div>
-<div class="archive-accordion-child-wrapper partials__sidebar__archive__monthListWrapper">
-<ul class="archive-accordion-child partials__sidebar__archive__monthList">
-<li class="archive-accordion-child partials__sidebar__archive__monthItem">
-<a href=/archives/2022%e5%b9%b41%e6%9c%88 class=partials__sidebar__archive__monthItemLink>
-2022年1月（2）
-</a>
-</li>
-</ul>
-</div>
-</li>
-<li class="close archive-accordion partials__sidebar__archive__yearItem">
-<div class=partials__sidebar__archive__yearItemTitle>2021年</div>
-<div class="archive-accordion-child-wrapper partials__sidebar__archive__monthListWrapper">
-<ul class="archive-accordion-child partials__sidebar__archive__monthList">
-<li class="archive-accordion-child partials__sidebar__archive__monthItem">
-<a href=/archives/2021%e5%b9%b412%e6%9c%88 class=partials__sidebar__archive__monthItemLink>
-2021年12月（2）
-</a>
-</li>
-<li class="archive-accordion-child partials__sidebar__archive__monthItem">
-<a href=/archives/2021%e5%b9%b410%e6%9c%88 class=partials__sidebar__archive__monthItemLink>
-2021年10月（1）
-</a>
-</li>
-<li class="archive-accordion-child partials__sidebar__archive__monthItem">
-<a href=/archives/2021%e5%b9%b49%e6%9c%88 class=partials__sidebar__archive__monthItemLink>
-2021年9月（12）
-</a>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</nav>
-</div>
-<script>document.querySelectorAll('.archive-accordion').forEach(function(a){a.addEventListener('click',function(a){if(a.target.tagName==='A')return;a.currentTarget.classList.toggle('open'),a.currentTarget.classList.toggle('close'),a.currentTarget.classList.contains('open')?a.currentTarget.querySelector('.archive-accordion-child-wrapper').style.height=a.currentTarget.querySelector('.archive-accordion-child').offsetHeight+'px':a.currentTarget.querySelector('.archive-accordion-child-wrapper').style.height='0'})})</script>
-</div>
-</div>
-</aside>
-</div>
-<footer class=footer>
-<div class=footer__inner><div class=partials__footer>
-<div class=partials__footer__menu>
-<ul class=partials__footer__menu__list>
-<li><a href=/about>このサイトについて</a></li>
-<li><a href=/information>お知らせ</a></li></ul>
-<ul class=partials__footer__menu__list>
-<li><a href=/privacy-policy>プライバシーポリシー</a></li>
-<li><a href=https://github.com/okdyy75/hugo-theme-salt/issues>お問い合わせ</a></li></ul>
-</div>
-<p class=partials__footer__copyright>
-© 2021 okdyy75<br>
-Powered by <a href=https://gohugo.io/ target=_blank>Hugo</a> | Hugo Theme Salt
-</p>
-</div>
-</div>
-</footer>
-</div>
-<div id=overlay class="close overlay"></div>
-<script>window.addEventListener('DOMContentLoaded',a=>{document.querySelector('#headerBlock').style.height=document.querySelector('.header').offsetHeight+'px'})</script>
-<script>document.querySelectorAll('#hamburger, #overlay').forEach(a=>{a.addEventListener('click',function(a){document.querySelector('#hamburger').classList.toggle('open'),document.querySelector('#hamburger').classList.toggle('close'),document.querySelector('#hamburgerMenu').classList.toggle('open'),document.querySelector('#hamburgerMenu').classList.toggle('close'),document.querySelector('#overlay').classList.toggle('open'),document.querySelector('#overlay').classList.toggle('close')})})</script>
-<script>let isLoaded=!1;window.addEventListener("scroll",function(){if(isLoaded)return;(document.documentElement.scrollTop!=0||document.body.scrollTop!=0)&&(function(){const b="ca-pub-9459277760652211";let a=document.createElement("script");a.type="text/javascript",a.crossorigin="anonymous",a.async=!0,a.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client="+b,document.body.appendChild(a)}(),function(){const b="G-LR5GBHW5M5";let a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src="https://www.googletagmanager.com/gtag/js?id="+b,document.body.appendChild(a),window.dataLayer=window.dataLayer||[];function c(){dataLayer.push(arguments)}c("js",new Date),c("config",b)}(),isLoaded=!0)},!0)</script>
-</body>
-</html>
+<i class="fas fa-search"></i></button></form></nav></div><div class=partials__sidebar__card><h3 class=partials__sidebar__title>プロフィール</h3><nav class=partials__sidebar__profile><img src=https://hugo-theme-salt.okdyy75.com/image/profile_icon_hu4744dbaf07a887c7366e50ea4ac12e19_14416_200x200_fill_q75_h2_box_center_3.webp alt=icon class=partials__sidebar__profile__icon><div class=partials__sidebar__profile__name>okdyy75</div><div class=partials__sidebar__profile__description>Hugo用ブログテーマ「Salt」を作りました</div><div class=partials__snsLinks><a href=https://twitter.com/okdyy75 target=_blank class=partials__snsLinks__link--twitter><i class="fa-lg fab fa-twitter"></i></a>
+<a href=https://www.instagram.com/instagram target=_blank class=partials__snsLinks__link--instagram><i class="fa-lg fab fa-instagram"></i></a>
+<a href=https://www.facebook.com/facebook target=_blank class=partials__snsLinks__link--facebook><i class="fa-lg fab fa-facebook-f"></i></a>
+<a href=https://www.youtube.com/user/YouTubeJapan target=_blank class=partials__snsLinks__link--youtube><i class="fa-lg fab fa-youtube"></i></a>
+<a href=https://github.com/okdyy75 target=_blank class=partials__snsLinks__link--github><i class="fa-lg fab fa-github"></i></a>
+<a href=https://qiita.com/okdyy75 target=_blank class=partials__snsLinks__link--qiita>Q</a>
+<a href=https://zenn.dev/okdyy75 target=_blank class=partials__snsLinks__link--zenn>Z</a>
+<a href=mailto:okdyy75@gmail.com target=_blank class=partials__snsLinks__link--email><i class="fa-lg fas fa-envelope"></i></a>
+<a href=https://github.com/okdyy75 target=_blank class=partials__snsLinks__link--other><i class="fa-lg fas fa-link"></i></a></div></nav></div><div class=partials__sidebar__card><h4 class=partials__sidebar__title>お知らせ</h4><nav class=partials__sidebar__information><a href=/information><div>2022年1月12日<br>ランキングを追加しました<br></div></a></nav></div><div class=partials__sidebar__card><h3 class=partials__sidebar__title>メニュー</h3><nav class=partials__sidebar__menu><ul class=partials__sidebar__menu__items><li class=partials__sidebar__menu__item><a href=/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9 class=partials__sidebar__menu__itemLink><div class=partials__sidebar__menu__itemIcon><i class="fa-2x fas fa-book"></i></div><div class=partials__sidebar__menu__itemTitle>Saltの使い方</div></a></li><li class=partials__sidebar__menu__item><a href=/tags/Hugo class=partials__sidebar__menu__itemLink><div class=partials__sidebar__menu__itemIcon><i class="fa-2x fas fa-cog"></i></div><div class=partials__sidebar__menu__itemTitle>Hugo</div></a></li><li class=partials__sidebar__menu__item><a href=/categories/Go%E8%A8%80%E8%AA%9E class=partials__sidebar__menu__itemLink><div class=partials__sidebar__menu__itemIcon><i class="fa-2x fas fa-laptop-code"></i></div><div class=partials__sidebar__menu__itemTitle>Go言語</div></a></li><li class=partials__sidebar__menu__item><a href=/tags/tips class=partials__sidebar__menu__itemLink><div class=partials__sidebar__menu__itemIcon><i class="fa-2x fas fa-mobile-alt"></i></div><div class=partials__sidebar__menu__itemTitle>Tips</div></a></li><li class=partials__sidebar__menu__item><a href=/tags/%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%B3%E3%83%BC%E3%83%89 class=partials__sidebar__menu__itemLink><div class=partials__sidebar__menu__itemIcon><i class="fa-2x fas fa-wrench"></i></div><div class=partials__sidebar__menu__itemTitle>shortcode</div></a></li><li class=partials__sidebar__menu__item><a href=/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB class=partials__sidebar__menu__itemLink><div class=partials__sidebar__menu__itemIcon><i class="fa-2x fab fa-safari"></i></div><div class=partials__sidebar__menu__itemTitle>サンプル</div></a></li></ul></nav></div><div class=partials__sidebar__card><h3 class=partials__sidebar__title>新着記事</h3><nav class=partials__sidebar__article><ul class=partials__sidebar__article__items><li class=partials__sidebar__article__item><a href=https://hugo-theme-salt.okdyy75.com/article/salt/blog-card/ class=partials__sidebar__article__itemLink><img src=https://hugo-theme-salt.okdyy75.com/article/salt/blog-card/thumbnail_hu5037f250d9cc1ce8eb58a963a9cc9a1b_7726_192x108_fill_q75_h2_box_center_3.webp alt=Hugoでついに外部URLのブログカードを作れるようになった【自作ショートコード】 loading=lazy class=partials__sidebar__article__itemThumbnail><div class=partials__sidebar__article__itemDetail><div class=partials__sidebar__article__itemTitle--line3>Hugoでついに外部URLのブログカードを作れるようになった【自作ショートコード】</div></div></a></li><li class=partials__sidebar__article__item><a href=https://hugo-theme-salt.okdyy75.com/article/hugo/build-error/ class=partials__sidebar__article__itemLink><img src=https://hugo-theme-salt.okdyy75.com/article/hugo/build-error/thumbnail_hu35a2922253720ea632397e348d85ecee_4260_192x108_fill_q75_h2_box_center_3.webp alt=HugoでCIからビルド際にたまにエラーになる原因 loading=lazy class=partials__sidebar__article__itemThumbnail><div class=partials__sidebar__article__itemDetail><div class=partials__sidebar__article__itemTitle--line3>HugoでCIからビルド際にたまにエラーになる原因</div></div></a></li><li class=partials__sidebar__article__item><a href=https://hugo-theme-salt.okdyy75.com/article/hugo/ranking/ class=partials__sidebar__article__itemLink><img src=https://hugo-theme-salt.okdyy75.com/article/hugo/ranking/thumbnail_hue62fd672beaa75a2609baf58cf75dd4b_3561_192x108_fill_q75_h2_box_center_3.webp alt=Hugoで一週間のPV数順の人気記事を作る方法 loading=lazy class=partials__sidebar__article__itemThumbnail><div class=partials__sidebar__article__itemDetail><div class=partials__sidebar__article__itemTitle--line3>Hugoで一週間のPV数順の人気記事を作る方法</div></div></a></li><li class=partials__sidebar__article__item><a href=https://hugo-theme-salt.okdyy75.com/article/hugo/archive/ class=partials__sidebar__article__itemLink><img src=https://hugo-theme-salt.okdyy75.com/article/hugo/archive/thumbnail_hu5726299922efdf47da26d7ebb7472693_4871_192x108_fill_q75_h2_box_center_3.webp alt=Hugoで年月別のアーカイブを作る方法 loading=lazy class=partials__sidebar__article__itemThumbnail><div class=partials__sidebar__article__itemDetail><div class=partials__sidebar__article__itemTitle--line3>Hugoで年月別のアーカイブを作る方法</div></div></a></li><li class=partials__sidebar__article__item><a href=https://hugo-theme-salt.okdyy75.com/article/hugo/fontawesome/ class=partials__sidebar__article__itemLink><img src=https://hugo-theme-salt.okdyy75.com/article/hugo/fontawesome/thumbnail_hu1d18fa1c515742002d9fbc7177b77ebf_6131_192x108_fill_q75_h2_box_center_3.webp alt=HugoでFontAwesomeを使う方法 loading=lazy class=partials__sidebar__article__itemThumbnail><div class=partials__sidebar__article__itemDetail><div class=partials__sidebar__article__itemTitle--line3>HugoでFontAwesomeを使う方法</div></div></a></li></ul></nav></div><div class=partials__sidebar__card><h3 class=partials__sidebar__title--pickup>ピックアップ</h3><nav class=partials__sidebar__article><ul class=partials__sidebar__article__items><li class=partials__sidebar__article__item><a href=https://hugo-theme-salt.okdyy75.com/article/salt/about/ class=partials__sidebar__article__itemLink><img src=https://hugo-theme-salt.okdyy75.com/article/salt/about/thumbnail_huc1633a480d1f14d3ad339ce0d839c0d3_2170_192x108_fill_q75_h2_box_center_3.webp alt=Hugoブログテーマ「Salt」とは？ loading=lazy class=partials__sidebar__article__itemThumbnail><div class=partials__sidebar__article__itemDetail><div class=partials__sidebar__article__itemTitle--line3>Hugoブログテーマ「Salt」とは？</div></div></a></li><li class=partials__sidebar__article__item><a href=https://hugo-theme-salt.okdyy75.com/article/salt/custom-figure/ class=partials__sidebar__article__itemLink><img src=https://hugo-theme-salt.okdyy75.com/article/salt/custom-figure/thumbnail_huabbb313cfc6fe0189548b2f94140ad9f_14559_192x108_fill_q75_h2_box_center_3.webp alt=画像のリサイズ・トリミング可能な自作ショートコード loading=lazy class=partials__sidebar__article__itemThumbnail><div class=partials__sidebar__article__itemDetail><div class=partials__sidebar__article__itemTitle--line3>画像のリサイズ・トリミング可能な自作ショートコード</div></div></a></li><li class=partials__sidebar__article__item><a href=https://hugo-theme-salt.okdyy75.com/article/salt/self-blog-card/ class=partials__sidebar__article__itemLink><img src=https://hugo-theme-salt.okdyy75.com/article/salt/self-blog-card/thumbnail_hu887fde30b154802a30332967b448fbb6_8526_192x108_fill_q75_h2_box_center_3.webp alt=サイト内ブログカードを作る自作ショートコード loading=lazy class=partials__sidebar__article__itemThumbnail><div class=partials__sidebar__article__itemDetail><div class=partials__sidebar__article__itemTitle--line3>サイト内ブログカードを作る自作ショートコード</div></div></a></li><li class=partials__sidebar__article__item><a href=https://hugo-theme-salt.okdyy75.com/article/hugo/tips/ class=partials__sidebar__article__itemLink><img src=https://hugo-theme-salt.okdyy75.com/article/hugo/tips/thumbnail_hu850c6f5958680582ad131d7609fc6b2a_2666_192x108_fill_q75_h2_box_center_3.webp alt=Hugoを使い始めた人に捧げるTips11選 loading=lazy class=partials__sidebar__article__itemThumbnail><div class=partials__sidebar__article__itemDetail><div class=partials__sidebar__article__itemTitle--line3>Hugoを使い始めた人に捧げるTips11選</div></div></a></li></ul></nav></div><div class=partials__sidebar__card><h3 class=partials__sidebar__title--ranking>ランキング</h3><nav class=partials__sidebar__article><ul class=partials__sidebar__article__items><li class=partials__sidebar__article__item><a href=https://hugo-theme-salt.okdyy75.com/article/salt/about/ class=partials__sidebar__article__itemLink><img src=https://hugo-theme-salt.okdyy75.com/article/salt/about/thumbnail_huc1633a480d1f14d3ad339ce0d839c0d3_2170_192x108_fill_q75_h2_box_center_3.webp alt=Hugoブログテーマ「Salt」とは？ loading=lazy class=partials__sidebar__article__itemThumbnail><div class=partials__sidebar__article__itemDetail><div class=partials__sidebar__article__itemTitle--line2>Hugoブログテーマ「Salt」とは？</div><div class=partials__sidebar__article__itemPv>5pv</div></div></a></li><li class=partials__sidebar__article__item><a href=https://hugo-theme-salt.okdyy75.com/article/hugo/about/ class=partials__sidebar__article__itemLink><img src=https://hugo-theme-salt.okdyy75.com/article/hugo/about/thumbnail_hu3631644e14d4f47f03ef96281b561b50_4022_192x108_fill_q75_h2_box_center_3.webp alt=Hugoでできること loading=lazy class=partials__sidebar__article__itemThumbnail><div class=partials__sidebar__article__itemDetail><div class=partials__sidebar__article__itemTitle--line2>Hugoでできること</div><div class=partials__sidebar__article__itemPv>4pv</div></div></a></li><li class=partials__sidebar__article__item><a href=https://hugo-theme-salt.okdyy75.com/article/hugo/tips/ class=partials__sidebar__article__itemLink><img src=https://hugo-theme-salt.okdyy75.com/article/hugo/tips/thumbnail_hu850c6f5958680582ad131d7609fc6b2a_2666_192x108_fill_q75_h2_box_center_3.webp alt=Hugoを使い始めた人に捧げるTips11選 loading=lazy class=partials__sidebar__article__itemThumbnail><div class=partials__sidebar__article__itemDetail><div class=partials__sidebar__article__itemTitle--line2>Hugoを使い始めた人に捧げるTips11選</div><div class=partials__sidebar__article__itemPv>3pv</div></div></a></li><li class=partials__sidebar__article__item><a href=https://hugo-theme-salt.okdyy75.com/article/hugo/search/ class=partials__sidebar__article__itemLink><img src=https://hugo-theme-salt.okdyy75.com/article/hugo/search/thumbnail_hu7a253d997b511fbff22929f86311ed19_4626_192x108_fill_q75_h2_box_center_3.webp alt=Hugoに検索機能を追加しよう loading=lazy class=partials__sidebar__article__itemThumbnail><div class=partials__sidebar__article__itemDetail><div class=partials__sidebar__article__itemTitle--line2>Hugoに検索機能を追加しよう</div><div class=partials__sidebar__article__itemPv>2pv</div></div></a></li><li class=partials__sidebar__article__item><a href=https://hugo-theme-salt.okdyy75.com/article/sample/markdown/ class=partials__sidebar__article__itemLink><img src=https://hugo-theme-salt.okdyy75.com/article/sample/markdown/thumbnail_hu8b2715e95ad414c90d2dcb05e7a44358_7366_192x108_fill_q75_h2_box_center_3.webp alt=マークダウン表示サンプル loading=lazy class=partials__sidebar__article__itemThumbnail><div class=partials__sidebar__article__itemDetail><div class=partials__sidebar__article__itemTitle--line2>マークダウン表示サンプル</div><div class=partials__sidebar__article__itemPv>2pv</div></div></a></li></ul></nav></div><div class=partials__sidebar__card><h3 class=partials__sidebar__title>カテゴリー</h3><nav class=partials__sidebar__category><ul class=partials__sidebar__category__items><li class=partials__sidebar__category__item><a href=/categories/Hugo class=partials__sidebar__category__itemLink><div><i class="fas fa-arrow-circle-right partials__sidebar__category__itemIcon"></i>
+Hugo</div><div class=partials__sidebar__category__itemCount>7</div></a></li><li class=partials__sidebar__category__item><a href=/categories/Salt%e3%81%ae%e4%bd%bf%e3%81%84%e6%96%b9 class=partials__sidebar__category__itemLink><div><i class="fas fa-arrow-circle-right partials__sidebar__category__itemIcon"></i>
+Saltの使い方</div><div class=partials__sidebar__category__itemCount>4</div></a></li><li class=partials__sidebar__category__item><a href=/categories/%e3%82%b5%e3%83%b3%e3%83%97%e3%83%ab class=partials__sidebar__category__itemLink><div><i class="fas fa-arrow-circle-right partials__sidebar__category__itemIcon"></i>
+サンプル</div><div class=partials__sidebar__category__itemCount>4</div></a></li><li class=partials__sidebar__category__item><a href=/categories/Go%e8%a8%80%e8%aa%9e class=partials__sidebar__category__itemLink><div><i class="fas fa-arrow-circle-right partials__sidebar__category__itemIcon"></i>
+Go言語</div><div class=partials__sidebar__category__itemCount>2</div></a></li></ul></nav></div><div class=partials__sidebar__card><h3 class=partials__sidebar__title>タグ</h3><nav class=partials__sidebar__tag><ul class=partials__tagList><li class=partials__tagList__item><a href=/tags/Hugo class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>Hugo</a></li><li class=partials__tagList__item><a href=/tags/tips class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>tips</a></li><li class=partials__tagList__item><a href=/tags/%e3%82%b7%e3%83%a7%e3%83%bc%e3%83%88%e3%82%b3%e3%83%bc%e3%83%89 class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>ショートコード</a></li><li class=partials__tagList__item><a href=/tags/go class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>go</a></li><li class=partials__tagList__item><a href=/tags/CI class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>CI</a></li><li class=partials__tagList__item><a href=/tags/FontAwesome class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>FontAwesome</a></li><li class=partials__tagList__item><a href=/tags/GA class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>GA</a></li><li class=partials__tagList__item><a href=/tags/go-template class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>go-template</a></li><li class=partials__tagList__item><a href=/tags/Hugo%e3%83%86%e3%83%bc%e3%83%9e class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>Hugoテーマ</a></li><li class=partials__tagList__item><a href=/tags/lunr class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>lunr</a></li><li class=partials__tagList__item><a href=/tags/%e3%81%be%e3%81%a8%e3%82%81 class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>まとめ</a></li><li class=partials__tagList__item><a href=/tags/%e3%82%a2%e3%82%a4%e3%82%b3%e3%83%b3 class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>アイコン</a></li><li class=partials__tagList__item><a href=/tags/%e3%82%a2%e3%83%bc%e3%82%ab%e3%82%a4%e3%83%96 class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>アーカイブ</a></li><li class=partials__tagList__item><a href=/tags/%e3%83%87%e3%83%97%e3%83%ad%e3%82%a4 class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>デプロイ</a></li><li class=partials__tagList__item><a href=/tags/%e3%83%9e%e3%83%bc%e3%82%af%e3%83%80%e3%82%a6%e3%83%b3 class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>マークダウン</a></li><li class=partials__tagList__item><a href=/tags/%e3%83%a9%e3%82%a4%e3%83%96%e3%83%a9%e3%83%aa class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>ライブラリ</a></li><li class=partials__tagList__item><a href=/tags/%e3%83%a9%e3%83%b3%e3%82%ad%e3%83%b3%e3%82%b0 class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>ランキング</a></li><li class=partials__tagList__item><a href=/tags/%e4%ba%ba%e6%b0%97%e8%a8%98%e4%ba%8b class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>人気記事</a></li><li class=partials__tagList__item><a href=/tags/%e6%a4%9c%e7%b4%a2 class=partials__tagList__itemLink><i class="fas fa-tag partials__tagList__itemIcon"></i>検索</a></li></ul></nav></div><div class=partials__sidebar__card><h3 class=partials__sidebar__title>アーカイブ</h3><nav class=partials__sidebar__archive><ul class=partials__sidebar__archive__yearList><li class="close archive-accordion partials__sidebar__archive__yearItem"><div class=partials__sidebar__archive__yearItemTitle>2022年</div><div class="archive-accordion-child-wrapper partials__sidebar__archive__monthListWrapper"><ul class="archive-accordion-child partials__sidebar__archive__monthList"><li class="archive-accordion-child partials__sidebar__archive__monthItem"><a href=/archives/2022%e5%b9%b45%e6%9c%88 class=partials__sidebar__archive__monthItemLink>2022年5月（1）</a></li><li class="archive-accordion-child partials__sidebar__archive__monthItem"><a href=/archives/2022%e5%b9%b41%e6%9c%88 class=partials__sidebar__archive__monthItemLink>2022年1月（2）</a></li></ul></div></li><li class="close archive-accordion partials__sidebar__archive__yearItem"><div class=partials__sidebar__archive__yearItemTitle>2021年</div><div class="archive-accordion-child-wrapper partials__sidebar__archive__monthListWrapper"><ul class="archive-accordion-child partials__sidebar__archive__monthList"><li class="archive-accordion-child partials__sidebar__archive__monthItem"><a href=/archives/2021%e5%b9%b412%e6%9c%88 class=partials__sidebar__archive__monthItemLink>2021年12月（2）</a></li><li class="archive-accordion-child partials__sidebar__archive__monthItem"><a href=/archives/2021%e5%b9%b410%e6%9c%88 class=partials__sidebar__archive__monthItemLink>2021年10月（1）</a></li><li class="archive-accordion-child partials__sidebar__archive__monthItem"><a href=/archives/2021%e5%b9%b49%e6%9c%88 class=partials__sidebar__archive__monthItemLink>2021年9月（12）</a></li></ul></div></li></ul></nav></div><script>document.querySelectorAll(".archive-accordion").forEach(function(e){e.addEventListener("click",function(e){if(e.target.tagName==="A")return;e.currentTarget.classList.toggle("open"),e.currentTarget.classList.toggle("close"),e.currentTarget.classList.contains("open")?e.currentTarget.querySelector(".archive-accordion-child-wrapper").style.height=e.currentTarget.querySelector(".archive-accordion-child").offsetHeight+"px":e.currentTarget.querySelector(".archive-accordion-child-wrapper").style.height="0"})})</script></div></div></aside></div><footer class=footer><div class=footer__inner><div class=partials__footer><div class=partials__footer__menu><ul class=partials__footer__menu__list><li><a href=/about>このサイトについて</a></li><li><a href=/information>お知らせ</a></li></ul><ul class=partials__footer__menu__list><li><a href=/privacy-policy>プライバシーポリシー</a></li><li><a href=https://github.com/okdyy75/hugo-theme-salt/issues>お問い合わせ</a></li></ul></div><p class=partials__footer__copyright>© 2021 okdyy75<br>Powered by <a href=https://gohugo.io/ target=_blank>Hugo</a> | Hugo Theme Salt</p></div></div></footer></div><div id=overlay class="close overlay"></div><script>window.addEventListener("DOMContentLoaded",e=>{document.querySelector("#headerBlock").style.height=document.querySelector(".header").offsetHeight+"px"})</script><script>document.querySelectorAll("#hamburger, #overlay").forEach(e=>{e.addEventListener("click",function(){document.querySelector("#hamburger").classList.toggle("open"),document.querySelector("#hamburger").classList.toggle("close"),document.querySelector("#hamburgerMenu").classList.toggle("open"),document.querySelector("#hamburgerMenu").classList.toggle("close"),document.querySelector("#overlay").classList.toggle("open"),document.querySelector("#overlay").classList.toggle("close")})})</script><script>let isLoaded=!1;window.addEventListener("scroll",function(){if(isLoaded)return;(document.documentElement.scrollTop!=0||document.body.scrollTop!=0)&&(function(){const t="ca-pub-9459277760652211";let e=document.createElement("script");e.type="text/javascript",e.crossorigin="anonymous",e.async=!0,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client="+t,document.body.appendChild(e)}(),function(){const t="G-LR5GBHW5M5";let e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id="+t,document.body.appendChild(e),window.dataLayer=window.dataLayer||[];function n(){dataLayer.push(arguments)}n("js",new Date),n("config",t)}(),isLoaded=!0)},!0)</script></body></html>
