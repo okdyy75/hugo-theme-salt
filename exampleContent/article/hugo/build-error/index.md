@@ -1,5 +1,5 @@
 ---
-title: "HugoでCIからビルド際にたまにエラーになる原因"
+title: "Hugoでデプロイする時たまにビルドエラーになる原因"
 description: ""
 date: 2022-01-29T20:11:23+09:00
 lastmod: 2022-01-29T20:11:23+09:00
@@ -12,7 +12,7 @@ toc: true
 comment: true
 ---
 
-たまにHugoでCIからデプロイしようとする際エラーになっていたんですが原因が分かりました。
+GitHub Actionsを使ったHugoのデプロイ時に、たまにエラーになっていたんですが原因が分かりました。
 
 package.json
 ```json
