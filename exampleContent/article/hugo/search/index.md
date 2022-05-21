@@ -392,7 +392,7 @@ idx.search("foo -bar")
 あとは検索フォームを設置して、検索ページに飛ばすだけです
 
 ```go-template
-<form action="{{ "search" | relURL }}" class="partials__sidebar__search__form">
+<form action="{{ "search/" | relURL }}" class="partials__sidebar__search__form">
     <input type="text" name="query" id="search" class="partials__sidebar__search__query">
     <button type="submit" class="partials__sidebar__search__button">
         <i class="fas fa-search"></i>
