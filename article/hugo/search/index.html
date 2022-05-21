@@ -261,7 +261,7 @@
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>seg</span>;
 </span></span><span style=display:flex><span>    });
 </span></span><span style=display:flex><span>    <span style=color:#a6e22e>query</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>segs</span>.<span style=color:#a6e22e>join</span>(<span style=color:#e6db74>&#34; &#34;</span>).<span style=color:#a6e22e>replace</span>(<span style=color:#e6db74>/\s+/g</span>, <span style=color:#e6db74>&#34; &#34;</span>).<span style=color:#a6e22e>trim</span>();
-</span></span></code></pre></div><h2 id=3-検索フォームを設置>3. 検索フォームを設置</h2><p>あとは検索フォームを設置して、検索ページに飛ばすだけです</p><pre tabindex=0><code class=language-go-template data-lang=go-template>&lt;form action=&#34;{{ &#34;search&#34; | relURL }}&#34; class=&#34;partials__sidebar__search__form&#34;&gt;
+</span></span></code></pre></div><h2 id=3-検索フォームを設置>3. 検索フォームを設置</h2><p>あとは検索フォームを設置して、検索ページに飛ばすだけです</p><pre tabindex=0><code class=language-go-template data-lang=go-template>&lt;form action=&#34;{{ &#34;search/&#34; | relURL }}&#34; class=&#34;partials__sidebar__search__form&#34;&gt;
     &lt;input type=&#34;text&#34; name=&#34;query&#34; id=&#34;search&#34; class=&#34;partials__sidebar__search__query&#34;&gt;
     &lt;button type=&#34;submit&#34; class=&#34;partials__sidebar__search__button&#34;&gt;
         &lt;i class=&#34;fas fa-search&#34;&gt;&lt;/i&gt;
