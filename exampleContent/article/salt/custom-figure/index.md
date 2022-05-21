@@ -16,7 +16,7 @@ archives: ["2021年9月"]
 
 このテーマ内で画像のリサイズ・トリミングができる「custom-figure」というショートコードを作成しました。
 
-### 使い方
+## 使い方
 - Hugo標準のfigureショートコードの機能をそのまま使えます
 - HugoのImage Processingで使えるResize、Fit、Fillが使えます
 
@@ -33,7 +33,7 @@ https://gohugo.io/content-management/image-processing/
 
 ```
 
-### 表示例
+## 表示例
 
 元画像は512x512です
 

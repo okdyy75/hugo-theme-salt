@@ -16,7 +16,7 @@ archives: ["2021年9月"]
 
 このテーマ内でサイト内ブログカードを作れる「self-blog-card」というショートコードを作成しました。
 
-### 使い方
+## 使い方
 - 自サイト内のurlを指定します
 - 自記事のブログカードは表示できません。
 - 日本語だとconfig.ymlの`summaryLength: 200`以上推奨です
@@ -27,6 +27,6 @@ archives: ["2021年9月"]
 
 ```
 
-### 表示例
+## 表示例
 
 {{< self-blog-card "/article/salt/custom-figure" >}}
