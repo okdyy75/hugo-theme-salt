@@ -2,11 +2,11 @@
     "items": [
         {
             "pagePath": "/",
-            "pv": "18"
+            "pv": "17"
         },
         {
             "pagePath": "/article/hugo/search/",
-            "pv": "8"
+            "pv": "11"
         },
         {
             "pagePath": "/article/salt/about/",
@@ -81,5 +81,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2022-06-01T00:35:14.452Z"
+    "createdAt": "2022-06-02T00:38:37.415Z"
 }
