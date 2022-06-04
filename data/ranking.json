@@ -1,20 +1,16 @@
 {
     "items": [
         {
+            "pagePath": "/article/hugo/search/",
+            "pv": "21"
+        },
+        {
             "pagePath": "/",
             "pv": "13"
         },
         {
-            "pagePath": "/article/hugo/search/",
-            "pv": "8"
-        },
-        {
             "pagePath": "/article/salt/about/",
-            "pv": "7"
-        },
-        {
-            "pagePath": "/search/",
-            "pv": "5"
+            "pv": "8"
         },
         {
             "pagePath": "/article/salt/self-blog-card/",
@@ -25,11 +21,15 @@
             "pv": "4"
         },
         {
-            "pagePath": "/article/sample/hugo-shortcode/",
+            "pagePath": "/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/",
+            "pv": "4"
+        },
+        {
+            "pagePath": "/article/hugo/tips/",
             "pv": "3"
         },
         {
-            "pagePath": "/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/",
+            "pagePath": "/article/sample/hugo-shortcode/",
             "pv": "3"
         },
         {
@@ -45,23 +45,15 @@
             "pv": "2"
         },
         {
+            "pagePath": "/article/hugo/archive/",
+            "pv": "2"
+        },
+        {
             "pagePath": "/article/hugo/ranking/",
             "pv": "2"
         },
         {
-            "pagePath": "/article/hugo/tips/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/hugo/archive/",
-            "pv": "1"
-        },
-        {
             "pagePath": "/article/hugo/build-error/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/salt/blog-card/",
             "pv": "1"
         },
         {
@@ -69,9 +61,9 @@
             "pv": "1"
         },
         {
-            "pagePath": "/tags/%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%B3%E3%83%BC%E3%83%89/",
+            "pagePath": "/tags/Hugo/",
             "pv": "1"
         }
     ],
-    "createdAt": "2022-06-03T00:27:05.574Z"
+    "createdAt": "2022-06-04T00:34:26.282Z"
 }
