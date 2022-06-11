@@ -6,19 +6,19 @@
         },
         {
             "pagePath": "/",
-            "pv": "7"
+            "pv": "8"
         },
         {
             "pagePath": "/article/salt/custom-figure/",
             "pv": "6"
         },
         {
-            "pagePath": "/article/hugo/tips/",
+            "pagePath": "/article/salt/about/",
             "pv": "5"
         },
         {
-            "pagePath": "/article/salt/about/",
-            "pv": "5"
+            "pagePath": "/article/hugo/tips/",
+            "pv": "4"
         },
         {
             "pagePath": "/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/",
@@ -37,6 +37,10 @@
             "pv": "3"
         },
         {
+            "pagePath": "/article/hugo/archive/",
+            "pv": "2"
+        },
+        {
             "pagePath": "/article/salt/self-blog-card/",
             "pv": "2"
         },
@@ -49,10 +53,6 @@
             "pv": "2"
         },
         {
-            "pagePath": "/article/hugo/archive/",
-            "pv": "1"
-        },
-        {
             "pagePath": "/tags/%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%B3%E3%83%BC%E3%83%89/",
             "pv": "1"
         },
@@ -61,5 +61,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2022-06-10T00:34:44.990Z"
+    "createdAt": "2022-06-11T00:32:17.218Z"
 }
