@@ -1,10 +1,6 @@
 {
     "items": [
         {
-            "pagePath": "/article/hugo/search/",
-            "pv": "20"
-        },
-        {
             "pagePath": "/",
             "pv": "8"
         },
@@ -13,7 +9,7 @@
             "pv": "6"
         },
         {
-            "pagePath": "/article/salt/about/",
+            "pagePath": "/article/hugo/search/",
             "pv": "5"
         },
         {
@@ -29,15 +25,11 @@
             "pv": "3"
         },
         {
+            "pagePath": "/article/salt/about/",
+            "pv": "3"
+        },
+        {
             "pagePath": "/article/hugo/ranking/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/article/hugo/archive/",
             "pv": "2"
         },
         {
@@ -49,17 +41,25 @@
             "pv": "2"
         },
         {
+            "pagePath": "/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/",
+            "pv": "2"
+        },
+        {
             "pagePath": "/tags/go-template/",
             "pv": "2"
         },
         {
-            "pagePath": "/tags/%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%B3%E3%83%BC%E3%83%89/",
+            "pagePath": "/article/hugo/about/",
             "pv": "1"
         },
         {
-            "pagePath": "/tags/Hugo/",
+            "pagePath": "/article/hugo/archive/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/tags/%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%B3%E3%83%BC%E3%83%89/",
             "pv": "1"
         }
     ],
-    "createdAt": "2022-06-11T00:32:17.218Z"
+    "createdAt": "2022-06-12T00:32:12.610Z"
 }
