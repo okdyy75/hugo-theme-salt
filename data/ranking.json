@@ -2,7 +2,7 @@
     "items": [
         {
             "pagePath": "/",
-            "pv": "8"
+            "pv": "11"
         },
         {
             "pagePath": "/article/salt/custom-figure/",
@@ -17,15 +17,15 @@
             "pv": "4"
         },
         {
+            "pagePath": "/article/salt/about/",
+            "pv": "4"
+        },
+        {
             "pagePath": "/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/",
             "pv": "4"
         },
         {
             "pagePath": "/article/go/go-template/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/article/salt/about/",
             "pv": "3"
         },
         {
@@ -61,5 +61,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2022-06-12T00:32:12.610Z"
+    "createdAt": "2022-06-13T00:35:48.970Z"
 }
