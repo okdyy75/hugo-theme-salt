@@ -93,17 +93,17 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
     {{ $style := resources.Get "scss/style.scss" | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
-    <link rel="preload" href="/css/vendor/@fortawesome/fontawesome-free/css/all.min.css" as="style">
-    <link rel="stylesheet" href="/css/vendor/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="preload" href="{{ "css/vendor/@fortawesome/fontawesome-free/css/all.min.css" | absURL }}" as="style">
+    <link rel="stylesheet" href="{{ "css/vendor/@fortawesome/fontawesome-free/css/all.min.css" | absURL }}" media="print" onload="this.media='all'">
     {{ if .IsPage }}
-        <link rel="preload" href="/css/vendor/github-markdown-css/github-markdown.css" as="style">
-        <link rel="stylesheet" href="/css/vendor/github-markdown-css/github-markdown.css" media="print" onload="this.media='all'">
+        <link rel="preload" href="{{ "css/vendor/github-markdown-css/github-markdown.css" | absURL }}" as="style">
+        <link rel="stylesheet" href="{{ "css/vendor/github-markdown-css/github-markdown.css" | absURL }}" media="print" onload="this.media='all'">
     {{ end }}
     {{ if eq .Section "search" }}
-        <script type="text/javascript" src="/js/vendor/lunr/lunr.min.js"></script>
-        <script type="text/javascript" src="/js/vendor/lunr-languages/lunr.stemmer.support.js"></script>
-        <script type="text/javascript" src="/js/vendor/lunr-languages/tinyseg.js"></script>
-        <script type="text/javascript" src="/js/vendor/lunr-languages/lunr.ja.js"></script>
+        <script type="text/javascript" src="{{ "js/vendor/lunr/lunr.min.js" | absURL }}"></script>
+        <script type="text/javascript" src="{{ "js/vendor/lunr-languages/lunr.stemmer.support.js" | absURL }}"></script>
+        <script type="text/javascript" src="{{ "js/vendor/lunr-languages/tinyseg.js" | absURL }}"></script>
+        <script type="text/javascript" src="{{ "js/vendor/lunr-languages/lunr.ja.js" | absURL  }}"></script>
         <script type="text/javascript" src="{{ with  resources.Get "js/search.js" | minify }}{{ .RelPermalink }}{{ end }}"></script>
     {{ end }}
     {{ partial "jsonld.html" . }}
