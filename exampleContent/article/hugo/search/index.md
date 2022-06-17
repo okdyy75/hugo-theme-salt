@@ -47,13 +47,13 @@ headでlunrを読み込みます
 
 head.html
 ```go-template
-    {{ if eq .Section "search" }}
-        <script type="text/javascript" src="/js/vendor/lunr/lunr.min.js"></script>
-        <script type="text/javascript" src="/js/vendor/lunr-languages/lunr.stemmer.support.js"></script>
-        <script type="text/javascript" src="/js/vendor/lunr-languages/tinyseg.js"></script>
-        <script type="text/javascript" src="/js/vendor/lunr-languages/lunr.ja.js"></script>
-        <script type="text/javascript" src="{{ with  resources.Get "js/search.js" | minify }}{{ .RelPermalink }}{{ end }}"></script>
-    {{ end }}
+{{ if eq .Section "search" }}
+    <script type="text/javascript" src="{{ "js/vendor/lunr/lunr.min.js" | absURL }}"></script>
+    <script type="text/javascript" src="{{ "js/vendor/lunr-languages/lunr.stemmer.support.js" | absURL }}"></script>
+    <script type="text/javascript" src="{{ "js/vendor/lunr-languages/tinyseg.js" | absURL }}"></script>
+    <script type="text/javascript" src="{{ "js/vendor/lunr-languages/lunr.ja.js" | absURL  }}"></script>
+    <script type="text/javascript" src="{{ with  resources.Get "js/search.js" | minify }}{{ .RelPermalink }}{{ end }}"></script>
+{{ end }}
 ```
 
 searchのsectionを作成し、検索結果ページ（一覧ページ）を作ります

@@ -38,8 +38,8 @@ module:
 
 ## 3. あとはheadで読み込ませるだけ
 
-```html
-    <link rel="stylesheet" href="/css/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+```go-template
+<link rel="stylesheet" href="{{ "css/vendor/@fortawesome/fontawesome-free/css/all.min.css" | absURL }}">
 ```
  
  FontAwesome以外のライブラリでもいけるので、是非使ってみてください！

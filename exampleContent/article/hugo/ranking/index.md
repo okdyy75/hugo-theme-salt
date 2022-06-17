@@ -202,7 +202,7 @@ ranking.json
 
 ## 4. CIで定期的にpv取得スクリプトを起動させる
 
-あとは毎日CIで実行させればOK。
+あとは週一でCIを実行させればOK。
 
 ### GitHub Actions
 
@@ -218,7 +218,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 * * 0'
 
 jobs:
   deploy:
