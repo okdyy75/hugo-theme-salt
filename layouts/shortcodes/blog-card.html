@@ -20,11 +20,11 @@
             {{- end -}}
         {{- end -}}
 
-        {{- $thumbnail := resources.GetRemote $image -}}
-        {{- if $thumbnail.Err -}}
-            {{- $thumbnail = resources.Get $.Site.Params.dafaultNoimage -}}
-            {{- $thumbnail = $thumbnail.Fit (printf "200x200 center q%d webp" $.Site.Params.imageQuality) -}}
+        {{- $thumbnail := (resources.Get 0) -}}
+        {{- with resources.GetRemote $image -}}
+            {{- $thumbnail = .Fit (printf "200x200 center q%d webp" $.Site.Params.imageQuality) -}}
         {{- else -}}
+            {{- $thumbnail = resources.Get $.Site.Params.dafaultNoimage -}}
             {{- $thumbnail = $thumbnail.Fit (printf "200x200 center q%d webp" $.Site.Params.imageQuality) -}}
         {{- end -}}
 
