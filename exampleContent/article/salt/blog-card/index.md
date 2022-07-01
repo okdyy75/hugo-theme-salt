@@ -119,4 +119,49 @@ layouts/shortcodes/blog-card.html
 
 <br>
 
+{{< blog-card "https://b.hatena.ne.jp/" >}}
+
+<br>
+
 {{< blog-card "https://hugo-theme-salt.okdyy75.com/" >}}
+
+### エラー時の表示例
+
+#### ページが存在しない場合（500系など）
+- その場でエラーメッセージが表示されます
+
+```
+{{</* blog-card "https://example.com.invalid/" */>}}
+```
+
+{{< blog-card "https://example.com.invalid/" >}}
+
+#### ページが見つからない場合（400系など）
+- 何も表示されません
+
+```
+{{</* blog-card "https://example.com/test" */>}}
+```
+
+{{< blog-card "https://example.com/test" >}}
+
+
+#### metaタグに`og:image`がない場合  
+- デフォルトのNoImage画像が表示されます
+
+```
+{{</* blog-card "https://example.com" */>}}
+```
+
+{{< blog-card "https://example.com" >}}
+
+<br>
+
+#### metaタグに`og:image`が存在するが、リンク切れを起こしている場合
+- リンク切れで表示されます。（`src=""`）
+
+```
+{{</* blog-card "https://hugo-theme-salt.okdyy75.com/test.html" */>}}
+```
+
+{{< blog-card "https://hugo-theme-salt.okdyy75.com/test.html" >}}
