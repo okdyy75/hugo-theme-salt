@@ -8,6 +8,7 @@
         {{- $image := "" -}}
         {{- with $findHead := index (findRE "<head>(.|\n)*?</head>" $result.Content) 0 -}}
             {{- range $meta := findRE "<meta.*?>" $findHead -}}
+                {{- $name := replaceRE "<.*name=\"(.*?)\".*>" "$1" $meta -}}
                 {{- $property := replaceRE "<.*property=\"(.*?)\".*>" "$1" $meta -}}
                 {{- $content := replaceRE "<.*content=\"(.*?)\".*>" "$1" $meta -}}
                 {{- if eq $property "og:title" -}}
@@ -16,6 +17,14 @@
                     {{- $description = $content -}}
                 {{- else if eq $property "og:image" -}}
                     {{- $image = $content -}}
+                {{- end -}}
+                {{- if and (eq $description "") (eq $name "description") -}}
+                    {{- $description = $content -}}
+                {{- end -}}
+            {{- end -}}
+            {{- if eq $title "" -}}
+                {{- with index (findRE "<title>(.*?)</title>" $findHead) 0 -}}
+                    {{- $title = replaceRE "<title>(.*?)</title>" "$1" . -}}
                 {{- end -}}
             {{- end -}}
         {{- end -}}
