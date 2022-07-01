@@ -14,14 +14,15 @@
 {{ end }}
 </code></pre><br><h2 id=外部urlブログカードのショートコード>外部URLブログカードのショートコード</h2><h3 id=実際のコード>実際のコード</h3><ul><li>unmarshalを使いたかったのですが、多くのサイトでパースエラーが起きてしまうので、正規表現を使うことにしました。</li></ul><p>layouts/shortcodes/blog-card.html</p><pre tabindex=0><code class=language-go-template data-lang=go-template>{{- $url := (.Get 0) -}}
 {{- with $result := resources.GetRemote $url -}}
-    {{- if $result.Err -}}
-        {{ $result.Err }}
-    {{ else }}
+    {{- with $result.Err -}}
+        {{- warnf &#34;%s&#34; . -}}{{- . -}}
+    {{- else -}}
         {{- $title := &#34;&#34; -}}
         {{- $description := &#34;&#34; -}}
         {{- $image := &#34;&#34; -}}
         {{- with $findHead := index (findRE &#34;&lt;head&gt;(.|\n)*?&lt;/head&gt;&#34; $result.Content) 0 -}}
             {{- range $meta := findRE &#34;&lt;meta.*?&gt;&#34; $findHead -}}
+                {{- $name := replaceRE &#34;&lt;.*name=\&#34;(.*?)\&#34;.*&gt;&#34; &#34;$1&#34; $meta -}}
                 {{- $property := replaceRE &#34;&lt;.*property=\&#34;(.*?)\&#34;.*&gt;&#34; &#34;$1&#34; $meta -}}
                 {{- $content := replaceRE &#34;&lt;.*content=\&#34;(.*?)\&#34;.*&gt;&#34; &#34;$1&#34; $meta -}}
                 {{- if eq $property &#34;og:title&#34; -}}
@@ -31,26 +32,40 @@
                 {{- else if eq $property &#34;og:image&#34; -}}
                     {{- $image = $content -}}
                 {{- end -}}
+                {{- if and (eq $description &#34;&#34;) (eq $name &#34;description&#34;) -}}
+                    {{- $description = $content -}}
+                {{- end -}}
+            {{- end -}}
+            {{- if eq $title &#34;&#34; -}}
+                {{- with index (findRE &#34;&lt;title&gt;(.*?)&lt;/title&gt;&#34; $findHead) 0 -}}
+                    {{- $title = replaceRE &#34;&lt;title&gt;(.*?)&lt;/title&gt;&#34; &#34;$1&#34; . -}}
+                {{- end -}}
             {{- end -}}
         {{- end -}}
 
-        {{- $thumbnail := resources.GetRemote $image -}}
-        {{- if $thumbnail.Err -}}
-            {{- $thumbnail = resources.Get $.Site.Params.dafaultNoimage -}}
-            {{- $thumbnail = $thumbnail.Fit (printf &#34;200x200 center q%d webp&#34; $.Site.Params.imageQuality) -}}
+        {{- $thumbnail_url := &#34;&#34; -}}
+        {{- if $image -}}
+            {{- with $thumbnail := resources.GetRemote $image -}}
+                {{- with $thumbnail.Err -}}
+                    {{- warnf &#34;%s&#34; . -}}{{- . -}}
+                {{- else -}}
+                    {{- $thumbnail_url = ($thumbnail.Fit (printf &#34;200x200 center q%d webp&#34; $.Site.Params.imageQuality)).Permalink -}}
+                {{- end -}}
+            {{- end -}}
         {{- else -}}
-            {{- $thumbnail = $thumbnail.Fit (printf &#34;200x200 center q%d webp&#34; $.Site.Params.imageQuality) -}}
+            {{- $thumbnail := resources.Get $.Site.Params.dafaultNoimage -}}
+            {{- $thumbnail_url = ($thumbnail.Fit (printf &#34;200x200 center q%d webp&#34; $.Site.Params.imageQuality)).Permalink -}}
         {{- end -}}
 
         &lt;a href=&#34;{{- $url -}}&#34; style=&#34;padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: #000;&#34; onMouseOver=&#34;this.style.opacity=&#39;0.9&#39;&#34;&gt;
             &lt;div style=&#34;flex-shrink: 0;&#34;&gt;
-                &lt;img src=&#34;{{- $thumbnail.Permalink -}}&#34; alt=&#34;{{- $title -}}&#34; width=&#34;100&#34; height=&#34;100&#34; style=&#34;object-fit: contain;&#34;&gt;
+                &lt;img src=&#34;{{- $thumbnail_url -}}&#34; alt=&#34;&#34; width=&#34;100&#34; height=&#34;100&#34; style=&#34;object-fit: contain;&#34;&gt;
             &lt;/div&gt;
             &lt;div style=&#34;margin-left: 10px;&#34;&gt;
                 &lt;h2 style=&#34;margin: 0;padding-bottom: 13px;border: none;font-size: 16px;&#34;&gt;
                     {{- $title -}}
                 &lt;/h2&gt;
-                &lt;p style=&#34;margin: 0;font-size: 13px;&#34;&gt;
+                &lt;p style=&#34;margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;&#34;&gt;
                     {{- $description | plainify | safeHTML -}}
                 &lt;/p&gt;
             &lt;/div&gt;
