@@ -1,8 +1,8 @@
 {{- $url := (.Get 0) -}}
 {{- with $result := resources.GetRemote $url -}}
-    {{- if $result.Err -}}
-        {{ $result.Err }}
-    {{ else }}
+    {{- with $result.Err -}}
+        {{- warnf "%s" . -}}{{- . -}}
+    {{- else -}}
         {{- $title := "" -}}
         {{- $description := "" -}}
         {{- $image := "" -}}
