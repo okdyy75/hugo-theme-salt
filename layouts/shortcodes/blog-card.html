@@ -1,13 +1,14 @@
 {{- $url := (.Get 0) -}}
 {{- with $result := resources.GetRemote $url -}}
-    {{- if $result.Err -}}
-        {{ $result.Err }}
-    {{ else }}
+    {{- with $result.Err -}}
+        {{- warnf "%s" . -}}{{- . -}}
+    {{- else -}}
         {{- $title := "" -}}
         {{- $description := "" -}}
         {{- $image := "" -}}
-        {{- with $findHead := index (findRE "<head>(.|\n)*?</head>" $result.Content) 0 -}}
-            {{- range $meta := findRE "<meta.*?>" $findHead -}}
+        {{- with $findHead := index (findRE "<head.*?>(.|\n)*?</head>" $result.Content) 0 -}}
+            {{- range $meta := findRE "<meta.*?>" (replace $findHead "\n" "") -}}
+                {{- $name := replaceRE "<.*name=\"(.*?)\".*>" "$1" $meta -}}
                 {{- $property := replaceRE "<.*property=\"(.*?)\".*>" "$1" $meta -}}
                 {{- $content := replaceRE "<.*content=\"(.*?)\".*>" "$1" $meta -}}
                 {{- if eq $property "og:title" -}}
@@ -17,20 +18,34 @@
                 {{- else if eq $property "og:image" -}}
                     {{- $image = $content -}}
                 {{- end -}}
+                {{- if and (eq $description "") (eq $name "description") -}}
+                    {{- $description = $content -}}
+                {{- end -}}
+            {{- end -}}
+            {{- if eq $title "" -}}
+                {{- with index (findRE "<title>(.*?)</title>" $findHead) 0 -}}
+                    {{- $title = replaceRE "<title>(.*?)</title>" "$1" . -}}
+                {{- end -}}
             {{- end -}}
         {{- end -}}
 
-        {{- $thumbnail := resources.GetRemote $image -}}
-        {{- if $thumbnail.Err -}}
-            {{- $thumbnail = resources.Get $.Site.Params.dafaultNoimage -}}
-            {{- $thumbnail = $thumbnail.Fit (printf "200x200 center q%d webp" $.Site.Params.imageQuality) -}}
+        {{- $thumbnail_url := "" -}}
+        {{- if $image -}}
+            {{- with $thumbnail := resources.GetRemote $image -}}
+                {{- with $thumbnail.Err -}}
+                    {{- warnf "%s" . -}}{{- . -}}
+                {{- else -}}
+                    {{- $thumbnail_url = ($thumbnail.Fill (printf "200x200 center q%d webp" $.Site.Params.imageQuality)).Permalink -}}
+                {{- end -}}
+            {{- end -}}
         {{- else -}}
-            {{- $thumbnail = $thumbnail.Fit (printf "200x200 center q%d webp" $.Site.Params.imageQuality) -}}
+            {{- $thumbnail := resources.Get $.Site.Params.dafaultNoimage -}}
+            {{- $thumbnail_url = ($thumbnail.Fill (printf "200x200 center q%d webp" $.Site.Params.imageQuality)).Permalink -}}
         {{- end -}}
 
         <a href="{{- $url -}}" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: #000;" onMouseOver="this.style.opacity='0.9'">
             <div style="flex-shrink: 0;">
-                <img src="{{- $thumbnail.Permalink -}}" alt="{{- $title -}}" width="100" height="100" style="object-fit: contain;">
+                <img src="{{- $thumbnail_url -}}" alt="" width="100" height="100">
             </div>
             <div style="margin-left: 10px;">
                 <h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">

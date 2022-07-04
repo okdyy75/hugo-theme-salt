@@ -56,14 +56,15 @@ layouts/shortcodes/blog-card.html
 ```go-template
 {{- $url := (.Get 0) -}}
 {{- with $result := resources.GetRemote $url -}}
-    {{- if $result.Err -}}
-        {{ $result.Err }}
-    {{ else }}
+    {{- with $result.Err -}}
+        {{- warnf "%s" . -}}{{- . -}}
+    {{- else -}}
         {{- $title := "" -}}
         {{- $description := "" -}}
         {{- $image := "" -}}
         {{- with $findHead := index (findRE "<head>(.|\n)*?</head>" $result.Content) 0 -}}
             {{- range $meta := findRE "<meta.*?>" $findHead -}}
+                {{- $name := replaceRE "<.*name=\"(.*?)\".*>" "$1" $meta -}}
                 {{- $property := replaceRE "<.*property=\"(.*?)\".*>" "$1" $meta -}}
                 {{- $content := replaceRE "<.*content=\"(.*?)\".*>" "$1" $meta -}}
                 {{- if eq $property "og:title" -}}
@@ -73,26 +74,40 @@ layouts/shortcodes/blog-card.html
                 {{- else if eq $property "og:image" -}}
                     {{- $image = $content -}}
                 {{- end -}}
+                {{- if and (eq $description "") (eq $name "description") -}}
+                    {{- $description = $content -}}
+                {{- end -}}
+            {{- end -}}
+            {{- if eq $title "" -}}
+                {{- with index (findRE "<title>(.*?)</title>" $findHead) 0 -}}
+                    {{- $title = replaceRE "<title>(.*?)</title>" "$1" . -}}
+                {{- end -}}
             {{- end -}}
         {{- end -}}
 
-        {{- $thumbnail := resources.GetRemote $image -}}
-        {{- if $thumbnail.Err -}}
-            {{- $thumbnail = resources.Get $.Site.Params.dafaultNoimage -}}
-            {{- $thumbnail = $thumbnail.Fit (printf "200x200 center q%d webp" $.Site.Params.imageQuality) -}}
+        {{- $thumbnail_url := "" -}}
+        {{- if $image -}}
+            {{- with $thumbnail := resources.GetRemote $image -}}
+                {{- with $thumbnail.Err -}}
+                    {{- warnf "%s" . -}}{{- . -}}
+                {{- else -}}
+                    {{- $thumbnail_url = ($thumbnail.Fit (printf "200x200 center q%d webp" $.Site.Params.imageQuality)).Permalink -}}
+                {{- end -}}
+            {{- end -}}
         {{- else -}}
-            {{- $thumbnail = $thumbnail.Fit (printf "200x200 center q%d webp" $.Site.Params.imageQuality) -}}
+            {{- $thumbnail := resources.Get $.Site.Params.dafaultNoimage -}}
+            {{- $thumbnail_url = ($thumbnail.Fit (printf "200x200 center q%d webp" $.Site.Params.imageQuality)).Permalink -}}
         {{- end -}}
 
         <a href="{{- $url -}}" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: #000;" onMouseOver="this.style.opacity='0.9'">
             <div style="flex-shrink: 0;">
-                <img src="{{- $thumbnail.Permalink -}}" alt="{{- $title -}}" width="100" height="100" style="object-fit: contain;">
+                <img src="{{- $thumbnail_url -}}" alt="" width="100" height="100" style="object-fit: contain;">
             </div>
             <div style="margin-left: 10px;">
                 <h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">
                     {{- $title -}}
                 </h2>
-                <p style="margin: 0;font-size: 13px;">
+                <p style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;">
                     {{- $description | plainify | safeHTML -}}
                 </p>
             </div>
@@ -119,4 +134,49 @@ layouts/shortcodes/blog-card.html
 
 <br>
 
+{{< blog-card "https://b.hatena.ne.jp/" >}}
+
+<br>
+
 {{< blog-card "https://hugo-theme-salt.okdyy75.com/" >}}
+
+### エラー時の表示例
+
+#### ページが存在しない場合（500系など）
+- その場でエラーメッセージが表示されます
+
+```
+{{</* blog-card "https://example.com.invalid/" */>}}
+```
+
+{{< blog-card "https://example.com.invalid/" >}}
+
+#### ページが見つからない場合（400系など）
+- 何も表示されません
+
+```
+{{</* blog-card "https://example.com/test" */>}}
+```
+
+{{< blog-card "https://example.com/test" >}}
+
+
+#### metaタグに`og:image`がない場合  
+- デフォルトのNoImage画像が表示されます
+
+```
+{{</* blog-card "https://example.com" */>}}
+```
+
+{{< blog-card "https://example.com" >}}
+
+<br>
+
+#### metaタグに`og:image`が存在するが、リンク切れを起こしている場合
+- リンク切れで表示されます。（`src=""`）
+
+```
+{{</* blog-card "https://hugo-theme-salt.okdyy75.com/test.html" */>}}
+```
+
+{{< blog-card "https://hugo-theme-salt.okdyy75.com/test.html" >}}

@@ -74,8 +74,13 @@
         <meta name="twitter:image" content="{{ $og_image_url }}">
         <meta name="twitter:card" content="summary_large_image">
     {{- end -}}
-    <meta name="robots" content="index,follow">
-    <meta name="googlebot" content="index,follow">
+    {{- partial "head.html" . -}}
+    {{- block "robots" . -}}
+        <meta name="robots" content="index,follow">
+    {{- end -}}
+    {{- block "googlebot" . -}}
+        <meta name="googlebot" content="index,follow">
+    {{- end -}}
     {{ hugo.Generator }}
     <link rel="icon" href="{{ "favicon.ico" | absURL }}">
     {{ if .Site.Params.icon }}

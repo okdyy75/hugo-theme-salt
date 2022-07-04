@@ -38,9 +38,22 @@ Hugo標準のショートコードを使用することで、TwitterやYouTube�
 
 {{< self-blog-card "article/sample/hugo-shortcode" >}}
 
+<br>
+
 **もちろん自サイト内のブログカードにも対応しています**
 
 {{< self-blog-card "article/salt/self-blog-card" >}}
+
+<br>
+
+{{< self-blog-card "/article/sample/no-thumbnail" >}}
+
+<br>
+
+2022-07-01 追記  
+**外部サイトのブログカードにも対応しました**
+
+{{< blog-card "https://zenn.dev/okdyy75/books/fe9188ccfd6ae3" >}}
 
 <br>
 

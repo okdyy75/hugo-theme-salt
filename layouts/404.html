@@ -1,5 +1,9 @@
-{{ define "robots" }}noindex,nofollow{{ end }}
-{{ define "googlebot" }}noindex,nofollow{{ end }}
+{{- define "robots" -}}
+    <meta name="robots" content="noindex,nofollow">
+{{- end -}}
+{{- define "googlebot" -}}
+    <meta name="googlebot" content="noindex,nofollow">
+{{- end -}}
 {{ define "main" }}
     <section class="notFound">
         <div class="notFound__inner">
