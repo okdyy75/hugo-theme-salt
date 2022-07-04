@@ -35,17 +35,17 @@
                 {{- with $thumbnail.Err -}}
                     {{- warnf "%s" . -}}{{- . -}}
                 {{- else -}}
-                    {{- $thumbnail_url = ($thumbnail.Fit (printf "200x200 center q%d webp" $.Site.Params.imageQuality)).Permalink -}}
+                    {{- $thumbnail_url = ($thumbnail.Fill (printf "200x200 center q%d webp" $.Site.Params.imageQuality)).Permalink -}}
                 {{- end -}}
             {{- end -}}
         {{- else -}}
             {{- $thumbnail := resources.Get $.Site.Params.dafaultNoimage -}}
-            {{- $thumbnail_url = ($thumbnail.Fit (printf "200x200 center q%d webp" $.Site.Params.imageQuality)).Permalink -}}
+            {{- $thumbnail_url = ($thumbnail.Fill (printf "200x200 center q%d webp" $.Site.Params.imageQuality)).Permalink -}}
         {{- end -}}
 
         <a href="{{- $url -}}" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: #000;" onMouseOver="this.style.opacity='0.9'">
             <div style="flex-shrink: 0;">
-                <img src="{{- $thumbnail_url -}}" alt="" width="100" height="100" style="object-fit: contain;">
+                <img src="{{- $thumbnail_url -}}" alt="" width="100" height="100">
             </div>
             <div style="margin-left: 10px;">
                 <h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">
