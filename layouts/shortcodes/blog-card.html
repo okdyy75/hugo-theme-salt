@@ -6,8 +6,8 @@
         {{- $title := "" -}}
         {{- $description := "" -}}
         {{- $image := "" -}}
-        {{- with $findHead := index (findRE "<head>(.|\n)*?</head>" $result.Content) 0 -}}
-            {{- range $meta := findRE "<meta.*?>" $findHead -}}
+        {{- with $findHead := index (findRE "<head.*?>(.|\n)*?</head>" $result.Content) 0 -}}
+            {{- range $meta := findRE "<meta.*?>" (replace $findHead "\n" "") -}}
                 {{- $name := replaceRE "<.*name=\"(.*?)\".*>" "$1" $meta -}}
                 {{- $property := replaceRE "<.*property=\"(.*?)\".*>" "$1" $meta -}}
                 {{- $content := replaceRE "<.*content=\"(.*?)\".*>" "$1" $meta -}}
