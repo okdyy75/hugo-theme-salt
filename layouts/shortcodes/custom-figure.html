@@ -12,6 +12,9 @@
     {{- else if .Get "Fill"  -}}
         {{ $src = .Page.Resources.Match $src }}
         {{ $src = ((index $src 0).Fill (.Get "Fill")).Permalink }}
+    {{- else if .Get "Crop"  -}}
+        {{ $src = .Page.Resources.Match $src }}
+        {{ $src = ((index $src 0).Crop (.Get "Crop")).Permalink }}
     {{ end }}
 
     <img src="{{ $src }}"
