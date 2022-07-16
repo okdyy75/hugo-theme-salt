@@ -20,9 +20,11 @@ archives: ["2021年9月"]
 - Hugo標準のfigureショートコードの機能をそのまま使えます
 - HugoのImage Processingで使えるResize、Fit、Fillが使えます
 
-Image Processingについてはこちらをチェック  
-https://gohugo.io/content-management/image-processing/
+Image Processingについてはこちらをチェック
 
+{{< blog-card "https://gohugo.io/content-management/image-processing/" >}}
+
+<br>
 
 ```
 {{</* custom-figure src="image.png" title="Resize スイカ" Resize="320x180" */>}}
@@ -31,6 +33,7 @@ https://gohugo.io/content-management/image-processing/
 
 {{</* custom-figure src="image.png" title="Fill スイカ" Fill="320x180" */>}}
 
+{{</* custom-figure src="image.png" title="Crop スイカ" Crop="320x180" */>}}
 ```
 
 ## 表示例
@@ -46,3 +49,7 @@ https://gohugo.io/content-management/image-processing/
 <br>
 
 {{< custom-figure src="image.png" title="Fill 320x180 スイカ" Fill="320x180" >}}
+
+<br>
+
+{{< custom-figure src="image.png" title="Crop 320x180 スイカ" Crop="320x180" >}}
