@@ -48,6 +48,8 @@
         }
         &__thumbnail {
             margin: 20px auto;
+            max-width: 640px;
+            max-height: 640px;
         }
         &__toc {
             margin: 10px;
@@ -166,6 +168,9 @@
             &__title {
                 margin-top: 20px;
                 margin-bottom: 5px;
+            }
+            &__thumbnail {
+                max-width: 100%;
             }
             &__toc {
                 margin: 0;
