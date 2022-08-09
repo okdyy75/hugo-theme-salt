@@ -92,6 +92,13 @@
                 overflow: auto;
                 white-space: nowrap;
             }
+            &.markdown-body {
+                color: $base-font-color;
+                pre, table {
+                    background: #f6f8fa;
+                    color: #000;
+                }
+            }
         }
     }
     &__relatedArticleList {
