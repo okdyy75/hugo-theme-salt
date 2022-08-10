@@ -2,7 +2,7 @@
 title: "Hugoブログテーマ「Salt」とは？"
 description: ""
 date: 2021-09-12T15:07:11+09:00
-lastmod: 2021-09-17T21:04:11+09:00
+lastmod: 2022-08-10T18:26:11+09:00
 draft: false
 tags: ["Hugo", "Hugoテーマ"]
 categories: "Saltの使い方"
@@ -38,9 +38,7 @@ Hugo標準のショートコードを使用することで、TwitterやYouTube�
 
 {{< self-blog-card "article/sample/hugo-shortcode" >}}
 
-<br>
-
-**もちろん自サイト内のブログカードにも対応しています**
+#### 自サイト内のブログカードにも対応
 
 {{< self-blog-card "article/salt/self-blog-card" >}}
 
@@ -50,8 +48,7 @@ Hugo標準のショートコードを使用することで、TwitterやYouTube�
 
 <br>
 
-2022-07-01 追記  
-**外部サイトのブログカードにも対応しました**
+#### 外部サイトのブログカードにも対応
 
 {{< blog-card "https://zenn.dev/okdyy75/books/fe9188ccfd6ae3" >}}
 
@@ -99,3 +96,36 @@ Hugoの特徴ですが、themeフォルダ内のファイルを、ローカル�
 
 ## 9. 記事ページに関連記事を自動で表示
 関連記事の表示はもちろん、関連させたい要素（タグやカテゴリー）を設定することも可能です
+
+<br>
+
+## 10. 構造化データ(JSON-LD)対応
+構造化データに対応しました
+
+<br>
+
+## 11. 選べるカラーテーマ
+標準のテーマ以外に、4種類のテーマからも選べます
+
+### ポップブルー
+
+{{< custom-figure src="site-color-capture/pop-blue_top.png" title="" Fit="1280x1280 webp q90" >}}
+
+### ゴールデンイエロー
+
+{{< custom-figure src="site-color-capture/golden-yellow_top.png" title="" Fit="1280x1280 webp q90" >}}
+
+### 桜ピンク
+
+{{< custom-figure src="site-color-capture/sakura-pink_top.png" title="" Fit="1280x1280 webp q90" >}}
+
+### モダンベージュ
+
+{{< custom-figure src="site-color-capture/modern-beige_top.png" title="" Fit="1280x1280 webp q90" >}}
+
+
+## 詳しい使い方
+
+Zennの本をチェックしてみてください
+
+{{< blog-card "https://zenn.dev/okdyy75/books/fe9188ccfd6ae3" >}}
