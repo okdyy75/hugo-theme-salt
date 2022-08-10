@@ -19,7 +19,7 @@
                 width: 100%;
                 position: absolute;
                 top: 0;
-                border-top: 2px solid $title-border;
+                border-top: 2px solid $header-menu-color;
                 transition: 0.3s ease-in-out;
             }
             &.open::before {
@@ -31,7 +31,7 @@
                 width: 100%;
                 position: absolute;
                 bottom: 0;
-                border-top: 2px solid $title-border;
+                border-top: 2px solid $header-menu-color;
                 transition: 0.3s ease-in-out;
             }
             &.open::after {
@@ -43,7 +43,7 @@
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
-                border-bottom: 2px solid $title-border;
+                border-bottom: 2px solid $header-menu-color;
                 transition: 0.3s ease-in-out;
                 opacity: 1;
             }
@@ -86,14 +86,13 @@
             &__menu {
                 position: absolute;
                 width: 100%;
-                right: -100%;
+                right: -101%;
                 overflow-y: scroll;
                 height: 80vh;
                 margin-top: 14px;
                 padding: 12.5px;
-                background: $base-background;
+                background: $header-background;
                 border-top: 1px solid $light-border;
-                border-bottom: 1px solid $light-border;
                 transition: 0.3s ease-in-out;
                 &.open {
                     right: 0;

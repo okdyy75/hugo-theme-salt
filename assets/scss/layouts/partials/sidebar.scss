@@ -166,8 +166,8 @@
                 content: "";
                 width: 10px;
                 height: 10px;
-                border-right: 1px solid #333;
-                border-bottom: 1px solid #333;
+                border-right: 1px solid $base-font-color;
+                border-bottom: 1px solid $base-font-color;
                 position: absolute;
                 right: 20px;
                 top: 5px;
@@ -219,7 +219,7 @@
                 border: 1px solid $light-border;
                 text-align: center;
                 font-size: 10px;
-                color: #aaa;
+                color: rgba($base-font-color, 0.8);
             }
         }
     }

@@ -5,7 +5,7 @@
         display: flex;
         white-space: nowrap;
         font-size: 14px;
-        color: $light-text;
+        color: rgba($base-font-color, 0.6);
         & li:not(:first-child) {
             margin-left: 6px;
         }

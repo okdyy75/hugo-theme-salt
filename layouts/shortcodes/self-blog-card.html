@@ -2,7 +2,7 @@
 {{/* 自記事のブログカードを表示しようとすると無限ループになるのを回避 */}}
 {{- if not (in .Page.Permalink $url) -}}
     {{- with $.Site.GetPage $url -}}
-        <a href="{{- .Permalink -}}" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: #000;" onMouseOver="this.style.opacity='0.9'">
+        <a href="{{- .Permalink -}}" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: inherit;" onMouseOver="this.style.opacity='0.9'">
             {{- $thumbnail_url := "" -}}
             {{- with $thumbnail := index (.Resources.Match "thumbnail.*") 0 -}}
                 {{- $thumbnail_url = ($thumbnail.Fill (printf "200x200 center q%d webp" $.Site.Params.imageQuality)).Permalink -}}
