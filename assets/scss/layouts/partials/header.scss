@@ -172,6 +172,9 @@
                             opacity: 1;
                         }
                     }
+                    &__itemIcon {
+                        pointer-events: none;
+                    }
                     &__itemTitle {
                         margin-top: 2px;
                     }
