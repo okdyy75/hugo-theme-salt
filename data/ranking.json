@@ -2,30 +2,26 @@
     "items": [
         {
             "pagePath": "/",
-            "pv": "16"
-        },
-        {
-            "pagePath": "/article/hugo/about/",
-            "pv": "7"
+            "pv": "12"
         },
         {
             "pagePath": "/article/hugo/tips/",
-            "pv": "5"
-        },
-        {
-            "pagePath": "/article/hugo/ranking/",
-            "pv": "4"
+            "pv": "11"
         },
         {
             "pagePath": "/article/salt/about/",
-            "pv": "4"
-        },
-        {
-            "pagePath": "/article/go/go-template/",
-            "pv": "3"
+            "pv": "10"
         },
         {
             "pagePath": "/article/hugo/search/",
+            "pv": "6"
+        },
+        {
+            "pagePath": "/article/salt/blog-card/",
+            "pv": "4"
+        },
+        {
+            "pagePath": "/article/hugo/about/",
             "pv": "3"
         },
         {
@@ -33,19 +29,19 @@
             "pv": "3"
         },
         {
-            "pagePath": "/tags/Hugo/",
+            "pagePath": "/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/",
             "pv": "3"
         },
         {
+            "pagePath": "/article/go/go-template/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/hugo/archive/",
+            "pv": "2"
+        },
+        {
             "pagePath": "/article/hugo/build-error/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/salt/blog-card/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/sample/hugo-shortcode/",
             "pv": "2"
         },
         {
@@ -53,27 +49,23 @@
             "pv": "2"
         },
         {
-            "pagePath": "/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/",
+            "pagePath": "/tags/Hugo/",
             "pv": "2"
-        },
-        {
-            "pagePath": "/tags/tips/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/archives/2022%E5%B9%B45%E6%9C%88/",
-            "pv": "1"
         },
         {
             "pagePath": "/article/hugo/fontawesome/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/salt/custom-figure/",
+            "pagePath": "/article/hugo/ranking/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/sample/small-thumbnail/",
+            "pagePath": "/article/sample/hugo-shortcode/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/sample/no-thumbnail/",
             "pv": "1"
         },
         {
@@ -81,21 +73,13 @@
             "pv": "1"
         },
         {
-            "pagePath": "/categories/Hugo/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/information/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/search/",
-            "pv": "1"
-        },
-        {
             "pagePath": "/tags/%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%B3%E3%83%BC%E3%83%89/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/tags/go-template/",
             "pv": "1"
         }
     ],
-    "createdAt": "2022-09-18T00:39:44.959Z"
+    "createdAt": "2022-09-25T00:36:26.859Z"
 }
