@@ -6,26 +6,22 @@
         },
         {
             "pagePath": "/article/hugo/tips/",
-            "pv": "11"
-        },
-        {
-            "pagePath": "/article/salt/about/",
-            "pv": "10"
-        },
-        {
-            "pagePath": "/article/hugo/search/",
             "pv": "6"
         },
         {
-            "pagePath": "/article/salt/blog-card/",
+            "pagePath": "/article/salt/about/",
+            "pv": "6"
+        },
+        {
+            "pagePath": "/article/hugo/build-error/",
             "pv": "4"
         },
         {
-            "pagePath": "/article/hugo/about/",
+            "pagePath": "/article/hugo/ranking/",
             "pv": "3"
         },
         {
-            "pagePath": "/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/",
+            "pagePath": "/article/salt/blog-card/",
             "pv": "3"
         },
         {
@@ -33,15 +29,11 @@
             "pv": "3"
         },
         {
-            "pagePath": "/article/go/go-template/",
-            "pv": "2"
+            "pagePath": "/tags/Hugo/",
+            "pv": "3"
         },
         {
-            "pagePath": "/article/hugo/archive/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/hugo/build-error/",
+            "pagePath": "/article/hugo/search/",
             "pv": "2"
         },
         {
@@ -49,15 +41,15 @@
             "pv": "2"
         },
         {
-            "pagePath": "/tags/Hugo/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/hugo/fontawesome/",
+            "pagePath": "/article/go/go-template/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/ranking/",
+            "pagePath": "/article/hugo/about/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/hugo/archive/",
             "pv": "1"
         },
         {
@@ -65,21 +57,9 @@
             "pv": "1"
         },
         {
-            "pagePath": "/article/sample/no-thumbnail/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/categories/Go%E8%A8%80%E8%AA%9E/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/tags/%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%B3%E3%83%BC%E3%83%89/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/tags/go-template/",
+            "pagePath": "/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/",
             "pv": "1"
         }
     ],
-    "createdAt": "2022-09-25T00:36:26.859Z"
+    "createdAt": "2022-10-02T00:47:59.787Z"
 }
