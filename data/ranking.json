@@ -1,47 +1,47 @@
 {
     "items": [
         {
-            "pagePath": "/article/hugo/tips/",
+            "pagePath": "/",
+            "pv": "18"
+        },
+        {
+            "pagePath": "/article/salt/about/",
             "pv": "9"
         },
         {
-            "pagePath": "/article/hugo/archive/",
+            "pagePath": "/article/salt/blog-card/",
+            "pv": "9"
+        },
+        {
+            "pagePath": "/article/hugo/tips/",
+            "pv": "7"
+        },
+        {
+            "pagePath": "/article/salt/custom-figure/",
             "pv": "5"
         },
         {
-            "pagePath": "/",
+            "pagePath": "/article/hugo/archive/",
+            "pv": "4"
+        },
+        {
+            "pagePath": "/article/sample/markdown/",
             "pv": "4"
         },
         {
             "pagePath": "/article/hugo/search/",
-            "pv": "4"
-        },
-        {
-            "pagePath": "/article/salt/blog-card/",
-            "pv": "4"
+            "pv": "3"
         },
         {
             "pagePath": "/article/hugo/build-error/",
-            "pv": "3"
+            "pv": "2"
         },
         {
-            "pagePath": "/article/salt/about/",
-            "pv": "3"
+            "pagePath": "/article/salt/self-blog-card/",
+            "pv": "2"
         },
         {
             "pagePath": "/article/hugo/about/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/salt/custom-figure/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/hugo/ranking/",
             "pv": "1"
         },
         {
@@ -49,7 +49,15 @@
             "pv": "1"
         },
         {
-            "pagePath": "/article/sample/markdown/",
+            "pagePath": "/categories/Go%E8%A8%80%E8%AA%9E/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/page/2/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/tags/%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%B3%E3%83%BC%E3%83%89/",
             "pv": "1"
         },
         {
@@ -57,5 +65,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2022-10-23T00:45:25.915Z"
+    "createdAt": "2022-10-30T00:42:46.445Z"
 }
