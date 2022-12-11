@@ -1,51 +1,35 @@
 {
     "items": [
         {
-            "pagePath": "/article/salt/blog-card/",
-            "pv": "11"
+            "pagePath": "/article/hugo/search/",
+            "pv": "8"
+        },
+        {
+            "pagePath": "/",
+            "pv": "5"
         },
         {
             "pagePath": "/article/hugo/build-error/",
             "pv": "5"
         },
         {
-            "pagePath": "/article/salt/self-blog-card/",
+            "pagePath": "/article/hugo/ranking/",
             "pv": "5"
         },
         {
-            "pagePath": "/article/hugo/ranking/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/article/hugo/search/",
-            "pv": "3"
-        },
-        {
             "pagePath": "/article/hugo/tips/",
-            "pv": "3"
+            "pv": "5"
         },
         {
             "pagePath": "/article/salt/about/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/article/sample/hugo-shortcode/",
-            "pv": "3"
+            "pv": "5"
         },
         {
             "pagePath": "/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/",
             "pv": "3"
         },
         {
-            "pagePath": "/tags/Hugo/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/",
+            "pagePath": "/article/sample/hugo-shortcode/",
             "pv": "2"
         },
         {
@@ -53,7 +37,7 @@
             "pv": "1"
         },
         {
-            "pagePath": "/article/go/variable/",
+            "pagePath": "/article/hugo/archive/",
             "pv": "1"
         },
         {
@@ -61,17 +45,13 @@
             "pv": "1"
         },
         {
-            "pagePath": "/article/salt/custom-figure/",
+            "pagePath": "/article/sample/markdown/",
             "pv": "1"
         },
         {
-            "pagePath": "/tags/%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%B3%E3%83%BC%E3%83%89/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/tags/tips/",
+            "pagePath": "/article/sample/small-thumbnail/",
             "pv": "1"
         }
     ],
-    "createdAt": "2022-12-04T00:28:37.725Z"
+    "createdAt": "2022-12-11T00:32:58.766Z"
 }
