@@ -1,40 +1,44 @@
 {
     "items": [
         {
-            "pagePath": "/article/hugo/search/",
-            "pv": "8"
+            "pagePath": "/",
+            "pv": "7"
         },
         {
-            "pagePath": "/",
-            "pv": "5"
+            "pagePath": "/article/hugo/tips/",
+            "pv": "6"
         },
         {
             "pagePath": "/article/hugo/build-error/",
             "pv": "5"
         },
         {
-            "pagePath": "/article/hugo/ranking/",
-            "pv": "5"
+            "pagePath": "/article/go/go-template/",
+            "pv": "4"
         },
         {
-            "pagePath": "/article/hugo/tips/",
-            "pv": "5"
-        },
-        {
-            "pagePath": "/article/salt/about/",
-            "pv": "5"
-        },
-        {
-            "pagePath": "/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/",
-            "pv": "3"
+            "pagePath": "/article/hugo/search/",
+            "pv": "4"
         },
         {
             "pagePath": "/article/sample/hugo-shortcode/",
+            "pv": "4"
+        },
+        {
+            "pagePath": "/article/hugo/about/",
             "pv": "2"
         },
         {
-            "pagePath": "/article/go/go-template/",
-            "pv": "1"
+            "pagePath": "/article/salt/about/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/salt/blog-card/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/page/2/",
+            "pv": "2"
         },
         {
             "pagePath": "/article/hugo/archive/",
@@ -45,13 +49,17 @@
             "pv": "1"
         },
         {
+            "pagePath": "/article/salt/custom-figure/",
+            "pv": "1"
+        },
+        {
             "pagePath": "/article/sample/markdown/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/sample/small-thumbnail/",
+            "pagePath": "/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/",
             "pv": "1"
         }
     ],
-    "createdAt": "2022-12-11T00:32:58.766Z"
+    "createdAt": "2022-12-18T00:27:33.628Z"
 }
