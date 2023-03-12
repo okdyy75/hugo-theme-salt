@@ -1,35 +1,35 @@
 {
     "items": [
         {
-            "pagePath": "/article/hugo/tips/",
+            "pagePath": "/",
+            "pv": "10"
+        },
+        {
+            "pagePath": "/article/hugo/search/",
             "pv": "8"
         },
         {
-            "pagePath": "/",
-            "pv": "6"
+            "pagePath": "/article/hugo/archive/",
+            "pv": "4"
         },
         {
             "pagePath": "/article/go/go-template/",
             "pv": "3"
         },
         {
-            "pagePath": "/article/hugo/build-error/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/article/sample/hugo-shortcode/",
-            "pv": "3"
-        },
-        {
             "pagePath": "/article/hugo/about/",
-            "pv": "2"
+            "pv": "3"
         },
         {
-            "pagePath": "/article/hugo/archive/",
-            "pv": "2"
+            "pagePath": "/article/hugo/tips/",
+            "pv": "3"
         },
         {
-            "pagePath": "/article/hugo/search/",
+            "pagePath": "/article/salt/blog-card/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/article/go/variable/",
             "pv": "2"
         },
         {
@@ -37,11 +37,19 @@
             "pv": "2"
         },
         {
-            "pagePath": "/tags/Hugo/",
+            "pagePath": "/article/salt/self-blog-card/",
             "pv": "2"
         },
         {
-            "pagePath": "/article/go/variable/",
+            "pagePath": "/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/hugo/build-error/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/hugo/fontawesome/",
             "pv": "1"
         },
         {
@@ -51,7 +59,19 @@
         {
             "pagePath": "/article/salt/custom-figure/",
             "pv": "1"
+        },
+        {
+            "pagePath": "/article/sample/hugo-shortcode/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/sample/markdown/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/sample/no-thumbnail/",
+            "pv": "1"
         }
     ],
-    "createdAt": "2023-03-05T00:34:58.733Z"
+    "createdAt": "2023-03-12T00:32:05.240Z"
 }
