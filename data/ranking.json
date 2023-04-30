@@ -1,23 +1,31 @@
 {
     "items": [
         {
-            "pagePath": "/article/salt/blog-card/",
-            "pv": "12"
-        },
-        {
             "pagePath": "/",
             "pv": "9"
         },
         {
-            "pagePath": "/article/salt/about/",
-            "pv": "5"
-        },
-        {
-            "pagePath": "/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/",
-            "pv": "5"
+            "pagePath": "/article/hugo/tips/",
+            "pv": "8"
         },
         {
             "pagePath": "/article/hugo/search/",
+            "pv": "6"
+        },
+        {
+            "pagePath": "/article/salt/blog-card/",
+            "pv": "6"
+        },
+        {
+            "pagePath": "/article/go/go-template/",
+            "pv": "4"
+        },
+        {
+            "pagePath": "/article/hugo/archive/",
+            "pv": "4"
+        },
+        {
+            "pagePath": "/about/",
             "pv": "3"
         },
         {
@@ -25,39 +33,35 @@
             "pv": "3"
         },
         {
-            "pagePath": "/article/go/go-template/",
+            "pagePath": "/article/hugo/build-error/",
             "pv": "2"
         },
         {
-            "pagePath": "/search/",
+            "pagePath": "/article/salt/custom-figure/",
             "pv": "2"
-        },
-        {
-            "pagePath": "/about/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/go/variable/",
-            "pv": "1"
         },
         {
             "pagePath": "/article/hugo/about/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/build-error/",
+            "pagePath": "/article/hugo/ranking/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/tips/",
+            "pagePath": "/article/salt/about/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/sample/hugo-shortcode/",
+            "pagePath": "/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/",
             "pv": "1"
         },
         {
-            "pagePath": "/categories/Go%E8%A8%80%E8%AA%9E/",
+            "pagePath": "/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/search/",
             "pv": "1"
         },
         {
@@ -73,5 +77,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2023-04-23T00:30:53.405Z"
+    "createdAt": "2023-04-30T00:30:25.707Z"
 }
