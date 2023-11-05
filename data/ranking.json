@@ -1,10 +1,6 @@
 {
     "items": [
         {
-            "pagePath": "/article/hugo/tips/",
-            "pv": "7"
-        },
-        {
             "pagePath": "/article/salt/blog-card/",
             "pv": "7"
         },
@@ -13,19 +9,23 @@
             "pv": "4"
         },
         {
-            "pagePath": "/article/hugo/search/",
-            "pv": "4"
-        },
-        {
-            "pagePath": "/article/salt/about/",
-            "pv": "4"
-        },
-        {
-            "pagePath": "/search/",
+            "pagePath": "/article/go/go-template/",
             "pv": "3"
         },
         {
-            "pagePath": "/article/go/go-template/",
+            "pagePath": "/categories/Saltの使い方/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/article/hugo/archive/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/hugo/search/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/hugo/tips/",
             "pv": "2"
         },
         {
@@ -33,11 +33,7 @@
             "pv": "2"
         },
         {
-            "pagePath": "/tags/Hugo/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/hugo/build-error/",
+            "pagePath": "/about/",
             "pv": "1"
         },
         {
@@ -45,25 +41,17 @@
             "pv": "1"
         },
         {
+            "pagePath": "/article/salt/about/",
+            "pv": "1"
+        },
+        {
             "pagePath": "/article/salt/self-blog-card/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/sample/markdown/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/categories/サンプル/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/information/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/tags/tips/",
+            "pagePath": "/article/sample/hugo-shortcode/",
             "pv": "1"
         }
     ],
-    "createdAt": "2023-10-29T00:28:34.887Z"
+    "createdAt": "2023-11-05T00:29:09.513Z"
 }
