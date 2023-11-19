@@ -1,57 +1,61 @@
 {
     "items": [
         {
-            "pagePath": "/",
-            "pv": "10"
-        },
-        {
-            "pagePath": "/article/hugo/tips/",
-            "pv": "7"
-        },
-        {
-            "pagePath": "/article/salt/blog-card/",
+            "pagePath": "/article/hugo/search/",
             "pv": "6"
+        },
+        {
+            "pagePath": "/article/sample/markdown/",
+            "pv": "5"
+        },
+        {
+            "pagePath": "/article/hugo/archive/",
+            "pv": "4"
         },
         {
             "pagePath": "/article/hugo/build-error/",
             "pv": "4"
         },
         {
-            "pagePath": "/article/hugo/search/",
-            "pv": "4"
-        },
-        {
-            "pagePath": "/categories/Hugo/",
+            "pagePath": "/article/go/go-template/",
             "pv": "3"
         },
         {
-            "pagePath": "/article/hugo/about/",
+            "pagePath": "/article/hugo/ranking/",
             "pv": "2"
         },
         {
-            "pagePath": "/article/salt/custom-figure/",
+            "pagePath": "/article/hugo/tips/",
             "pv": "2"
-        },
-        {
-            "pagePath": "/tags/Hugo/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/go/go-template/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/hugo/archive/",
-            "pv": "1"
         },
         {
             "pagePath": "/article/salt/about/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/categories/Saltの使い方/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/sample/markdown/",
+            "pagePath": "/about/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/hugo/about/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/salt/blog-card/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/salt/custom-figure/",
             "pv": "1"
         }
     ],
-    "createdAt": "2023-11-12T00:29:14.760Z"
+    "createdAt": "2023-11-19T00:30:23.084Z"
 }
