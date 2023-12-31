@@ -1,10 +1,6 @@
 {
     "items": [
         {
-            "pagePath": "/article/hugo/search/",
-            "pv": "14"
-        },
-        {
             "pagePath": "/",
             "pv": "10"
         },
@@ -13,15 +9,23 @@
             "pv": "5"
         },
         {
+            "pagePath": "/article/hugo/search/",
+            "pv": "5"
+        },
+        {
             "pagePath": "/article/hugo/tips/",
             "pv": "5"
         },
         {
-            "pagePath": "/article/salt/blog-card/",
-            "pv": "5"
+            "pagePath": "/article/salt/about/",
+            "pv": "4"
         },
         {
-            "pagePath": "/search/",
+            "pagePath": "/article/salt/blog-card/",
+            "pv": "4"
+        },
+        {
+            "pagePath": "/article/sample/markdown/",
             "pv": "4"
         },
         {
@@ -29,8 +33,12 @@
             "pv": "3"
         },
         {
-            "pagePath": "/article/salt/about/",
+            "pagePath": "/article/salt/self-blog-card/",
             "pv": "3"
+        },
+        {
+            "pagePath": "/article/go/variable/",
+            "pv": "2"
         },
         {
             "pagePath": "/article/hugo/about/",
@@ -41,37 +49,33 @@
             "pv": "2"
         },
         {
-            "pagePath": "/article/salt/custom-figure/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/information/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/salt/self-blog-card/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/sample/hugo-shortcode/",
-            "pv": "1"
-        },
-        {
             "pagePath": "/categories/サンプル/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/hugo/ranking/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/salt/custom-figure/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/categories/Go言語/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/page/2/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/tags/CI/",
             "pv": "1"
         },
         {
             "pagePath": "/tags/Hugo/",
             "pv": "1"
-        },
-        {
-            "pagePath": "/tags/lunr/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/tags/マークダウン/",
-            "pv": "1"
         }
     ],
-    "createdAt": "2023-12-24T00:30:15.538Z"
+    "createdAt": "2023-12-31T00:30:46.452Z"
 }
