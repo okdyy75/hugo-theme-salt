@@ -1,44 +1,32 @@
 {
     "items": [
         {
-            "pagePath": "/",
-            "pv": "10"
-        },
-        {
-            "pagePath": "/article/go/go-template/",
-            "pv": "5"
-        },
-        {
-            "pagePath": "/article/hugo/search/",
-            "pv": "5"
+            "pagePath": "/article/salt/blog-card/",
+            "pv": "20"
         },
         {
             "pagePath": "/article/hugo/tips/",
             "pv": "5"
         },
         {
-            "pagePath": "/article/salt/about/",
-            "pv": "4"
-        },
-        {
-            "pagePath": "/article/salt/blog-card/",
-            "pv": "4"
-        },
-        {
-            "pagePath": "/article/sample/markdown/",
+            "pagePath": "/",
             "pv": "4"
         },
         {
             "pagePath": "/article/hugo/archive/",
+            "pv": "4"
+        },
+        {
+            "pagePath": "/article/salt/about/",
+            "pv": "4"
+        },
+        {
+            "pagePath": "/article/hugo/search/",
             "pv": "3"
         },
         {
             "pagePath": "/article/salt/self-blog-card/",
             "pv": "3"
-        },
-        {
-            "pagePath": "/article/go/variable/",
-            "pv": "2"
         },
         {
             "pagePath": "/article/hugo/about/",
@@ -49,33 +37,37 @@
             "pv": "2"
         },
         {
-            "pagePath": "/categories/サンプル/",
+            "pagePath": "/article/salt/custom-figure/",
             "pv": "2"
+        },
+        {
+            "pagePath": "/article/sample/hugo-shortcode/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/categories/Saltの使い方/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/go/go-template/",
+            "pv": "1"
         },
         {
             "pagePath": "/article/hugo/ranking/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/salt/custom-figure/",
+            "pagePath": "/article/sample/markdown/",
             "pv": "1"
         },
         {
-            "pagePath": "/categories/Go言語/",
+            "pagePath": "/search/",
             "pv": "1"
         },
         {
-            "pagePath": "/page/2/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/tags/CI/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/tags/Hugo/",
+            "pagePath": "/tags/Hugoテーマ/",
             "pv": "1"
         }
     ],
-    "createdAt": "2023-12-31T00:30:46.452Z"
+    "createdAt": "2024-01-07T00:31:35.947Z"
 }
