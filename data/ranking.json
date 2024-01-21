@@ -2,10 +2,6 @@
     "items": [
         {
             "pagePath": "/article/hugo/tips/",
-            "pv": "13"
-        },
-        {
-            "pagePath": "/article/salt/blog-card/",
             "pv": "12"
         },
         {
@@ -14,92 +10,72 @@
         },
         {
             "pagePath": "/article/hugo/about/",
+            "pv": "10"
+        },
+        {
+            "pagePath": "/article/salt/blog-card/",
+            "pv": "9"
+        },
+        {
+            "pagePath": "/article/go/go-template/",
             "pv": "6"
         },
         {
-            "pagePath": "/article/hugo/search/",
+            "pagePath": "/article/salt/self-blog-card/",
             "pv": "6"
         },
         {
             "pagePath": "/article/salt/about/",
-            "pv": "6"
-        },
-        {
-            "pagePath": "/article/sample/markdown/",
-            "pv": "6"
-        },
-        {
-            "pagePath": "/article/salt/custom-figure/",
-            "pv": "5"
-        },
-        {
-            "pagePath": "/article/salt/self-blog-card/",
             "pv": "4"
-        },
-        {
-            "pagePath": "/tags/Hugo/",
-            "pv": "4"
-        },
-        {
-            "pagePath": "/article/go/variable/",
-            "pv": "3"
         },
         {
             "pagePath": "/categories/Saltの使い方/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/article/go/go-template/",
             "pv": "2"
         },
         {
-            "pagePath": "/article/hugo/ranking/",
+            "pagePath": "/tags/Hugo/",
             "pv": "2"
         },
         {
-            "pagePath": "/article/sample/hugo-shortcode/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/categories/サンプル/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/privacy-policy/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/tags/tips/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/tags/ショートコード/",
-            "pv": "2"
+            "pagePath": "/about/",
+            "pv": "1"
         },
         {
             "pagePath": "/article/hugo/build-error/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/sample/no-tag-category/",
+            "pagePath": "/article/hugo/ranking/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/sample/no-thumbnail/",
+            "pagePath": "/article/hugo/search/",
             "pv": "1"
         },
         {
-            "pagePath": "/search/",
+            "pagePath": "/article/salt/custom-figure/",
             "pv": "1"
         },
         {
-            "pagePath": "/tags/CI/",
+            "pagePath": "/article/sample/hugo-shortcode/",
             "pv": "1"
         },
         {
-            "pagePath": "/tags/まとめ/",
+            "pagePath": "/article/sample/markdown/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/page/2/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/tags/tips/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/tags/ショートコード/",
             "pv": "1"
         }
     ],
-    "createdAt": "2024-01-14T00:31:43.158Z"
+    "createdAt": "2024-01-21T00:31:51.220Z"
 }
