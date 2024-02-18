@@ -1,59 +1,59 @@
 {
     "items": [
         {
-            "pagePath": "/article/salt/about/",
-            "pv": "10"
-        },
-        {
-            "pagePath": "/article/hugo/search/",
-            "pv": "9"
-        },
-        {
             "pagePath": "/",
-            "pv": "8"
+            "pv": "118"
         },
         {
             "pagePath": "/article/hugo/tips/",
-            "pv": "8"
+            "pv": "13"
         },
         {
-            "pagePath": "/article/sample/markdown/",
-            "pv": "5"
+            "pagePath": "/article/salt/about/",
+            "pv": "13"
         },
         {
-            "pagePath": "/categories/サンプル/",
-            "pv": "5"
+            "pagePath": "/article/hugo/search/",
+            "pv": "11"
+        },
+        {
+            "pagePath": "/okdyy75.com",
+            "pv": "6"
         },
         {
             "pagePath": "/article/go/go-template/",
+            "pv": "5"
+        },
+        {
+            "pagePath": "/categories/Saltの使い方/",
+            "pv": "5"
+        },
+        {
+            "pagePath": "/article/hugo/about/",
             "pv": "4"
         },
         {
             "pagePath": "/article/salt/blog-card/",
-            "pv": "4"
-        },
-        {
-            "pagePath": "/article/hugo/archive/",
             "pv": "3"
         },
         {
-            "pagePath": "/categories/Saltの使い方/",
+            "pagePath": "/article/sample/markdown/",
             "pv": "3"
         },
         {
-            "pagePath": "/article/go/variable/",
+            "pagePath": "/article/salt/custom-figure/",
             "pv": "2"
         },
         {
-            "pagePath": "/article/hugo/build-error/",
+            "pagePath": "/categories/Go言語/",
             "pv": "2"
         },
         {
-            "pagePath": "/article/hugo/about/",
+            "pagePath": "//okdyy75.com/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/fontawesome/",
+            "pagePath": "/article/hugo/build-error/",
             "pv": "1"
         },
         {
@@ -61,17 +61,17 @@
             "pv": "1"
         },
         {
-            "pagePath": "/article/salt/self-blog-card/",
+            "pagePath": "/categories/サンプル/",
             "pv": "1"
         },
         {
-            "pagePath": "/page/2/",
+            "pagePath": "/tags/CI/",
             "pv": "1"
         },
         {
-            "pagePath": "/tags/Hugo/",
+            "pagePath": "/tags/ショートコード/",
             "pv": "1"
         }
     ],
-    "createdAt": "2024-02-11T00:30:00.919Z"
+    "createdAt": "2024-02-18T00:29:26.192Z"
 }
