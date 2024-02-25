@@ -2,38 +2,30 @@
     "items": [
         {
             "pagePath": "/",
-            "pv": "118"
+            "pv": "572"
         },
         {
             "pagePath": "/article/hugo/tips/",
-            "pv": "13"
-        },
-        {
-            "pagePath": "/article/salt/about/",
-            "pv": "13"
+            "pv": "21"
         },
         {
             "pagePath": "/article/hugo/search/",
-            "pv": "11"
-        },
-        {
-            "pagePath": "/okdyy75.com",
-            "pv": "6"
-        },
-        {
-            "pagePath": "/article/go/go-template/",
-            "pv": "5"
-        },
-        {
-            "pagePath": "/categories/Saltの使い方/",
-            "pv": "5"
-        },
-        {
-            "pagePath": "/article/hugo/about/",
-            "pv": "4"
+            "pv": "10"
         },
         {
             "pagePath": "/article/salt/blog-card/",
+            "pv": "8"
+        },
+        {
+            "pagePath": "/article/salt/about/",
+            "pv": "6"
+        },
+        {
+            "pagePath": "/article/hugo/archive/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/article/salt/custom-figure/",
             "pv": "3"
         },
         {
@@ -41,11 +33,15 @@
             "pv": "3"
         },
         {
-            "pagePath": "/article/salt/custom-figure/",
+            "pagePath": "/categories/Saltの使い方/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/article/go/go-template/",
             "pv": "2"
         },
         {
-            "pagePath": "/categories/Go言語/",
+            "pagePath": "/article/hugo/build-error/",
             "pv": "2"
         },
         {
@@ -53,11 +49,23 @@
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/build-error/",
+            "pagePath": "/about/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/ranking/",
+            "pagePath": "/article/go/variable/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/hugo/about/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/sample/small-thumbnail/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/categories/Go言語/",
             "pv": "1"
         },
         {
@@ -65,13 +73,9 @@
             "pv": "1"
         },
         {
-            "pagePath": "/tags/CI/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/tags/ショートコード/",
+            "pagePath": "/tags/Hugo/",
             "pv": "1"
         }
     ],
-    "createdAt": "2024-02-18T00:29:26.192Z"
+    "createdAt": "2024-02-25T00:29:18.026Z"
 }
