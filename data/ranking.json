@@ -2,22 +2,34 @@
     "items": [
         {
             "pagePath": "/",
-            "pv": "5"
-        },
-        {
-            "pagePath": "/article/go/go-template/",
-            "pv": "4"
+            "pv": "9"
         },
         {
             "pagePath": "/article/hugo/tips/",
+            "pv": "8"
+        },
+        {
+            "pagePath": "/article/hugo/archive/",
+            "pv": "5"
+        },
+        {
+            "pagePath": "/article/hugo/search/",
             "pv": "4"
         },
         {
-            "pagePath": "/article/hugo/about/",
+            "pagePath": "/article/go/go-template/",
             "pv": "3"
         },
         {
-            "pagePath": "/article/salt/blog-card/",
+            "pagePath": "/article/salt/about/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/article/sample/markdown/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/tags/Hugo/",
             "pv": "3"
         },
         {
@@ -25,23 +37,23 @@
             "pv": "2"
         },
         {
-            "pagePath": "/article/hugo/search/",
+            "pagePath": "/article/hugo/ranking/",
             "pv": "2"
         },
         {
-            "pagePath": "/article/hugo/archive/",
+            "pagePath": "/categories/Saltの使い方/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/about/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/ranking/",
+            "pagePath": "/article/salt/blog-card/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/salt/about/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/sample/markdown/",
+            "pagePath": "/article/sample/hugo-shortcode/",
             "pv": "1"
         },
         {
@@ -49,17 +61,17 @@
             "pv": "1"
         },
         {
+            "pagePath": "/categories/サンプル/",
+            "pv": "1"
+        },
+        {
             "pagePath": "/tags/CI/",
             "pv": "1"
         },
         {
-            "pagePath": "/tags/FontAwesome/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/tags/tips/",
+            "pagePath": "/tags/go-template/",
             "pv": "1"
         }
     ],
-    "createdAt": "2024-03-24T00:30:27.944Z"
+    "createdAt": "2024-03-31T00:30:56.547Z"
 }
