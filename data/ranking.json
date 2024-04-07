@@ -6,18 +6,18 @@
         },
         {
             "pagePath": "/article/hugo/tips/",
-            "pv": "8"
-        },
-        {
-            "pagePath": "/article/hugo/archive/",
-            "pv": "5"
-        },
-        {
-            "pagePath": "/article/hugo/search/",
-            "pv": "4"
+            "pv": "6"
         },
         {
             "pagePath": "/article/go/go-template/",
+            "pv": "5"
+        },
+        {
+            "pagePath": "/article/salt/blog-card/",
+            "pv": "4"
+        },
+        {
+            "pagePath": "/article/hugo/build-error/",
             "pv": "3"
         },
         {
@@ -33,45 +33,13 @@
             "pv": "3"
         },
         {
-            "pagePath": "/article/hugo/build-error/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/hugo/ranking/",
+            "pagePath": "/article/hugo/archive/",
             "pv": "2"
         },
         {
             "pagePath": "/categories/Saltの使い方/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/about/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/salt/blog-card/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/sample/hugo-shortcode/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/categories/Go言語/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/categories/サンプル/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/tags/CI/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/tags/go-template/",
             "pv": "1"
         }
     ],
-    "createdAt": "2024-03-31T00:30:56.547Z"
+    "createdAt": "2024-04-07T00:31:02.388Z"
 }
