@@ -1,51 +1,51 @@
 {
     "items": [
         {
-            "pagePath": "/article/hugo/tips/",
-            "pv": "6"
-        },
-        {
-            "pagePath": "/article/hugo/search/",
-            "pv": "5"
-        },
-        {
-            "pagePath": "/article/salt/about/",
-            "pv": "4"
-        },
-        {
             "pagePath": "/article/salt/blog-card/",
-            "pv": "4"
-        },
-        {
-            "pagePath": "/article/hugo/archive/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/article/sample/markdown/",
-            "pv": "3"
+            "pv": "7"
         },
         {
             "pagePath": "/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/go/go-template/",
-            "pv": "2"
+            "pv": "6"
         },
         {
             "pagePath": "/article/hugo/about/",
-            "pv": "2"
+            "pv": "6"
+        },
+        {
+            "pagePath": "/article/hugo/archive/",
+            "pv": "5"
+        },
+        {
+            "pagePath": "/article/hugo/tips/",
+            "pv": "5"
         },
         {
             "pagePath": "/article/hugo/build-error/",
-            "pv": "1"
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/salt/about/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/salt/custom-figure/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/sample/markdown/",
+            "pv": "2"
         },
         {
             "pagePath": "/article/hugo/fontawesome/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/salt/custom-figure/",
+            "pagePath": "/article/hugo/ranking/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/hugo/search/",
             "pv": "1"
         },
         {
@@ -53,9 +53,13 @@
             "pv": "1"
         },
         {
-            "pagePath": "/tags/Hugo/",
+            "pagePath": "/article/sample/hugo-shortcode/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/privacy-policy/",
             "pv": "1"
         }
     ],
-    "createdAt": "2024-04-21T00:30:32.144Z"
+    "createdAt": "2024-04-28T00:31:14.983Z"
 }
