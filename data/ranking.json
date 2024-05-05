@@ -1,27 +1,27 @@
 {
     "items": [
         {
-            "pagePath": "/article/salt/blog-card/",
-            "pv": "7"
-        },
-        {
-            "pagePath": "/",
-            "pv": "6"
-        },
-        {
             "pagePath": "/article/hugo/about/",
             "pv": "6"
         },
         {
-            "pagePath": "/article/hugo/archive/",
+            "pagePath": "/article/salt/blog-card/",
             "pv": "5"
+        },
+        {
+            "pagePath": "/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/hugo/ranking/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/hugo/search/",
+            "pv": "2"
         },
         {
             "pagePath": "/article/hugo/tips/",
-            "pv": "5"
-        },
-        {
-            "pagePath": "/article/hugo/build-error/",
             "pv": "2"
         },
         {
@@ -29,31 +29,27 @@
             "pv": "2"
         },
         {
-            "pagePath": "/article/salt/custom-figure/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/sample/markdown/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/hugo/fontawesome/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/hugo/ranking/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/hugo/search/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/salt/self-blog-card/",
-            "pv": "1"
-        },
-        {
             "pagePath": "/article/sample/hugo-shortcode/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/categories/Saltの使い方/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/categories/サンプル/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/go/go-template/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/sample/no-thumbnail/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/sample/small-thumbnail/",
             "pv": "1"
         },
         {
@@ -61,5 +57,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2024-04-28T00:31:14.983Z"
+    "createdAt": "2024-05-05T00:30:46.176Z"
 }
