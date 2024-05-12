@@ -1,8 +1,12 @@
 {
     "items": [
         {
-            "pagePath": "/article/hugo/about/",
-            "pv": "6"
+            "pagePath": "/article/salt/about/",
+            "pv": "7"
+        },
+        {
+            "pagePath": "/article/go/go-template/",
+            "pv": "5"
         },
         {
             "pagePath": "/article/salt/blog-card/",
@@ -10,6 +14,10 @@
         },
         {
             "pagePath": "/",
+            "pv": "4"
+        },
+        {
+            "pagePath": "/article/hugo/archive/",
             "pv": "2"
         },
         {
@@ -17,45 +25,41 @@
             "pv": "2"
         },
         {
-            "pagePath": "/article/hugo/search/",
-            "pv": "2"
-        },
-        {
             "pagePath": "/article/hugo/tips/",
             "pv": "2"
         },
         {
-            "pagePath": "/article/salt/about/",
-            "pv": "2"
+            "pagePath": "/article/go/variable/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/hugo/about/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/hugo/build-error/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/hugo/search/",
+            "pv": "1"
         },
         {
             "pagePath": "/article/sample/hugo-shortcode/",
-            "pv": "2"
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/sample/markdown/",
+            "pv": "1"
         },
         {
             "pagePath": "/categories/Saltの使い方/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/categories/サンプル/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/go/go-template/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/sample/no-thumbnail/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/sample/small-thumbnail/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/privacy-policy/",
+            "pagePath": "/tags/lunr/",
             "pv": "1"
         }
     ],
-    "createdAt": "2024-05-05T00:30:46.176Z"
+    "createdAt": "2024-05-12T00:31:42.222Z"
 }
