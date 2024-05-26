@@ -25,7 +25,7 @@
     "github-markdown-css": "^5.5.1",
     "hugo-bin": "^0.86.0",
     "lunr": "^2.3.9",
-    "lunr-languages": "^1.9.0"
+    "lunr-languages": "^1.14.0"
   },
   "hugo-bin": {
     "buildTags": "extended"
