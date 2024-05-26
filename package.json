@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/okdyy75/hugo-theme-salt#readme",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fortawesome/fontawesome-free": "^6.5.2",
     "@google-analytics/data": "^2.8.0",
     "dayjs": "^1.10.7",
     "github-markdown-css": "^4.0.0",
