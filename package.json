@@ -23,7 +23,7 @@
     "@google-analytics/data": "^4.7.0",
     "dayjs": "^1.11.11",
     "github-markdown-css": "^5.5.1",
-    "hugo-bin": "^0.86.0",
+    "hugo-bin": "^0.123.1",
     "lunr": "^2.3.9",
     "lunr-languages": "^1.14.0"
   },
