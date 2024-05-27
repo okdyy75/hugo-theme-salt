@@ -10,49 +10,45 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    permissions:
+      contents: write
     steps:
-    - uses: actions/checkout@v2
-
-    - name: Setup npm
-      uses: actions/setup-node@v1
-      with:
-        node-version: '14.x'
-
-    - uses: actions/cache@v1
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
-
-    - name: npm Install
-      run: |
-        npm ci
-
-    - name: Build
-      run: |
-        echo 'hugo-theme-salt.okdyy75.com' > static/CNAME
-        mv exampleContent content
-        mv config.org.yml config.yml
-        sed -ie "s|my_name|okdyy75|" config.yml
-        sed -ie "s|my_email@example.com|okdyy75@gmail.com|" config.yml
-        sed -ie "s|https://example.com/my_url|https://github.com/okdyy75|" config.yml
-        sed -ie "s|name: ユーザー名|name: okdyy75|" config.yml
-        sed -ie "s|description: プロフィール|description: Hugo用ブログテーマ「Salt」を作りました|" config.yml
-        sed -ie "s|twitter: twitter|twitter: okdyy75|" config.yml
-        sed -ie "s|github: github|github: okdyy75|" config.yml
-        sed -ie "s|qiita: qiita|qiita: okdyy75|" config.yml
-        sed -ie "s|zenn: zenn|zenn: okdyy75|" config.yml
-        sed -ie "s|name: my_organization|name: okdyy75|" config.yml
-        sed -ie "s|url: https://example.com/publisher|url: https://github.com/okdyy75|" config.yml
-        sed -ie "s|description: organization_description|description: Hugo用ブログテーマ「Salt」を作りました|" config.yml
-        sed -ie "s|https://example.com/sameAs|https://twitter.com/okdyy75|" config.yml
-        sed -ie "s|twitterTimeline: twitter|twitterTimeline:|" config.yml
-        echo '<script>let isLoaded = false; window.addEventListener( "scroll", function () { if (isLoaded) { return; } if (document.documentElement.scrollTop != 0 || document.body.scrollTop != 0) { (function () { const GoogleAdSenseId = "ca-pub-9459277760652211"; let e = document.createElement("script"); e.type = "text/javascript"; e.crossorigin = "anonymous"; e.async = true; e.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + GoogleAdSenseId; document.body.appendChild(e); e.onload = function(){ document.querySelector("header .google-auto-placed").remove(); } })(); (function () { const GoogleAnalyticsId = "G-LR5GBHW5M5"; let e = document.createElement("script"); e.type = "text/javascript"; e.async = true; e.src = "https://www.googletagmanager.com/gtag/js?id=" + GoogleAnalyticsId; document.body.appendChild(e); window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag("js", new Date()); gtag("config", GoogleAnalyticsId); })(); isLoaded = true; } }, true );</script>' >> ./layouts/partials/body-add.html
-        npm run build
-
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public
+      - uses: actions/checkout@v4
+  
+      - name: Setup npm
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+  
+      - name: npm Install
+        run: |
+          npm ci
+  
+      - name: Build
+        run: |
+          echo 'hugo-theme-salt.okdyy75.com' > static/CNAME
+          mv exampleContent content
+          mv config.org.yml config.yml
+          sed -ie "s|my_name|okdyy75|" config.yml
+          sed -ie "s|my_email@example.com|okdyy75@gmail.com|" config.yml
+          sed -ie "s|https://example.com/my_url|https://github.com/okdyy75|" config.yml
+          sed -ie "s|name: ユーザー名|name: okdyy75|" config.yml
+          sed -ie "s|description: プロフィール|description: Hugo用ブログテーマ「Salt」を作りました|" config.yml
+          sed -ie "s|twitter: twitter|twitter: okdyy75|" config.yml
+          sed -ie "s|github: github|github: okdyy75|" config.yml
+          sed -ie "s|qiita: qiita|qiita: okdyy75|" config.yml
+          sed -ie "s|zenn: zenn|zenn: okdyy75|" config.yml
+          sed -ie "s|name: my_organization|name: okdyy75|" config.yml
+          sed -ie "s|url: https://example.com/publisher|url: https://github.com/okdyy75|" config.yml
+          sed -ie "s|description: organization_description|description: Hugo用ブログテーマ「Salt」を作りました|" config.yml
+          sed -ie "s|https://example.com/sameAs|https://x.com/okdyy75|" config.yml
+          sed -ie "s|twitterTimeline: twitter|twitterTimeline:|" config.yml
+          echo '<script>let isLoaded = false; window.addEventListener( "scroll", function () { if (isLoaded) { return; } if (document.documentElement.scrollTop != 0 || document.body.scrollTop != 0) { (function () { const GoogleAdSenseId = "ca-pub-9459277760652211"; let e = document.createElement("script"); e.type = "text/javascript"; e.crossorigin = "anonymous"; e.async = true; e.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + GoogleAdSenseId; document.body.appendChild(e); e.onload = function(){ document.querySelector("header .google-auto-placed").remove(); } })(); (function () { const GoogleAnalyticsId = "G-LR5GBHW5M5"; let e = document.createElement("script"); e.type = "text/javascript"; e.async = true; e.src = "https://www.googletagmanager.com/gtag/js?id=" + GoogleAnalyticsId; document.body.appendChild(e); window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag("js", new Date()); gtag("config", GoogleAnalyticsId); })(); isLoaded = true; } }, true );</script>' >> ./layouts/partials/body-add.html
+          npm run build
+  
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public

@@ -26,8 +26,8 @@
         &__itemLink {
             &--twitter {
                 @extend %__itemLink;
-                background: #1da1f1;
-                box-shadow: 0 3px 0 #0092ca;
+                background: #000000;
+                box-shadow: 0 3px 0 #333333;
             }
             &--facebook {
                 @extend %__itemLink;
