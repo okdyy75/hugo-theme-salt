@@ -214,9 +214,6 @@ gcpからDLした鍵の内容をGitHubのsercretsに`GOOGLE_ANALYTICS_CREDENTIAL
 name: Create Ranking
 
 on:
-  push:
-    branches:
-      - main
   schedule:
     - cron: '0 0 * * 0'
 
@@ -225,19 +222,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Setup npm
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
-          node-version: '14.x'
-
-      - uses: actions/cache@v1
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          node-version: 20
+          cache: 'npm'
 
       - name: npm Install
         run: |
@@ -295,7 +286,7 @@ variables:
 create-ranking:
   timeout: 5m
   stage: build
-  image: node:14
+  image: node:20
   before_script:
     - eval `ssh-agent`
     - ssh-add <(echo "$SSH_PRIVATE_KEY")
@@ -317,7 +308,7 @@ create-ranking:
 pages:
   timeout: 5m
   stage: deploy
-  image: node:14
+  image: node:20
   script: |
     npm ci
     npm run build
