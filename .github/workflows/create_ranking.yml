@@ -1,8 +1,9 @@
 name: Create Ranking
 
 on:
-  schedule:
-    - cron: '0 0 * * 0'
+  push:
+    branches:
+      - fix_ranking_ci_test
 
 jobs:
   deploy:
