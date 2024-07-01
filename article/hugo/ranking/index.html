@@ -120,9 +120,6 @@
 </code></pre><br><h2 id=4-ciで定期的にpv取得スクリプトを起動させる>4. CIで定期的にpv取得スクリプトを起動させる</h2><p>あとは週一でCIを実行させればOK。</p><h3 id=github-actions>GitHub Actions</h3><p>gcpからDLした鍵の内容をGitHubのsercretsに<code>GOOGLE_ANALYTICS_CREDENTIALS</code>として保存してください。</p><p>.github/workflows/create_ranking.yml</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span><span style=color:#f92672>name</span>: <span style=color:#ae81ff>Create Ranking</span>
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#f92672>on</span>:
-</span></span><span style=display:flex><span>  <span style=color:#f92672>push</span>:
-</span></span><span style=display:flex><span>    <span style=color:#f92672>branches</span>:
-</span></span><span style=display:flex><span>      - <span style=color:#ae81ff>main</span>
 </span></span><span style=display:flex><span>  <span style=color:#f92672>schedule</span>:
 </span></span><span style=display:flex><span>    - <span style=color:#f92672>cron</span>: <span style=color:#e6db74>&#39;0 0 * * 0&#39;</span>
 </span></span><span style=display:flex><span>
@@ -131,19 +128,13 @@
 </span></span><span style=display:flex><span>    <span style=color:#f92672>runs-on</span>: <span style=color:#ae81ff>ubuntu-latest</span>
 </span></span><span style=display:flex><span>    <span style=color:#f92672>timeout-minutes</span>: <span style=color:#ae81ff>5</span>
 </span></span><span style=display:flex><span>    <span style=color:#f92672>steps</span>:
-</span></span><span style=display:flex><span>      - <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/checkout@v2</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/checkout@v4</span>
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Setup npm</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/setup-node@v1</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/setup-node@v4</span>
 </span></span><span style=display:flex><span>        <span style=color:#f92672>with</span>:
-</span></span><span style=display:flex><span>          <span style=color:#f92672>node-version</span>: <span style=color:#e6db74>&#39;14.x&#39;</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>      - <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/cache@v1</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>with</span>:
-</span></span><span style=display:flex><span>          <span style=color:#f92672>path</span>: <span style=color:#ae81ff>~/.npm</span>
-</span></span><span style=display:flex><span>          <span style=color:#f92672>key</span>: <span style=color:#ae81ff>${{ runner.os }}-node-${{ hashFiles(&#39;package-lock.json&#39;) }}</span>
-</span></span><span style=display:flex><span>          <span style=color:#f92672>restore-keys</span>: |<span style=color:#e6db74>
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>            ${{ runner.os }}-node-</span>            
+</span></span><span style=display:flex><span>          <span style=color:#f92672>node-version</span>: <span style=color:#ae81ff>20</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>cache</span>: <span style=color:#e6db74>&#39;npm&#39;</span>
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>npm Install</span>
 </span></span><span style=display:flex><span>        <span style=color:#f92672>run</span>: |<span style=color:#e6db74>
@@ -181,7 +172,7 @@ Your public key has been saved in .ssh/gitlab_id_rsa.pub
 </span></span><span style=display:flex><span><span style=color:#f92672>create-ranking</span>:
 </span></span><span style=display:flex><span>  <span style=color:#f92672>timeout</span>: <span style=color:#ae81ff>5m</span>
 </span></span><span style=display:flex><span>  <span style=color:#f92672>stage</span>: <span style=color:#ae81ff>build</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>image</span>: <span style=color:#ae81ff>node:14</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>image</span>: <span style=color:#ae81ff>node:20</span>
 </span></span><span style=display:flex><span>  <span style=color:#f92672>before_script</span>:
 </span></span><span style=display:flex><span>    - <span style=color:#ae81ff>eval `ssh-agent`</span>
 </span></span><span style=display:flex><span>    - <span style=color:#ae81ff>ssh-add &lt;(echo &#34;$SSH_PRIVATE_KEY&#34;)</span>
@@ -203,7 +194,7 @@ Your public key has been saved in .ssh/gitlab_id_rsa.pub
 </span></span><span style=display:flex><span><span style=color:#f92672>pages</span>:
 </span></span><span style=display:flex><span>  <span style=color:#f92672>timeout</span>: <span style=color:#ae81ff>5m</span>
 </span></span><span style=display:flex><span>  <span style=color:#f92672>stage</span>: <span style=color:#ae81ff>deploy</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>image</span>: <span style=color:#ae81ff>node:14</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>image</span>: <span style=color:#ae81ff>node:20</span>
 </span></span><span style=display:flex><span>  <span style=color:#f92672>script</span>: |<span style=color:#e6db74>
 </span></span></span><span style=display:flex><span><span style=color:#e6db74>    npm ci
 </span></span></span><span style=display:flex><span><span style=color:#e6db74>    npm run build</span>    
