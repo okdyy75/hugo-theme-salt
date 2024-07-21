@@ -1,23 +1,35 @@
 {
     "items": [
         {
-            "pagePath": "/",
-            "pv": "8"
+            "pagePath": "/article/hugo/archive/",
+            "pv": "6"
         },
         {
-            "pagePath": "/article/hugo/build-error/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/article/salt/about/",
-            "pv": "3"
+            "pagePath": "/article/hugo/search/",
+            "pv": "6"
         },
         {
             "pagePath": "/article/hugo/tips/",
-            "pv": "2"
+            "pv": "6"
+        },
+        {
+            "pagePath": "/article/salt/about/",
+            "pv": "6"
         },
         {
             "pagePath": "/article/salt/blog-card/",
+            "pv": "4"
+        },
+        {
+            "pagePath": "/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/article/hugo/ranking/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/article/hugo/about/",
             "pv": "2"
         },
         {
@@ -25,45 +37,9 @@
             "pv": "2"
         },
         {
-            "pagePath": "/article/go/go-template/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/go/variable/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/hugo/about/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/hugo/archive/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/hugo/search/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/salt/custom-figure/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/sample/no-tag-category/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/sample/no-thumbnail/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/categories/Saltの使い方/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/page/2/",
+            "pagePath": "/article/hugo/build-error/",
             "pv": "1"
         }
     ],
-    "createdAt": "2024-07-14T00:35:07.118Z"
+    "createdAt": "2024-07-21T00:34:54.341Z"
 }
