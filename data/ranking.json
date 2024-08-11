@@ -1,51 +1,75 @@
 {
     "items": [
         {
-            "pagePath": "/article/hugo/tips/",
-            "pv": "16"
+            "pagePath": "/article/salt/about/",
+            "pv": "8"
         },
         {
             "pagePath": "/article/hugo/search/",
-            "pv": "5"
-        },
-        {
-            "pagePath": "/article/hugo/build-error/",
-            "pv": "4"
+            "pv": "6"
         },
         {
             "pagePath": "/article/salt/blog-card/",
-            "pv": "4"
+            "pv": "6"
         },
         {
             "pagePath": "/",
-            "pv": "3"
+            "pv": "5"
+        },
+        {
+            "pagePath": "/article/hugo/tips/",
+            "pv": "5"
+        },
+        {
+            "pagePath": "/article/salt/custom-figure/",
+            "pv": "5"
         },
         {
             "pagePath": "/article/hugo/about/",
-            "pv": "2"
+            "pv": "4"
+        },
+        {
+            "pagePath": "/article/hugo/archive/",
+            "pv": "4"
+        },
+        {
+            "pagePath": "/article/hugo/build-error/",
+            "pv": "3"
         },
         {
             "pagePath": "/article/go/go-template/",
-            "pv": "1"
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/salt/self-blog-card/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/sample/hugo-shortcode/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/categories/Saltの使い方/",
+            "pv": "2"
         },
         {
             "pagePath": "/article/hugo/fontawesome/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/salt/about/",
+            "pagePath": "/article/sample/no-thumbnail/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/salt/custom-figure/",
+            "pagePath": "/article/sample/small-thumbnail/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/sample/hugo-shortcode/",
+            "pagePath": "/page/2/",
             "pv": "1"
         },
         {
-            "pagePath": "/categories/Saltの使い方/",
+            "pagePath": "/tags/Hugo/",
             "pv": "1"
         },
         {
@@ -53,5 +77,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2024-08-04T00:35:07.966Z"
+    "createdAt": "2024-08-11T00:35:52.210Z"
 }
