@@ -1,81 +1,49 @@
 {
     "items": [
         {
-            "pagePath": "/article/salt/about/",
-            "pv": "8"
-        },
-        {
-            "pagePath": "/article/hugo/search/",
+            "pagePath": "/article/hugo/archive/",
             "pv": "6"
-        },
-        {
-            "pagePath": "/article/salt/blog-card/",
-            "pv": "6"
-        },
-        {
-            "pagePath": "/",
-            "pv": "5"
         },
         {
             "pagePath": "/article/hugo/tips/",
             "pv": "5"
         },
         {
-            "pagePath": "/article/salt/custom-figure/",
-            "pv": "5"
-        },
-        {
-            "pagePath": "/article/hugo/about/",
+            "pagePath": "/",
             "pv": "4"
         },
         {
-            "pagePath": "/article/hugo/archive/",
-            "pv": "4"
-        },
-        {
-            "pagePath": "/article/hugo/build-error/",
+            "pagePath": "/article/salt/blog-card/",
             "pv": "3"
         },
         {
-            "pagePath": "/article/go/go-template/",
+            "pagePath": "/article/salt/about/",
             "pv": "2"
+        },
+        {
+            "pagePath": "/article/hugo/about/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/hugo/build-error/",
+            "pv": "1"
         },
         {
             "pagePath": "/article/salt/self-blog-card/",
-            "pv": "2"
+            "pv": "1"
         },
         {
-            "pagePath": "/article/sample/hugo-shortcode/",
-            "pv": "2"
+            "pagePath": "/article/sample/markdown/",
+            "pv": "1"
         },
         {
             "pagePath": "/categories/Saltの使い方/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/hugo/fontawesome/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/sample/no-thumbnail/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/sample/small-thumbnail/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/page/2/",
             "pv": "1"
         },
         {
             "pagePath": "/tags/Hugo/",
             "pv": "1"
-        },
-        {
-            "pagePath": "/tags/ライブラリ/",
-            "pv": "1"
         }
     ],
-    "createdAt": "2024-08-11T00:35:52.210Z"
+    "createdAt": "2024-08-18T00:35:12.130Z"
 }
