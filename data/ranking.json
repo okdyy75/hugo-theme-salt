@@ -2,23 +2,15 @@
     "items": [
         {
             "pagePath": "/",
-            "pv": "17"
+            "pv": "8"
         },
         {
             "pagePath": "/article/salt/about/",
-            "pv": "12"
-        },
-        {
-            "pagePath": "/article/hugo/search/",
             "pv": "7"
         },
         {
-            "pagePath": "/article/hugo/tips/",
-            "pv": "6"
-        },
-        {
-            "pagePath": "/article/go/go-template/",
-            "pv": "5"
+            "pagePath": "/article/hugo/ranking/",
+            "pv": "4"
         },
         {
             "pagePath": "/article/hugo/about/",
@@ -29,19 +21,15 @@
             "pv": "3"
         },
         {
-            "pagePath": "/categories/Saltの使い方/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/categories/サンプル/",
-            "pv": "3"
-        },
-        {
             "pagePath": "/article/salt/blog-card/",
             "pv": "2"
         },
         {
-            "pagePath": "/about/",
+            "pagePath": "/archives/2022年5月/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/go/go-template/",
             "pv": "1"
         },
         {
@@ -49,11 +37,7 @@
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/fontawesome/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/hugo/ranking/",
+            "pagePath": "/article/hugo/tips/",
             "pv": "1"
         },
         {
@@ -61,25 +45,9 @@
             "pv": "1"
         },
         {
-            "pagePath": "/article/salt/self-blog-card/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/sample/hugo-shortcode/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/categories/Go言語/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/information/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/tags/Hugo/",
+            "pagePath": "/privacy-policy/",
             "pv": "1"
         }
     ],
-    "createdAt": "2024-09-08T00:38:04.382Z"
+    "createdAt": "2024-09-15T00:39:06.745Z"
 }
