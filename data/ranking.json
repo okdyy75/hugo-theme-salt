@@ -1,12 +1,16 @@
 {
     "items": [
         {
-            "pagePath": "/article/hugo/tips/",
-            "pv": "5"
+            "pagePath": "/article/go/go-template/",
+            "pv": "8"
         },
         {
             "pagePath": "/",
-            "pv": "4"
+            "pv": "5"
+        },
+        {
+            "pagePath": "/article/hugo/tips/",
+            "pv": "5"
         },
         {
             "pagePath": "/article/salt/about/",
@@ -17,49 +21,21 @@
             "pv": "4"
         },
         {
-            "pagePath": "/article/sample/markdown/",
+            "pagePath": "/article/hugo/search/",
             "pv": "3"
         },
         {
-            "pagePath": "/article/go/go-template/",
+            "pagePath": "/article/sample/hugo-shortcode/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/sample/markdown/",
             "pv": "2"
         },
         {
             "pagePath": "/article/hugo/build-error/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/hugo/ranking/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/hugo/search/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/salt/self-blog-card/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/privacy-policy/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/salt/custom-figure/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/sample/hugo-shortcode/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/categories/Saltの使い方/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/tags/Hugo/",
             "pv": "1"
         }
     ],
-    "createdAt": "2024-10-13T00:39:42.697Z"
+    "createdAt": "2024-10-20T00:40:26.463Z"
 }
