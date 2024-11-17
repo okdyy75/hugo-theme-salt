@@ -2,18 +2,22 @@
     "items": [
         {
             "pagePath": "/",
-            "pv": "5"
+            "pv": "3"
         },
         {
-            "pagePath": "/article/go/go-template/",
-            "pv": "4"
-        },
-        {
-            "pagePath": "/article/hugo/archive/",
-            "pv": "2"
+            "pagePath": "/article/hugo/search/",
+            "pv": "3"
         },
         {
             "pagePath": "/article/salt/about/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/tags/Hugo/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/article/go/go-template/",
             "pv": "2"
         },
         {
@@ -25,19 +29,15 @@
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/ranking/",
+            "pagePath": "/article/hugo/archive/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/search/",
+            "pagePath": "/article/hugo/tips/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/sample/hugo-shortcode/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/categories/Go言語/",
+            "pagePath": "/article/sample/markdown/",
             "pv": "1"
         },
         {
@@ -47,11 +47,7 @@
         {
             "pagePath": "/categories/サンプル/",
             "pv": "1"
-        },
-        {
-            "pagePath": "/tags/Hugo/",
-            "pv": "1"
         }
     ],
-    "createdAt": "2024-11-10T00:39:07.687Z"
+    "createdAt": "2024-11-17T00:41:46.789Z"
 }
