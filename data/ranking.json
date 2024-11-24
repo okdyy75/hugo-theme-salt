@@ -1,19 +1,19 @@
 {
     "items": [
         {
-            "pagePath": "/",
-            "pv": "3"
+            "pagePath": "/article/hugo/search/",
+            "pv": "6"
         },
         {
-            "pagePath": "/article/hugo/search/",
-            "pv": "3"
+            "pagePath": "/article/hugo/tips/",
+            "pv": "5"
         },
         {
             "pagePath": "/article/salt/about/",
-            "pv": "3"
+            "pv": "4"
         },
         {
-            "pagePath": "/tags/Hugo/",
+            "pagePath": "/",
             "pv": "3"
         },
         {
@@ -22,32 +22,20 @@
         },
         {
             "pagePath": "/article/salt/blog-card/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/hugo/about/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/hugo/archive/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/hugo/tips/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/sample/markdown/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/categories/Saltの使い方/",
             "pv": "1"
         },
         {
             "pagePath": "/categories/サンプル/",
             "pv": "1"
+        },
+        {
+            "pagePath": "/page/2/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/tags/FontAwesome/",
+            "pv": "1"
         }
     ],
-    "createdAt": "2024-11-17T00:41:46.789Z"
+    "createdAt": "2024-11-24T00:42:17.586Z"
 }
