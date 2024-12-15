@@ -1,49 +1,65 @@
 {
     "items": [
         {
-            "pagePath": "/article/salt/blog-card/",
-            "pv": "9"
-        },
-        {
             "pagePath": "/article/hugo/archive/",
-            "pv": "7"
-        },
-        {
-            "pagePath": "/article/hugo/search/",
-            "pv": "7"
+            "pv": "6"
         },
         {
             "pagePath": "/",
-            "pv": "5"
+            "pv": "4"
+        },
+        {
+            "pagePath": "/article/go/go-template/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/article/hugo/search/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/article/salt/blog-card/",
+            "pv": "3"
         },
         {
             "pagePath": "/article/hugo/tips/",
-            "pv": "5"
-        },
-        {
-            "pagePath": "/article/hugo/build-error/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/categories/Saltの使い方/",
-            "pv": "3"
+            "pv": "2"
         },
         {
             "pagePath": "/article/salt/about/",
             "pv": "2"
         },
         {
+            "pagePath": "/archives/2022年5月/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/hugo/about/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/hugo/build-error/",
+            "pv": "1"
+        },
+        {
             "pagePath": "/article/sample/markdown/",
             "pv": "1"
         },
         {
-            "pagePath": "/categories/Hugo/",
+            "pagePath": "/categories/Saltの使い方/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/categories/サンプル/",
             "pv": "1"
         },
         {
             "pagePath": "/tags/Hugo/",
             "pv": "1"
+        },
+        {
+            "pagePath": "/tags/tips/",
+            "pv": "1"
         }
     ],
-    "createdAt": "2024-12-08T00:44:05.794Z"
+    "createdAt": "2024-12-15T00:44:09.191Z"
 }
