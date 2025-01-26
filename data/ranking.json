@@ -1,57 +1,49 @@
 {
     "items": [
         {
-            "pagePath": "/article/hugo/tips/",
+            "pagePath": "/",
             "pv": "6"
+        },
+        {
+            "pagePath": "/article/hugo/tips/",
+            "pv": "4"
         },
         {
             "pagePath": "/article/salt/blog-card/",
             "pv": "4"
         },
         {
-            "pagePath": "/article/sample/markdown/",
-            "pv": "4"
-        },
-        {
-            "pagePath": "/",
+            "pagePath": "/article/salt/about/",
             "pv": "3"
         },
         {
-            "pagePath": "/article/go/go-template/",
+            "pagePath": "/article/hugo/build-error/",
             "pv": "2"
         },
         {
-            "pagePath": "/article/hugo/about/",
-            "pv": "2"
+            "pagePath": "/article/go/go-template/",
+            "pv": "1"
         },
         {
             "pagePath": "/article/hugo/archive/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/salt/about/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/sample/hugo-shortcode/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/sample/no-tag-category/",
+            "pagePath": "/article/hugo/fontawesome/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/sample/no-thumbnail/",
+            "pagePath": "/article/sample/markdown/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/sample/small-thumbnail/",
+            "pagePath": "/categories/Go言語/",
             "pv": "1"
         },
         {
-            "pagePath": "/tags/Hugo/",
+            "pagePath": "/categories/サンプル/",
             "pv": "1"
         }
     ],
-    "createdAt": "2025-01-19T00:39:26.153Z"
+    "createdAt": "2025-01-26T00:37:22.164Z"
 }
