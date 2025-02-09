@@ -2,26 +2,30 @@
     "items": [
         {
             "pagePath": "/",
-            "pv": "8"
+            "pv": "12"
         },
         {
             "pagePath": "/article/salt/about/",
+            "pv": "7"
+        },
+        {
+            "pagePath": "/article/hugo/tips/",
             "pv": "5"
         },
         {
-            "pagePath": "/article/salt/blog-card/",
+            "pagePath": "/categories/Saltの使い方/",
             "pv": "4"
         },
         {
-            "pagePath": "/categories/Saltの使い方/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/article/go/go-template/",
+            "pagePath": "/article/hugo/fontawesome/",
             "pv": "2"
         },
         {
-            "pagePath": "/article/salt/custom-figure/",
+            "pagePath": "/article/hugo/search/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/salt/blog-card/",
             "pv": "2"
         },
         {
@@ -29,19 +33,19 @@
             "pv": "2"
         },
         {
+            "pagePath": "/article/go/go-template/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/hugo/about/",
+            "pv": "1"
+        },
+        {
             "pagePath": "/article/hugo/build-error/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/fontawesome/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/hugo/search/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/hugo/tips/",
+            "pagePath": "/article/salt/custom-figure/",
             "pv": "1"
         },
         {
@@ -49,7 +53,7 @@
             "pv": "1"
         },
         {
-            "pagePath": "/article/sample/markdown/",
+            "pagePath": "/article/sample/hugo-shortcode/",
             "pv": "1"
         },
         {
@@ -57,5 +61,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2025-02-02T00:38:59.658Z"
+    "createdAt": "2025-02-09T00:39:45.095Z"
 }
