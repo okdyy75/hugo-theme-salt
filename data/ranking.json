@@ -5,31 +5,39 @@
             "pv": "12"
         },
         {
+            "pagePath": "/article/sample/markdown/",
+            "pv": "6"
+        },
+        {
             "pagePath": "/article/salt/about/",
-            "pv": "7"
-        },
-        {
-            "pagePath": "/article/hugo/tips/",
-            "pv": "5"
-        },
-        {
-            "pagePath": "/categories/Saltの使い方/",
             "pv": "4"
         },
         {
-            "pagePath": "/article/hugo/fontawesome/",
-            "pv": "2"
-        },
-        {
             "pagePath": "/article/hugo/search/",
-            "pv": "2"
+            "pv": "3"
         },
         {
             "pagePath": "/article/salt/blog-card/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/article/hugo/tips/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/sample/hugo-shortcode/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/categories/Saltの使い方/",
             "pv": "2"
         },
         {
             "pagePath": "/categories/サンプル/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/tags/Hugo/",
             "pv": "2"
         },
         {
@@ -41,7 +49,7 @@
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/build-error/",
+            "pagePath": "/article/hugo/ranking/",
             "pv": "1"
         },
         {
@@ -49,17 +57,21 @@
             "pv": "1"
         },
         {
-            "pagePath": "/article/salt/self-blog-card/",
+            "pagePath": "/categories/hugo",
             "pv": "1"
         },
         {
-            "pagePath": "/article/sample/hugo-shortcode/",
+            "pagePath": "/privacy-policy/",
             "pv": "1"
         },
         {
             "pagePath": "/tags/tips/",
             "pv": "1"
+        },
+        {
+            "pagePath": "/tags/アーカイブ/",
+            "pv": "1"
         }
     ],
-    "createdAt": "2025-02-09T00:39:45.095Z"
+    "createdAt": "2025-02-16T00:40:49.479Z"
 }
