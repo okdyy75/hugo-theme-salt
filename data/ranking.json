@@ -2,30 +2,14 @@
     "items": [
         {
             "pagePath": "/",
-            "pv": "12"
-        },
-        {
-            "pagePath": "/article/sample/markdown/",
-            "pv": "6"
-        },
-        {
-            "pagePath": "/article/salt/about/",
-            "pv": "4"
-        },
-        {
-            "pagePath": "/article/hugo/search/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/article/salt/blog-card/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/article/hugo/tips/",
             "pv": "2"
         },
         {
-            "pagePath": "/article/sample/hugo-shortcode/",
+            "pagePath": "/article/hugo/search/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/salt/blog-card/",
             "pv": "2"
         },
         {
@@ -33,45 +17,21 @@
             "pv": "2"
         },
         {
+            "pagePath": "/article/salt/about/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/sample/hugo-shortcode/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/sample/markdown/",
+            "pv": "1"
+        },
+        {
             "pagePath": "/categories/サンプル/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/tags/Hugo/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/go/go-template/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/hugo/about/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/hugo/ranking/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/salt/custom-figure/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/categories/hugo",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/privacy-policy/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/tags/tips/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/tags/アーカイブ/",
             "pv": "1"
         }
     ],
-    "createdAt": "2025-02-16T00:40:49.479Z"
+    "createdAt": "2025-02-23T00:40:41.565Z"
 }
