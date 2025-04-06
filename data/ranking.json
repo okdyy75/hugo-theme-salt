@@ -1,27 +1,23 @@
 {
     "items": [
         {
-            "pagePath": "/article/salt/blog-card/",
-            "pv": "12"
-        },
-        {
-            "pagePath": "/article/hugo/search/",
-            "pv": "4"
-        },
-        {
-            "pagePath": "/article/hugo/tips/",
-            "pv": "4"
-        },
-        {
-            "pagePath": "/",
+            "pagePath": "/article/go/go-template/",
             "pv": "3"
         },
         {
-            "pagePath": "/archives/2022年5月/",
-            "pv": "1"
+            "pagePath": "/article/hugo/search/",
+            "pv": "3"
         },
         {
-            "pagePath": "/article/go/go-template/",
+            "pagePath": "/article/salt/blog-card/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/go/variable/",
             "pv": "1"
         },
         {
@@ -29,9 +25,21 @@
             "pv": "1"
         },
         {
-            "pagePath": "/article/salt/self-blog-card/",
+            "pagePath": "/article/sample/markdown/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/categories/Saltの使い方/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/tags/Hugo/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/tags/go-template/",
             "pv": "1"
         }
     ],
-    "createdAt": "2025-03-30T00:43:52.550Z"
+    "createdAt": "2025-04-06T00:43:28.015Z"
 }
