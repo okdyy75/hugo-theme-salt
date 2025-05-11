@@ -2,10 +2,10 @@
     "items": [
         {
             "pagePath": "/article/salt/blog-card/",
-            "pv": "8"
+            "pv": "4"
         },
         {
-            "pagePath": "/article/hugo/search/",
+            "pagePath": "/",
             "pv": "3"
         },
         {
@@ -13,27 +13,15 @@
             "pv": "3"
         },
         {
-            "pagePath": "/article/salt/about/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/",
+            "pagePath": "/article/hugo/search/",
             "pv": "2"
         },
         {
-            "pagePath": "/article/hugo/archive/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/categories/サンプル/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/about/",
+            "pagePath": "/archives/2021年9月/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/go/go-template/",
+            "pagePath": "/article/hugo/build-error/",
             "pv": "1"
         },
         {
@@ -41,7 +29,7 @@
             "pv": "1"
         },
         {
-            "pagePath": "/article/salt/self-blog-card/",
+            "pagePath": "/article/salt/about/",
             "pv": "1"
         },
         {
@@ -49,25 +37,9 @@
             "pv": "1"
         },
         {
-            "pagePath": "/categories/Saltの使い方/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/privacy-policy/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/tags/Hugo/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/tags/アーカイブ/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/tags/ショートコード/",
+            "pagePath": "/tags/lunr/",
             "pv": "1"
         }
     ],
-    "createdAt": "2025-05-04T00:47:23.247Z"
+    "createdAt": "2025-05-11T00:46:15.046Z"
 }
