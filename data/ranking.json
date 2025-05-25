@@ -1,57 +1,65 @@
 {
     "items": [
         {
-            "pagePath": "/article/go/go-template/",
-            "pv": "5"
-        },
-        {
             "pagePath": "/",
-            "pv": "4"
-        },
-        {
-            "pagePath": "/article/hugo/tips/",
-            "pv": "4"
+            "pv": "20"
         },
         {
             "pagePath": "/article/salt/about/",
+            "pv": "7"
+        },
+        {
+            "pagePath": "/article/hugo/search/",
+            "pv": "5"
+        },
+        {
+            "pagePath": "/article/hugo/tips/",
             "pv": "3"
         },
         {
-            "pagePath": "/tags/go-template/",
+            "pagePath": "/article/salt/blog-card/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/categories/サンプル/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/article/hugo/fontawesome/",
             "pv": "2"
+        },
+        {
+            "pagePath": "/article/salt/custom-figure/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/categories/Saltの使い方/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/go/go-template/",
+            "pv": "1"
         },
         {
             "pagePath": "/article/hugo/about/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/build-error/",
+            "pagePath": "/article/hugo/archive/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/search/",
+            "pagePath": "/article/sample/small-thumbnail/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/salt/blog-card/",
+            "pagePath": "/tags/FontAwesome/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/salt/custom-figure/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/sample/hugo-shortcode/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/categories/Saltの使い方/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/categories/サンプル/",
+            "pagePath": "/tags/ライブラリ/",
             "pv": "1"
         }
     ],
-    "createdAt": "2025-05-18T00:46:59.054Z"
+    "createdAt": "2025-05-25T00:48:52.093Z"
 }
