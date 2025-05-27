@@ -51,13 +51,13 @@
                             {{ end }}
                         ],
                     {{ end }}
-                    {{ if .Site.Author.name }}
+                    {{ if .Site.Params.Author.name }}
                         "author": {
                             "@type": "Person",
-                            {{ with .Site.Author.url }}
+                            {{ with .Site.Params.Author.url }}
                                 "url": {{ . }},
                             {{ end }}
-                            "name": {{ .Site.Author.name }}
+                            "name": {{ .Site.Params.Author.name }}
                         },
                     {{ end }}
                     {{ if .Site.Params.publisher }}
