@@ -98,9 +98,12 @@
                     {{ range first .Site.Params.newArticleLimit (where .Site.RegularPages.ByLastmod.Reverse ".Section" "==" "article") }}
                         <li class="partials__sidebar__article__item">
                             <a href="{{ .Permalink }}" class="partials__sidebar__article__itemLink">
-                                {{ $thumbnail := .Resources.Match "thumbnail.*" }}
+                                {{ $thumbnail := .Resources.GetMatch "thumbnail.*" }}
+                                {{ if and (not $thumbnail) (.Params.thumbnail) }}
+                                    {{ $thumbnail = resources.Get .Params.thumbnail }}
+                                {{ end }}
                                 {{ if $thumbnail }}
-                                    {{ $thumbnail = (index $thumbnail 0).Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
+                                    {{ $thumbnail = $thumbnail.Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
                                 {{ else }}
                                     {{ $thumbnail = resources.Get .Site.Params.dafaultNoimage }}
                                     {{ $thumbnail = $thumbnail.Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
