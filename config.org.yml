@@ -3,10 +3,6 @@ languageCode: ja
 # theme: hugo-theme-salt
 title: Hugoブログテーマ「Salt」
 copyright: © 2021 my_name
-author:
-  name: my_name
-  email: my_email@example.com
-  url: https://example.com/my_url
 googleAnalytics:
 disqusShortname:
 
@@ -60,6 +56,10 @@ module:
       target: static/js/vendor/lunr-languages/lunr.ja.js
 
 params:
+  author:
+    name: my_name
+    email: my_email@example.com
+    url: https://example.com/my_url
   description: このサイトはHugo用ブログテーマ「Salt」のサンプルサイトです
   icon: image/icon.png
   images:
