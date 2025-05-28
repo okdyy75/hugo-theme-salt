@@ -98,11 +98,12 @@
                     {{ range first .Site.Params.newArticleLimit (where .Site.RegularPages.ByLastmod.Reverse ".Section" "==" "article") }}
                         <li class="partials__sidebar__article__item">
                             <a href="{{ .Permalink }}" class="partials__sidebar__article__itemLink">
-                                {{ $thumbnail := .Resources.Match "thumbnail.*" }}
+                                {{ $thumbnail := or
+                                    (.Resources.GetMatch "thumbnail.*")
+                                    (resources.Get .Params.thumbnail)
+                                    (resources.Get .Site.Params.dafaultNoimage)
+                                }}
                                 {{ if $thumbnail }}
-                                    {{ $thumbnail = (index $thumbnail 0).Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
-                                {{ else }}
-                                    {{ $thumbnail = resources.Get .Site.Params.dafaultNoimage }}
                                     {{ $thumbnail = $thumbnail.Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
                                 {{ end }}
                                 <img src='{{ $thumbnail.Permalink }}' alt="{{ .Title }}" loading="lazy" class="partials__sidebar__article__itemThumbnail">
@@ -128,11 +129,12 @@
                         {{ range .Site.Taxonomies.pickups.sidebar }}
                             <li class="partials__sidebar__article__item">
                                 <a href="{{ .Permalink }}" class="partials__sidebar__article__itemLink">
-                                    {{ $thumbnail := .Resources.Match "thumbnail.*" }}
+                                    {{ $thumbnail := or
+                                        (.Resources.GetMatch "thumbnail.*")
+                                        (resources.Get .Params.thumbnail)
+                                        (resources.Get .Site.Params.dafaultNoimage)
+                                    }}
                                     {{ if $thumbnail }}
-                                        {{ $thumbnail = (index $thumbnail 0).Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
-                                    {{ else }}
-                                        {{ $thumbnail = resources.Get .Site.Params.dafaultNoimage }}
                                         {{ $thumbnail = $thumbnail.Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
                                     {{ end }}
                                     <img src='{{ $thumbnail.Permalink }}' alt="{{ .Title }}" loading="lazy" class="partials__sidebar__article__itemThumbnail">
@@ -169,11 +171,12 @@
                             {{ with .page }}
                                 <li class="partials__sidebar__article__item">
                                     <a href="{{ .Permalink }}" class="partials__sidebar__article__itemLink">
-                                        {{ $thumbnail := .Resources.Match "thumbnail.*" }}
+                                        {{ $thumbnail := or
+                                            (.Resources.GetMatch "thumbnail.*")
+                                            (resources.Get .Params.thumbnail)
+                                            (resources.Get .Site.Params.dafaultNoimage)
+                                        }}
                                         {{ if $thumbnail }}
-                                            {{ $thumbnail = (index $thumbnail 0).Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
-                                        {{ else }}
-                                            {{ $thumbnail = resources.Get .Site.Params.dafaultNoimage }}
                                             {{ $thumbnail = $thumbnail.Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
                                         {{ end }}
                                         <img src='{{ $thumbnail.Permalink }}' alt="{{ .Title }}" loading="lazy" class="partials__sidebar__article__itemThumbnail">
