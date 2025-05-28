@@ -78,7 +78,7 @@ layouts/search/list.json
     {{- $thumbnail := or
         (.Resources.GetMatch "thumbnail.*")
         (resources.Get .Params.thumbnail)
-        (resources.Get .Site.Params.dafaultNoimage)
+        (resources.Get .Site.Params.defaultNoimage)
     -}}
     {{- if $thumbnail -}}
         {{- $thumbnail = $thumbnail.Fill (printf "640x360 center q%d webp" .Site.Params.imageQuality) -}}

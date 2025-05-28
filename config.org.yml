@@ -65,7 +65,7 @@ params:
   images:
     - image/og_large.png
   notFoundImage: image/404.png
-  dafaultNoimage: image/default_noimage.png
+  defaultNoimage: image/default_noimage.png
   newArticleLimit: 5
   rankingArticleLimit: 5
   relatedArticleLimit: 2

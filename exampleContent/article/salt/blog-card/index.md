@@ -99,7 +99,7 @@ layouts/shortcodes/blog-card.html
                 {{- end -}}
             {{- end -}}
         {{- else -}}
-            {{- $thumbnail := resources.Get $.Site.Params.dafaultNoimage -}}
+            {{- $thumbnail := resources.Get $.Site.Params.defaultNoimage -}}
             {{- $thumbnail_url = ($thumbnail.Fill (printf "200x200 center q%d webp" $.Site.Params.imageQuality)).Permalink -}}
         {{- end -}}
 
