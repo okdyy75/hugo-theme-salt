@@ -19,7 +19,8 @@ taxonomies:
 disablePathToLower: true
 hasCJKLanguage: true
 summaryLength: 200
-paginate: 10
+pagination:
+  pagerSize: 10
 
 markup:
   goldmark:
