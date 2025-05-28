@@ -41,8 +41,12 @@
                     "@type": "Article",
                     "headline": {{ .Title }},
                     "description": {{ .Summary | plainify | safeHTML }},
-                    {{ with $image := .Resources.Match "thumbnail.*" }}
-                        "image": {{ ((index . 0).Fill (printf "1280x720 center q%d webp" $.Site.Params.imageQuality)).Permalink }},
+                    {{ $thumbnail := or
+                        (.Resources.GetMatch "thumbnail.*")
+                        (resources.Get .Params.thumbnail)
+                    }}
+                    {{ if $thumbnail }}
+                        "image": {{ ($thumbnail.Fill (printf "1280x720 center q%d webp" $.Site.Params.imageQuality)).Permalink }},
                     {{ end }}
                     {{ if .Params.tags }}
                         "keywords": [

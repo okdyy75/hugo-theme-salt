@@ -24,10 +24,10 @@
                 {{ partial "tag-list.html" (dict "tags" $tags) }}
             {{ end }}
 
-            {{ $thumbnail := .Resources.GetMatch "thumbnail.*" }}
-            {{ if and (not $thumbnail) (.Params.thumbnail) }}
-                {{ $thumbnail = resources.Get .Params.thumbnail }}
-            {{ end }}
+            {{- $thumbnail := or 
+                (.Resources.GetMatch "thumbnail.*")
+                (resources.Get .Params.thumbnail)
+            -}}
             {{ if $thumbnail }}
                 {{ $thumbnail = $thumbnail.Fit (printf "1280x1280 q%d webp" .Site.Params.imageQuality) }}
                 <img src="{{ $thumbnail.RelPermalink  }}" alt="{{ .Title }}" class="single__article__thumbnail">
