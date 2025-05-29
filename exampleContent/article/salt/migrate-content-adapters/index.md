@@ -12,10 +12,10 @@ toc: true
 comment: true
 ---
 
-Hugo Theme SaltでもContent adaptersに対応しました。  
-使用方法と移行方法をまとめたのでご参考に
+Hugo Theme Salt v3.0.0でもContent adaptersに対応しました。  
+使用方法と移行方法をまとめたので参考にして下さい
 
-## 前提として
+### 前提として
 - 目次が使えません
 - ページバンドル内の画像ファイル等が考慮されていません（記事本文を修正する必要あり）
 - 本文内にHugoの記法がある場合ビルドエラーになります（`{{ xxx }}`の記述）
@@ -25,7 +25,7 @@ Hugo Theme SaltでもContent adaptersに対応しました。
         - content/article/[category]/[article]/thumbnail.jpg
     - 記事ディレクトリパスと記事URLパスが同一（slugを使用している場合は未検証）
 
-## Content adaptersを使用した記事表示
+## Content adaptersを使用した記事表示方法
 
 大まかな流れとしては下記の通り
 
@@ -145,7 +145,13 @@ Hugoサーバーを起動して記事が表示される事を確認して下さ�
 hugo server -D --disableFastRender
 ```
 
-<br><br>
+実際のソースはこちらを参考にしてみて下さい
+
+https://github.com/okdyy75/hugo-theme-salt/tree/main/assets/article/hugo-release/v0.145.0
+
+https://github.com/okdyy75/hugo-theme-salt/tree/main/exampleContent/article/hugo-release/v0.145.0
+
+<br>
 
 ## 移行の流れ
 大まかな移行の流れとしては下記の通りです
@@ -317,11 +323,11 @@ async function main() {
 })()
 ```
 
-実行後は下記の形式で保存されます。Content adaptersを使用しない記事データは適宜削除して下さい
+実行後は下記の形式で保存されます
 
 ```
-assets/article/hugo-release/v0.145.0/index.json
-assets/article/hugo-release/v0.145.0/thumbnail.png
+assets/article/[category]/[article]/index.json
+assets/article/[category]/[article]/thumbnail.png
 ```
 
 
