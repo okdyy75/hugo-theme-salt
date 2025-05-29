@@ -1,1 +1,169 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2025年5月 on Hugoブログテーマ「Salt」</title><link>https://hugo-theme-salt.okdyy75.com/archives/2025%E5%B9%B45%E6%9C%88/</link><description>Recent content in 2025年5月 on Hugoブログテーマ「Salt」</description><generator>Hugo</generator><language>ja</language><managingEditor>okdyy75@gmail.com (okdyy75)</managingEditor><webMaster>okdyy75@gmail.com (okdyy75)</webMaster><copyright>© 2021 okdyy75</copyright><lastBuildDate>Thu, 29 May 2025 17:55:17 +0900</lastBuildDate><atom:link href="https://hugo-theme-salt.okdyy75.com/archives/2025%E5%B9%B45%E6%9C%88/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo v0.147.0 リリースノートまとめ</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.147.0/</link><pubDate>Thu, 29 May 2025 17:55:17 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.147.0/</guid><description>Warning ※この記事は生成AIを使用して作成された記事です。（create by GPT-4o） 記事内容については未検証ですので参考程度にご活用ください 2025年4月25日にリリースされた Hugo v0.147.0 の主な更新内容をまとめます。既存ユーザー向けに 新機能・主な変更点・バグ修正・非推奨事項を分類し、プロジェクトへの影響や対応方法のヒントを解説します。 新機能 images.Text の縦位置指定オプション追加 画像操作機能 images.Text にテキストの縦位置を指定で</description></item><item><title>Hugo v0.146.0 リリースノートまとめ</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.146.0/</link><pubDate>Thu, 29 May 2025 16:08:31 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.146.0/</guid><description>Warning ※この記事は生成AIを使用して作成された記事です。（create by GPT-4o） 記事内容については未検証ですので参考程度にご活用ください 2025年4月10日にリリースされた Hugo v0.146.0 の主な更新内容をまとめます。既存ユーザー向けに 新機能・主な変更点・バグ修正・非推奨事項を分類し、プロジェクトへの影響や対応方法のヒントを解説します。 新機能 テンプレートシステムの刷新 Hugo v0.146.0 では、Go テンプレートの処理方法が全面</description></item><item><title>Hugo v0.145.0 リリースノートまとめ</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.145.0/</link><pubDate>Thu, 29 May 2025 15:23:31 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.145.0/</guid><description>Warning ※この記事は生成AIを使用して作成された記事です。（create by GPT-4o） 記事内容については未検証ですので参考程度にご活用ください 2025年2月26日にリリースされた Hugo v0.145.0 の主な更新内容をまとめます。既存ユーザー向けに 新機能・主な変更点・バグ修正・非推奨事項を分類し、プロジェクトへの影響や対応方法のヒントを解説します。 新機能 transform.PortableText 関数の追加 Sanity CMS との統合を容易にするため、transform.Por</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2025年5月 on Hugoブログテーマ「Salt」</title><link>https://hugo-theme-salt.okdyy75.com/archives/2025%E5%B9%B45%E6%9C%88/</link><description>Recent content in 2025年5月 on Hugoブログテーマ「Salt」</description><generator>Hugo</generator><language>ja</language><managingEditor>okdyy75@gmail.com (okdyy75)</managingEditor><webMaster>okdyy75@gmail.com (okdyy75)</webMaster><copyright>© 2021 okdyy75</copyright><lastBuildDate>Thu, 29 May 2025 20:02:09 +0900</lastBuildDate><atom:link href="https://hugo-theme-salt.okdyy75.com/archives/2025%E5%B9%B45%E6%9C%88/index.xml" rel="self" type="application/rss+xml"/><item><title>Content adaptersに対応しました＆既存の記事の移行方法</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/migrate-content-adapters/</link><pubDate>Thu, 29 May 2025 20:02:09 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/migrate-content-adapters/</guid><description>&lt;p>Hugo Theme SaltでもContent adaptersに対応しました。&lt;br>
+使用方法と移行方法をまとめたのでご参考に&lt;/p>
+&lt;h2 id="前提として">前提として&lt;/h2>
+&lt;ul>
+&lt;li>目次が使えません&lt;/li>
+&lt;li>ページバンドル内の画像ファイル等が考慮されていません（記事本文を修正する必要あり）&lt;/li>
+&lt;li>本文内にHugoの記法がある場合ビルドエラーになります（&lt;code>{{ xxx }}&lt;/code>の記述）&lt;/li>
+&lt;li>ディレクトリ構造について
+&lt;ul>
+&lt;li>下記の構成で記事を保存している
+&lt;ul>
+&lt;li>content/article/[category]/[article]/index.md&lt;/li>
+&lt;li>content/article/[category]/[article]/thumbnail.jpg&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>記事ディレクトリパスと記事URLパスが同一（slugを使用している場合は未検証）&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="content-adaptersを使用した記事表示">Content adaptersを使用した記事表示&lt;/h2>
+&lt;p>大まかな流れとしては下記の通り&lt;/p></description></item><item><title>Hugo v0.147.0 リリースノートまとめ</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.147.0/</link><pubDate>Thu, 29 May 2025 17:55:17 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.147.0/</guid><description>&lt;div class="markdown-alert markdown-alert-warning" dir="auto">&lt;p class="markdown-alert-title" dir="auto">&lt;svg class="octicon octicon-alert mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z">&lt;/path>&lt;/svg>Warning&lt;/p>&lt;p dir="auto">※この記事は生成AIを使用して作成された記事です。（create by GPT-4o）&lt;br>記事内容については未検証ですので参考程度にご活用ください&lt;/p>
+&lt;/div>
+&lt;p>2025年4月25日にリリースされた Hugo v0.147.0 の主な更新内容をまとめます。既存ユーザー向けに &lt;strong>新機能&lt;/strong>・&lt;strong>主な変更点&lt;/strong>・&lt;strong>バグ修正&lt;/strong>・&lt;strong>非推奨事項&lt;/strong>を分類し、プロジェクトへの影響や対応方法のヒントを解説します。&lt;/p>
+&lt;h2 id="新機能">新機能&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>images.Text の縦位置指定オプション追加&lt;/strong>&lt;br>
+画像操作機能 &lt;a href="https://gohugo.io/functions/images/text/" target="_blank">&lt;code>images.Text&lt;/code>&lt;/a> にテキストの縦位置を指定できる新オプション &lt;code>aligny&lt;/code> が導入されました。従来からの &lt;code>alignx&lt;/code> オプションと組み合わせることで、画像上のテキストを縦横とも中央に配置するなど、柔軟なレイアウトが可能になります。&lt;/li>
+&lt;/ul>
+&lt;h2 id="主な変更点">主な変更点&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>設定（config）マージの改善&lt;/strong>&lt;br>
+デフォルト設定の適用順序が見直され、モジュールやテーマから読み込んだ設定をルートの設定により柔軟に統合できるようになりました。具体的には、&lt;code>config.toml&lt;/code> 等で &lt;code>_merge = &amp;quot;deep&amp;quot;&lt;/code> を指定すると、インポートしたモジュールやテーマの設定を深い階層までマージするようになります。これにより、複数サイトで共通設定を共有する際に、設定の上書きや階層構造が意図しない形で失われる問題を回避しやすくなります。詳細については&lt;a href="https://gohugo.io/configuration/introduction/#merge-configuration-settings" target="_blank">ドキュメント&lt;/a>を参照してください。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>テーマスケルトンのテンプレート名調整&lt;/strong>&lt;br>
+テーマ作成用スケルトン (&lt;code>create/skeletons&lt;/code>) において、一部テンプレートファイル名が変更されました。既存のカスタムテーマをインポートしている場合は、ファイル名の差分に注意してください。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="バグ修正">バグ修正&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>コードブロックレンダリング&lt;/strong>&lt;br>
+組み込みのコードブロックレンダリングを、カスタムの &lt;code>render-codeblock-*.html&lt;/code> テンプレートよりも優先するよう修正されました。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Vimeo/YouTube ショートコード&lt;/strong>&lt;br>
+&lt;code>allowFullScreen&lt;/code> オプションの不具合が修正され、YouTube/Vimeo ショートコードで全画面表示が正しく機能するようになりました。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>設定マージ (&lt;code>_merge&lt;/code>) のバグ&lt;/strong>&lt;br>
+キーが存在しない場合の &lt;code>_merge&lt;/code> 処理に関する不具合が修正されました。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>タイポ・文言修正&lt;/strong>&lt;br>
+ドキュメントやコード内の軽微な誤記やコメント表記の修正が行われました。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="非推奨事項">非推奨事項&lt;/h2>
+&lt;p>今回のリリースでは、&lt;strong>非推奨（deprecation）とされた機能は特にありません&lt;/strong>。既存の機能が削除・変更される予定も発表されていないため、現状のコードをそのまま継続利用できます。&lt;/p>
+&lt;h2 id="影響と対応のヒント">影響と対応のヒント&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>画像テキスト配置の活用&lt;/strong>&lt;br>
+新しい &lt;code>aligny&lt;/code> オプションにより、&lt;code>images.Text&lt;/code> を使用した画像上のテキスト配置の自由度が高まりました。&lt;code>alignx&lt;/code> と組み合わせて使うことで、テキストを画像の縦横中央に配置するレイアウトが簡単になります。必要に応じてショートコードやテンプレートの更新を検討してください。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>設定統合の活用&lt;/strong>&lt;br>
+複数テーマやモジュールにまたがる設定を共通化している場合、&lt;code>config.toml&lt;/code> に &lt;code>_merge = &amp;quot;deep&amp;quot;&lt;/code> を追加すると良いでしょう。これにより、インポートした設定を階層構造のまままとめて取り込めます。ただし、マージ時に意図しない上書きが発生しないか、アップデート後に設定ファイルの挙動を確認してください。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>カスタムテンプレートの確認&lt;/strong>&lt;br>
+独自に作成した &lt;code>render-codeblock-*.html&lt;/code> テンプレートなどがある場合、内部レンダリングの優先度変更によって出力結果が変わる可能性があります。新バージョンでサイトをビルドした際に、コードブロックの表示が期待通りかチェックしておくと安心です。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>ショートコードの挙動確認&lt;/strong>&lt;br>
+既存サイトで Vimeo/YouTube ショートコードの &lt;code>allowFullScreen&lt;/code> オプションを使用している場合、今回の修正により全画面表示が正しく動作するようになります。特に何か対応する必要はありませんが、アップデート前後で動作に差がないか確認しておくと良いでしょう。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;strong>参考&lt;/strong>: &lt;a href="https://github.com/gohugoio/hugo/releases/tag/v0.147.0">Hugo v0.147.0 リリースノート（GitHub）&lt;/a>&lt;/p></description></item><item><title>Hugo v0.146.0 リリースノートまとめ</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.146.0/</link><pubDate>Thu, 29 May 2025 16:08:31 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.146.0/</guid><description>&lt;div class="markdown-alert markdown-alert-warning" dir="auto">&lt;p class="markdown-alert-title" dir="auto">&lt;svg class="octicon octicon-alert mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z">&lt;/path>&lt;/svg>Warning&lt;/p>&lt;p dir="auto">※この記事は生成AIを使用して作成された記事です。（create by GPT-4o）&lt;br>記事内容については未検証ですので参考程度にご活用ください&lt;/p>
+&lt;/div>
+&lt;p>2025年4月10日にリリースされた Hugo v0.146.0 の主な更新内容をまとめます。既存ユーザー向けに &lt;strong>新機能&lt;/strong>・&lt;strong>主な変更点&lt;/strong>・&lt;strong>バグ修正&lt;/strong>・&lt;strong>非推奨事項&lt;/strong>を分類し、プロジェクトへの影響や対応方法のヒントを解説します。&lt;/p>
+&lt;h2 id="新機能">新機能&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>テンプレートシステムの刷新&lt;/strong>&lt;br>
+Hugo v0.146.0 では、Go テンプレートの処理方法が全面的に再実装され、&lt;code>layouts&lt;/code> フォルダの構造変更や、より強力なテンプレートルックアップシステムが導入されました。これにより、テンプレートの管理と再利用が容易になります。詳細は &lt;a href="https://gohugo.io/templates/new-templatesystem-overview/">新しいテンプレートシステムの概要&lt;/a> を参照してください。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>新しいテンプレート関数の追加&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>templates.Current&lt;/code>: 現在実行中のテンプレートとそのコールスタックに関する情報を提供します。デバッグ時に有用です。&lt;/li>
+&lt;li>&lt;code>time.In&lt;/code>: 指定された IANA タイムゾーンで日付/時刻を表現します。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="主な変更点">主な変更点&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>&lt;code>layouts&lt;/code> フォルダの構造変更&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>_default&lt;/code> フォルダは削除され、そこにあったファイルは &lt;code>layouts/&lt;/code> のルートに移動されました。&lt;/li>
+&lt;li>&lt;code>layouts/partials&lt;/code> フォルダは &lt;code>layouts/_partials&lt;/code> にリネームされました。&lt;/li>
+&lt;li>&lt;code>layouts/shortcodes&lt;/code> フォルダは &lt;code>layouts/_shortcodes&lt;/code> にリネームされました。&lt;/li>
+&lt;li>&lt;code>layouts&lt;/code> 内のフォルダでアンダースコアで始まらないものは、ページパスのルートを表します。これらは必要に応じて深くネストできます。また、&lt;code>_shortcodes&lt;/code> や &lt;code>_markup&lt;/code> フォルダはツリー内の任意のレベルに配置できます。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>パーシャルテンプレートのルックアップキャッシュの追加&lt;/strong>&lt;br>
+パーシャルテンプレートのルックアップにキャッシュが導入され、ビルドパフォーマンスが向上しました。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>テーマ作成の改善&lt;/strong>&lt;br>
+&lt;code>hugo new&lt;/code> コマンドによるテーマ作成機能が改善され、より効率的にテーマを作成できるようになりました。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="バグ修正">バグ修正&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Vimeo/YouTube ショートコードの全画面表示オプションの修正&lt;/strong>&lt;br>
+Vimeo および YouTube のショートコードにおいて、&lt;code>allowFullScreen&lt;/code> オプションが正しく機能しない問題が修正されました。&lt;/li>
+&lt;/ul>
+&lt;h2 id="非推奨事項">非推奨事項&lt;/h2>
+&lt;p>今回のリリースでは、&lt;strong>非推奨（deprecation）とされた機能は特にありません&lt;/strong>。既存の機能が削除・変更される予定も発表されていないため、現状のコードをそのまま継続利用できます。&lt;/p>
+&lt;h2 id="影響と対応のヒント">影響と対応のヒント&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>テンプレート構造の移行&lt;/strong>&lt;br>
+新しいテンプレートシステムにより、&lt;code>layouts&lt;/code> フォルダの構造が変更されました。既存のプロジェクトでは、以下の対応が必要です：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>layouts/_default&lt;/code> フォルダの内容を &lt;code>layouts/&lt;/code> のルートに移動する。&lt;/li>
+&lt;li>&lt;code>layouts/partials&lt;/code> を &lt;code>layouts/_partials&lt;/code> にリネームする。&lt;/li>
+&lt;li>&lt;code>layouts/shortcodes&lt;/code> を &lt;code>layouts/_shortcodes&lt;/code> にリネームする。
+これらの変更により、テンプレートのルックアップが正しく機能するようになります。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>テンプレート関数の活用&lt;/strong>&lt;br>
+新たに追加された &lt;code>templates.Current&lt;/code> 関数を利用することで、テンプレートのデバッグが容易になります。また、&lt;code>time.In&lt;/code> 関数を使用することで、特定のタイムゾーンでの日付/時刻の表示が可能になります。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>ビルドパフォーマンスの向上&lt;/strong>&lt;br>
+パーシャルテンプレートのルックアップキャッシュの導入により、ビルド時間が短縮される可能性があります。大規模なプロジェクトでは、ビルドパフォーマンスの改善が期待できます。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;strong>参考&lt;/strong>: &lt;a href="https://github.com/gohugoio/hugo/releases/tag/v0.146.0">Hugo v0.146.0 リリースノート（GitHub）&lt;/a>&lt;/p></description></item><item><title>Hugo v0.145.0 リリースノートまとめ</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.145.0/</link><pubDate>Thu, 29 May 2025 15:23:31 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.145.0/</guid><description>&lt;div class="markdown-alert markdown-alert-warning" dir="auto">&lt;p class="markdown-alert-title" dir="auto">&lt;svg class="octicon octicon-alert mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z">&lt;/path>&lt;/svg>Warning&lt;/p>&lt;p dir="auto">※この記事は生成AIを使用して作成された記事です。（create by GPT-4o）&lt;br>記事内容については未検証ですので参考程度にご活用ください&lt;/p>
+&lt;/div>
+&lt;p>2025年2月26日にリリースされた Hugo v0.145.0 の主な更新内容をまとめます。既存ユーザー向けに &lt;strong>新機能&lt;/strong>・&lt;strong>主な変更点&lt;/strong>・&lt;strong>バグ修正&lt;/strong>・&lt;strong>非推奨事項&lt;/strong>を分類し、プロジェクトへの影響や対応方法のヒントを解説します。&lt;/p>
+&lt;h2 id="新機能">新機能&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>&lt;code>transform.PortableText&lt;/code> 関数の追加&lt;/strong>&lt;/p></description></item><item><title>Hugo標準のgistショートコードをテーマ内に移行しました</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/gist/</link><pubDate>Wed, 28 May 2025 18:02:09 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/gist/</guid><description>&lt;p>Hugo公式のgistショートコードはバージョン0.143.0で非推奨となり、将来のリリースで削除されるそうなので
+Hugo Theme Salt内ののショートコードとして使えるように移行しました&lt;/p>
+&lt;pre tabindex="0">&lt;code>WARN The &amp;#34;gist&amp;#34; shortcode was deprecated in v0.143.0 and will be removed in a future release. See https://gohugo.io/shortcodes/gist for instructions to create a replacement.
+&lt;/code>&lt;/pre>&lt;p>Hugo公式ページでは下記の通り&lt;/p>
+&lt;a href="https://gohugo.io/shortcodes/gist/" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: inherit;" onMouseOver="this.style.opacity='0.9'">
+ &lt;div style="flex-shrink: 0;">
+ &lt;img src="https://hugo-theme-salt.okdyy75.com/gohugoio-card-base-1_hu_731e7eb4458b328b.webp" alt="" width="100" height="100">
+ &lt;/div>
+ &lt;div style="margin-left: 10px;">
+ &lt;h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">Gist shortcode&lt;/h2>
+ &lt;p style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;"> Embed a GitHub Gist in your content using the gist shortcode. &lt;/p>
+ &lt;/div>
+ &lt;/a>
+&lt;br>
+&lt;blockquote>
+&lt;p>The gist shortcode was deprecated in version 0.143.0 and will be removed in a future release. To continue embedding &amp;gt; GitHub Gists in your content, you’ll need to create a custom shortcode:&lt;/p>&lt;/blockquote>
+&lt;p>Gist ショートコードはバージョン 0.143.0 で非推奨となり、今後のリリースで削除される予定です。コンテンツに GitHub Gist を埋め込むには、カスタムショートコードを作成する必要があります。&lt;/p></description></item></channel></rss>

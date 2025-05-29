@@ -1,1 +1,69 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sidebar on Hugoブログテーマ「Salt」</title><link>https://hugo-theme-salt.okdyy75.com/pickups/sidebar/</link><description>Recent content in Sidebar on Hugoブログテーマ「Salt」</description><generator>Hugo</generator><language>ja</language><managingEditor>okdyy75@gmail.com (okdyy75)</managingEditor><webMaster>okdyy75@gmail.com (okdyy75)</webMaster><copyright>© 2021 okdyy75</copyright><lastBuildDate>Wed, 10 Aug 2022 18:26:11 +0900</lastBuildDate><atom:link href="https://hugo-theme-salt.okdyy75.com/pickups/sidebar/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugoブログテーマ「Salt」とは？</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/about/</link><pubDate>Sun, 12 Sep 2021 15:07:11 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/about/</guid><description>「Salt」はシンプルなブログを低コストで作成できる を目標にしたHugo用テーマです。名前の通り、できるだけ素材そのものを引き出せるようなシンプルなデザイン・レイアウトにしました。 実際にSaltでできることについて紹介したいと思います 1. レスポンシブデザイン対応 PCとSP表示に対応しています。 デフォルトで横幅600pxをデフォルトにしていますが、任意のサイズに変更できます。 2. サイトカラーを自分の好き</description></item><item><title>画像のリサイズ・トリミング可能な自作ショートコード</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/custom-figure/</link><pubDate>Sat, 11 Sep 2021 23:39:15 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/custom-figure/</guid><description>このテーマ内で画像のリサイズ・トリミングができる「custom-figure」というショートコードを作成しました。 使い方 Hugo標準のfigureショートコードの機能をそのまま使えます HugoのImage Processingで使えるResize、Fit、Fillが使えます Image Processingについてはこちらをチェック Image processing Resize, crop, rotate, filter, and convert images. {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Resize スイカ&amp;#34; Resize=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Fit スイカ&amp;#34; Fit=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34;</description></item><item><title>サイト内ブログカードを作る自作ショートコード</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/self-blog-card/</link><pubDate>Sun, 12 Sep 2021 13:21:49 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/self-blog-card/</guid><description>このテーマ内でサイト内ブログカードを作れる「self-blog-card」というショートコードを作成しました。 使い方 自サイト内のurlを指定します 自記事のブログカードは表示できません。 日本語だとconfig.ymlのsummaryLength: 200以上推奨です {{&amp;lt; self-blog-card &amp;#34;/article/salt/custom-figure&amp;#34; &amp;gt;}} 表示例 画像のリサイズ・トリミング可能な自作ショートコード このテーマ内で画像のリサイズ・トリミングができる「custom-figur</description></item><item><title>Hugoを使い始めた人に捧げるTips11選</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo/tips/</link><pubDate>Thu, 16 Sep 2021 23:10:23 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo/tips/</guid><description>1. とりあえずhugo server -Dって使ってるけどこれって何？ draft: trueのコンテンツファイルも含めて出力。 詳しくはhugo server --helpでチェック 2. taxonomyとtermの違い taxonomyは「タグ」や「カテゴリー」といった分類自体 termはそのタグやカテゴリーに属する「go」とか「tips」のことです こちらのサイトが非常に分かりやすいです！ https://maku77.github.io/hugo/taxonomy/basic.html 3. content配下の固定ページに共通のlayoutを使</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sidebar on Hugoブログテーマ「Salt」</title><link>https://hugo-theme-salt.okdyy75.com/pickups/sidebar/</link><description>Recent content in Sidebar on Hugoブログテーマ「Salt」</description><generator>Hugo</generator><language>ja</language><managingEditor>okdyy75@gmail.com (okdyy75)</managingEditor><webMaster>okdyy75@gmail.com (okdyy75)</webMaster><copyright>© 2021 okdyy75</copyright><lastBuildDate>Wed, 10 Aug 2022 18:26:11 +0900</lastBuildDate><atom:link href="https://hugo-theme-salt.okdyy75.com/pickups/sidebar/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugoブログテーマ「Salt」とは？</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/about/</link><pubDate>Sun, 12 Sep 2021 15:07:11 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/about/</guid><description>&lt;p>「Salt」は&lt;strong>シンプルなブログを低コストで作成できる&lt;/strong>&lt;/p>
+&lt;p>を目標にしたHugo用テーマです。名前の通り、できるだけ素材そのものを引き出せるようなシンプルなデザイン・レイアウトにしました。&lt;/p>
+&lt;p>実際にSaltでできることについて紹介したいと思います&lt;/p>
+&lt;br>
+&lt;h2 id="1-レスポンシブデザイン対応">1. レスポンシブデザイン対応&lt;/h2>
+&lt;p>PCとSP表示に対応しています。
+デフォルトで横幅600pxをデフォルトにしていますが、任意のサイズに変更できます。&lt;/p>
+&lt;br>
+&lt;h2 id="2-サイトカラーを自分の好きなように変更可能">2. サイトカラーを自分の好きなように変更可能&lt;/h2>
+&lt;p>ヘッダー・フッダー・コンテンツの背景色、記事カードの細かいスタイルも簡単に変更できます&lt;/p></description></item><item><title>画像のリサイズ・トリミング可能な自作ショートコード</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/custom-figure/</link><pubDate>Sat, 11 Sep 2021 23:39:15 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/custom-figure/</guid><description>&lt;p>このテーマ内で画像のリサイズ・トリミングができる「custom-figure」というショートコードを作成しました。&lt;/p>
+&lt;h2 id="使い方">使い方&lt;/h2>
+&lt;ul>
+&lt;li>Hugo標準のfigureショートコードの機能をそのまま使えます&lt;/li>
+&lt;li>HugoのImage Processingで使えるResize、Fit、Fillが使えます&lt;/li>
+&lt;/ul>
+&lt;p>Image Processingについてはこちらをチェック&lt;/p>
+&lt;a href="https://gohugo.io/content-management/image-processing/" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: inherit;" onMouseOver="this.style.opacity='0.9'">
+ &lt;div style="flex-shrink: 0;">
+ &lt;img src="https://hugo-theme-salt.okdyy75.com/gohugoio-card-base-1_hu_47d22b62de30cb02.webp" alt="" width="100" height="100">
+ &lt;/div>
+ &lt;div style="margin-left: 10px;">
+ &lt;h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">Image processing&lt;/h2>
+ &lt;p style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;"> Resize, crop, rotate, filter, and convert images. &lt;/p>
+ &lt;/div>
+ &lt;/a>
+&lt;br>
+&lt;pre tabindex="0">&lt;code>{{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Resize スイカ&amp;#34; Resize=&amp;#34;320x180&amp;#34; &amp;gt;}}
+
+{{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Fit スイカ&amp;#34; Fit=&amp;#34;320x180&amp;#34; &amp;gt;}}
+
+{{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Fill スイカ&amp;#34; Fill=&amp;#34;320x180&amp;#34; &amp;gt;}}
+
+{{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Crop スイカ&amp;#34; Crop=&amp;#34;320x180&amp;#34; &amp;gt;}}
+&lt;/code>&lt;/pre>&lt;h2 id="表示例">表示例&lt;/h2>
+&lt;p>元画像は512x512です&lt;/p></description></item><item><title>サイト内ブログカードを作る自作ショートコード</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/self-blog-card/</link><pubDate>Sun, 12 Sep 2021 13:21:49 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/self-blog-card/</guid><description>&lt;p>このテーマ内でサイト内ブログカードを作れる「self-blog-card」というショートコードを作成しました。&lt;/p>
+&lt;h2 id="使い方">使い方&lt;/h2>
+&lt;ul>
+&lt;li>自サイト内のurlを指定します&lt;/li>
+&lt;li>自記事のブログカードは表示できません。&lt;/li>
+&lt;li>日本語だとconfig.ymlの&lt;code>summaryLength: 200&lt;/code>以上推奨です&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code>
+{{&amp;lt; self-blog-card &amp;#34;/article/salt/custom-figure&amp;#34; &amp;gt;}}
+&lt;/code>&lt;/pre>&lt;h2 id="表示例">表示例&lt;/h2>
+
+&lt;a href="https://hugo-theme-salt.okdyy75.com/article/salt/custom-figure/" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: inherit;" onMouseOver="this.style.opacity='0.9'">&lt;div style="flex-shrink: 0;">
+ &lt;img src="https://hugo-theme-salt.okdyy75.com/article/salt/custom-figure/thumbnail_hu_d8615303b83f68ee.webp" alt="画像のリサイズ・トリミング可能な自作ショートコード" width="100" height="100">
+ &lt;/div>
+ &lt;div style="margin-left: 10px;">
+ &lt;h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">画像のリサイズ・トリミング可能な自作ショートコード&lt;/h2>
+ &lt;div style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;">このテーマ内で画像のリサイズ・トリミングができる「custom-figure」というショートコードを作成しました。
+使い方 Hugo標準のfigureショートコードの機能をそのまま使えます HugoのImage Processingで使えるResize、Fit、Fillが使えます Image Processingについてはこちらをチェック
+Image processing Resize, crop, rotate, filter, and convert images. {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Resize スイカ&amp;#34; Resize=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Fit スイカ&amp;#34; Fit=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Fill スイカ&amp;#34; Fill=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Crop スイカ&amp;#34; Crop=&amp;#34;320x180&amp;#34; &amp;gt;}} 表示例 元画像は512x512です
+&lt;/div>
+ &lt;/div>
+ &lt;/a></description></item><item><title>Hugoを使い始めた人に捧げるTips11選</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo/tips/</link><pubDate>Thu, 16 Sep 2021 23:10:23 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo/tips/</guid><description>&lt;h2 id="1-とりあえずhugo-server--dって使ってるけどこれって何">1. とりあえず&lt;code>hugo server -D&lt;/code>って使ってるけどこれって何？&lt;/h2>
+&lt;p>&lt;code>draft: true&lt;/code>のコンテンツファイルも含めて出力。&lt;/p>
+&lt;p>詳しくは&lt;code>hugo server --help&lt;/code>でチェック&lt;/p>
+&lt;br>
+&lt;h2 id="2-taxonomyとtermの違い">2. taxonomyとtermの違い&lt;/h2>
+&lt;ul>
+&lt;li>taxonomyは「タグ」や「カテゴリー」といった分類自体&lt;/li>
+&lt;li>termはそのタグやカテゴリーに属する「go」とか「tips」のことです&lt;/li>
+&lt;/ul>
+&lt;p>こちらのサイトが非常に分かりやすいです！&lt;br>
+&lt;a href="https://maku77.github.io/hugo/taxonomy/basic.html">https://maku77.github.io/hugo/taxonomy/basic.html&lt;/a>&lt;/p>
+&lt;br>
+&lt;h2 id="3-content配下の固定ページに共通のlayoutを使いたい">3. content配下の固定ページに共通のlayoutを使いたい&lt;/h2>
+&lt;p>content配下のKindが「page」になるので「layout/page/single.html」が使えます&lt;/p></description></item></channel></rss>

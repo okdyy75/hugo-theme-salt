@@ -1,1 +1,94 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Saltの使い方 on Hugoブログテーマ「Salt」</title><link>https://hugo-theme-salt.okdyy75.com/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</link><description>Recent content in Saltの使い方 on Hugoブログテーマ「Salt」</description><generator>Hugo</generator><language>ja</language><managingEditor>okdyy75@gmail.com (okdyy75)</managingEditor><webMaster>okdyy75@gmail.com (okdyy75)</webMaster><copyright>© 2021 okdyy75</copyright><lastBuildDate>Wed, 10 Aug 2022 18:26:11 +0900</lastBuildDate><atom:link href="https://hugo-theme-salt.okdyy75.com/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugoでついに外部URLのブログカードを作れるようになった【自作ショートコード】</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/blog-card/</link><pubDate>Fri, 06 May 2022 23:34:09 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/blog-card/</guid><description>Hugoでは外部サイトのデータを扱う場合、getJSONやgetCSVを使った方法しかありませんでしたが、ついにv0.91でGetRemoteが実装されました。 Release v0.91.0 · gohugoio/hugo Hugo 0.91.0 is mostly on the boring and technical side. See the list of changes below, but especially note the fix that allows passing falsy arguments to partials with the return keyword (5758c37 #... Hugo Pipes Hugo Pipes is Hugo's asset processing set of functions. GetRemoteの基本 基本の使い方はこんな感じで、html以外にも外部の画像、css、jsといったデータも取得できます。 {{ with resources.GetRemote &amp;#34;https://example.com&amp;#34; }} {{ .Content }} {{ end</description></item><item><title>Hugoブログテーマ「Salt」とは？</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/about/</link><pubDate>Sun, 12 Sep 2021 15:07:11 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/about/</guid><description>「Salt」はシンプルなブログを低コストで作成できる を目標にしたHugo用テーマです。名前の通り、できるだけ素材そのものを引き出せるようなシンプルなデザイン・レイアウトにしました。 実際にSaltでできることについて紹介したいと思います 1. レスポンシブデザイン対応 PCとSP表示に対応しています。 デフォルトで横幅600pxをデフォルトにしていますが、任意のサイズに変更できます。 2. サイトカラーを自分の好き</description></item><item><title>サイト内ブログカードを作る自作ショートコード</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/self-blog-card/</link><pubDate>Sun, 12 Sep 2021 13:21:49 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/self-blog-card/</guid><description>このテーマ内でサイト内ブログカードを作れる「self-blog-card」というショートコードを作成しました。 使い方 自サイト内のurlを指定します 自記事のブログカードは表示できません。 日本語だとconfig.ymlのsummaryLength: 200以上推奨です {{&amp;lt; self-blog-card &amp;#34;/article/salt/custom-figure&amp;#34; &amp;gt;}} 表示例 画像のリサイズ・トリミング可能な自作ショートコード このテーマ内で画像のリサイズ・トリミングができる「custom-figur</description></item><item><title>画像のリサイズ・トリミング可能な自作ショートコード</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/custom-figure/</link><pubDate>Sat, 11 Sep 2021 23:39:15 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/custom-figure/</guid><description>このテーマ内で画像のリサイズ・トリミングができる「custom-figure」というショートコードを作成しました。 使い方 Hugo標準のfigureショートコードの機能をそのまま使えます HugoのImage Processingで使えるResize、Fit、Fillが使えます Image Processingについてはこちらをチェック Image processing Resize, crop, rotate, filter, and convert images. {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Resize スイカ&amp;#34; Resize=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Fit スイカ&amp;#34; Fit=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Saltの使い方 on Hugoブログテーマ「Salt」</title><link>https://hugo-theme-salt.okdyy75.com/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</link><description>Recent content in Saltの使い方 on Hugoブログテーマ「Salt」</description><generator>Hugo</generator><language>ja</language><managingEditor>okdyy75@gmail.com (okdyy75)</managingEditor><webMaster>okdyy75@gmail.com (okdyy75)</webMaster><copyright>© 2021 okdyy75</copyright><lastBuildDate>Wed, 28 May 2025 18:02:09 +0900</lastBuildDate><atom:link href="https://hugo-theme-salt.okdyy75.com/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo標準のgistショートコードをテーマ内に移行しました</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/gist/</link><pubDate>Wed, 28 May 2025 18:02:09 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/gist/</guid><description>&lt;p>Hugo公式のgistショートコードはバージョン0.143.0で非推奨となり、将来のリリースで削除されるそうなので
+Hugo Theme Salt内ののショートコードとして使えるように移行しました&lt;/p>
+&lt;pre tabindex="0">&lt;code>WARN The &amp;#34;gist&amp;#34; shortcode was deprecated in v0.143.0 and will be removed in a future release. See https://gohugo.io/shortcodes/gist for instructions to create a replacement.
+&lt;/code>&lt;/pre>&lt;p>Hugo公式ページでは下記の通り&lt;/p>
+&lt;a href="https://gohugo.io/shortcodes/gist/" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: inherit;" onMouseOver="this.style.opacity='0.9'">
+ &lt;div style="flex-shrink: 0;">
+ &lt;img src="https://hugo-theme-salt.okdyy75.com/gohugoio-card-base-1_hu_731e7eb4458b328b.webp" alt="" width="100" height="100">
+ &lt;/div>
+ &lt;div style="margin-left: 10px;">
+ &lt;h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">Gist shortcode&lt;/h2>
+ &lt;p style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;"> Embed a GitHub Gist in your content using the gist shortcode. &lt;/p>
+ &lt;/div>
+ &lt;/a>
+&lt;br>
+&lt;blockquote>
+&lt;p>The gist shortcode was deprecated in version 0.143.0 and will be removed in a future release. To continue embedding &amp;gt; GitHub Gists in your content, you’ll need to create a custom shortcode:&lt;/p>&lt;/blockquote>
+&lt;p>Gist ショートコードはバージョン 0.143.0 で非推奨となり、今後のリリースで削除される予定です。コンテンツに GitHub Gist を埋め込むには、カスタムショートコードを作成する必要があります。&lt;/p></description></item><item><title>Hugoでついに外部URLのブログカードを作れるようになった【自作ショートコード】</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/blog-card/</link><pubDate>Fri, 06 May 2022 23:34:09 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/blog-card/</guid><description>&lt;p>Hugoでは外部サイトのデータを扱う場合、&lt;code>getJSON&lt;/code>や&lt;code>getCSV&lt;/code>を使った方法しかありませんでしたが、ついにv0.91で&lt;code>GetRemote&lt;/code>が実装されました。&lt;/p>
+&lt;a href="https://github.com/gohugoio/hugo/releases/tag/v0.91.0" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: inherit;" onMouseOver="this.style.opacity='0.9'">
+ &lt;div style="flex-shrink: 0;">
+ &lt;img src="https://hugo-theme-salt.okdyy75.com/v0.91_10250111416627201191_hu_76f0620161481b54.webp" alt="" width="100" height="100">
+ &lt;/div>
+ &lt;div style="margin-left: 10px;">
+ &lt;h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">Release v0.91.0 · gohugoio/hugo&lt;/h2>
+ &lt;p style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;">Hugo 0.91.0 is mostly on the boring and technical side. See the list of changes below, but especially note the fix that allows passing falsy arguments to partials with the return keyword (5758c37 #...&lt;/p>
+ &lt;/div>
+ &lt;/a>
+&lt;br>
+&lt;a href="https://gohugo.io/hugo-pipes/introduction/#get-resource-with-resourcesget-and-resourcesgetremote" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: inherit;" onMouseOver="this.style.opacity='0.9'">
+ &lt;div style="flex-shrink: 0;">
+ &lt;img src="https://hugo-theme-salt.okdyy75.com/gohugoio-card-base-1_hu_687944b582d34bbf.webp" alt="" width="100" height="100">
+ &lt;/div>
+ &lt;div style="margin-left: 10px;">
+ &lt;h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">Hugo Pipes&lt;/h2>
+ &lt;p style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;"> Hugo Pipes is Hugo's asset processing set of functions. &lt;/p>
+ &lt;/div>
+ &lt;/a>
+&lt;br>
+&lt;h2 id="getremoteの基本">GetRemoteの基本&lt;/h2>
+&lt;p>基本の使い方はこんな感じで、html以外にも外部の画像、css、jsといったデータも取得できます。&lt;/p></description></item><item><title>Hugoブログテーマ「Salt」とは？</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/about/</link><pubDate>Sun, 12 Sep 2021 15:07:11 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/about/</guid><description>&lt;p>「Salt」は&lt;strong>シンプルなブログを低コストで作成できる&lt;/strong>&lt;/p>
+&lt;p>を目標にしたHugo用テーマです。名前の通り、できるだけ素材そのものを引き出せるようなシンプルなデザイン・レイアウトにしました。&lt;/p>
+&lt;p>実際にSaltでできることについて紹介したいと思います&lt;/p>
+&lt;br>
+&lt;h2 id="1-レスポンシブデザイン対応">1. レスポンシブデザイン対応&lt;/h2>
+&lt;p>PCとSP表示に対応しています。
+デフォルトで横幅600pxをデフォルトにしていますが、任意のサイズに変更できます。&lt;/p>
+&lt;br>
+&lt;h2 id="2-サイトカラーを自分の好きなように変更可能">2. サイトカラーを自分の好きなように変更可能&lt;/h2>
+&lt;p>ヘッダー・フッダー・コンテンツの背景色、記事カードの細かいスタイルも簡単に変更できます&lt;/p></description></item><item><title>サイト内ブログカードを作る自作ショートコード</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/self-blog-card/</link><pubDate>Sun, 12 Sep 2021 13:21:49 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/self-blog-card/</guid><description>&lt;p>このテーマ内でサイト内ブログカードを作れる「self-blog-card」というショートコードを作成しました。&lt;/p>
+&lt;h2 id="使い方">使い方&lt;/h2>
+&lt;ul>
+&lt;li>自サイト内のurlを指定します&lt;/li>
+&lt;li>自記事のブログカードは表示できません。&lt;/li>
+&lt;li>日本語だとconfig.ymlの&lt;code>summaryLength: 200&lt;/code>以上推奨です&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code>
+{{&amp;lt; self-blog-card &amp;#34;/article/salt/custom-figure&amp;#34; &amp;gt;}}
+&lt;/code>&lt;/pre>&lt;h2 id="表示例">表示例&lt;/h2>
+
+&lt;a href="https://hugo-theme-salt.okdyy75.com/article/salt/custom-figure/" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: inherit;" onMouseOver="this.style.opacity='0.9'">&lt;div style="flex-shrink: 0;">
+ &lt;img src="https://hugo-theme-salt.okdyy75.com/article/salt/custom-figure/thumbnail_hu_d8615303b83f68ee.webp" alt="画像のリサイズ・トリミング可能な自作ショートコード" width="100" height="100">
+ &lt;/div>
+ &lt;div style="margin-left: 10px;">
+ &lt;h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">画像のリサイズ・トリミング可能な自作ショートコード&lt;/h2>
+ &lt;div style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;">このテーマ内で画像のリサイズ・トリミングができる「custom-figure」というショートコードを作成しました。
+使い方 Hugo標準のfigureショートコードの機能をそのまま使えます HugoのImage Processingで使えるResize、Fit、Fillが使えます Image Processingについてはこちらをチェック
+Image processing Resize, crop, rotate, filter, and convert images. {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Resize スイカ&amp;#34; Resize=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Fit スイカ&amp;#34; Fit=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Fill スイカ&amp;#34; Fill=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Crop スイカ&amp;#34; Crop=&amp;#34;320x180&amp;#34; &amp;gt;}} 表示例 元画像は512x512です
+&lt;/div>
+ &lt;/div>
+ &lt;/a></description></item><item><title>画像のリサイズ・トリミング可能な自作ショートコード</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/custom-figure/</link><pubDate>Sat, 11 Sep 2021 23:39:15 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/custom-figure/</guid><description>&lt;p>このテーマ内で画像のリサイズ・トリミングができる「custom-figure」というショートコードを作成しました。&lt;/p>
+&lt;h2 id="使い方">使い方&lt;/h2>
+&lt;ul>
+&lt;li>Hugo標準のfigureショートコードの機能をそのまま使えます&lt;/li>
+&lt;li>HugoのImage Processingで使えるResize、Fit、Fillが使えます&lt;/li>
+&lt;/ul>
+&lt;p>Image Processingについてはこちらをチェック&lt;/p>
+&lt;a href="https://gohugo.io/content-management/image-processing/" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: inherit;" onMouseOver="this.style.opacity='0.9'">
+ &lt;div style="flex-shrink: 0;">
+ &lt;img src="https://hugo-theme-salt.okdyy75.com/gohugoio-card-base-1_hu_47d22b62de30cb02.webp" alt="" width="100" height="100">
+ &lt;/div>
+ &lt;div style="margin-left: 10px;">
+ &lt;h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">Image processing&lt;/h2>
+ &lt;p style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;"> Resize, crop, rotate, filter, and convert images. &lt;/p>
+ &lt;/div>
+ &lt;/a>
+&lt;br>
+&lt;pre tabindex="0">&lt;code>{{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Resize スイカ&amp;#34; Resize=&amp;#34;320x180&amp;#34; &amp;gt;}}
+
+{{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Fit スイカ&amp;#34; Fit=&amp;#34;320x180&amp;#34; &amp;gt;}}
+
+{{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Fill スイカ&amp;#34; Fill=&amp;#34;320x180&amp;#34; &amp;gt;}}
+
+{{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Crop スイカ&amp;#34; Crop=&amp;#34;320x180&amp;#34; &amp;gt;}}
+&lt;/code>&lt;/pre>&lt;h2 id="表示例">表示例&lt;/h2>
+&lt;p>元画像は512x512です&lt;/p></description></item></channel></rss>

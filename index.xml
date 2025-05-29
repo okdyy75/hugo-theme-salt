@@ -1,1 +1,675 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>トップページ on Hugoブログテーマ「Salt」</title><link>https://hugo-theme-salt.okdyy75.com/</link><description>Recent content in トップページ on Hugoブログテーマ「Salt」</description><generator>Hugo</generator><language>ja</language><managingEditor>okdyy75@gmail.com (okdyy75)</managingEditor><webMaster>okdyy75@gmail.com (okdyy75)</webMaster><copyright>© 2021 okdyy75</copyright><lastBuildDate>Thu, 29 May 2025 17:55:17 +0900</lastBuildDate><atom:link href="https://hugo-theme-salt.okdyy75.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo v0.147.0 リリースノートまとめ</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.147.0/</link><pubDate>Thu, 29 May 2025 17:55:17 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.147.0/</guid><description>Warning ※この記事は生成AIを使用して作成された記事です。（create by GPT-4o） 記事内容については未検証ですので参考程度にご活用ください 2025年4月25日にリリースされた Hugo v0.147.0 の主な更新内容をまとめます。既存ユーザー向けに 新機能・主な変更点・バグ修正・非推奨事項を分類し、プロジェクトへの影響や対応方法のヒントを解説します。 新機能 images.Text の縦位置指定オプション追加 画像操作機能 images.Text にテキストの縦位置を指定で</description></item><item><title>Hugo v0.146.0 リリースノートまとめ</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.146.0/</link><pubDate>Thu, 29 May 2025 16:08:31 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.146.0/</guid><description>Warning ※この記事は生成AIを使用して作成された記事です。（create by GPT-4o） 記事内容については未検証ですので参考程度にご活用ください 2025年4月10日にリリースされた Hugo v0.146.0 の主な更新内容をまとめます。既存ユーザー向けに 新機能・主な変更点・バグ修正・非推奨事項を分類し、プロジェクトへの影響や対応方法のヒントを解説します。 新機能 テンプレートシステムの刷新 Hugo v0.146.0 では、Go テンプレートの処理方法が全面</description></item><item><title>Hugo v0.145.0 リリースノートまとめ</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.145.0/</link><pubDate>Thu, 29 May 2025 15:23:31 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.145.0/</guid><description>Warning ※この記事は生成AIを使用して作成された記事です。（create by GPT-4o） 記事内容については未検証ですので参考程度にご活用ください 2025年2月26日にリリースされた Hugo v0.145.0 の主な更新内容をまとめます。既存ユーザー向けに 新機能・主な変更点・バグ修正・非推奨事項を分類し、プロジェクトへの影響や対応方法のヒントを解説します。 新機能 transform.PortableText 関数の追加 Sanity CMS との統合を容易にするため、transform.Por</description></item><item><title>Hugoでついに外部URLのブログカードを作れるようになった【自作ショートコード】</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/blog-card/</link><pubDate>Fri, 06 May 2022 23:34:09 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/blog-card/</guid><description>Hugoでは外部サイトのデータを扱う場合、getJSONやgetCSVを使った方法しかありませんでしたが、ついにv0.91でGetRemoteが実装されました。 Release v0.91.0 · gohugoio/hugo Hugo 0.91.0 is mostly on the boring and technical side. See the list of changes below, but especially note the fix that allows passing falsy arguments to partials with the return keyword (5758c37 #... Hugo Pipes Hugo Pipes is Hugo's asset processing set of functions. GetRemoteの基本 基本の使い方はこんな感じで、html以外にも外部の画像、css、jsといったデータも取得できます。 {{ with resources.GetRemote &amp;#34;https://example.com&amp;#34; }} {{ .Content }} {{ end</description></item><item><title>Hugoでデプロイする時たまにビルドエラーになる原因</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo/build-error/</link><pubDate>Sat, 29 Jan 2022 20:11:23 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo/build-error/</guid><description>GitHub Actionsを使ったHugoのデプロイ時に、たまにエラーになっていたんですが原因が分かりました。 package.json &amp;#34;scripts&amp;#34;: { &amp;#34;create-ranking&amp;#34;: &amp;#34;node scripts/create-ranking.js&amp;#34;, &amp;#34;build&amp;#34;: &amp;#34;hugo --gc --minify&amp;#34;, &amp;#34;test&amp;#34;: &amp;#34;echo \&amp;#34;Error: no test specified\&amp;#34; &amp;amp;&amp;amp; exit 1&amp;#34; }, npm run buildしてみるとこんな感じのエラーが出て、たまにデプロイがうまくいきませんでした Start building sites … hugo v0.89.4-AB01BA6E darwin/amd64 BuildDate=2021-11-17T08:24:09Z VendorInfo=gohugoio ERROR 2022/01/29 20:21:30 render of &amp;#34;page&amp;#34; failed: execute of template failed: template: partials/sidebar.html:101:72: executing &amp;#34;sidebar&amp;#34; at &amp;lt;(index $thumbnail 0).Fill&amp;gt;: error calling Fill: image &amp;#34;/Users/okdyy75/hugo-theme-salt/content/article/hugo/fontawsome/thumbnail.png&amp;#34;: this feature is not available in your current Hugo version, see https://goo.gl/YMrWcn for more information ERROR 2022/01/29 20:21:30 render of &amp;#34;page&amp;#34; failed: execute of template failed: template: partials/sidebar.html:101:72: executing &amp;#34;sidebar&amp;#34; at &amp;lt;(index $thumbnail 0).Fill&amp;gt;: error calling Fill: image &amp;#34;/Users/okdyy75/hugo-theme-salt/content/article/hugo/fontawsome/thumbnail.png&amp;#34;: this feature is not available in your current Hugo version, see https://goo.gl/YMrWcn for more</description></item><item><title>Hugoで一週間のPV数順の人気記事を作る方法</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo/ranking/</link><pubDate>Wed, 12 Jan 2022 15:34:42 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo/ranking/</guid><description>HugoとGoogle Analyticsを使って人気記事のランキングを作る方法を紹介します ステップとしては GCPから鍵を作成し、Google Analyticsで権限を付与 Google Analytics Data APIからpv数を取得するスクリプトを作成 保存したpvデータを元にHugoからランキング作成 CIで定期的にpv取得スクリプトを起動させる 1. GCPから鍵を作成し、Google Analyticsで権限を付与 基本的にはdevelo</description></item><item><title>Hugoで年月別のアーカイブを作る方法</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo/archive/</link><pubDate>Tue, 28 Dec 2021 10:32:02 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo/archive/</guid><description>Hugoでアーカイブを作るには2種類ほど方法があります ①タグやカテゴリと同様にタクソノミーを設定する config.ymlにarchiveを追加し taxonomies: archive: archives 記事のフロントマターに年月を設定してあげれば archives: [&amp;#34;2021年12月&amp;#34;] こんな感じのデータが作成されます。この時「yyyy年mm月」の形式でないと年月でソートされないので注意です {{ .Site.Taxonomies.archives.Alphabetical.Reverse }} [ {2021年12月 [WeightedPage(0,</description></item><item><title>HugoでFontAwesomeを使う方法</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo/fontawesome/</link><pubDate>Sat, 04 Dec 2021 10:11:36 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo/fontawesome/</guid><description>HugoにFontAwesomeを使う場合はHugoの機能であるモジュールを使うと簡単に実現できます！ 1. npmでFontAwesomeをインストール package.jsonがない場合はnpm initしてください npm install -D @fortawesome/fontawesome-free 2. config.ymlのmoduleに使いたいjsファイルをmounts 注意点としてmountすると、デフォルトであるtargetのルートディレクトリが無視されるので明示的に追加する</description></item><item><title>Hugoに検索機能を追加しよう</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo/search/</link><pubDate>Fri, 15 Oct 2021 21:35:10 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo/search/</guid><description>このサイトにも実装されているんですが、Hugoにlunaを使った検索機能を実装する方法を紹介します。 基本的には公式で紹介されているgistを参考に実装します。（コメント下の方にvanilla js版を作ってくれた方がいました！感謝！） こちらのサイトも参考にさせて頂きました。 1. lunrのセットアップ npm install lunr lunr-languagesを実行してパッケージをインストールし、config.ymlに下記を追加</description></item><item><title>Hugoを使い始めた人に捧げるTips11選</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo/tips/</link><pubDate>Thu, 16 Sep 2021 23:10:23 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo/tips/</guid><description>1. とりあえずhugo server -Dって使ってるけどこれって何？ draft: trueのコンテンツファイルも含めて出力。 詳しくはhugo server --helpでチェック 2. taxonomyとtermの違い taxonomyは「タグ」や「カテゴリー」といった分類自体 termはそのタグやカテゴリーに属する「go」とか「tips」のことです こちらのサイトが非常に分かりやすいです！ https://maku77.github.io/hugo/taxonomy/basic.html 3. content配下の固定ページに共通のlayoutを使</description></item><item><title>Go言語Tips② Hugoで使われるlayoutの正体</title><link>https://hugo-theme-salt.okdyy75.com/article/go/go-template/</link><pubDate>Mon, 13 Sep 2021 11:59:12 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/go/go-template/</guid><description>Hugoで使われるlayoutですが実態はgo-templateという、いわゆるテンプレートエンジンです https://pkg.go.dev/text/template テンプレート内のハイフンありなしの違い たまにHugoテンプレート内で{{ .Title }}や{{- .Title -}}で書いてるものを見かけます この違いはハイフンを付けることで前後の空白を除去したい場合に使われます ちなみに公式ドキュメントにあります https://pkg.go.dev/text/template#hdr-Text_and_spaces 配列や連想配列の空チェック Hugoを使う際、空ではない文字列or配列</description></item><item><title>Go言語Tips① 変数について</title><link>https://hugo-theme-salt.okdyy75.com/article/go/variable/</link><pubDate>Mon, 13 Sep 2021 10:39:48 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/go/variable/</guid><description>変数定義 Hugoのテンプレート内で{{ $title := .Title }}や{{ $title = .Title }} のようにコロンをつけたり、付けなかったりする記述を見ます。 これはgo言語の書き方の特徴で、変数を定義する場合の省略記法です title := &amp;#34;タイトル&amp;#34; 省略しない場合はこうなります var title string = &amp;#34;タイトル&amp;#34; 変数のスコープ go言語の変数スコープはif、for、switchなどのブロック内で有効です if内などで新しく変数を定義す</description></item><item><title>Hugoでできること</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo/about/</link><pubDate>Sun, 12 Sep 2021 17:43:50 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo/about/</guid><description>最近はSSG（静的サイトジェネレータ）全盛期の時代で、サーバー代をかけずにブログが作れる時代になりました。 そこで実際にHugoを使ってこのブログを作ってみた所感とHugoでできることを紹介したいと思います ちなみにHugoとGatsbyどっちの方がいいの？ サイト内でリッチなグラフやテーブルを使ったり、動きのあるサイトを作りたい場合は、Gatsbyのほうが良いと思います。 というのもGatsbyの方がR</description></item><item><title>Hugoブログテーマ「Salt」とは？</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/about/</link><pubDate>Sun, 12 Sep 2021 15:07:11 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/about/</guid><description>「Salt」はシンプルなブログを低コストで作成できる を目標にしたHugo用テーマです。名前の通り、できるだけ素材そのものを引き出せるようなシンプルなデザイン・レイアウトにしました。 実際にSaltでできることについて紹介したいと思います 1. レスポンシブデザイン対応 PCとSP表示に対応しています。 デフォルトで横幅600pxをデフォルトにしていますが、任意のサイズに変更できます。 2. サイトカラーを自分の好き</description></item><item><title>サイト内ブログカードを作る自作ショートコード</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/self-blog-card/</link><pubDate>Sun, 12 Sep 2021 13:21:49 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/self-blog-card/</guid><description>このテーマ内でサイト内ブログカードを作れる「self-blog-card」というショートコードを作成しました。 使い方 自サイト内のurlを指定します 自記事のブログカードは表示できません。 日本語だとconfig.ymlのsummaryLength: 200以上推奨です {{&amp;lt; self-blog-card &amp;#34;/article/salt/custom-figure&amp;#34; &amp;gt;}} 表示例 画像のリサイズ・トリミング可能な自作ショートコード このテーマ内で画像のリサイズ・トリミングができる「custom-figur</description></item><item><title>画像のリサイズ・トリミング可能な自作ショートコード</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/custom-figure/</link><pubDate>Sat, 11 Sep 2021 23:39:15 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/custom-figure/</guid><description>このテーマ内で画像のリサイズ・トリミングができる「custom-figure」というショートコードを作成しました。 使い方 Hugo標準のfigureショートコードの機能をそのまま使えます HugoのImage Processingで使えるResize、Fit、Fillが使えます Image Processingについてはこちらをチェック Image processing Resize, crop, rotate, filter, and convert images. {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Resize スイカ&amp;#34; Resize=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Fit スイカ&amp;#34; Fit=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34;</description></item><item><title>Hugo標準のショートコード表示サンプル</title><link>https://hugo-theme-salt.okdyy75.com/article/sample/hugo-shortcode/</link><pubDate>Sat, 11 Sep 2021 23:09:41 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/sample/hugo-shortcode/</guid><description>Hugoで用意されているショートコード使用時の表示サンプルです figure スイカの画像 gist highlight &amp;lt;section id=&amp;#34;main&amp;#34;&amp;gt; &amp;lt;div&amp;gt; &amp;lt;h1 id=&amp;#34;title&amp;#34;&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt; {{ range .Pages }} {{ .Render &amp;#34;summary&amp;#34;}} {{ end }} &amp;lt;/div&amp;gt; &amp;lt;/section&amp;gt; instagram Instagramのdeveloperアカウントが必要です。自前で用意する必要あり tweet Owl bet you&amp;#39;ll lose this staring contest 🦉 pic.twitter.com/eJh4f2zncC &amp;mdash; San Diego Zoo Wildlife Alliance (@sandiegozoo) October 26, 2021 vimeo youtube</description></item><item><title>マークダウン表示サンプル</title><link>https://hugo-theme-salt.okdyy75.com/article/sample/markdown/</link><pubDate>Sat, 11 Sep 2021 08:27:34 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/sample/markdown/</guid><description>マークダウンで記事作成時の表示サンプルです Block Elements Headers 見出し 先頭に#をレベルの数だけ記述します。 # 見出し1 ## 見出し2 ### 見出し3 #### 見出し4 ##### 見出し5 ###### 見出し6 見出し1 見出し2 見出し3 見出し4 見出し5 見出し6 Block 段落 空白行を挟むことで段落となります。 段落1 (空行) 段落2 段落1 段落2 Br 改行 改行の前に半角スペース を2つ記述します。 hoge fuga(スペース2つ) piyo hoge fuga piyo Blockquotes 引用 先頭に&amp;gt;を記述します。ネストは&amp;gt;</description></item><item><title>小さいサムネイル記事</title><link>https://hugo-theme-salt.okdyy75.com/article/sample/small-thumbnail/</link><pubDate>Fri, 10 Sep 2021 19:29:57 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/sample/small-thumbnail/</guid><description>小さいサムネイルの場合の記事です 120x120です</description></item><item><title>タグとカテゴリーなしの記事</title><link>https://hugo-theme-salt.okdyy75.com/article/sample/no-tag-category/</link><pubDate>Fri, 10 Sep 2021 18:45:23 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/sample/no-tag-category/</guid><description>タグとカテゴリーが設定されていない場合の記事です</description></item><item><title>サムネイルなしの記事</title><link>https://hugo-theme-salt.okdyy75.com/article/sample/no-thumbnail/</link><pubDate>Fri, 10 Sep 2021 18:17:52 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/sample/no-thumbnail/</guid><description>サムネイルが設定されていない場合の記事です</description></item><item><title>お知らせ</title><link>https://hugo-theme-salt.okdyy75.com/information/</link><pubDate>Tue, 31 Aug 2021 22:31:13 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/information/</guid><description>2022年1月12日 ランキングを追加しました 2021年10月14日 検索機能を追加しました 2021年10月2日 アーカイブを追加しました 2021年8月31日 サイトを作成しました</description></item><item><title>プライバシーポリシー</title><link>https://hugo-theme-salt.okdyy75.com/privacy-policy/</link><pubDate>Tue, 31 Aug 2021 22:31:13 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/privacy-policy/</guid><description>このサイトはHugoブログテーマ「Salt」（以下、「当サイト」といいます。）は、本ウェブサイト上で提供するサービスにおけるユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定めます。 個人情報の利用目的 当サイトが個人情報を収集・利用する目的は、以下のとおりです。 当サイトサービスの提供・運営のため 不正・不当な目的でサービスを利用しようとするユー</description></item><item><title>このサイトについて</title><link>https://hugo-theme-salt.okdyy75.com/about/</link><pubDate>Tue, 31 Aug 2021 22:30:41 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/about/</guid><description>このサイトはシンプルなHugoブログテーマ「Salt」の紹介サイトです 「Salt」はシンプルなブログを低コストで作成できる を目標にしたHugo用テーマです。名前の通り、できるだけ素材そのものを引き出せるようなシンプルなデザイン・レイアウトにしました。</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>トップページ on Hugoブログテーマ「Salt」</title><link>https://hugo-theme-salt.okdyy75.com/</link><description>Recent content in トップページ on Hugoブログテーマ「Salt」</description><generator>Hugo</generator><language>ja</language><managingEditor>okdyy75@gmail.com (okdyy75)</managingEditor><webMaster>okdyy75@gmail.com (okdyy75)</webMaster><copyright>© 2021 okdyy75</copyright><lastBuildDate>Thu, 29 May 2025 20:02:09 +0900</lastBuildDate><atom:link href="https://hugo-theme-salt.okdyy75.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Content adaptersに対応しました＆既存の記事の移行方法</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/migrate-content-adapters/</link><pubDate>Thu, 29 May 2025 20:02:09 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/migrate-content-adapters/</guid><description>&lt;p>Hugo Theme SaltでもContent adaptersに対応しました。&lt;br>
+使用方法と移行方法をまとめたのでご参考に&lt;/p>
+&lt;h2 id="前提として">前提として&lt;/h2>
+&lt;ul>
+&lt;li>目次が使えません&lt;/li>
+&lt;li>ページバンドル内の画像ファイル等が考慮されていません（記事本文を修正する必要あり）&lt;/li>
+&lt;li>本文内にHugoの記法がある場合ビルドエラーになります（&lt;code>{{ xxx }}&lt;/code>の記述）&lt;/li>
+&lt;li>ディレクトリ構造について
+&lt;ul>
+&lt;li>下記の構成で記事を保存している
+&lt;ul>
+&lt;li>content/article/[category]/[article]/index.md&lt;/li>
+&lt;li>content/article/[category]/[article]/thumbnail.jpg&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>記事ディレクトリパスと記事URLパスが同一（slugを使用している場合は未検証）&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="content-adaptersを使用した記事表示">Content adaptersを使用した記事表示&lt;/h2>
+&lt;p>大まかな流れとしては下記の通り&lt;/p></description></item><item><title>Hugo v0.147.0 リリースノートまとめ</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.147.0/</link><pubDate>Thu, 29 May 2025 17:55:17 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.147.0/</guid><description>&lt;div class="markdown-alert markdown-alert-warning" dir="auto">&lt;p class="markdown-alert-title" dir="auto">&lt;svg class="octicon octicon-alert mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z">&lt;/path>&lt;/svg>Warning&lt;/p>&lt;p dir="auto">※この記事は生成AIを使用して作成された記事です。（create by GPT-4o）&lt;br>記事内容については未検証ですので参考程度にご活用ください&lt;/p>
+&lt;/div>
+&lt;p>2025年4月25日にリリースされた Hugo v0.147.0 の主な更新内容をまとめます。既存ユーザー向けに &lt;strong>新機能&lt;/strong>・&lt;strong>主な変更点&lt;/strong>・&lt;strong>バグ修正&lt;/strong>・&lt;strong>非推奨事項&lt;/strong>を分類し、プロジェクトへの影響や対応方法のヒントを解説します。&lt;/p>
+&lt;h2 id="新機能">新機能&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>images.Text の縦位置指定オプション追加&lt;/strong>&lt;br>
+画像操作機能 &lt;a href="https://gohugo.io/functions/images/text/" target="_blank">&lt;code>images.Text&lt;/code>&lt;/a> にテキストの縦位置を指定できる新オプション &lt;code>aligny&lt;/code> が導入されました。従来からの &lt;code>alignx&lt;/code> オプションと組み合わせることで、画像上のテキストを縦横とも中央に配置するなど、柔軟なレイアウトが可能になります。&lt;/li>
+&lt;/ul>
+&lt;h2 id="主な変更点">主な変更点&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>設定（config）マージの改善&lt;/strong>&lt;br>
+デフォルト設定の適用順序が見直され、モジュールやテーマから読み込んだ設定をルートの設定により柔軟に統合できるようになりました。具体的には、&lt;code>config.toml&lt;/code> 等で &lt;code>_merge = &amp;quot;deep&amp;quot;&lt;/code> を指定すると、インポートしたモジュールやテーマの設定を深い階層までマージするようになります。これにより、複数サイトで共通設定を共有する際に、設定の上書きや階層構造が意図しない形で失われる問題を回避しやすくなります。詳細については&lt;a href="https://gohugo.io/configuration/introduction/#merge-configuration-settings" target="_blank">ドキュメント&lt;/a>を参照してください。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>テーマスケルトンのテンプレート名調整&lt;/strong>&lt;br>
+テーマ作成用スケルトン (&lt;code>create/skeletons&lt;/code>) において、一部テンプレートファイル名が変更されました。既存のカスタムテーマをインポートしている場合は、ファイル名の差分に注意してください。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="バグ修正">バグ修正&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>コードブロックレンダリング&lt;/strong>&lt;br>
+組み込みのコードブロックレンダリングを、カスタムの &lt;code>render-codeblock-*.html&lt;/code> テンプレートよりも優先するよう修正されました。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Vimeo/YouTube ショートコード&lt;/strong>&lt;br>
+&lt;code>allowFullScreen&lt;/code> オプションの不具合が修正され、YouTube/Vimeo ショートコードで全画面表示が正しく機能するようになりました。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>設定マージ (&lt;code>_merge&lt;/code>) のバグ&lt;/strong>&lt;br>
+キーが存在しない場合の &lt;code>_merge&lt;/code> 処理に関する不具合が修正されました。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>タイポ・文言修正&lt;/strong>&lt;br>
+ドキュメントやコード内の軽微な誤記やコメント表記の修正が行われました。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="非推奨事項">非推奨事項&lt;/h2>
+&lt;p>今回のリリースでは、&lt;strong>非推奨（deprecation）とされた機能は特にありません&lt;/strong>。既存の機能が削除・変更される予定も発表されていないため、現状のコードをそのまま継続利用できます。&lt;/p>
+&lt;h2 id="影響と対応のヒント">影響と対応のヒント&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>画像テキスト配置の活用&lt;/strong>&lt;br>
+新しい &lt;code>aligny&lt;/code> オプションにより、&lt;code>images.Text&lt;/code> を使用した画像上のテキスト配置の自由度が高まりました。&lt;code>alignx&lt;/code> と組み合わせて使うことで、テキストを画像の縦横中央に配置するレイアウトが簡単になります。必要に応じてショートコードやテンプレートの更新を検討してください。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>設定統合の活用&lt;/strong>&lt;br>
+複数テーマやモジュールにまたがる設定を共通化している場合、&lt;code>config.toml&lt;/code> に &lt;code>_merge = &amp;quot;deep&amp;quot;&lt;/code> を追加すると良いでしょう。これにより、インポートした設定を階層構造のまままとめて取り込めます。ただし、マージ時に意図しない上書きが発生しないか、アップデート後に設定ファイルの挙動を確認してください。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>カスタムテンプレートの確認&lt;/strong>&lt;br>
+独自に作成した &lt;code>render-codeblock-*.html&lt;/code> テンプレートなどがある場合、内部レンダリングの優先度変更によって出力結果が変わる可能性があります。新バージョンでサイトをビルドした際に、コードブロックの表示が期待通りかチェックしておくと安心です。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>ショートコードの挙動確認&lt;/strong>&lt;br>
+既存サイトで Vimeo/YouTube ショートコードの &lt;code>allowFullScreen&lt;/code> オプションを使用している場合、今回の修正により全画面表示が正しく動作するようになります。特に何か対応する必要はありませんが、アップデート前後で動作に差がないか確認しておくと良いでしょう。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;strong>参考&lt;/strong>: &lt;a href="https://github.com/gohugoio/hugo/releases/tag/v0.147.0">Hugo v0.147.0 リリースノート（GitHub）&lt;/a>&lt;/p></description></item><item><title>Hugo v0.146.0 リリースノートまとめ</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.146.0/</link><pubDate>Thu, 29 May 2025 16:08:31 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.146.0/</guid><description>&lt;div class="markdown-alert markdown-alert-warning" dir="auto">&lt;p class="markdown-alert-title" dir="auto">&lt;svg class="octicon octicon-alert mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z">&lt;/path>&lt;/svg>Warning&lt;/p>&lt;p dir="auto">※この記事は生成AIを使用して作成された記事です。（create by GPT-4o）&lt;br>記事内容については未検証ですので参考程度にご活用ください&lt;/p>
+&lt;/div>
+&lt;p>2025年4月10日にリリースされた Hugo v0.146.0 の主な更新内容をまとめます。既存ユーザー向けに &lt;strong>新機能&lt;/strong>・&lt;strong>主な変更点&lt;/strong>・&lt;strong>バグ修正&lt;/strong>・&lt;strong>非推奨事項&lt;/strong>を分類し、プロジェクトへの影響や対応方法のヒントを解説します。&lt;/p>
+&lt;h2 id="新機能">新機能&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>テンプレートシステムの刷新&lt;/strong>&lt;br>
+Hugo v0.146.0 では、Go テンプレートの処理方法が全面的に再実装され、&lt;code>layouts&lt;/code> フォルダの構造変更や、より強力なテンプレートルックアップシステムが導入されました。これにより、テンプレートの管理と再利用が容易になります。詳細は &lt;a href="https://gohugo.io/templates/new-templatesystem-overview/">新しいテンプレートシステムの概要&lt;/a> を参照してください。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>新しいテンプレート関数の追加&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>templates.Current&lt;/code>: 現在実行中のテンプレートとそのコールスタックに関する情報を提供します。デバッグ時に有用です。&lt;/li>
+&lt;li>&lt;code>time.In&lt;/code>: 指定された IANA タイムゾーンで日付/時刻を表現します。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="主な変更点">主な変更点&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>&lt;code>layouts&lt;/code> フォルダの構造変更&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>_default&lt;/code> フォルダは削除され、そこにあったファイルは &lt;code>layouts/&lt;/code> のルートに移動されました。&lt;/li>
+&lt;li>&lt;code>layouts/partials&lt;/code> フォルダは &lt;code>layouts/_partials&lt;/code> にリネームされました。&lt;/li>
+&lt;li>&lt;code>layouts/shortcodes&lt;/code> フォルダは &lt;code>layouts/_shortcodes&lt;/code> にリネームされました。&lt;/li>
+&lt;li>&lt;code>layouts&lt;/code> 内のフォルダでアンダースコアで始まらないものは、ページパスのルートを表します。これらは必要に応じて深くネストできます。また、&lt;code>_shortcodes&lt;/code> や &lt;code>_markup&lt;/code> フォルダはツリー内の任意のレベルに配置できます。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>パーシャルテンプレートのルックアップキャッシュの追加&lt;/strong>&lt;br>
+パーシャルテンプレートのルックアップにキャッシュが導入され、ビルドパフォーマンスが向上しました。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>テーマ作成の改善&lt;/strong>&lt;br>
+&lt;code>hugo new&lt;/code> コマンドによるテーマ作成機能が改善され、より効率的にテーマを作成できるようになりました。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="バグ修正">バグ修正&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Vimeo/YouTube ショートコードの全画面表示オプションの修正&lt;/strong>&lt;br>
+Vimeo および YouTube のショートコードにおいて、&lt;code>allowFullScreen&lt;/code> オプションが正しく機能しない問題が修正されました。&lt;/li>
+&lt;/ul>
+&lt;h2 id="非推奨事項">非推奨事項&lt;/h2>
+&lt;p>今回のリリースでは、&lt;strong>非推奨（deprecation）とされた機能は特にありません&lt;/strong>。既存の機能が削除・変更される予定も発表されていないため、現状のコードをそのまま継続利用できます。&lt;/p>
+&lt;h2 id="影響と対応のヒント">影響と対応のヒント&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>テンプレート構造の移行&lt;/strong>&lt;br>
+新しいテンプレートシステムにより、&lt;code>layouts&lt;/code> フォルダの構造が変更されました。既存のプロジェクトでは、以下の対応が必要です：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>layouts/_default&lt;/code> フォルダの内容を &lt;code>layouts/&lt;/code> のルートに移動する。&lt;/li>
+&lt;li>&lt;code>layouts/partials&lt;/code> を &lt;code>layouts/_partials&lt;/code> にリネームする。&lt;/li>
+&lt;li>&lt;code>layouts/shortcodes&lt;/code> を &lt;code>layouts/_shortcodes&lt;/code> にリネームする。
+これらの変更により、テンプレートのルックアップが正しく機能するようになります。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>テンプレート関数の活用&lt;/strong>&lt;br>
+新たに追加された &lt;code>templates.Current&lt;/code> 関数を利用することで、テンプレートのデバッグが容易になります。また、&lt;code>time.In&lt;/code> 関数を使用することで、特定のタイムゾーンでの日付/時刻の表示が可能になります。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>ビルドパフォーマンスの向上&lt;/strong>&lt;br>
+パーシャルテンプレートのルックアップキャッシュの導入により、ビルド時間が短縮される可能性があります。大規模なプロジェクトでは、ビルドパフォーマンスの改善が期待できます。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;strong>参考&lt;/strong>: &lt;a href="https://github.com/gohugoio/hugo/releases/tag/v0.146.0">Hugo v0.146.0 リリースノート（GitHub）&lt;/a>&lt;/p></description></item><item><title>Hugo v0.145.0 リリースノートまとめ</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.145.0/</link><pubDate>Thu, 29 May 2025 15:23:31 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.145.0/</guid><description>&lt;div class="markdown-alert markdown-alert-warning" dir="auto">&lt;p class="markdown-alert-title" dir="auto">&lt;svg class="octicon octicon-alert mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z">&lt;/path>&lt;/svg>Warning&lt;/p>&lt;p dir="auto">※この記事は生成AIを使用して作成された記事です。（create by GPT-4o）&lt;br>記事内容については未検証ですので参考程度にご活用ください&lt;/p>
+&lt;/div>
+&lt;p>2025年2月26日にリリースされた Hugo v0.145.0 の主な更新内容をまとめます。既存ユーザー向けに &lt;strong>新機能&lt;/strong>・&lt;strong>主な変更点&lt;/strong>・&lt;strong>バグ修正&lt;/strong>・&lt;strong>非推奨事項&lt;/strong>を分類し、プロジェクトへの影響や対応方法のヒントを解説します。&lt;/p>
+&lt;h2 id="新機能">新機能&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>&lt;code>transform.PortableText&lt;/code> 関数の追加&lt;/strong>&lt;/p></description></item><item><title>Hugo標準のgistショートコードをテーマ内に移行しました</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/gist/</link><pubDate>Wed, 28 May 2025 18:02:09 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/gist/</guid><description>&lt;p>Hugo公式のgistショートコードはバージョン0.143.0で非推奨となり、将来のリリースで削除されるそうなので
+Hugo Theme Salt内ののショートコードとして使えるように移行しました&lt;/p>
+&lt;pre tabindex="0">&lt;code>WARN The &amp;#34;gist&amp;#34; shortcode was deprecated in v0.143.0 and will be removed in a future release. See https://gohugo.io/shortcodes/gist for instructions to create a replacement.
+&lt;/code>&lt;/pre>&lt;p>Hugo公式ページでは下記の通り&lt;/p>
+&lt;a href="https://gohugo.io/shortcodes/gist/" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: inherit;" onMouseOver="this.style.opacity='0.9'">
+ &lt;div style="flex-shrink: 0;">
+ &lt;img src="https://hugo-theme-salt.okdyy75.com/gohugoio-card-base-1_hu_731e7eb4458b328b.webp" alt="" width="100" height="100">
+ &lt;/div>
+ &lt;div style="margin-left: 10px;">
+ &lt;h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">Gist shortcode&lt;/h2>
+ &lt;p style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;"> Embed a GitHub Gist in your content using the gist shortcode. &lt;/p>
+ &lt;/div>
+ &lt;/a>
+&lt;br>
+&lt;blockquote>
+&lt;p>The gist shortcode was deprecated in version 0.143.0 and will be removed in a future release. To continue embedding &amp;gt; GitHub Gists in your content, you’ll need to create a custom shortcode:&lt;/p>&lt;/blockquote>
+&lt;p>Gist ショートコードはバージョン 0.143.0 で非推奨となり、今後のリリースで削除される予定です。コンテンツに GitHub Gist を埋め込むには、カスタムショートコードを作成する必要があります。&lt;/p></description></item><item><title>Hugoでついに外部URLのブログカードを作れるようになった【自作ショートコード】</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/blog-card/</link><pubDate>Fri, 06 May 2022 23:34:09 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/blog-card/</guid><description>&lt;p>Hugoでは外部サイトのデータを扱う場合、&lt;code>getJSON&lt;/code>や&lt;code>getCSV&lt;/code>を使った方法しかありませんでしたが、ついにv0.91で&lt;code>GetRemote&lt;/code>が実装されました。&lt;/p>
+&lt;a href="https://github.com/gohugoio/hugo/releases/tag/v0.91.0" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: inherit;" onMouseOver="this.style.opacity='0.9'">
+ &lt;div style="flex-shrink: 0;">
+ &lt;img src="https://hugo-theme-salt.okdyy75.com/v0.91_10250111416627201191_hu_76f0620161481b54.webp" alt="" width="100" height="100">
+ &lt;/div>
+ &lt;div style="margin-left: 10px;">
+ &lt;h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">Release v0.91.0 · gohugoio/hugo&lt;/h2>
+ &lt;p style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;">Hugo 0.91.0 is mostly on the boring and technical side. See the list of changes below, but especially note the fix that allows passing falsy arguments to partials with the return keyword (5758c37 #...&lt;/p>
+ &lt;/div>
+ &lt;/a>
+&lt;br>
+&lt;a href="https://gohugo.io/hugo-pipes/introduction/#get-resource-with-resourcesget-and-resourcesgetremote" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: inherit;" onMouseOver="this.style.opacity='0.9'">
+ &lt;div style="flex-shrink: 0;">
+ &lt;img src="https://hugo-theme-salt.okdyy75.com/gohugoio-card-base-1_hu_687944b582d34bbf.webp" alt="" width="100" height="100">
+ &lt;/div>
+ &lt;div style="margin-left: 10px;">
+ &lt;h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">Hugo Pipes&lt;/h2>
+ &lt;p style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;"> Hugo Pipes is Hugo's asset processing set of functions. &lt;/p>
+ &lt;/div>
+ &lt;/a>
+&lt;br>
+&lt;h2 id="getremoteの基本">GetRemoteの基本&lt;/h2>
+&lt;p>基本の使い方はこんな感じで、html以外にも外部の画像、css、jsといったデータも取得できます。&lt;/p></description></item><item><title>Hugoでデプロイする時たまにビルドエラーになる原因</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo/build-error/</link><pubDate>Sat, 29 Jan 2022 20:11:23 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo/build-error/</guid><description>&lt;p>GitHub Actionsを使ったHugoのデプロイ時に、たまにエラーになっていたんですが原因が分かりました。&lt;/p>
+&lt;p>package.json&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;scripts&amp;#34;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;create-ranking&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;node scripts/create-ranking.js&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;build&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;hugo --gc --minify&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;test&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;echo \&amp;#34;Error: no test specified\&amp;#34; &amp;amp;&amp;amp; exit 1&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }&lt;span style="color:#960050;background-color:#1e0010">,&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>npm run build&lt;/code>してみるとこんな感じのエラーが出て、たまにデプロイがうまくいきませんでした&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Start building sites … 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hugo v0.89.4-AB01BA6E darwin/amd64 BuildDate&lt;span style="color:#f92672">=&lt;/span>2021-11-17T08:24:09Z VendorInfo&lt;span style="color:#f92672">=&lt;/span>gohugoio
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ERROR 2022/01/29 20:21:30 render of &lt;span style="color:#e6db74">&amp;#34;page&amp;#34;&lt;/span> failed: execute of template failed: template: partials/sidebar.html:101:72: executing &lt;span style="color:#e6db74">&amp;#34;sidebar&amp;#34;&lt;/span> at &amp;lt;&lt;span style="color:#f92672">(&lt;/span>index $thumbnail 0&lt;span style="color:#f92672">)&lt;/span>.Fill&amp;gt;: error calling Fill: image &lt;span style="color:#e6db74">&amp;#34;/Users/okdyy75/hugo-theme-salt/content/article/hugo/fontawsome/thumbnail.png&amp;#34;&lt;/span>: this feature is not available in your current Hugo version, see https://goo.gl/YMrWcn &lt;span style="color:#66d9ef">for&lt;/span> more information
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ERROR 2022/01/29 20:21:30 render of &lt;span style="color:#e6db74">&amp;#34;page&amp;#34;&lt;/span> failed: execute of template failed: template: partials/sidebar.html:101:72: executing &lt;span style="color:#e6db74">&amp;#34;sidebar&amp;#34;&lt;/span> at &amp;lt;&lt;span style="color:#f92672">(&lt;/span>index $thumbnail 0&lt;span style="color:#f92672">)&lt;/span>.Fill&amp;gt;: error calling Fill: image &lt;span style="color:#e6db74">&amp;#34;/Users/okdyy75/hugo-theme-salt/content/article/hugo/fontawsome/thumbnail.png&amp;#34;&lt;/span>: this feature is not available in your current Hugo version, see https://goo.gl/YMrWcn &lt;span style="color:#66d9ef">for&lt;/span> more information
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ERROR 2022/01/29 20:21:30 render of &lt;span style="color:#e6db74">&amp;#34;page&amp;#34;&lt;/span> failed: execute of template failed: template: partials/sidebar.html:101:72: executing &lt;span style="color:#e6db74">&amp;#34;sidebar&amp;#34;&lt;/span> at &amp;lt;&lt;span style="color:#f92672">(&lt;/span>index $thumbnail 0&lt;span style="color:#f92672">)&lt;/span>.Fill&amp;gt;: error calling Fill: image &lt;span style="color:#e6db74">&amp;#34;/Users/okdyy75/hugo-theme-salt/content/article/hugo/fontawsome/thumbnail.png&amp;#34;&lt;/span>: this feature is not available in your current Hugo version, see https://goo.gl/YMrWcn &lt;span style="color:#66d9ef">for&lt;/span> more information
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ERROR 2022/01/29 20:21:30 render of &lt;span style="color:#e6db74">&amp;#34;page&amp;#34;&lt;/span> failed: execute of template failed: template: partials/sidebar.html:101:72: executing &lt;span style="color:#e6db74">&amp;#34;sidebar&amp;#34;&lt;/span> at &amp;lt;&lt;span style="color:#f92672">(&lt;/span>index $thumbnail 0&lt;span style="color:#f92672">)&lt;/span>.Fill&amp;gt;: error calling Fill: image &lt;span style="color:#e6db74">&amp;#34;/Users/okdyy75/hugo-theme-salt/content/article/hugo/fontawsome/thumbnail.png&amp;#34;&lt;/span>: this feature is not available in your current Hugo version, see https://goo.gl/YMrWcn &lt;span style="color:#66d9ef">for&lt;/span> more information
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Error: Error building site: failed to render pages: render of &lt;span style="color:#e6db74">&amp;#34;page&amp;#34;&lt;/span> failed: execute of template failed: template: partials/sidebar.html:101:72: executing &lt;span style="color:#e6db74">&amp;#34;sidebar&amp;#34;&lt;/span> at &amp;lt;&lt;span style="color:#f92672">(&lt;/span>index $thumbnail 0&lt;span style="color:#f92672">)&lt;/span>.Fill&amp;gt;: error calling Fill: image &lt;span style="color:#e6db74">&amp;#34;/Users/okdyy75/hugo-theme-salt/content/article/hugo/fontawsome/thumbnail.png&amp;#34;&lt;/span>: this feature is not available in your current Hugo version, see https://goo.gl/YMrWcn &lt;span style="color:#66d9ef">for&lt;/span> more information
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Total in &lt;span style="color:#ae81ff">235&lt;/span> ms
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>ローカルのhugoとhugo-binのバージョンを確認してみると&lt;/p></description></item><item><title>Hugoで一週間のPV数順の人気記事を作る方法</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo/ranking/</link><pubDate>Wed, 12 Jan 2022 15:34:42 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo/ranking/</guid><description>&lt;p>HugoとGoogle Analyticsを使って人気記事のランキングを作る方法を紹介します&lt;/p>
+&lt;p>ステップとしては&lt;/p>
+&lt;ol>
+&lt;li>GCPから鍵を作成し、Google Analyticsで権限を付与&lt;/li>
+&lt;li>Google Analytics Data APIからpv数を取得するスクリプトを作成&lt;/li>
+&lt;li>保存したpvデータを元にHugoからランキング作成&lt;/li>
+&lt;li>CIで定期的にpv取得スクリプトを起動させる&lt;/li>
+&lt;/ol>
+&lt;br>
+&lt;h2 id="1-gcpから鍵を作成しgoogle-analyticsで権限を付与">1. GCPから鍵を作成し、Google Analyticsで権限を付与&lt;/h2>
+&lt;p>基本的にはdevelopers IOさんの記事を参考にします。「Google Analyticsでサービスアカウント用のユーザーに権限を与える」の部分まで実行してください。&lt;/p></description></item><item><title>Hugoで年月別のアーカイブを作る方法</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo/archive/</link><pubDate>Tue, 28 Dec 2021 10:32:02 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo/archive/</guid><description>&lt;p>Hugoでアーカイブを作るには2種類ほど方法があります&lt;/p>
+&lt;h2 id="タグやカテゴリと同様にタクソノミーを設定する">①タグやカテゴリと同様にタクソノミーを設定する&lt;/h2>
+&lt;p>config.ymlに&lt;code>archive&lt;/code>を追加し&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yml" data-lang="yml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">taxonomies&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">archive&lt;/span>: &lt;span style="color:#ae81ff">archives&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>記事のフロントマターに年月を設定してあげれば&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yml" data-lang="yml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">archives&lt;/span>: [&lt;span style="color:#e6db74">&amp;#34;2021年12月&amp;#34;&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>こんな感じのデータが作成されます。この時「yyyy年mm月」の形式でないと年月でソートされないので注意です&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go-template" data-lang="go-template">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">{{&lt;/span> &lt;span style="color:#a6e22e">.Site.Taxonomies.archives.Alphabetical.Reverse&lt;/span> &lt;span style="color:#75715e">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {2021年12月 [WeightedPage(0,&amp;#34;Hugoで年月別のアーカイブを作る方法&amp;#34;) WeightedPage(0,&amp;#34;HugoでFontawsomeを使う方法&amp;#34;)]}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {2021年10月 [WeightedPage(0,&amp;#34;Hugoに検索機能を追加しよう&amp;#34;)]}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {2021年9月 [WeightedPage(0,&amp;#34;Hugoを使い始めた人に捧げるTips11選&amp;#34;) WeightedPage(0,&amp;#34;Go言語Tips② Hugoで使われるlayoutの正体&amp;#34;)]}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>新しく作る記事はarchetypesを更新してあげれば問題ないのですが、すでにある記事にarchiveを追加してあげるのは結構大変ですよね&lt;/p></description></item><item><title>HugoでFontAwesomeを使う方法</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo/fontawesome/</link><pubDate>Sat, 04 Dec 2021 10:11:36 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo/fontawesome/</guid><description>&lt;p>HugoにFontAwesomeを使う場合はHugoの機能であるモジュールを使うと簡単に実現できます！&lt;/p>
+&lt;h2 id="1-npmでfontawesomeをインストール">1. npmでFontAwesomeをインストール&lt;/h2>
+&lt;p>package.jsonがない場合は&lt;code>npm init&lt;/code>してください&lt;/p>
+&lt;pre tabindex="0">&lt;code>npm install -D @fortawesome/fontawesome-free
+&lt;/code>&lt;/pre>&lt;h2 id="2-configymlのmoduleに使いたいjsファイルをmounts">2. config.ymlのmoduleに使いたいjsファイルをmounts&lt;/h2>
+&lt;p>注意点としてmountすると、デフォルトであるtargetのルートディレクトリが無視されるので明示的に追加する必要があります&lt;/p></description></item><item><title>Hugoに検索機能を追加しよう</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo/search/</link><pubDate>Fri, 15 Oct 2021 21:35:10 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo/search/</guid><description>&lt;p>このサイトにも実装されているんですが、Hugoにlunaを使った検索機能を実装する方法を紹介します。&lt;/p>
+&lt;p>基本的には公式で紹介されているgistを参考に実装します。（コメント下の方にvanilla js版を作ってくれた方がいました！感謝！）&lt;/p>
+&lt;iframe src="https://hatenablog-parts.com/embed?url=https://gohugo.io/tools/search/" title="Search for your Hugo Website | Hugo" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block;width: 100%;height: 190px;max-width: 680px;margin: 10px 0px;">&lt;/iframe>
+&lt;iframe src="https://hatenablog-parts.com/embed?url=https://gist.github.com/sebz/efddfc8fdcb6b480f567" title="hugo + gruntjs + lunrjs = &lt;3 search" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block;width: 100%;height: 190px;max-width: 680px;margin: 10px 0px;">&lt;/iframe>
+&lt;p>こちらのサイトも参考にさせて頂きました。&lt;/p>
+&lt;iframe src="https://hatenablog-parts.com/embed?url=https://blog.unigiri.net/article/hugo-lunr%E3%81%AB%E3%82%88%E3%82%8B%E6%97%A5%E6%9C%AC%E8%AA%9E%E5%85%A8%E6%96%87%E6%A4%9C%E7%B4%A2/" title="Hugo + Lunrによる日本語全文検索 | Unigiri" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block;width: 100%;height: 190px;max-width: 680px;margin: 10px 0px;">&lt;/iframe>
+&lt;h2 id="1-lunrのセットアップ">1. lunrのセットアップ&lt;/h2>
+&lt;p>&lt;code>npm install lunr lunr-languages&lt;/code>を実行してパッケージをインストールし、config.ymlに下記を追加します&lt;/p></description></item><item><title>Hugoを使い始めた人に捧げるTips11選</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo/tips/</link><pubDate>Thu, 16 Sep 2021 23:10:23 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo/tips/</guid><description>&lt;h2 id="1-とりあえずhugo-server--dって使ってるけどこれって何">1. とりあえず&lt;code>hugo server -D&lt;/code>って使ってるけどこれって何？&lt;/h2>
+&lt;p>&lt;code>draft: true&lt;/code>のコンテンツファイルも含めて出力。&lt;/p>
+&lt;p>詳しくは&lt;code>hugo server --help&lt;/code>でチェック&lt;/p>
+&lt;br>
+&lt;h2 id="2-taxonomyとtermの違い">2. taxonomyとtermの違い&lt;/h2>
+&lt;ul>
+&lt;li>taxonomyは「タグ」や「カテゴリー」といった分類自体&lt;/li>
+&lt;li>termはそのタグやカテゴリーに属する「go」とか「tips」のことです&lt;/li>
+&lt;/ul>
+&lt;p>こちらのサイトが非常に分かりやすいです！&lt;br>
+&lt;a href="https://maku77.github.io/hugo/taxonomy/basic.html">https://maku77.github.io/hugo/taxonomy/basic.html&lt;/a>&lt;/p>
+&lt;br>
+&lt;h2 id="3-content配下の固定ページに共通のlayoutを使いたい">3. content配下の固定ページに共通のlayoutを使いたい&lt;/h2>
+&lt;p>content配下のKindが「page」になるので「layout/page/single.html」が使えます&lt;/p></description></item><item><title>Go言語Tips② Hugoで使われるlayoutの正体</title><link>https://hugo-theme-salt.okdyy75.com/article/go/go-template/</link><pubDate>Mon, 13 Sep 2021 11:59:12 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/go/go-template/</guid><description>&lt;br>
+&lt;p>Hugoで使われるlayoutですが実態は&lt;strong>go-template&lt;/strong>という、いわゆるテンプレートエンジンです&lt;/p>
+&lt;p>&lt;a href="https://pkg.go.dev/text/template">https://pkg.go.dev/text/template&lt;/a>&lt;/p>
+&lt;br>
+&lt;h2 id="テンプレート内のハイフンありなしの違い">テンプレート内のハイフンありなしの違い&lt;/h2>
+&lt;p>たまにHugoテンプレート内で&lt;code>{{ .Title }}&lt;/code>や&lt;code>{{- .Title -}}&lt;/code>で書いてるものを見かけます
+この違いはハイフンを付けることで前後の空白を除去したい場合に使われます&lt;/p>
+&lt;p>ちなみに公式ドキュメントにあります&lt;br>
+&lt;a href="https://pkg.go.dev/text/template#hdr-Text_and_spaces">https://pkg.go.dev/text/template#hdr-Text_and_spaces&lt;/a>&lt;/p>
+&lt;br>
+&lt;h2 id="配列や連想配列の空チェック">配列や連想配列の空チェック&lt;/h2>
+&lt;p>Hugoを使う際、空ではない文字列or配列or連想配列のチェックする時に、最初はこんな感じで空チェックをしていたんですが&lt;/p></description></item><item><title>Go言語Tips① 変数について</title><link>https://hugo-theme-salt.okdyy75.com/article/go/variable/</link><pubDate>Mon, 13 Sep 2021 10:39:48 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/go/variable/</guid><description>&lt;h2 id="変数定義">変数定義&lt;/h2>
+&lt;p>Hugoのテンプレート内で&lt;code>{{ $title := .Title }}&lt;/code>や&lt;code>{{ $title = .Title }}&lt;/code>
+のようにコロンをつけたり、付けなかったりする記述を見ます。&lt;/p>
+&lt;p>これはgo言語の書き方の特徴で、変数を定義する場合の省略記法です&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">title&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;タイトル&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>省略しない場合はこうなります&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">title&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;タイトル&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="変数のスコープ">変数のスコープ&lt;/h2>
+&lt;p>go言語の変数スコープはif、for、switchなどのブロック内で有効です&lt;br>
+if内などで新しく変数を定義するとifブロック内での変数になるので注意です。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">title&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;タイトル&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#a6e22e">title&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">title&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;タイトル2&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#a6e22e">title&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#a6e22e">title&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre tabindex="0">&lt;code>タイトル
+タイトル2
+タイトル
+&lt;/code>&lt;/pre>&lt;h2 id="変数の命名規則">変数の命名規則&lt;/h2>
+&lt;p>go言語では変数名を短く、スコープも小さく、変数の寿命を短くすること推奨されます&lt;br>
+処理が長くなる場合は細かい単位でメソッドに切り出します。&lt;/p></description></item><item><title>Hugoでできること</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo/about/</link><pubDate>Sun, 12 Sep 2021 17:43:50 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo/about/</guid><description>&lt;p>最近はSSG（静的サイトジェネレータ）全盛期の時代で、サーバー代をかけずにブログが作れる時代になりました。
+そこで実際にHugoを使ってこのブログを作ってみた所感とHugoでできることを紹介したいと思います&lt;/p>
+&lt;h2 id="ちなみにhugoとgatsbyどっちの方がいいの">ちなみにHugoとGatsbyどっちの方がいいの？&lt;/h2>
+&lt;p>サイト内でリッチなグラフやテーブルを使ったり、動きのあるサイトを作りたい場合は、Gatsbyのほうが良いと思います。&lt;/p>
+&lt;p>というのもGatsbyの方がReactベースで作られているので、jsとの相性が非常に良く、Reactのライブラリをそのまま使えます。&lt;/p></description></item><item><title>Hugoブログテーマ「Salt」とは？</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/about/</link><pubDate>Sun, 12 Sep 2021 15:07:11 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/about/</guid><description>&lt;p>「Salt」は&lt;strong>シンプルなブログを低コストで作成できる&lt;/strong>&lt;/p>
+&lt;p>を目標にしたHugo用テーマです。名前の通り、できるだけ素材そのものを引き出せるようなシンプルなデザイン・レイアウトにしました。&lt;/p>
+&lt;p>実際にSaltでできることについて紹介したいと思います&lt;/p>
+&lt;br>
+&lt;h2 id="1-レスポンシブデザイン対応">1. レスポンシブデザイン対応&lt;/h2>
+&lt;p>PCとSP表示に対応しています。
+デフォルトで横幅600pxをデフォルトにしていますが、任意のサイズに変更できます。&lt;/p>
+&lt;br>
+&lt;h2 id="2-サイトカラーを自分の好きなように変更可能">2. サイトカラーを自分の好きなように変更可能&lt;/h2>
+&lt;p>ヘッダー・フッダー・コンテンツの背景色、記事カードの細かいスタイルも簡単に変更できます&lt;/p></description></item><item><title>サイト内ブログカードを作る自作ショートコード</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/self-blog-card/</link><pubDate>Sun, 12 Sep 2021 13:21:49 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/self-blog-card/</guid><description>&lt;p>このテーマ内でサイト内ブログカードを作れる「self-blog-card」というショートコードを作成しました。&lt;/p>
+&lt;h2 id="使い方">使い方&lt;/h2>
+&lt;ul>
+&lt;li>自サイト内のurlを指定します&lt;/li>
+&lt;li>自記事のブログカードは表示できません。&lt;/li>
+&lt;li>日本語だとconfig.ymlの&lt;code>summaryLength: 200&lt;/code>以上推奨です&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code>
+{{&amp;lt; self-blog-card &amp;#34;/article/salt/custom-figure&amp;#34; &amp;gt;}}
+&lt;/code>&lt;/pre>&lt;h2 id="表示例">表示例&lt;/h2>
+
+&lt;a href="https://hugo-theme-salt.okdyy75.com/article/salt/custom-figure/" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: inherit;" onMouseOver="this.style.opacity='0.9'">&lt;div style="flex-shrink: 0;">
+ &lt;img src="https://hugo-theme-salt.okdyy75.com/article/salt/custom-figure/thumbnail_hu_d8615303b83f68ee.webp" alt="画像のリサイズ・トリミング可能な自作ショートコード" width="100" height="100">
+ &lt;/div>
+ &lt;div style="margin-left: 10px;">
+ &lt;h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">画像のリサイズ・トリミング可能な自作ショートコード&lt;/h2>
+ &lt;div style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;">このテーマ内で画像のリサイズ・トリミングができる「custom-figure」というショートコードを作成しました。
+使い方 Hugo標準のfigureショートコードの機能をそのまま使えます HugoのImage Processingで使えるResize、Fit、Fillが使えます Image Processingについてはこちらをチェック
+Image processing Resize, crop, rotate, filter, and convert images. {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Resize スイカ&amp;#34; Resize=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Fit スイカ&amp;#34; Fit=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Fill スイカ&amp;#34; Fill=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Crop スイカ&amp;#34; Crop=&amp;#34;320x180&amp;#34; &amp;gt;}} 表示例 元画像は512x512です
+&lt;/div>
+ &lt;/div>
+ &lt;/a></description></item><item><title>画像のリサイズ・トリミング可能な自作ショートコード</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/custom-figure/</link><pubDate>Sat, 11 Sep 2021 23:39:15 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/custom-figure/</guid><description>&lt;p>このテーマ内で画像のリサイズ・トリミングができる「custom-figure」というショートコードを作成しました。&lt;/p>
+&lt;h2 id="使い方">使い方&lt;/h2>
+&lt;ul>
+&lt;li>Hugo標準のfigureショートコードの機能をそのまま使えます&lt;/li>
+&lt;li>HugoのImage Processingで使えるResize、Fit、Fillが使えます&lt;/li>
+&lt;/ul>
+&lt;p>Image Processingについてはこちらをチェック&lt;/p>
+&lt;a href="https://gohugo.io/content-management/image-processing/" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: inherit;" onMouseOver="this.style.opacity='0.9'">
+ &lt;div style="flex-shrink: 0;">
+ &lt;img src="https://hugo-theme-salt.okdyy75.com/gohugoio-card-base-1_hu_47d22b62de30cb02.webp" alt="" width="100" height="100">
+ &lt;/div>
+ &lt;div style="margin-left: 10px;">
+ &lt;h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">Image processing&lt;/h2>
+ &lt;p style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;"> Resize, crop, rotate, filter, and convert images. &lt;/p>
+ &lt;/div>
+ &lt;/a>
+&lt;br>
+&lt;pre tabindex="0">&lt;code>{{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Resize スイカ&amp;#34; Resize=&amp;#34;320x180&amp;#34; &amp;gt;}}
+
+{{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Fit スイカ&amp;#34; Fit=&amp;#34;320x180&amp;#34; &amp;gt;}}
+
+{{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Fill スイカ&amp;#34; Fill=&amp;#34;320x180&amp;#34; &amp;gt;}}
+
+{{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Crop スイカ&amp;#34; Crop=&amp;#34;320x180&amp;#34; &amp;gt;}}
+&lt;/code>&lt;/pre>&lt;h2 id="表示例">表示例&lt;/h2>
+&lt;p>元画像は512x512です&lt;/p></description></item><item><title>Hugo標準のショートコード表示サンプル</title><link>https://hugo-theme-salt.okdyy75.com/article/sample/hugo-shortcode/</link><pubDate>Sat, 11 Sep 2021 23:09:41 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/sample/hugo-shortcode/</guid><description>&lt;p>Hugoで用意されているショートコード使用時の表示サンプルです&lt;/p>
+&lt;h2 id="figure">figure&lt;/h2>
+&lt;figure>&lt;img src="https://hugo-theme-salt.okdyy75.com/article/sample/hugo-shortcode/suica.png">&lt;figcaption>
+ &lt;h4>スイカの画像&lt;/h4>
+ &lt;/figcaption>
+&lt;/figure>
+
+&lt;h2 id="gist">gist&lt;/h2>
+&lt;script src="https://gist.github.com/spf13/7896402.js">&lt;/script>
+
+&lt;p>※このgistショートコードはHugoのバージョン0.143.0で非推奨となり、将来のリリースで削除予定なので
+Hugo Theme Salt内のショートコードに移行しました&lt;/p>
+
+&lt;a href="https://hugo-theme-salt.okdyy75.com/article/salt/gist/" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: inherit;" onMouseOver="this.style.opacity='0.9'">&lt;div style="flex-shrink: 0;">
+ &lt;img src="https://hugo-theme-salt.okdyy75.com/article/salt/gist/thumbnail_hu_9e1137dd35099b1e.webp" alt="Hugo標準のgistショートコードをテーマ内に移行しました" width="100" height="100">
+ &lt;/div>
+ &lt;div style="margin-left: 10px;">
+ &lt;h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">Hugo標準のgistショートコードをテーマ内に移行しました&lt;/h2>
+ &lt;div style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;">Hugo公式のgistショートコードはバージョン0.143.0で非推奨となり、将来のリリースで削除されるそうなので Hugo Theme Salt内ののショートコードとして使えるように移行しました
+WARN The &amp;#34;gist&amp;#34; shortcode was deprecated in v0.143.0 and will be removed in a future release. See https://gohugo.io/shortcodes/gist for instructions to create a replacement. Hugo公式ページでは下記の通り
+Gist shortcode Embed a GitHub Gist in your content using the gist shortcode. The gist shortcode was deprecated in version 0.143.0 and will be removed in a future release. To continue embedding &amp;gt; GitHub Gists in your content, you’ll need to create a custom shortcode:
+Gist ショートコードはバージョン 0.143.0 で非推奨となり、今後のリリースで削除される予定です。コンテンツに GitHub Gist を埋め込むには、カスタムショートコードを作成する必要があります。
+&lt;/div>
+ &lt;/div>
+ &lt;/a>
+&lt;h2 id="highlight">highlight&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">section&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;main&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">h1&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;title&amp;#34;&lt;/span>&amp;gt;{{ .Title }}&amp;lt;/&lt;span style="color:#f92672">h1&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{ range .Pages }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{ .Render &amp;#34;summary&amp;#34;}}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{ end }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">section&lt;/span>&amp;gt;&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;h2 id="instagram">instagram&lt;/h2>
+&lt;blockquote
+ class="instagram-media"
+ data-instgrm-captioned
+ data-instgrm-permalink="https://www.instagram.com/p/CxOWiQNP2MO"
+ data-instgrm-version="14"
+ style="
+ background: #fff;
+ border: 0;
+ border-radius: 3px;
+ box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5), 0 1px 10px 0 rgba(0, 0, 0, 0.15);
+ margin: 1px;
+ max-width: 540px;
+ min-width: 326px;
+ padding: 0;
+ width: 99.375%;
+ width: -webkit-calc(100% - 2px);
+ width: calc(100% - 2px);
+ "
+ >
+ &lt;div style="padding: 16px">
+ &lt;a
+ href="https://www.instagram.com/p/CxOWiQNP2MO"
+ style="
+ background: #ffffff;
+ line-height: 0;
+ padding: 0 0;
+ text-align: center;
+ text-decoration: none;
+ width: 100%;
+ "
+ target="_blank"
+ >
+ &lt;div style="display: flex; flex-direction: row; align-items: center">
+ &lt;div
+ style="
+ background-color: #f4f4f4;
+ border-radius: 50%;
+ flex-grow: 0;
+ height: 40px;
+ margin-right: 14px;
+ width: 40px;
+ "
+ >&lt;/div>
+ &lt;div
+ style="
+ display: flex;
+ flex-direction: column;
+ flex-grow: 1;
+ justify-content: center;
+ "
+ >
+ &lt;div
+ style="
+ background-color: #f4f4f4;
+ border-radius: 4px;
+ flex-grow: 0;
+ height: 14px;
+ margin-bottom: 6px;
+ width: 100px;
+ "
+ >&lt;/div>
+ &lt;div
+ style="
+ background-color: #f4f4f4;
+ border-radius: 4px;
+ flex-grow: 0;
+ height: 14px;
+ width: 60px;
+ "
+ >&lt;/div>
+ &lt;/div>
+ &lt;/div>
+ &lt;div style="padding: 19% 0">&lt;/div>
+ &lt;div
+ style="display: block; height: 50px; margin: 0 auto 12px; width: 50px"
+ >
+ &lt;svg
+ width="50px"
+ height="50px"
+ viewBox="0 0 60 60"
+ version="1.1"
+ xmlns="https://www.w3.org/2000/svg"
+ xmlns:xlink="https://www.w3.org/1999/xlink"
+ >
+ &lt;g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+ &lt;g transform="translate(-511.000000, -20.000000)" fill="#000000">
+ &lt;g>
+ &lt;path
+ d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"
+ >&lt;/path>
+ &lt;/g>
+ &lt;/g>
+ &lt;/g>
+ &lt;/svg>
+ &lt;/div>
+ &lt;div style="padding-top: 8px">
+ &lt;div
+ style="
+ color: #3897f0;
+ font-family: Arial, sans-serif;
+ font-size: 14px;
+ font-style: normal;
+ font-weight: 550;
+ line-height: 18px;
+ "
+ >
+ View this post on Instagram
+ &lt;/div>
+ &lt;/div>
+ &lt;div style="padding: 12.5% 0">&lt;/div>
+ &lt;div
+ style="
+ display: flex;
+ flex-direction: row;
+ margin-bottom: 14px;
+ align-items: center;
+ "
+ >
+ &lt;div>
+ &lt;div
+ style="
+ background-color: #f4f4f4;
+ border-radius: 50%;
+ height: 12.5px;
+ width: 12.5px;
+ transform: translateX(0px) translateY(7px);
+ "
+ >&lt;/div>
+ &lt;div
+ style="
+ background-color: #f4f4f4;
+ height: 12.5px;
+ transform: rotate(-45deg) translateX(3px) translateY(1px);
+ width: 12.5px;
+ flex-grow: 0;
+ margin-right: 14px;
+ margin-left: 2px;
+ "
+ >&lt;/div>
+ &lt;div
+ style="
+ background-color: #f4f4f4;
+ border-radius: 50%;
+ height: 12.5px;
+ width: 12.5px;
+ transform: translateX(9px) translateY(-18px);
+ "
+ >&lt;/div>
+ &lt;/div>
+ &lt;div style="margin-left: 8px">
+ &lt;div
+ style="
+ background-color: #f4f4f4;
+ border-radius: 50%;
+ flex-grow: 0;
+ height: 20px;
+ width: 20px;
+ "
+ >&lt;/div>
+ &lt;div
+ style="
+ width: 0;
+ height: 0;
+ border-top: 2px solid transparent;
+ border-left: 6px solid #f4f4f4;
+ border-bottom: 2px solid transparent;
+ transform: translateX(16px) translateY(-4px) rotate(30deg);
+ "
+ >&lt;/div>
+ &lt;/div>
+ &lt;div style="margin-left: auto">
+ &lt;div
+ style="
+ width: 0px;
+ border-top: 8px solid #f4f4f4;
+ border-right: 8px solid transparent;
+ transform: translateY(16px);
+ "
+ >&lt;/div>
+ &lt;div
+ style="
+ background-color: #f4f4f4;
+ flex-grow: 0;
+ height: 12px;
+ width: 16px;
+ transform: translateY(-4px);
+ "
+ >&lt;/div>
+ &lt;div
+ style="
+ width: 0;
+ height: 0;
+ border-top: 8px solid #f4f4f4;
+ border-left: 8px solid transparent;
+ transform: translateY(-4px) translateX(8px);
+ "
+ >&lt;/div>
+ &lt;/div>
+ &lt;/div>
+ &lt;div
+ style="
+ display: flex;
+ flex-direction: column;
+ flex-grow: 1;
+ justify-content: center;
+ margin-bottom: 24px;
+ "
+ >
+ &lt;div
+ style="
+ background-color: #f4f4f4;
+ border-radius: 4px;
+ flex-grow: 0;
+ height: 14px;
+ margin-bottom: 6px;
+ width: 224px;
+ "
+ >&lt;/div>
+ &lt;div
+ style="
+ background-color: #f4f4f4;
+ border-radius: 4px;
+ flex-grow: 0;
+ height: 14px;
+ width: 144px;
+ "
+ >&lt;/div>&lt;/div
+ >&lt;/a>
+ &lt;/div>
+ &lt;/blockquote>&lt;script async src="https://www.instagram.com/embed.js">&lt;/script>
+&lt;h2 id="x">X&lt;/h2>
+&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">Owl bet you&amp;#39;ll lose this staring contest 🦉 &lt;a href="https://t.co/eJh4f2zncC">pic.twitter.com/eJh4f2zncC&lt;/a>&lt;/p></description></item><item><title>マークダウン表示サンプル</title><link>https://hugo-theme-salt.okdyy75.com/article/sample/markdown/</link><pubDate>Sat, 11 Sep 2021 08:27:34 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/sample/markdown/</guid><description>&lt;p>マークダウンで記事作成時の表示サンプルです&lt;/p>
+&lt;h1 id="block-elements">Block Elements&lt;/h1>
+&lt;h2 id="headers-見出し">Headers 見出し&lt;/h2>
+&lt;p>先頭に&lt;code>#&lt;/code>をレベルの数だけ記述します。&lt;/p>
+&lt;pre tabindex="0">&lt;code># 見出し1
+## 見出し2
+### 見出し3
+#### 見出し4
+##### 見出し5
+###### 見出し6
+&lt;/code>&lt;/pre>&lt;h1 id="見出し1">見出し1&lt;/h1>
+&lt;h2 id="見出し2">見出し2&lt;/h2>
+&lt;h3 id="見出し3">見出し3&lt;/h3>
+&lt;h4 id="見出し4">見出し4&lt;/h4>
+&lt;h5 id="見出し5">見出し5&lt;/h5>
+&lt;h6 id="見出し6">見出し6&lt;/h6>
+&lt;h2 id="block-段落">Block 段落&lt;/h2>
+&lt;p>空白行を挟むことで段落となります。&lt;/p>
+&lt;pre tabindex="0">&lt;code>段落1
+(空行)
+段落2
+&lt;/code>&lt;/pre>&lt;p>段落1&lt;/p>
+&lt;p>段落2&lt;/p>
+&lt;h2 id="br-改行">Br 改行&lt;/h2>
+&lt;p>改行の前に半角スペース&lt;code> &lt;/code>を2つ記述します。&lt;/p>
+&lt;pre tabindex="0">&lt;code>hoge
+fuga(スペース2つ)
+piyo
+&lt;/code>&lt;/pre>&lt;p>hoge
+fuga&lt;br>
+piyo&lt;/p>
+&lt;h2 id="blockquotes-引用">Blockquotes 引用&lt;/h2>
+&lt;p>先頭に&lt;code>&amp;gt;&lt;/code>を記述します。ネストは&lt;code>&amp;gt;&lt;/code>を多重に記述します。&lt;/p>
+&lt;pre tabindex="0">&lt;code>&amp;gt; 引用 
+&amp;gt; 引用
+&amp;gt;&amp;gt; 多重引用
+&lt;/code>&lt;/pre>&lt;blockquote>
+&lt;p>引用&lt;br>
+引用&lt;/p>
+&lt;blockquote>
+&lt;p>多重引用&lt;/p>&lt;/blockquote>&lt;/blockquote>
+&lt;h2 id="code-コード">Code コード&lt;/h2>
+&lt;p>&lt;code>`バッククオート`&lt;/code> 3つ、あるいはダッシュ&lt;code>~&lt;/code>３つで囲みます。&lt;/p></description></item><item><title>小さいサムネイル記事</title><link>https://hugo-theme-salt.okdyy75.com/article/sample/small-thumbnail/</link><pubDate>Fri, 10 Sep 2021 19:29:57 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/sample/small-thumbnail/</guid><description>&lt;p>小さいサムネイルの場合の記事です&lt;/p>
+&lt;p>120x120です&lt;/p></description></item><item><title>タグとカテゴリーなしの記事</title><link>https://hugo-theme-salt.okdyy75.com/article/sample/no-tag-category/</link><pubDate>Fri, 10 Sep 2021 18:45:23 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/sample/no-tag-category/</guid><description>&lt;p>タグとカテゴリーが設定されていない場合の記事です&lt;/p></description></item><item><title>サムネイルなしの記事</title><link>https://hugo-theme-salt.okdyy75.com/article/sample/no-thumbnail/</link><pubDate>Fri, 10 Sep 2021 18:17:52 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/sample/no-thumbnail/</guid><description>&lt;p>サムネイルが設定されていない場合の記事です&lt;/p></description></item><item><title>お知らせ</title><link>https://hugo-theme-salt.okdyy75.com/information/</link><pubDate>Tue, 31 Aug 2021 22:31:13 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/information/</guid><description>&lt;p>2022年1月12日&lt;br>
+ランキングを追加しました&lt;/p>
+&lt;p>2021年10月14日&lt;br>
+検索機能を追加しました&lt;/p>
+&lt;p>2021年10月2日&lt;br>
+アーカイブを追加しました&lt;/p>
+&lt;p>2021年8月31日&lt;br>
+サイトを作成しました&lt;/p></description></item><item><title>プライバシーポリシー</title><link>https://hugo-theme-salt.okdyy75.com/privacy-policy/</link><pubDate>Tue, 31 Aug 2021 22:31:13 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/privacy-policy/</guid><description>&lt;p>このサイトはHugoブログテーマ「Salt」（以下、「当サイト」といいます。）は、本ウェブサイト上で提供するサービスにおけるユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定めます。&lt;/p>
+&lt;h3 id="個人情報の利用目的">個人情報の利用目的&lt;/h3>
+&lt;p>当サイトが個人情報を収集・利用する目的は、以下のとおりです。&lt;/p>
+&lt;ul>
+&lt;li>当サイトサービスの提供・運営のため&lt;/li>
+&lt;li>不正・不当な目的でサービスを利用しようとするユーザーの特定をし、ご利用をお断りするため&lt;/li>
+&lt;/ul>
+&lt;h3 id="個人情報の第三者開示">個人情報の第三者開示&lt;/h3>
+&lt;p>当サイトは次に掲げる場合を除いて、あらかじめユーザーの同意を得ることなく、第三者に個人情報を提供することはありません。&lt;/p></description></item><item><title>このサイトについて</title><link>https://hugo-theme-salt.okdyy75.com/about/</link><pubDate>Tue, 31 Aug 2021 22:30:41 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/about/</guid><description>&lt;p>このサイトはシンプルなHugoブログテーマ「Salt」の紹介サイトです&lt;/p>
+&lt;p>「Salt」は&lt;strong>シンプルなブログを低コストで作成できる&lt;/strong>&lt;/p>
+&lt;p>を目標にしたHugo用テーマです。名前の通り、できるだけ素材そのものを引き出せるようなシンプルなデザイン・レイアウトにしました。&lt;/p></description></item></channel></rss>

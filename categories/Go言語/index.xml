@@ -1,1 +1,34 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Go言語 on Hugoブログテーマ「Salt」</title><link>https://hugo-theme-salt.okdyy75.com/categories/Go%E8%A8%80%E8%AA%9E/</link><description>Recent content in Go言語 on Hugoブログテーマ「Salt」</description><generator>Hugo</generator><language>ja</language><managingEditor>okdyy75@gmail.com (okdyy75)</managingEditor><webMaster>okdyy75@gmail.com (okdyy75)</webMaster><copyright>© 2021 okdyy75</copyright><lastBuildDate>Mon, 13 Sep 2021 11:59:12 +0900</lastBuildDate><atom:link href="https://hugo-theme-salt.okdyy75.com/categories/Go%E8%A8%80%E8%AA%9E/index.xml" rel="self" type="application/rss+xml"/><item><title>Go言語Tips② Hugoで使われるlayoutの正体</title><link>https://hugo-theme-salt.okdyy75.com/article/go/go-template/</link><pubDate>Mon, 13 Sep 2021 11:59:12 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/go/go-template/</guid><description>Hugoで使われるlayoutですが実態はgo-templateという、いわゆるテンプレートエンジンです https://pkg.go.dev/text/template テンプレート内のハイフンありなしの違い たまにHugoテンプレート内で{{ .Title }}や{{- .Title -}}で書いてるものを見かけます この違いはハイフンを付けることで前後の空白を除去したい場合に使われます ちなみに公式ドキュメントにあります https://pkg.go.dev/text/template#hdr-Text_and_spaces 配列や連想配列の空チェック Hugoを使う際、空ではない文字列or配列</description></item><item><title>Go言語Tips① 変数について</title><link>https://hugo-theme-salt.okdyy75.com/article/go/variable/</link><pubDate>Mon, 13 Sep 2021 10:39:48 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/go/variable/</guid><description>変数定義 Hugoのテンプレート内で{{ $title := .Title }}や{{ $title = .Title }} のようにコロンをつけたり、付けなかったりする記述を見ます。 これはgo言語の書き方の特徴で、変数を定義する場合の省略記法です title := &amp;#34;タイトル&amp;#34; 省略しない場合はこうなります var title string = &amp;#34;タイトル&amp;#34; 変数のスコープ go言語の変数スコープはif、for、switchなどのブロック内で有効です if内などで新しく変数を定義す</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Go言語 on Hugoブログテーマ「Salt」</title><link>https://hugo-theme-salt.okdyy75.com/categories/Go%E8%A8%80%E8%AA%9E/</link><description>Recent content in Go言語 on Hugoブログテーマ「Salt」</description><generator>Hugo</generator><language>ja</language><managingEditor>okdyy75@gmail.com (okdyy75)</managingEditor><webMaster>okdyy75@gmail.com (okdyy75)</webMaster><copyright>© 2021 okdyy75</copyright><lastBuildDate>Mon, 13 Sep 2021 11:59:12 +0900</lastBuildDate><atom:link href="https://hugo-theme-salt.okdyy75.com/categories/Go%E8%A8%80%E8%AA%9E/index.xml" rel="self" type="application/rss+xml"/><item><title>Go言語Tips② Hugoで使われるlayoutの正体</title><link>https://hugo-theme-salt.okdyy75.com/article/go/go-template/</link><pubDate>Mon, 13 Sep 2021 11:59:12 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/go/go-template/</guid><description>&lt;br>
+&lt;p>Hugoで使われるlayoutですが実態は&lt;strong>go-template&lt;/strong>という、いわゆるテンプレートエンジンです&lt;/p>
+&lt;p>&lt;a href="https://pkg.go.dev/text/template">https://pkg.go.dev/text/template&lt;/a>&lt;/p>
+&lt;br>
+&lt;h2 id="テンプレート内のハイフンありなしの違い">テンプレート内のハイフンありなしの違い&lt;/h2>
+&lt;p>たまにHugoテンプレート内で&lt;code>{{ .Title }}&lt;/code>や&lt;code>{{- .Title -}}&lt;/code>で書いてるものを見かけます
+この違いはハイフンを付けることで前後の空白を除去したい場合に使われます&lt;/p>
+&lt;p>ちなみに公式ドキュメントにあります&lt;br>
+&lt;a href="https://pkg.go.dev/text/template#hdr-Text_and_spaces">https://pkg.go.dev/text/template#hdr-Text_and_spaces&lt;/a>&lt;/p>
+&lt;br>
+&lt;h2 id="配列や連想配列の空チェック">配列や連想配列の空チェック&lt;/h2>
+&lt;p>Hugoを使う際、空ではない文字列or配列or連想配列のチェックする時に、最初はこんな感じで空チェックをしていたんですが&lt;/p></description></item><item><title>Go言語Tips① 変数について</title><link>https://hugo-theme-salt.okdyy75.com/article/go/variable/</link><pubDate>Mon, 13 Sep 2021 10:39:48 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/go/variable/</guid><description>&lt;h2 id="変数定義">変数定義&lt;/h2>
+&lt;p>Hugoのテンプレート内で&lt;code>{{ $title := .Title }}&lt;/code>や&lt;code>{{ $title = .Title }}&lt;/code>
+のようにコロンをつけたり、付けなかったりする記述を見ます。&lt;/p>
+&lt;p>これはgo言語の書き方の特徴で、変数を定義する場合の省略記法です&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">title&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;タイトル&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>省略しない場合はこうなります&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">title&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;タイトル&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="変数のスコープ">変数のスコープ&lt;/h2>
+&lt;p>go言語の変数スコープはif、for、switchなどのブロック内で有効です&lt;br>
+if内などで新しく変数を定義するとifブロック内での変数になるので注意です。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">title&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;タイトル&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#a6e22e">title&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">title&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;タイトル2&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#a6e22e">title&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#a6e22e">title&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre tabindex="0">&lt;code>タイトル
+タイトル2
+タイトル
+&lt;/code>&lt;/pre>&lt;h2 id="変数の命名規則">変数の命名規則&lt;/h2>
+&lt;p>go言語では変数名を短く、スコープも小さく、変数の寿命を短くすること推奨されます&lt;br>
+処理が長くなる場合は細かい単位でメソッドに切り出します。&lt;/p></description></item></channel></rss>

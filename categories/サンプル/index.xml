@@ -1,1 +1,310 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>サンプル on Hugoブログテーマ「Salt」</title><link>https://hugo-theme-salt.okdyy75.com/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/</link><description>Recent content in サンプル on Hugoブログテーマ「Salt」</description><generator>Hugo</generator><language>ja</language><managingEditor>okdyy75@gmail.com (okdyy75)</managingEditor><webMaster>okdyy75@gmail.com (okdyy75)</webMaster><copyright>© 2021 okdyy75</copyright><lastBuildDate>Sat, 11 Sep 2021 23:09:41 +0900</lastBuildDate><atom:link href="https://hugo-theme-salt.okdyy75.com/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo標準のショートコード表示サンプル</title><link>https://hugo-theme-salt.okdyy75.com/article/sample/hugo-shortcode/</link><pubDate>Sat, 11 Sep 2021 23:09:41 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/sample/hugo-shortcode/</guid><description>Hugoで用意されているショートコード使用時の表示サンプルです figure スイカの画像 gist highlight &amp;lt;section id=&amp;#34;main&amp;#34;&amp;gt; &amp;lt;div&amp;gt; &amp;lt;h1 id=&amp;#34;title&amp;#34;&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt; {{ range .Pages }} {{ .Render &amp;#34;summary&amp;#34;}} {{ end }} &amp;lt;/div&amp;gt; &amp;lt;/section&amp;gt; instagram Instagramのdeveloperアカウントが必要です。自前で用意する必要あり tweet Owl bet you&amp;#39;ll lose this staring contest 🦉 pic.twitter.com/eJh4f2zncC &amp;mdash; San Diego Zoo Wildlife Alliance (@sandiegozoo) October 26, 2021 vimeo youtube</description></item><item><title>マークダウン表示サンプル</title><link>https://hugo-theme-salt.okdyy75.com/article/sample/markdown/</link><pubDate>Sat, 11 Sep 2021 08:27:34 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/sample/markdown/</guid><description>マークダウンで記事作成時の表示サンプルです Block Elements Headers 見出し 先頭に#をレベルの数だけ記述します。 # 見出し1 ## 見出し2 ### 見出し3 #### 見出し4 ##### 見出し5 ###### 見出し6 見出し1 見出し2 見出し3 見出し4 見出し5 見出し6 Block 段落 空白行を挟むことで段落となります。 段落1 (空行) 段落2 段落1 段落2 Br 改行 改行の前に半角スペース を2つ記述します。 hoge fuga(スペース2つ) piyo hoge fuga piyo Blockquotes 引用 先頭に&amp;gt;を記述します。ネストは&amp;gt;</description></item><item><title>小さいサムネイル記事</title><link>https://hugo-theme-salt.okdyy75.com/article/sample/small-thumbnail/</link><pubDate>Fri, 10 Sep 2021 19:29:57 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/sample/small-thumbnail/</guid><description>小さいサムネイルの場合の記事です 120x120です</description></item><item><title>サムネイルなしの記事</title><link>https://hugo-theme-salt.okdyy75.com/article/sample/no-thumbnail/</link><pubDate>Fri, 10 Sep 2021 18:17:52 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/sample/no-thumbnail/</guid><description>サムネイルが設定されていない場合の記事です</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>サンプル on Hugoブログテーマ「Salt」</title><link>https://hugo-theme-salt.okdyy75.com/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/</link><description>Recent content in サンプル on Hugoブログテーマ「Salt」</description><generator>Hugo</generator><language>ja</language><managingEditor>okdyy75@gmail.com (okdyy75)</managingEditor><webMaster>okdyy75@gmail.com (okdyy75)</webMaster><copyright>© 2021 okdyy75</copyright><lastBuildDate>Sat, 11 Sep 2021 23:09:41 +0900</lastBuildDate><atom:link href="https://hugo-theme-salt.okdyy75.com/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo標準のショートコード表示サンプル</title><link>https://hugo-theme-salt.okdyy75.com/article/sample/hugo-shortcode/</link><pubDate>Sat, 11 Sep 2021 23:09:41 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/sample/hugo-shortcode/</guid><description>&lt;p>Hugoで用意されているショートコード使用時の表示サンプルです&lt;/p>
+&lt;h2 id="figure">figure&lt;/h2>
+&lt;figure>&lt;img src="https://hugo-theme-salt.okdyy75.com/article/sample/hugo-shortcode/suica.png">&lt;figcaption>
+ &lt;h4>スイカの画像&lt;/h4>
+ &lt;/figcaption>
+&lt;/figure>
+
+&lt;h2 id="gist">gist&lt;/h2>
+&lt;script src="https://gist.github.com/spf13/7896402.js">&lt;/script>
+
+&lt;p>※このgistショートコードはHugoのバージョン0.143.0で非推奨となり、将来のリリースで削除予定なので
+Hugo Theme Salt内のショートコードに移行しました&lt;/p>
+
+&lt;a href="https://hugo-theme-salt.okdyy75.com/article/salt/gist/" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: inherit;" onMouseOver="this.style.opacity='0.9'">&lt;div style="flex-shrink: 0;">
+ &lt;img src="https://hugo-theme-salt.okdyy75.com/article/salt/gist/thumbnail_hu_9e1137dd35099b1e.webp" alt="Hugo標準のgistショートコードをテーマ内に移行しました" width="100" height="100">
+ &lt;/div>
+ &lt;div style="margin-left: 10px;">
+ &lt;h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">Hugo標準のgistショートコードをテーマ内に移行しました&lt;/h2>
+ &lt;div style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;">Hugo公式のgistショートコードはバージョン0.143.0で非推奨となり、将来のリリースで削除されるそうなので Hugo Theme Salt内ののショートコードとして使えるように移行しました
+WARN The &amp;#34;gist&amp;#34; shortcode was deprecated in v0.143.0 and will be removed in a future release. See https://gohugo.io/shortcodes/gist for instructions to create a replacement. Hugo公式ページでは下記の通り
+Gist shortcode Embed a GitHub Gist in your content using the gist shortcode. The gist shortcode was deprecated in version 0.143.0 and will be removed in a future release. To continue embedding &amp;gt; GitHub Gists in your content, you’ll need to create a custom shortcode:
+Gist ショートコードはバージョン 0.143.0 で非推奨となり、今後のリリースで削除される予定です。コンテンツに GitHub Gist を埋め込むには、カスタムショートコードを作成する必要があります。
+&lt;/div>
+ &lt;/div>
+ &lt;/a>
+&lt;h2 id="highlight">highlight&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">section&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;main&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">h1&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;title&amp;#34;&lt;/span>&amp;gt;{{ .Title }}&amp;lt;/&lt;span style="color:#f92672">h1&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{ range .Pages }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{ .Render &amp;#34;summary&amp;#34;}}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{ end }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">section&lt;/span>&amp;gt;&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;h2 id="instagram">instagram&lt;/h2>
+&lt;blockquote
+ class="instagram-media"
+ data-instgrm-captioned
+ data-instgrm-permalink="https://www.instagram.com/p/CxOWiQNP2MO"
+ data-instgrm-version="14"
+ style="
+ background: #fff;
+ border: 0;
+ border-radius: 3px;
+ box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5), 0 1px 10px 0 rgba(0, 0, 0, 0.15);
+ margin: 1px;
+ max-width: 540px;
+ min-width: 326px;
+ padding: 0;
+ width: 99.375%;
+ width: -webkit-calc(100% - 2px);
+ width: calc(100% - 2px);
+ "
+ >
+ &lt;div style="padding: 16px">
+ &lt;a
+ href="https://www.instagram.com/p/CxOWiQNP2MO"
+ style="
+ background: #ffffff;
+ line-height: 0;
+ padding: 0 0;
+ text-align: center;
+ text-decoration: none;
+ width: 100%;
+ "
+ target="_blank"
+ >
+ &lt;div style="display: flex; flex-direction: row; align-items: center">
+ &lt;div
+ style="
+ background-color: #f4f4f4;
+ border-radius: 50%;
+ flex-grow: 0;
+ height: 40px;
+ margin-right: 14px;
+ width: 40px;
+ "
+ >&lt;/div>
+ &lt;div
+ style="
+ display: flex;
+ flex-direction: column;
+ flex-grow: 1;
+ justify-content: center;
+ "
+ >
+ &lt;div
+ style="
+ background-color: #f4f4f4;
+ border-radius: 4px;
+ flex-grow: 0;
+ height: 14px;
+ margin-bottom: 6px;
+ width: 100px;
+ "
+ >&lt;/div>
+ &lt;div
+ style="
+ background-color: #f4f4f4;
+ border-radius: 4px;
+ flex-grow: 0;
+ height: 14px;
+ width: 60px;
+ "
+ >&lt;/div>
+ &lt;/div>
+ &lt;/div>
+ &lt;div style="padding: 19% 0">&lt;/div>
+ &lt;div
+ style="display: block; height: 50px; margin: 0 auto 12px; width: 50px"
+ >
+ &lt;svg
+ width="50px"
+ height="50px"
+ viewBox="0 0 60 60"
+ version="1.1"
+ xmlns="https://www.w3.org/2000/svg"
+ xmlns:xlink="https://www.w3.org/1999/xlink"
+ >
+ &lt;g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+ &lt;g transform="translate(-511.000000, -20.000000)" fill="#000000">
+ &lt;g>
+ &lt;path
+ d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"
+ >&lt;/path>
+ &lt;/g>
+ &lt;/g>
+ &lt;/g>
+ &lt;/svg>
+ &lt;/div>
+ &lt;div style="padding-top: 8px">
+ &lt;div
+ style="
+ color: #3897f0;
+ font-family: Arial, sans-serif;
+ font-size: 14px;
+ font-style: normal;
+ font-weight: 550;
+ line-height: 18px;
+ "
+ >
+ View this post on Instagram
+ &lt;/div>
+ &lt;/div>
+ &lt;div style="padding: 12.5% 0">&lt;/div>
+ &lt;div
+ style="
+ display: flex;
+ flex-direction: row;
+ margin-bottom: 14px;
+ align-items: center;
+ "
+ >
+ &lt;div>
+ &lt;div
+ style="
+ background-color: #f4f4f4;
+ border-radius: 50%;
+ height: 12.5px;
+ width: 12.5px;
+ transform: translateX(0px) translateY(7px);
+ "
+ >&lt;/div>
+ &lt;div
+ style="
+ background-color: #f4f4f4;
+ height: 12.5px;
+ transform: rotate(-45deg) translateX(3px) translateY(1px);
+ width: 12.5px;
+ flex-grow: 0;
+ margin-right: 14px;
+ margin-left: 2px;
+ "
+ >&lt;/div>
+ &lt;div
+ style="
+ background-color: #f4f4f4;
+ border-radius: 50%;
+ height: 12.5px;
+ width: 12.5px;
+ transform: translateX(9px) translateY(-18px);
+ "
+ >&lt;/div>
+ &lt;/div>
+ &lt;div style="margin-left: 8px">
+ &lt;div
+ style="
+ background-color: #f4f4f4;
+ border-radius: 50%;
+ flex-grow: 0;
+ height: 20px;
+ width: 20px;
+ "
+ >&lt;/div>
+ &lt;div
+ style="
+ width: 0;
+ height: 0;
+ border-top: 2px solid transparent;
+ border-left: 6px solid #f4f4f4;
+ border-bottom: 2px solid transparent;
+ transform: translateX(16px) translateY(-4px) rotate(30deg);
+ "
+ >&lt;/div>
+ &lt;/div>
+ &lt;div style="margin-left: auto">
+ &lt;div
+ style="
+ width: 0px;
+ border-top: 8px solid #f4f4f4;
+ border-right: 8px solid transparent;
+ transform: translateY(16px);
+ "
+ >&lt;/div>
+ &lt;div
+ style="
+ background-color: #f4f4f4;
+ flex-grow: 0;
+ height: 12px;
+ width: 16px;
+ transform: translateY(-4px);
+ "
+ >&lt;/div>
+ &lt;div
+ style="
+ width: 0;
+ height: 0;
+ border-top: 8px solid #f4f4f4;
+ border-left: 8px solid transparent;
+ transform: translateY(-4px) translateX(8px);
+ "
+ >&lt;/div>
+ &lt;/div>
+ &lt;/div>
+ &lt;div
+ style="
+ display: flex;
+ flex-direction: column;
+ flex-grow: 1;
+ justify-content: center;
+ margin-bottom: 24px;
+ "
+ >
+ &lt;div
+ style="
+ background-color: #f4f4f4;
+ border-radius: 4px;
+ flex-grow: 0;
+ height: 14px;
+ margin-bottom: 6px;
+ width: 224px;
+ "
+ >&lt;/div>
+ &lt;div
+ style="
+ background-color: #f4f4f4;
+ border-radius: 4px;
+ flex-grow: 0;
+ height: 14px;
+ width: 144px;
+ "
+ >&lt;/div>&lt;/div
+ >&lt;/a>
+ &lt;/div>
+ &lt;/blockquote>&lt;script async src="https://www.instagram.com/embed.js">&lt;/script>
+&lt;h2 id="x">X&lt;/h2>
+&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">Owl bet you&amp;#39;ll lose this staring contest 🦉 &lt;a href="https://t.co/eJh4f2zncC">pic.twitter.com/eJh4f2zncC&lt;/a>&lt;/p></description></item><item><title>マークダウン表示サンプル</title><link>https://hugo-theme-salt.okdyy75.com/article/sample/markdown/</link><pubDate>Sat, 11 Sep 2021 08:27:34 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/sample/markdown/</guid><description>&lt;p>マークダウンで記事作成時の表示サンプルです&lt;/p>
+&lt;h1 id="block-elements">Block Elements&lt;/h1>
+&lt;h2 id="headers-見出し">Headers 見出し&lt;/h2>
+&lt;p>先頭に&lt;code>#&lt;/code>をレベルの数だけ記述します。&lt;/p>
+&lt;pre tabindex="0">&lt;code># 見出し1
+## 見出し2
+### 見出し3
+#### 見出し4
+##### 見出し5
+###### 見出し6
+&lt;/code>&lt;/pre>&lt;h1 id="見出し1">見出し1&lt;/h1>
+&lt;h2 id="見出し2">見出し2&lt;/h2>
+&lt;h3 id="見出し3">見出し3&lt;/h3>
+&lt;h4 id="見出し4">見出し4&lt;/h4>
+&lt;h5 id="見出し5">見出し5&lt;/h5>
+&lt;h6 id="見出し6">見出し6&lt;/h6>
+&lt;h2 id="block-段落">Block 段落&lt;/h2>
+&lt;p>空白行を挟むことで段落となります。&lt;/p>
+&lt;pre tabindex="0">&lt;code>段落1
+(空行)
+段落2
+&lt;/code>&lt;/pre>&lt;p>段落1&lt;/p>
+&lt;p>段落2&lt;/p>
+&lt;h2 id="br-改行">Br 改行&lt;/h2>
+&lt;p>改行の前に半角スペース&lt;code> &lt;/code>を2つ記述します。&lt;/p>
+&lt;pre tabindex="0">&lt;code>hoge
+fuga(スペース2つ)
+piyo
+&lt;/code>&lt;/pre>&lt;p>hoge
+fuga&lt;br>
+piyo&lt;/p>
+&lt;h2 id="blockquotes-引用">Blockquotes 引用&lt;/h2>
+&lt;p>先頭に&lt;code>&amp;gt;&lt;/code>を記述します。ネストは&lt;code>&amp;gt;&lt;/code>を多重に記述します。&lt;/p>
+&lt;pre tabindex="0">&lt;code>&amp;gt; 引用 
+&amp;gt; 引用
+&amp;gt;&amp;gt; 多重引用
+&lt;/code>&lt;/pre>&lt;blockquote>
+&lt;p>引用&lt;br>
+引用&lt;/p>
+&lt;blockquote>
+&lt;p>多重引用&lt;/p>&lt;/blockquote>&lt;/blockquote>
+&lt;h2 id="code-コード">Code コード&lt;/h2>
+&lt;p>&lt;code>`バッククオート`&lt;/code> 3つ、あるいはダッシュ&lt;code>~&lt;/code>３つで囲みます。&lt;/p></description></item><item><title>小さいサムネイル記事</title><link>https://hugo-theme-salt.okdyy75.com/article/sample/small-thumbnail/</link><pubDate>Fri, 10 Sep 2021 19:29:57 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/sample/small-thumbnail/</guid><description>&lt;p>小さいサムネイルの場合の記事です&lt;/p>
+&lt;p>120x120です&lt;/p></description></item><item><title>サムネイルなしの記事</title><link>https://hugo-theme-salt.okdyy75.com/article/sample/no-thumbnail/</link><pubDate>Fri, 10 Sep 2021 18:17:52 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/sample/no-thumbnail/</guid><description>&lt;p>サムネイルが設定されていない場合の記事です&lt;/p></description></item></channel></rss>
