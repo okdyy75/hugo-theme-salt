@@ -130,4 +130,67 @@ Vimeo および YouTube のショートコードにおいて、&lt;code>allowFul
 &lt;h2 id="新機能">新機能&lt;/h2>
 &lt;ul>
 &lt;li>
-&lt;p>&lt;strong>&lt;code>transform.PortableText&lt;/code> 関数の追加&lt;/strong>&lt;/p></description></item></channel></rss>
+&lt;p>&lt;strong>&lt;code>transform.PortableText&lt;/code> 関数の追加&lt;/strong>&lt;/p>
+&lt;p>Sanity CMS との統合を容易にするため、&lt;a href="https://gohugo.io/functions/transform/portabletext/" target="_blank">&lt;code>transform.PortableText&lt;/code>&lt;/a> 関数が新たに導入されました。これにより、Sanity の Portable Text フォーマットを Hugo で直接処理できるようになります。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="主な変更点">主な変更点&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>&lt;code>_build&lt;/code> フロントマターキーの非推奨化&lt;/strong>&lt;br>
+フロントマターの &lt;code>_build&lt;/code> キーが非推奨となり、新たに &lt;code>build&lt;/code> キーが推奨されるようになりました。今後のバージョンアップに備え、既存の &lt;code>_build&lt;/code> キーを &lt;code>build&lt;/code> に置き換えることを検討してください。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Instagram ショートコードの HTTPS 化&lt;/strong>&lt;br>
+Instagram のショートコードで使用される JavaScript が HTTPS 経由で読み込まれるように変更され、セキュリティと互換性が向上しました。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>デフォルトソートの改善&lt;/strong>&lt;br>
+デフォルトのソート順が、バックエンドのファイル名ではなくページパスに基づくように変更されました。これにより、より直感的な並び順が実現されます。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="バグ修正">バグ修正&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>関連コンテンツの問題修正&lt;/strong>&lt;br>
+コンテンツアダプターを使用した際に発生していた関連コンテンツの問題が修正されました。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>&lt;code>httpcache&lt;/code> 設定の nil ポインターエラー修正&lt;/strong>&lt;br>
+&lt;code>httpcache&lt;/code> 設定において、nil ポインターが原因で発生していたエラーが修正されました。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>&lt;code>--printPathWarnings&lt;/code> オプションの修正&lt;/strong>&lt;br>
+&lt;code>templates.Defer&lt;/code> を使用しているサイトで &lt;code>--printPathWarnings&lt;/code> オプションが正しく機能しない問題が修正されました。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>ドキュメントのリンク修正&lt;/strong>&lt;br>
+&lt;code>README&lt;/code> の Editions セクションにおける相対リンクの誤りが修正されました。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="非推奨事項">非推奨事項&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>&lt;code>_build&lt;/code> キーの非推奨化&lt;/strong>&lt;br>
+前述の通り、フロントマターの &lt;code>_build&lt;/code> キーが非推奨となり、&lt;code>build&lt;/code> キーの使用が推奨されます。既存のプロジェクトでは、早めの対応を検討してください。&lt;/li>
+&lt;/ul>
+&lt;h2 id="影響と対応のヒント">影響と対応のヒント&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Sanity CMS との統合&lt;/strong>&lt;br>
+Sanity CMS を使用している場合、新たに追加された &lt;code>transform.PortableText&lt;/code> 関数を活用することで、Portable Text フォーマットのデータを Hugo で直接処理できるようになります。これにより、データの取り込みと表示がよりスムーズになります。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>フロントマターの更新&lt;/strong>&lt;br>
+&lt;code>_build&lt;/code> キーを使用している既存のコンテンツは、将来的な互換性のために &lt;code>build&lt;/code> キーへの置き換えを検討してください。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>ショートコードの確認&lt;/strong>&lt;br>
+Instagram のショートコードを使用している場合、HTTPS 化に伴う影響がないか確認してください。特に、外部リソースの読み込みに関する設定やポリシーに注意が必要です。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>ソート順の確認&lt;/strong>&lt;br>
+デフォルトのソート順が変更されたことにより、ページの並び順に影響が出る可能性があります。必要に応じて、明示的なソート設定を追加してください。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;strong>参考&lt;/strong>: &lt;a href="https://github.com/gohugoio/hugo/releases/tag/v0.145.0">Hugo v0.145.0 リリースノート（GitHub）&lt;/a>&lt;/p></description></item></channel></rss>
