@@ -1,0 +1,21 @@
+{
+    "path": "v0.147.0",
+    "title": "Hugo v0.147.0 リリースノートまとめ",
+    "description": "",
+    "date": "2025-05-29T17:55:17+09:00",
+    "lastmod": "2025-05-29T17:55:17+09:00",
+    "draft": false,
+    "tags": [
+        "Hugo",
+        "Hugoリリースノートまとめ"
+    ],
+    "categories": "Hugoリリース",
+    "archives": [
+        "2025年5月"
+    ],
+    "share": true,
+    "toc": false,
+    "comment": true,
+    "thumbnail": "/article/hugo-release/v0.147.0/thumbnail.jpg",
+    "content": "<div class=\"markdown-alert markdown-alert-warning\" dir=\"auto\"><p class=\"markdown-alert-title\" dir=\"auto\"><svg class=\"octicon octicon-alert mr-2\" viewBox=\"0 0 16 16\" version=\"1.1\" width=\"16\" height=\"16\" aria-hidden=\"true\"><path d=\"M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z\"></path></svg>Warning</p><p dir=\"auto\">※この記事は生成AIを使用して作成された記事です。（create by GPT-4o）<br>記事内容については未検証ですので参考程度にご活用ください</p>\n</div>\n<p>2025年4月25日にリリースされた Hugo v0.147.0 の主な更新内容をまとめます。既存ユーザー向けに <strong>新機能</strong>・<strong>主な変更点</strong>・<strong>バグ修正</strong>・<strong>非推奨事項</strong>を分類し、プロジェクトへの影響や対応方法のヒントを解説します。</p>\n<h2 id=\"新機能\">新機能</h2>\n<ul>\n<li><strong>images.Text の縦位置指定オプション追加</strong><br>\n画像操作機能 <a href=\"https://gohugo.io/functions/images/text/\" target=\"_blank\"><code>images.Text</code></a> にテキストの縦位置を指定できる新オプション <code>aligny</code> が導入されました。従来からの <code>alignx</code> オプションと組み合わせることで、画像上のテキストを縦横とも中央に配置するなど、柔軟なレイアウトが可能になります。</li>\n</ul>\n<h2 id=\"主な変更点\">主な変更点</h2>\n<ul>\n<li>\n<p><strong>設定（config）マージの改善</strong><br>\nデフォルト設定の適用順序が見直され、モジュールやテーマから読み込んだ設定をルートの設定により柔軟に統合できるようになりました。具体的には、<code>config.toml</code> 等で <code>_merge = &quot;deep&quot;</code> を指定すると、インポートしたモジュールやテーマの設定を深い階層までマージするようになります。これにより、複数サイトで共通設定を共有する際に、設定の上書きや階層構造が意図しない形で失われる問題を回避しやすくなります。詳細については<a href=\"https://gohugo.io/configuration/introduction/#merge-configuration-settings\" target=\"_blank\">ドキュメント</a>を参照してください。</p>\n</li>\n<li>\n<p><strong>テーマスケルトンのテンプレート名調整</strong><br>\nテーマ作成用スケルトン (<code>create/skeletons</code>) において、一部テンプレートファイル名が変更されました。既存のカスタムテーマをインポートしている場合は、ファイル名の差分に注意してください。</p>\n</li>\n</ul>\n<h2 id=\"バグ修正\">バグ修正</h2>\n<ul>\n<li>\n<p><strong>コードブロックレンダリング</strong><br>\n組み込みのコードブロックレンダリングを、カスタムの <code>render-codeblock-*.html</code> テンプレートよりも優先するよう修正されました。</p>\n</li>\n<li>\n<p><strong>Vimeo/YouTube ショートコード</strong><br>\n<code>allowFullScreen</code> オプションの不具合が修正され、YouTube/Vimeo ショートコードで全画面表示が正しく機能するようになりました。</p>\n</li>\n<li>\n<p><strong>設定マージ (<code>_merge</code>) のバグ</strong><br>\nキーが存在しない場合の <code>_merge</code> 処理に関する不具合が修正されました。</p>\n</li>\n<li>\n<p><strong>タイポ・文言修正</strong><br>\nドキュメントやコード内の軽微な誤記やコメント表記の修正が行われました。</p>\n</li>\n</ul>\n<h2 id=\"非推奨事項\">非推奨事項</h2>\n<p>今回のリリースでは、<strong>非推奨（deprecation）とされた機能は特にありません</strong>。既存の機能が削除・変更される予定も発表されていないため、現状のコードをそのまま継続利用できます。</p>\n<h2 id=\"影響と対応のヒント\">影響と対応のヒント</h2>\n<ul>\n<li>\n<p><strong>画像テキスト配置の活用</strong><br>\n新しい <code>aligny</code> オプションにより、<code>images.Text</code> を使用した画像上のテキスト配置の自由度が高まりました。<code>alignx</code> と組み合わせて使うことで、テキストを画像の縦横中央に配置するレイアウトが簡単になります。必要に応じてショートコードやテンプレートの更新を検討してください。</p>\n</li>\n<li>\n<p><strong>設定統合の活用</strong><br>\n複数テーマやモジュールにまたがる設定を共通化している場合、<code>config.toml</code> に <code>_merge = &quot;deep&quot;</code> を追加すると良いでしょう。これにより、インポートした設定を階層構造のまままとめて取り込めます。ただし、マージ時に意図しない上書きが発生しないか、アップデート後に設定ファイルの挙動を確認してください。</p>\n</li>\n<li>\n<p><strong>カスタムテンプレートの確認</strong><br>\n独自に作成した <code>render-codeblock-*.html</code> テンプレートなどがある場合、内部レンダリングの優先度変更によって出力結果が変わる可能性があります。新バージョンでサイトをビルドした際に、コードブロックの表示が期待通りかチェックしておくと安心です。</p>\n</li>\n<li>\n<p><strong>ショートコードの挙動確認</strong><br>\n既存サイトで Vimeo/YouTube ショートコードの <code>allowFullScreen</code> オプションを使用している場合、今回の修正により全画面表示が正しく動作するようになります。特に何か対応する必要はありませんが、アップデート前後で動作に差がないか確認しておくと良いでしょう。</p>\n</li>\n</ul>\n<hr>\n<p><strong>参考</strong>: <a href=\"https://github.com/gohugoio/hugo/releases/tag/v0.147.0\">Hugo v0.147.0 リリースノート（GitHub）</a></p>\n"
+}

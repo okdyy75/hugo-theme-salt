@@ -1,0 +1,21 @@
+{
+    "path": "v0.146.0",
+    "title": "Hugo v0.146.0 リリースノートまとめ",
+    "description": "",
+    "date": "2025-05-29T16:08:31+09:00",
+    "lastmod": "2025-05-29T16:08:31+09:00",
+    "draft": false,
+    "tags": [
+        "Hugo",
+        "Hugoリリースノートまとめ"
+    ],
+    "categories": "Hugoリリース",
+    "archives": [
+        "2025年5月"
+    ],
+    "share": true,
+    "toc": false,
+    "comment": true,
+    "thumbnail": "/article/hugo-release/v0.146.0/thumbnail.png",
+    "content": "<div class=\"markdown-alert markdown-alert-warning\" dir=\"auto\"><p class=\"markdown-alert-title\" dir=\"auto\"><svg class=\"octicon octicon-alert mr-2\" viewBox=\"0 0 16 16\" version=\"1.1\" width=\"16\" height=\"16\" aria-hidden=\"true\"><path d=\"M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z\"></path></svg>Warning</p><p dir=\"auto\">※この記事は生成AIを使用して作成された記事です。（create by GPT-4o）<br>記事内容については未検証ですので参考程度にご活用ください</p>\n</div>\n<p>2025年4月10日にリリースされた Hugo v0.146.0 の主な更新内容をまとめます。既存ユーザー向けに <strong>新機能</strong>・<strong>主な変更点</strong>・<strong>バグ修正</strong>・<strong>非推奨事項</strong>を分類し、プロジェクトへの影響や対応方法のヒントを解説します。</p>\n<h2 id=\"新機能\">新機能</h2>\n<ul>\n<li>\n<p><strong>テンプレートシステムの刷新</strong><br>\nHugo v0.146.0 では、Go テンプレートの処理方法が全面的に再実装され、<code>layouts</code> フォルダの構造変更や、より強力なテンプレートルックアップシステムが導入されました。これにより、テンプレートの管理と再利用が容易になります。詳細は <a href=\"https://gohugo.io/templates/new-templatesystem-overview/\">新しいテンプレートシステムの概要</a> を参照してください。</p>\n</li>\n<li>\n<p><strong>新しいテンプレート関数の追加</strong></p>\n<ul>\n<li><code>templates.Current</code>: 現在実行中のテンプレートとそのコールスタックに関する情報を提供します。デバッグ時に有用です。</li>\n<li><code>time.In</code>: 指定された IANA タイムゾーンで日付/時刻を表現します。</li>\n</ul>\n</li>\n</ul>\n<h2 id=\"主な変更点\">主な変更点</h2>\n<ul>\n<li>\n<p><strong><code>layouts</code> フォルダの構造変更</strong></p>\n<ul>\n<li><code>_default</code> フォルダは削除され、そこにあったファイルは <code>layouts/</code> のルートに移動されました。</li>\n<li><code>layouts/partials</code> フォルダは <code>layouts/_partials</code> にリネームされました。</li>\n<li><code>layouts/shortcodes</code> フォルダは <code>layouts/_shortcodes</code> にリネームされました。</li>\n<li><code>layouts</code> 内のフォルダでアンダースコアで始まらないものは、ページパスのルートを表します。これらは必要に応じて深くネストできます。また、<code>_shortcodes</code> や <code>_markup</code> フォルダはツリー内の任意のレベルに配置できます。</li>\n</ul>\n</li>\n<li>\n<p><strong>パーシャルテンプレートのルックアップキャッシュの追加</strong><br>\nパーシャルテンプレートのルックアップにキャッシュが導入され、ビルドパフォーマンスが向上しました。</p>\n</li>\n<li>\n<p><strong>テーマ作成の改善</strong><br>\n<code>hugo new</code> コマンドによるテーマ作成機能が改善され、より効率的にテーマを作成できるようになりました。</p>\n</li>\n</ul>\n<h2 id=\"バグ修正\">バグ修正</h2>\n<ul>\n<li><strong>Vimeo/YouTube ショートコードの全画面表示オプションの修正</strong><br>\nVimeo および YouTube のショートコードにおいて、<code>allowFullScreen</code> オプションが正しく機能しない問題が修正されました。</li>\n</ul>\n<h2 id=\"非推奨事項\">非推奨事項</h2>\n<p>今回のリリースでは、<strong>非推奨（deprecation）とされた機能は特にありません</strong>。既存の機能が削除・変更される予定も発表されていないため、現状のコードをそのまま継続利用できます。</p>\n<h2 id=\"影響と対応のヒント\">影響と対応のヒント</h2>\n<ul>\n<li>\n<p><strong>テンプレート構造の移行</strong><br>\n新しいテンプレートシステムにより、<code>layouts</code> フォルダの構造が変更されました。既存のプロジェクトでは、以下の対応が必要です：</p>\n<ul>\n<li><code>layouts/_default</code> フォルダの内容を <code>layouts/</code> のルートに移動する。</li>\n<li><code>layouts/partials</code> を <code>layouts/_partials</code> にリネームする。</li>\n<li><code>layouts/shortcodes</code> を <code>layouts/_shortcodes</code> にリネームする。\nこれらの変更により、テンプレートのルックアップが正しく機能するようになります。</li>\n</ul>\n</li>\n<li>\n<p><strong>テンプレート関数の活用</strong><br>\n新たに追加された <code>templates.Current</code> 関数を利用することで、テンプレートのデバッグが容易になります。また、<code>time.In</code> 関数を使用することで、特定のタイムゾーンでの日付/時刻の表示が可能になります。</p>\n</li>\n<li>\n<p><strong>ビルドパフォーマンスの向上</strong><br>\nパーシャルテンプレートのルックアップキャッシュの導入により、ビルド時間が短縮される可能性があります。大規模なプロジェクトでは、ビルドパフォーマンスの改善が期待できます。</p>\n</li>\n</ul>\n<hr>\n<p><strong>参考</strong>: <a href=\"https://github.com/gohugoio/hugo/releases/tag/v0.146.0\">Hugo v0.146.0 リリースノート（GitHub）</a></p>\n"
+}
