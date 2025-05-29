@@ -23,9 +23,12 @@
             {{- $og_image_url = ($image.Fill (printf "1200x630 center q%d webp" .Site.Params.imageQuality)).Permalink -}}
         {{- end -}}
     {{- else if .IsPage -}}
-        {{- $thumbnail := .Resources.Match "thumbnail.*" -}}
+        {{- $thumbnail := or
+            (.Resources.GetMatch "thumbnail.*")
+            (resources.Get .Params.thumbnail)
+        -}}
         {{- if $thumbnail -}}
-            {{- $og_image_url = ((index $thumbnail 0).Fill (printf "1200x630 center q%d webp" .Site.Params.imageQuality)).Permalink -}}
+            {{- $og_image_url = ($thumbnail.Fill (printf "1200x630 center q%d webp" .Site.Params.imageQuality)).Permalink -}}
         {{- end -}}
     {{- end -}}
 
@@ -58,7 +61,7 @@
         {{- with .ExpiryDate -}}
             <meta property="article:expiration_time" content="{{- .Format "2006-01-02T15:04:05-07:00" -}}">
         {{- end -}}
-        {{- with .Site.Author.name -}}
+        {{- with .Site.Params.Author.name -}}
             <meta property="article:author" content="{{- . -}}">
         {{- end -}}
         {{- with .Params.categories -}}

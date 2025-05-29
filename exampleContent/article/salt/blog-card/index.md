@@ -55,15 +55,16 @@ layouts/shortcodes/blog-card.html
 
 ```go-template
 {{- $url := (.Get 0) -}}
-{{- with $result := resources.GetRemote $url -}}
-    {{- with $result.Err -}}
-        {{- warnf "%s" . -}}{{- . -}}
-    {{- else -}}
+{{- with try (resources.GetRemote $url) -}}
+    {{- with .Err -}}
+        {{- warnf "%s" . -}}
+    {{- else with .Value -}}
+        {{- $result := . -}}
         {{- $title := "" -}}
         {{- $description := "" -}}
         {{- $image := "" -}}
-        {{- with $findHead := index (findRE "<head>(.|\n)*?</head>" $result.Content) 0 -}}
-            {{- range $meta := findRE "<meta.*?>" $findHead -}}
+        {{- with $findHead := index (findRE "<head.*?>(.|\n)*?</head>" $result.Content) 0 -}}
+            {{- range $meta := findRE "<meta.*?>" (replace $findHead "\n" "") -}}
                 {{- $name := replaceRE "<.*name=\"(.*?)\".*>" "$1" $meta -}}
                 {{- $property := replaceRE "<.*property=\"(.*?)\".*>" "$1" $meta -}}
                 {{- $content := replaceRE "<.*content=\"(.*?)\".*>" "$1" $meta -}}
@@ -87,21 +88,24 @@ layouts/shortcodes/blog-card.html
 
         {{- $thumbnail_url := "" -}}
         {{- if $image -}}
-            {{- with $thumbnail := resources.GetRemote $image -}}
-                {{- with $thumbnail.Err -}}
-                    {{- warnf "%s" . -}}{{- . -}}
+            {{- with try (resources.GetRemote $image) -}}
+                {{- with .Err -}}
+                    {{- warnf "%s" . -}}
+                {{- else with .Value -}}
+                    {{- $thumbnail := . -}}
+                    {{- $thumbnail_url = ($thumbnail.Fill (printf "200x200 center q%d webp" $.Site.Params.imageQuality)).Permalink -}}
                 {{- else -}}
-                    {{- $thumbnail_url = ($thumbnail.Fit (printf "200x200 center q%d webp" $.Site.Params.imageQuality)).Permalink -}}
+                    {{- warnf "Unable to get remote resource %q" $url -}}
                 {{- end -}}
             {{- end -}}
         {{- else -}}
-            {{- $thumbnail := resources.Get $.Site.Params.dafaultNoimage -}}
-            {{- $thumbnail_url = ($thumbnail.Fit (printf "200x200 center q%d webp" $.Site.Params.imageQuality)).Permalink -}}
+            {{- $thumbnail := resources.Get $.Site.Params.defaultNoimage -}}
+            {{- $thumbnail_url = ($thumbnail.Fill (printf "200x200 center q%d webp" $.Site.Params.imageQuality)).Permalink -}}
         {{- end -}}
 
-        <a href="{{- $url -}}" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: #000;" onMouseOver="this.style.opacity='0.9'">
+        <a href="{{- $url -}}" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: inherit;" onMouseOver="this.style.opacity='0.9'">
             <div style="flex-shrink: 0;">
-                <img src="{{- $thumbnail_url -}}" alt="" width="100" height="100" style="object-fit: contain;">
+                <img src="{{- $thumbnail_url -}}" alt="" width="100" height="100">
             </div>
             <div style="margin-left: 10px;">
                 <h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">
@@ -112,6 +116,8 @@ layouts/shortcodes/blog-card.html
                 </p>
             </div>
         </a>
+    {{- else -}}
+        {{- warnf "Unable to get remote resource %q" $url -}}
     {{- end -}}
 {{- end -}}
 ```

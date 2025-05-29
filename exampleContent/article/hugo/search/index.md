@@ -62,7 +62,6 @@ content/search/_index.md
 ```md
 ---
 title: "検索"
-date: 2021-10-13T00:51:05+9:00
 draft: false
 outputs:
     - html
@@ -76,11 +75,12 @@ layouts/search/list.json
 ```go-template
 {{- $.Scratch.Add "index" slice -}}
 {{- range where .Site.RegularPages ".Section" "==" "article" -}}
-    {{- $thumbnail := .Resources.Match "thumbnail.*" -}}
+    {{- $thumbnail := or
+        (.Resources.GetMatch "thumbnail.*")
+        (resources.Get .Params.thumbnail)
+        (resources.Get .Site.Params.defaultNoimage)
+    -}}
     {{- if $thumbnail -}}
-        {{- $thumbnail = (index $thumbnail 0).Fill (printf "640x360 center q%d webp" .Site.Params.imageQuality) -}}
-    {{- else -}}
-        {{- $thumbnail = resources.Get .Site.Params.dafaultNoimage -}}
         {{- $thumbnail = $thumbnail.Fill (printf "640x360 center q%d webp" .Site.Params.imageQuality) -}}
     {{- end -}}
     {{- $.Scratch.Add "index" (

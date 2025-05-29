@@ -1,6 +1,7 @@
 .body {
     color: $base-font-color;
     font-family: $base-font;
+    background: $content-background;
 }
 .container {
     min-width: 1260px;
@@ -22,7 +23,6 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
-    background: $content-background;
 }
 .main {
     &__inner {

@@ -1,0 +1,44 @@
+{{ $data := slice }}
+
+{{ range where (os.ReadDir "assets/article/hugo-release") "IsDir" "eq" true }}
+    {{ $path := .Name }}
+    {{ with resources.Get (printf "article/hugo-release/%s/index.json" $path) }}
+        {{ with . | transform.Unmarshal }}
+            {{ $data = $data | append . }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ range $data }}
+    {{ $content := dict
+        "mediaType" "text/markdown"
+        "value" .content
+    }}
+    {{ $dates := dict
+        "date" (time.AsTime .date)
+        "lastmod" (time.AsTime .lastmod)
+    }}
+    {{ $params := dict
+        "title" .title
+        "description" .description
+        "date" (time.AsTime .date)
+        "lastmod" (time.AsTime .lastmod)
+        "tags" .tags
+        "categories" .categories
+        "archives" .archives
+        "draft" .draft
+        "share" .share
+        "toc" .toc
+        "comment" .comment
+        "thumbnail" .thumbnail
+    }}
+    {{ $page := dict
+        "path" .path
+        "title" .title
+        "draft" .draft
+        "dates" $dates
+        "content" $content
+        "params" $params
+    }}
+    {{ $.AddPage $page }}
+{{ end }}

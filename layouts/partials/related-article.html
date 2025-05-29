@@ -1,11 +1,12 @@
 <article class="partials__relatedArticle">
     <div class="partials__relatedArticle__inner">
         <a href="{{ .Permalink }}" class="partials__relatedArticle__link"></a>
-        {{ $thumbnail := .Resources.Match "thumbnail.*" }}
+        {{ $thumbnail := or
+            (.Resources.GetMatch "thumbnail.*")
+            (resources.Get .Params.thumbnail)
+            (resources.Get .Site.Params.defaultNoimage)
+        }}
         {{ if $thumbnail }}
-            {{ $thumbnail = (index $thumbnail 0).Fill (printf "576x324 center q%d webp" .Site.Params.imageQuality) }}
-        {{ else }}
-            {{ $thumbnail = resources.Get .Site.Params.dafaultNoimage }}
             {{ $thumbnail = $thumbnail.Fill (printf "576x324 center q%d webp" .Site.Params.imageQuality) }}
         {{ end }}
         <img src='{{ $thumbnail.Permalink  }}' alt="{{ .Title }}" loading="lazy" class="partials__relatedArticle__thumbnail">

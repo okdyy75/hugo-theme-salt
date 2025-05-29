@@ -3,10 +3,6 @@ languageCode: ja
 # theme: hugo-theme-salt
 title: Hugoブログテーマ「Salt」
 copyright: © 2021 my_name
-author:
-  name: my_name
-  email: my_email@example.com
-  url: https://example.com/my_url
 googleAnalytics:
 disqusShortname:
 
@@ -19,7 +15,8 @@ taxonomies:
 disablePathToLower: true
 hasCJKLanguage: true
 summaryLength: 200
-paginate: 10
+pagination:
+  pagerSize: 10
 
 markup:
   goldmark:
@@ -59,12 +56,16 @@ module:
       target: static/js/vendor/lunr-languages/lunr.ja.js
 
 params:
+  author:
+    name: my_name
+    email: my_email@example.com
+    url: https://example.com/my_url
   description: このサイトはHugo用ブログテーマ「Salt」のサンプルサイトです
   icon: image/icon.png
   images:
     - image/og_large.png
   notFoundImage: image/404.png
-  dafaultNoimage: image/default_noimage.png
+  defaultNoimage: image/default_noimage.png
   newArticleLimit: 5
   rankingArticleLimit: 5
   relatedArticleLimit: 2
