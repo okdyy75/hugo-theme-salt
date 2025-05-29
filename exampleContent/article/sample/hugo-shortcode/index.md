@@ -22,6 +22,12 @@ Hugoで用意されているショートコード使用時の表示サンプル�
 
 {{< gist spf13 7896402 >}}
 
+※このgistショートコードはHugoのバージョン0.143.0で非推奨となり、将来のリリースで削除予定なので
+Hugo Theme Salt内のショートコードに移行しました
+
+{{< self-blog-card "/article/salt/gist" >}}
+
+
 ## highlight
 
 {{< highlight html >}}
@@ -38,11 +44,11 @@ Hugoで用意されているショートコード使用時の表示サンプル�
 
 ## instagram
 
-**Instagramのdeveloperアカウントが必要です。自前で用意する必要あり**
+{{< instagram CxOWiQNP2MO >}}
 
-## tweet
+## X
 
-{{< tweet user="SanDiegoZoo" id="1453110110599868418" >}}
+{{< x user="SanDiegoZoo" id="1453110110599868418" >}}
 
 ## vimeo
 

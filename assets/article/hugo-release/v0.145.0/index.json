@@ -1,0 +1,21 @@
+{
+    "path": "v0.145.0",
+    "title": "Hugo v0.145.0 リリースノートまとめ",
+    "description": "",
+    "date": "2025-05-29T15:23:31+09:00",
+    "lastmod": "2025-05-29T15:23:31+09:00",
+    "draft": false,
+    "tags": [
+        "Hugo",
+        "Hugoリリースノートまとめ"
+    ],
+    "categories": "Hugoリリース",
+    "archives": [
+        "2025年5月"
+    ],
+    "share": true,
+    "toc": false,
+    "comment": true,
+    "thumbnail": "/article/hugo-release/v0.145.0/thumbnail.png",
+    "content": "<div class=\"markdown-alert markdown-alert-warning\" dir=\"auto\"><p class=\"markdown-alert-title\" dir=\"auto\"><svg class=\"octicon octicon-alert mr-2\" viewBox=\"0 0 16 16\" version=\"1.1\" width=\"16\" height=\"16\" aria-hidden=\"true\"><path d=\"M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z\"></path></svg>Warning</p><p dir=\"auto\">※この記事は生成AIを使用して作成された記事です。（create by GPT-4o）<br>記事内容については未検証ですので参考程度にご活用ください</p>\n</div>\n<p>2025年2月26日にリリースされた Hugo v0.145.0 の主な更新内容をまとめます。既存ユーザー向けに <strong>新機能</strong>・<strong>主な変更点</strong>・<strong>バグ修正</strong>・<strong>非推奨事項</strong>を分類し、プロジェクトへの影響や対応方法のヒントを解説します。</p>\n<h2 id=\"新機能\">新機能</h2>\n<ul>\n<li>\n<p><strong><code>transform.PortableText</code> 関数の追加</strong></p>\n<p>Sanity CMS との統合を容易にするため、<a href=\"https://gohugo.io/functions/transform/portabletext/\" target=\"_blank\"><code>transform.PortableText</code></a> 関数が新たに導入されました。これにより、Sanity の Portable Text フォーマットを Hugo で直接処理できるようになります。</p>\n</li>\n</ul>\n<h2 id=\"主な変更点\">主な変更点</h2>\n<ul>\n<li>\n<p><strong><code>_build</code> フロントマターキーの非推奨化</strong><br>\nフロントマターの <code>_build</code> キーが非推奨となり、新たに <code>build</code> キーが推奨されるようになりました。今後のバージョンアップに備え、既存の <code>_build</code> キーを <code>build</code> に置き換えることを検討してください。</p>\n</li>\n<li>\n<p><strong>Instagram ショートコードの HTTPS 化</strong><br>\nInstagram のショートコードで使用される JavaScript が HTTPS 経由で読み込まれるように変更され、セキュリティと互換性が向上しました。</p>\n</li>\n<li>\n<p><strong>デフォルトソートの改善</strong><br>\nデフォルトのソート順が、バックエンドのファイル名ではなくページパスに基づくように変更されました。これにより、より直感的な並び順が実現されます。</p>\n</li>\n</ul>\n<h2 id=\"バグ修正\">バグ修正</h2>\n<ul>\n<li>\n<p><strong>関連コンテンツの問題修正</strong><br>\nコンテンツアダプターを使用した際に発生していた関連コンテンツの問題が修正されました。</p>\n</li>\n<li>\n<p><strong><code>httpcache</code> 設定の nil ポインターエラー修正</strong><br>\n<code>httpcache</code> 設定において、nil ポインターが原因で発生していたエラーが修正されました。</p>\n</li>\n<li>\n<p><strong><code>--printPathWarnings</code> オプションの修正</strong><br>\n<code>templates.Defer</code> を使用しているサイトで <code>--printPathWarnings</code> オプションが正しく機能しない問題が修正されました。</p>\n</li>\n<li>\n<p><strong>ドキュメントのリンク修正</strong><br>\n<code>README</code> の Editions セクションにおける相対リンクの誤りが修正されました。</p>\n</li>\n</ul>\n<h2 id=\"非推奨事項\">非推奨事項</h2>\n<ul>\n<li><strong><code>_build</code> キーの非推奨化</strong><br>\n前述の通り、フロントマターの <code>_build</code> キーが非推奨となり、<code>build</code> キーの使用が推奨されます。既存のプロジェクトでは、早めの対応を検討してください。</li>\n</ul>\n<h2 id=\"影響と対応のヒント\">影響と対応のヒント</h2>\n<ul>\n<li>\n<p><strong>Sanity CMS との統合</strong><br>\nSanity CMS を使用している場合、新たに追加された <code>transform.PortableText</code> 関数を活用することで、Portable Text フォーマットのデータを Hugo で直接処理できるようになります。これにより、データの取り込みと表示がよりスムーズになります。</p>\n</li>\n<li>\n<p><strong>フロントマターの更新</strong><br>\n<code>_build</code> キーを使用している既存のコンテンツは、将来的な互換性のために <code>build</code> キーへの置き換えを検討してください。</p>\n</li>\n<li>\n<p><strong>ショートコードの確認</strong><br>\nInstagram のショートコードを使用している場合、HTTPS 化に伴う影響がないか確認してください。特に、外部リソースの読み込みに関する設定やポリシーに注意が必要です。</p>\n</li>\n<li>\n<p><strong>ソート順の確認</strong><br>\nデフォルトのソート順が変更されたことにより、ページの並び順に影響が出る可能性があります。必要に応じて、明示的なソート設定を追加してください。</p>\n</li>\n</ul>\n<hr>\n<p><strong>参考</strong>: <a href=\"https://github.com/gohugoio/hugo/releases/tag/v0.145.0\">Hugo v0.145.0 リリースノート（GitHub）</a></p>\n"
+}

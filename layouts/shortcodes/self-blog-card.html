@@ -4,10 +4,12 @@
     {{- with $.Site.GetPage $url -}}
         <a href="{{- .Permalink -}}" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: inherit;" onMouseOver="this.style.opacity='0.9'">
             {{- $thumbnail_url := "" -}}
-            {{- with $thumbnail := index (.Resources.Match "thumbnail.*") 0 -}}
-                {{- $thumbnail_url = ($thumbnail.Fill (printf "200x200 center q%d webp" $.Site.Params.imageQuality)).Permalink -}}
-            {{- else -}}
-                {{- $thumbnail = resources.Get $.Site.Params.dafaultNoimage -}}
+            {{- $thumbnail := or
+                (.Resources.GetMatch "thumbnail.*")
+                (resources.Get .Params.thumbnail)
+                (resources.Get .Site.Params.defaultNoimage)
+            -}}
+            {{- if $thumbnail -}}
                 {{- $thumbnail_url = ($thumbnail.Fill (printf "200x200 center q%d webp" $.Site.Params.imageQuality)).Permalink -}}
             {{- end -}}
             <div style="flex-shrink: 0;">

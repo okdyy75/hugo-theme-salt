@@ -1,8 +1,9 @@
 {{- $url := (.Get 0) -}}
-{{- with $result := resources.GetRemote $url -}}
-    {{- with $result.Err -}}
-        {{- warnf "%s" . -}}{{- . -}}
-    {{- else -}}
+{{- with try (resources.GetRemote $url) -}}
+    {{- with .Err -}}
+        {{- warnf "%s" . -}}
+    {{- else with .Value -}}
+        {{- $result := . -}}
         {{- $title := "" -}}
         {{- $description := "" -}}
         {{- $image := "" -}}
@@ -31,15 +32,18 @@
 
         {{- $thumbnail_url := "" -}}
         {{- if $image -}}
-            {{- with $thumbnail := resources.GetRemote $image -}}
-                {{- with $thumbnail.Err -}}
-                    {{- warnf "%s" . -}}{{- . -}}
-                {{- else -}}
+            {{- with try (resources.GetRemote $image) -}}
+                {{- with .Err -}}
+                    {{- warnf "%s" . -}}
+                {{- else with .Value -}}
+                    {{- $thumbnail := . -}}
                     {{- $thumbnail_url = ($thumbnail.Fill (printf "200x200 center q%d webp" $.Site.Params.imageQuality)).Permalink -}}
+                {{- else -}}
+                    {{- warnf "Unable to get remote resource %q" $url -}}
                 {{- end -}}
             {{- end -}}
         {{- else -}}
-            {{- $thumbnail := resources.Get $.Site.Params.dafaultNoimage -}}
+            {{- $thumbnail := resources.Get $.Site.Params.defaultNoimage -}}
             {{- $thumbnail_url = ($thumbnail.Fill (printf "200x200 center q%d webp" $.Site.Params.imageQuality)).Permalink -}}
         {{- end -}}
 
@@ -56,5 +60,7 @@
                 </p>
             </div>
         </a>
+    {{- else -}}
+        {{- warnf "Unable to get remote resource %q" $url -}}
     {{- end -}}
 {{- end -}}

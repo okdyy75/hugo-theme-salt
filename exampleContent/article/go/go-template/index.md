@@ -10,6 +10,7 @@ share: true
 toc: true
 comment: true
 archives: ["2021年9月"]
+thumbnail: /article/go/go-template/thumbnail.png
 ---
 
 <br>
