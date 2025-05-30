@@ -13,7 +13,7 @@
             {{ $image := resources.Get .Site.Params.notFoundImage }}
             {{ if $image }}
                 {{ $image = $image.Fit (printf "640x640 center q%d webp" .Site.Params.imageQuality) }}
-                <img src="{{ $image.RelPermalink  }}" alt="404 Not Found" loading="lazy" class="notFound__image">
+                <img src="{{ $image.RelPermalink  }}" alt="404 Not Found"{{- if .Site.Params.imageLazyLoad }} loading="lazy"{{ end }} class="notFound__image">
             {{ end }}
         </div>
     </section>
