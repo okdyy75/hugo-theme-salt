@@ -106,7 +106,7 @@
                                 {{ if $thumbnail }}
                                     {{ $thumbnail = $thumbnail.Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
                                 {{ end }}
-                                <img src='{{ $thumbnail.Permalink }}' alt="{{ .Title }}" loading="lazy" class="partials__sidebar__article__itemThumbnail">
+                                <img src='{{ $thumbnail.Permalink }}' alt="{{ .Title }}"{{- if .Site.Params.imageLazyLoad }} loading="lazy"{{ end }} class="partials__sidebar__article__itemThumbnail">
                                 <div class="partials__sidebar__article__itemDetail">
                                     <div class="partials__sidebar__article__itemTitle--line3">
                                         {{ .Title }}
@@ -137,7 +137,7 @@
                                     {{ if $thumbnail }}
                                         {{ $thumbnail = $thumbnail.Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
                                     {{ end }}
-                                    <img src='{{ $thumbnail.Permalink }}' alt="{{ .Title }}" loading="lazy" class="partials__sidebar__article__itemThumbnail">
+                                    <img src='{{ $thumbnail.Permalink }}' alt="{{ .Title }}"{{- if .Site.Params.imageLazyLoad }} loading="lazy"{{ end }} class="partials__sidebar__article__itemThumbnail">
                                     <div class="partials__sidebar__article__itemDetail">
                                         <div class="partials__sidebar__article__itemTitle--line3">
                                             {{ .Title }}
@@ -179,7 +179,7 @@
                                         {{ if $thumbnail }}
                                             {{ $thumbnail = $thumbnail.Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
                                         {{ end }}
-                                        <img src='{{ $thumbnail.Permalink }}' alt="{{ .Title }}" loading="lazy" class="partials__sidebar__article__itemThumbnail">
+                                        <img src='{{ $thumbnail.Permalink }}' alt="{{ .Title }}"{{- if .Site.Params.imageLazyLoad }} loading="lazy"{{ end }} class="partials__sidebar__article__itemThumbnail">
                                         <div class="partials__sidebar__article__itemDetail">
                                             <div class="partials__sidebar__article__itemTitle--line2">
                                                 {{ .Title }}
