@@ -205,7 +205,7 @@
                 <ul class="partials__sidebar__category__items">
                     {{ range .Site.Taxonomies.categories.ByCount }}
                         <li class="partials__sidebar__category__item">
-                            <a href="{{ "categories" | relURL }}/{{ .Term }}" class="partials__sidebar__category__itemLink">
+                            <a href="{{ .Page.Permalink }}" class="partials__sidebar__category__itemLink">
                                 <div>
                                     <i class="fas fa-arrow-circle-right partials__sidebar__category__itemIcon"></i>
                                     {{ .Term }}
