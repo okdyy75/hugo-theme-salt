@@ -75,6 +75,16 @@ layouts/search/list.json
 ```go-template
 {{- $.Scratch.Add "index" slice -}}
 {{- range where .Site.RegularPages ".Section" "==" "article" -}}
+    {{- $data := dict
+        "title" .Title
+        "description" .Description
+        "summary" .Summary
+        "date" (.Date.Format "2006-01-02")
+        "lastmod" (.Lastmod.Format "2006-01-02")
+        "tags" .Params.tags
+        "categories" .Params.categories
+        "href" .Permalink
+    -}}
     {{- $thumbnail := or
         (.Resources.GetMatch "thumbnail.*")
         (resources.Get .Params.thumbnail)
@@ -82,18 +92,9 @@ layouts/search/list.json
     -}}
     {{- if $thumbnail -}}
         {{- $thumbnail = $thumbnail.Fill (printf "640x360 center q%d webp" .Site.Params.imageQuality) -}}
+        {{- $data = merge $data (dict "thumbnail" $thumbnail.Permalink) -}}
     {{- end -}}
-    {{- $.Scratch.Add "index" (
-        dict "title" .Title
-            "description" .Description
-            "thumbnail" $thumbnail.Permalink
-            "summary" .Summary
-            "date" (.Date.Format "2006-01-02")
-            "lastmod" (.Lastmod.Format "2006-01-02")
-            "tags" .Params.tags
-            "categories" .Params.categories
-            "href" .Permalink
-    ) -}}
+    {{- $.Scratch.Add "index" $data -}}
 {{- end -}}
 {{- $.Scratch.Get "index" | jsonify -}}
 ```
