@@ -39,7 +39,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Create Ranking
+      - name: Commit Changes
         id: commit
         run: |
           NOW=$(date +"%Y%m%d%H%M%S")
@@ -57,13 +57,13 @@ jobs:
           gh pr create \
             --title "[Auto] Create Ranking ${{ steps.commit.outputs.now }}" \
             --body "Create Ranking by GitHub Actions." \
-            --base main \
+            --base develop \
             --head "${{ steps.commit.outputs.branch }}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Auto Merge
         run: |
-          gh pr merge "${{ steps.commit.outputs.branch}}" --auto --merge
+          gh pr merge "${{ steps.commit.outputs.branch}}" --auto --merge --delete-branch
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
