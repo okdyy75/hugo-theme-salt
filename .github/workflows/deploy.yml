@@ -14,7 +14,9 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-  
+        with:
+          fetch-depth: 0
+
       - name: Setup npm
         uses: actions/setup-node@v4
         with:
@@ -52,3 +54,35 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+
+      - name: Get next version
+        id: version
+        run: |
+          latest_tag=$(git tag -l 'v*' | sort -V | tail -1)
+          echo "Latest tag: $latest_tag"
+
+          # v1.2.3 形式に対応
+          next_tag=$(echo "$latest_tag" | awk -F'.' '{print $1"."$2"."$3+1}')
+          echo "Next tag: $next_tag"
+
+          # 下書きリリース取得
+          draft_tag=$(gh release list | awk -F'\\t' '$2=="Draft" {print $3}' | head -n 1)
+          echo "Draft tag: $draft_tag"
+
+          # 下書きリリースが既に存在していれば削除して再作成（リリースノート自動生成のため）
+          if [ "$draft_tag" != "" ]; then
+            gh release delete $draft_tag -y
+          fi
+
+          echo "next_tag=$next_tag" >> $GITHUB_OUTPUT
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create draft release
+        run: |
+          gh release create ${{ steps.version.outputs.next_tag }} \
+            --draft \
+            --generate-notes \
+            --title "${{ steps.version.outputs.next_tag }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
