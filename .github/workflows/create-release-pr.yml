@@ -18,6 +18,8 @@ jobs:
           fetch-depth: 0
 
       - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 'ruby'
 
       - name: Create a release pull request
         run: |
