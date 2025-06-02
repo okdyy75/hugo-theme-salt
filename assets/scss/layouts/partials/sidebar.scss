@@ -157,15 +157,28 @@
                 position: relative;
                 margin: 10px 0;
                 border-bottom: 1px solid $border;
-                &:hover {
-                    cursor: pointer;
-                }
             }
             &__yearItem:last-child {
                 margin-bottom: 0;
                 border-bottom: none;
             }
-            &__yearItem::after {
+
+            // チェックボックスを非表示
+            .archive-accordion-toggle {
+                display: none;
+            }
+
+            // ラベルにカーソルスタイルを追加
+            &__yearItemTitle {
+                margin-bottom: 10px;
+                margin-left: 20px;
+                cursor: pointer;
+                display: block;
+                position: relative;
+            }
+
+            // 矢印アイコン（デフォルトは下向き）
+            &__yearItemTitle::after {
                 content: "";
                 width: 10px;
                 height: 10px;
@@ -177,17 +190,19 @@
                 transform: rotate(45deg);
                 transition: 0.3s ease-in-out;
             }
-            &__yearItem.open::after {
+            // チェックボックスがチェックされた時の矢印（上向き）
+            .archive-accordion-toggle:checked + &__yearItemTitle::after {
                 top: 10px;
                 transform: rotate(225deg);
             }
-            &__yearItemTitle {
-                margin-bottom: 10px;
-                margin-left: 20px;
-            }
+
             &__monthListWrapper {
                 height: 0;
                 overflow: hidden;
+            }
+            // チェックボックスがチェックされた時にコンテンツを表示
+            .archive-accordion-toggle:checked ~ &__monthListWrapper {
+                height: 100%;
                 transition: 0.3s ease-in-out;
             }
             &__monthList {
@@ -239,13 +254,6 @@
                 &__item {
                     width: $sp-menu-icon-size;
                     height: $sp-menu-icon-size;
-                }
-            }
-            &__archive {
-                &__yearItem {
-                    &:hover {
-                        cursor: none;
-                    }
                 }
             }
         }
