@@ -41,7 +41,10 @@
                 opacity: 1;
             }
             &__checkbox {
-                display: none;
+                position: absolute;
+                opacity: 0;
+                width: 0;
+                height: 0;
             }
         }
         &__menu {
