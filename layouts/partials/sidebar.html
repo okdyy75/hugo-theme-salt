@@ -19,14 +19,14 @@
                 プロフィール
             </h3>
             <nav class="partials__sidebar__profile">
-                {{ $icon := resources.Get .Site.Params.profile.icon }}
+                {{ $icon := or
+                    (resources.Get .Site.Params.profile.icon)
+                    (resources.Get .Site.Params.defaultNoimage)
+                }}
                 {{ if $icon }}
                     {{ $icon = $icon.Fill (printf "200x200 center q%d webp" .Site.Params.imageQuality) }}
-                {{ else }}
-                    {{ $icon = resources.Get .Site.Params.defaultNoimage }}
-                    {{ $icon = $icon.Fill (printf "200x200 center q%d webp" .Site.Params.imageQuality) }}
+                    <img src="{{ $icon.Permalink }}" alt="icon"{{- if .Site.Params.imageLazyLoad }} loading="lazy"{{ end }} class="partials__sidebar__profile__icon">
                 {{ end }}
-                <img src="{{ $icon.Permalink }}" alt="icon"{{- if .Site.Params.imageLazyLoad }} loading="lazy"{{ end }} class="partials__sidebar__profile__icon">
                 <div class="partials__sidebar__profile__name">
                     {{ .Site.Params.profile.name }}
                 </div>
