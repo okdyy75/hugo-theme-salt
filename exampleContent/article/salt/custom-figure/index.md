@@ -17,8 +17,9 @@ archives: ["2021年9月"]
 このテーマ内で画像のリサイズ・トリミングができる「custom-figure」というショートコードを作成しました。
 
 ## 使い方
-- Hugo標準のfigureショートコードの機能をそのまま使えます
-- HugoのImage Processingで使えるResize、Fit、Fillが使えます
+- Hugo標準の[figureショートコード](https://gohugo.io/shortcodes/figure/)の機能をそのまま使えます
+- Hugoの[Image Processing](https://gohugo.io/content-management/image-processing/)で使えるResize、Fit、Fillが使えます
+- デフォルトで`loading="lazy"`で画像を読み込みます。動作を変更したい場合は`loading="eager"`を明示的に指定してください
 
 Image Processingについてはこちらをチェック
 
@@ -34,6 +35,8 @@ Image Processingについてはこちらをチェック
 {{</* custom-figure src="image.png" title="Fill スイカ" Fill="320x180" */>}}
 
 {{</* custom-figure src="image.png" title="Crop スイカ" Crop="320x180" */>}}
+
+{{</* custom-figure src="image.png" title="Crop スイカ" Crop="320x180" loading="eager" */>}}
 ```
 
 ## 表示例
@@ -53,3 +56,7 @@ Image Processingについてはこちらをチェック
 <br>
 
 {{< custom-figure src="image.png" title="Crop 320x180 スイカ" Crop="320x180" >}}
+
+<br>
+
+{{< custom-figure src="image.png" title="loading=\"eager\"の場合" Crop="320x180" loading="eager" >}}
