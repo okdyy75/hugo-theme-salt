@@ -26,7 +26,7 @@
                     {{ $icon = resources.Get .Site.Params.defaultNoimage }}
                     {{ $icon = $icon.Fill (printf "200x200 center q%d webp" .Site.Params.imageQuality) }}
                 {{ end }}
-                <img src="{{ $icon.Permalink }}" alt="icon" class="partials__sidebar__profile__icon">
+                <img src="{{ $icon.Permalink }}" alt="icon"{{- if .Site.Params.imageLazyLoad }} loading="lazy"{{ end }} class="partials__sidebar__profile__icon">
                 <div class="partials__sidebar__profile__name">
                     {{ .Site.Params.profile.name }}
                 </div>
