@@ -1,0 +1,53 @@
+{{/*
+記事リスト表示用テンプレート
+Parameters:
+- articles: 記事のリスト（ページオブジェクトまたはランキング用辞書形式 {page: ページ, pv: PV数}）
+- showPv: PV数を表示するかどうか（デフォルト: false）
+- maxLineNum: タイトルの最大行数（デフォルト: 3）
+- site: サイトオブジェクト
+*/}}
+{{ $articles := .articles }}
+{{ $showPv := .showPv | default false }}
+{{ $maxLineNum := .maxLineNum | default 3 }}
+{{ $site := .site }}
+
+<nav class="partials__sidebar__article">
+    <ul class="partials__sidebar__article__items">
+        {{ range $articles }}
+            {{/* ページオブジェクトとPV値を取得（辞書形式とページオブジェクト形式に対応） */}}
+            {{ $page := . }}
+            {{ $pv := "" }}
+            {{ if reflect.IsMap . }}
+                {{ if .page }}
+                    {{ $page = .page }}
+                {{ end }}
+                {{ if .pv }}
+                    {{ $pv = .pv }}
+                {{ end }}
+            {{ end }}
+            <li class="partials__sidebar__article__item">
+                <a href="{{ $page.Permalink }}" class="partials__sidebar__article__itemLink">
+                    {{ $thumbnail := or
+                        ($page.Resources.GetMatch "thumbnail.*")
+                        (resources.Get $page.Params.thumbnail)
+                        (resources.Get $site.Params.defaultNoimage)
+                    }}
+                    {{ if $thumbnail }}
+                        {{ $thumbnail = $thumbnail.Fill (printf "192x108 center q%d webp" $site.Params.imageQuality) }}
+                        <img src='{{ $thumbnail.Permalink }}' alt="{{ $page.Title }}" loading="lazy" class="partials__sidebar__article__itemThumbnail">
+                    {{ end }}
+                    <div class="partials__sidebar__article__itemDetail">
+                        <div class="partials__sidebar__article__itemTitle--line{{ $maxLineNum }}">
+                            {{ $page.Title }}
+                        </div>
+                        {{ if and $showPv $pv }}
+                            <div class="partials__sidebar__article__itemPv">
+                                {{ $pv }}pv
+                            </div>
+                        {{ end }}
+                    </div>
+                </a>
+            </li>
+        {{ end }}
+    </ul>
+</nav>

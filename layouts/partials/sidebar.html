@@ -91,32 +91,14 @@
 
         <div class="partials__sidebar__card">
             <h3 class="partials__sidebar__title">
-                新着記事
+                新着記事{{ .Site.Params.imageQuality }}
             </h3>
-            <nav class="partials__sidebar__article">
-                <ul class="partials__sidebar__article__items">
-                    {{ range first .Site.Params.newArticleLimit (where .Site.RegularPages.ByLastmod.Reverse ".Section" "==" "article") }}
-                        <li class="partials__sidebar__article__item">
-                            <a href="{{ .Permalink }}" class="partials__sidebar__article__itemLink">
-                                {{ $thumbnail := or
-                                    (.Resources.GetMatch "thumbnail.*")
-                                    (resources.Get .Params.thumbnail)
-                                    (resources.Get .Site.Params.defaultNoimage)
-                                }}
-                                {{ if $thumbnail }}
-                                    {{ $thumbnail = $thumbnail.Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
-                                    <img src='{{ $thumbnail.Permalink }}' alt="{{ .Title }}" loading="lazy" class="partials__sidebar__article__itemThumbnail">
-                                {{ end }}
-                                <div class="partials__sidebar__article__itemDetail">
-                                    <div class="partials__sidebar__article__itemTitle--line3">
-                                        {{ .Title }}
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                    {{ end }}
-                </ul>
-            </nav>
+            {{ partial "sidebar-article-list" (dict 
+                "articles" (first .Site.Params.newArticleLimit (where .Site.RegularPages.ByLastmod.Reverse ".Section" "==" "article"))
+                "showPv" false
+                "maxLineNum" 3
+                "site" $.Site
+            ) }}
         </div>
 
         {{ if .Site.Taxonomies.pickups.sidebar  }}
@@ -124,37 +106,21 @@
                 <h3 class="partials__sidebar__title--pickup">
                     ピックアップ
                 </h3>
-                <nav class="partials__sidebar__article">
-                    <ul class="partials__sidebar__article__items">
-                        {{ range .Site.Taxonomies.pickups.sidebar }}
-                            <li class="partials__sidebar__article__item">
-                                <a href="{{ .Permalink }}" class="partials__sidebar__article__itemLink">
-                                    {{ $thumbnail := or
-                                        (.Resources.GetMatch "thumbnail.*")
-                                        (resources.Get .Params.thumbnail)
-                                        (resources.Get .Site.Params.defaultNoimage)
-                                    }}
-                                    {{ if $thumbnail }}
-                                        {{ $thumbnail = $thumbnail.Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
-                                        <img src='{{ $thumbnail.Permalink }}' alt="{{ .Title }}" loading="lazy" class="partials__sidebar__article__itemThumbnail">
-                                    {{ end }}
-                                    <div class="partials__sidebar__article__itemDetail">
-                                        <div class="partials__sidebar__article__itemTitle--line3">
-                                            {{ .Title }}
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                        {{ end }}
-                    </ul>
-                </nav>
+                {{ partial "sidebar-article-list" (dict 
+                    "articles" .Site.Taxonomies.pickups.sidebar
+                    "showPv" false
+                    "maxLineNum" 3
+                    "site" $.Site
+                ) }}
             </div>
         {{ end }}
 
+        {{/* ランキング用のページスライスを作成（辞書形式でページとPVデータを管理） */}}
         {{ $ranking := slice }}
         {{ range $item := sort .Site.Data.ranking.items "pv" "desc" }}
             {{ with $page := $.Site.GetPage (path.Clean $item.pagePath) }}
                 {{ if eq .Section "article" }}
+                    {{/* ページとPVデータを辞書として保存 */}}
                     {{ $ranking = $ranking | append (dict "page" $page "pv" $item.pv) }}
                 {{ end }}
             {{ end }}
@@ -164,36 +130,12 @@
                 <h3 class="partials__sidebar__title--ranking">
                     ランキング
                 </h3>
-                <nav class="partials__sidebar__article">
-                    <ul class="partials__sidebar__article__items">
-                        {{ range first .Site.Params.rankingArticleLimit $ranking }}
-                            {{ $pv := .pv }}
-                            {{ with .page }}
-                                <li class="partials__sidebar__article__item">
-                                    <a href="{{ .Permalink }}" class="partials__sidebar__article__itemLink">
-                                        {{ $thumbnail := or
-                                            (.Resources.GetMatch "thumbnail.*")
-                                            (resources.Get .Params.thumbnail)
-                                            (resources.Get .Site.Params.defaultNoimage)
-                                        }}
-                                        {{ if $thumbnail }}
-                                            {{ $thumbnail = $thumbnail.Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
-                                            <img src='{{ $thumbnail.Permalink }}' alt="{{ .Title }}" loading="lazy" class="partials__sidebar__article__itemThumbnail">
-                                        {{ end }}
-                                        <div class="partials__sidebar__article__itemDetail">
-                                            <div class="partials__sidebar__article__itemTitle--line2">
-                                                {{ .Title }}
-                                            </div>
-                                            <div class="partials__sidebar__article__itemPv">
-                                                {{ $pv }}pv
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                            {{ end }}
-                        {{ end }}
-                    </ul>
-                </nav>
+                {{ partial "sidebar-article-list" (dict 
+                    "articles" (first .Site.Params.rankingArticleLimit $ranking)
+                    "showPv" true
+                    "maxLineNum" 2
+                    "site" $.Site
+                ) }}
             </div>
         {{ end }}
 
