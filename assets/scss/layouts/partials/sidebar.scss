@@ -136,10 +136,12 @@
                 &--line2 {
                     @extend %__itemTitle;
                     -webkit-line-clamp: 2;
+                    line-clamp: 2;
                 }
                 &--line3 {
                     @extend %__itemTitle;
                     -webkit-line-clamp: 3;
+                    line-clamp: 3;
                 }
             }
             &__itemPv {
