@@ -4,9 +4,11 @@ description: ""
 date: 2025-05-29T20:02:09+09:00
 lastmod: 2025-05-29T20:02:09+09:00
 draft: false
-tags: []
-categories: ""
+tags: ["Hugo", "新機能"]
+categories: "Saltの使い方"
 archives: ["2025年5月"]
+pickups: ["top"]
+pickups_weight: -90
 share: true
 toc: true
 comment: true

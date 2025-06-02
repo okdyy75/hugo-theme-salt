@@ -1,0 +1,71 @@
+name: Create Ranking
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  create-ranking:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: develop
+
+      - name: Setup npm
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: npm Install
+        run: |
+          npm ci
+
+      - name: Create Ranking
+        env:
+          GOOGLE_ANALYTICS_CREDENTIALS: ${{ secrets.GOOGLE_ANALYTICS_CREDENTIALS }}
+        run: |
+          mkdir .gcp
+          echo "$GOOGLE_ANALYTICS_CREDENTIALS" > .gcp/google-analytics_credentials.json
+          npm run create-ranking
+
+      - name: Set Git config
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit Changes
+        id: commit
+        run: |
+          NOW=$(date +"%Y%m%d%H%M%S")
+          BRANCH_NAME="auto/update-ranking-$NOW"
+          git switch -c $BRANCH_NAME
+          git commit -am "[Auto] Create Ranking"
+          git push origin $BRANCH_NAME
+          echo "now=$NOW" >> $GITHUB_OUTPUT
+          echo "branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
+        env:
+          TZ: Asia/Tokyo
+
+      - name: Create Pull Request
+        run: |
+          gh pr create \
+            --title "[Auto] Create Ranking ${{ steps.commit.outputs.now }}" \
+            --body "Create Ranking by GitHub Actions." \
+            --base develop \
+            --head "${{ steps.commit.outputs.branch }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Auto Merge
+        run: |
+          gh pr merge "${{ steps.commit.outputs.branch}}" --auto --merge --delete-branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

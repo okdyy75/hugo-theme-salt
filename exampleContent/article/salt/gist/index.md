@@ -1,8 +1,8 @@
 ---
 title: "Hugo標準のgistショートコードをテーマ内に移行しました"
 description: ""
-date: 2025-05-28T18:02:09+09:00
-lastmod: 2025-05-28T18:02:09+09:00
+date: 2025-05-29T19:02:09+09:00
+lastmod: 2025-05-29T19:02:09+09:00
 draft: false
 tags: ["Hugo", "ショートコード"]
 categories: "Saltの使い方"
