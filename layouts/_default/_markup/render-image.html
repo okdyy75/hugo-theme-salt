@@ -1,0 +1,11 @@
+{{- $src := .Destination | safeURL -}}
+{{- $alt := .Text -}}
+{{- $title := .Title -}}
+
+{{- /* 設定でlazyLoadが有効化されているかチェック */ -}}
+{{- $lazyLoad := .Page.Site.Params.imageLazyLoad | default false -}}
+
+<img src="{{ $src }}" alt="{{ $alt }}"
+    {{- if $title }} title="{{ $title }}"{{ end -}}
+    {{- if $lazyLoad }} loading="lazy"{{ end -}}
+> 

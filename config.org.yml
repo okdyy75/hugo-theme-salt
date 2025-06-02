@@ -70,6 +70,7 @@ params:
   rankingArticleLimit: 5
   relatedArticleLimit: 2
   imageQuality: 75
+  imageLazyLoad: true
   profile:
     name: ユーザー名
     description: プロフィール
