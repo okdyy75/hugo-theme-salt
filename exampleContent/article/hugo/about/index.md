@@ -6,8 +6,6 @@ lastmod: 2021-09-12T17:43:50+09:00
 draft: false
 tags: ["Hugo", "まとめ"]
 categories: "Hugo"
-pickups: ["top"]
-pickups_weight: -90
 share: true
 toc: true
 comment: true
