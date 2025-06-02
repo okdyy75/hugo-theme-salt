@@ -18,7 +18,23 @@
 &lt;/li>
 &lt;/ul>
 &lt;h2 id="content-adaptersを使用した記事表示方法">Content adaptersを使用した記事表示方法&lt;/h2>
-&lt;p>大まかな流れとしては下記の通り&lt;/p></description></item><item><title>Hugo v0.147.0 リリースノートまとめ</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.147.0/</link><pubDate>Thu, 29 May 2025 17:55:17 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.147.0/</guid><description>&lt;div class="markdown-alert markdown-alert-warning" dir="auto">&lt;p class="markdown-alert-title" dir="auto">&lt;svg class="octicon octicon-alert mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z">&lt;/path>&lt;/svg>Warning&lt;/p>&lt;p dir="auto">※この記事は生成AIを使用して作成された記事です。（create by GPT-4o）&lt;br>記事内容については未検証ですので参考程度にご活用ください&lt;/p>
+&lt;p>大まかな流れとしては下記の通り&lt;/p></description></item><item><title>Hugo標準のgistショートコードをテーマ内に移行しました</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/gist/</link><pubDate>Thu, 29 May 2025 19:02:09 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/gist/</guid><description>&lt;p>Hugo公式のgistショートコードはバージョン0.143.0で非推奨となり、将来のリリースで削除されるそうなので
+Hugo Theme Salt内ののショートコードとして使えるように移行しました&lt;/p>
+&lt;pre tabindex="0">&lt;code>WARN The &amp;#34;gist&amp;#34; shortcode was deprecated in v0.143.0 and will be removed in a future release. See https://gohugo.io/shortcodes/gist for instructions to create a replacement.
+&lt;/code>&lt;/pre>&lt;p>Hugo公式ページでは下記の通り&lt;/p>
+&lt;a href="https://gohugo.io/shortcodes/gist/" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: inherit;" onMouseOver="this.style.opacity='0.9'">
+ &lt;div style="flex-shrink: 0;">
+ &lt;img src="https://hugo-theme-salt.okdyy75.com/gohugoio-card-base-1_hu_731e7eb4458b328b.webp" alt="" width="100" height="100">
+ &lt;/div>
+ &lt;div style="margin-left: 10px;">
+ &lt;h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">Gist shortcode&lt;/h2>
+ &lt;p style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;"> Embed a GitHub Gist in your content using the gist shortcode. &lt;/p>
+ &lt;/div>
+ &lt;/a>
+&lt;br>
+&lt;blockquote>
+&lt;p>The gist shortcode was deprecated in version 0.143.0 and will be removed in a future release. To continue embedding &amp;gt; GitHub Gists in your content, you’ll need to create a custom shortcode:&lt;/p>&lt;/blockquote>
+&lt;p>Gist ショートコードはバージョン 0.143.0 で非推奨となり、今後のリリースで削除される予定です。コンテンツに GitHub Gist を埋め込むには、カスタムショートコードを作成する必要があります。&lt;/p></description></item><item><title>Hugo v0.147.0 リリースノートまとめ</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.147.0/</link><pubDate>Thu, 29 May 2025 17:55:17 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo-release/v0.147.0/</guid><description>&lt;div class="markdown-alert markdown-alert-warning" dir="auto">&lt;p class="markdown-alert-title" dir="auto">&lt;svg class="octicon octicon-alert mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z">&lt;/path>&lt;/svg>Warning&lt;/p>&lt;p dir="auto">※この記事は生成AIを使用して作成された記事です。（create by GPT-4o）&lt;br>記事内容については未検証ですので参考程度にご活用ください&lt;/p>
 &lt;/div>
 &lt;p>2025年4月25日にリリースされた Hugo v0.147.0 の主な更新内容をまとめます。既存ユーザー向けに &lt;strong>新機能&lt;/strong>・&lt;strong>主な変更点&lt;/strong>・&lt;strong>バグ修正&lt;/strong>・&lt;strong>非推奨事項&lt;/strong>を分類し、プロジェクトへの影響や対応方法のヒントを解説します。&lt;/p>
 &lt;h2 id="新機能">新機能&lt;/h2>
@@ -213,23 +229,7 @@ Instagram のショートコードを使用している場合、HTTPS 化に伴�
 &lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;p>&lt;strong>参考&lt;/strong>: &lt;a href="https://github.com/gohugoio/hugo/releases/tag/v0.145.0">Hugo v0.145.0 リリースノート（GitHub）&lt;/a>&lt;/p></description></item><item><title>Hugo標準のgistショートコードをテーマ内に移行しました</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/gist/</link><pubDate>Wed, 28 May 2025 18:02:09 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/gist/</guid><description>&lt;p>Hugo公式のgistショートコードはバージョン0.143.0で非推奨となり、将来のリリースで削除されるそうなので
-Hugo Theme Salt内ののショートコードとして使えるように移行しました&lt;/p>
-&lt;pre tabindex="0">&lt;code>WARN The &amp;#34;gist&amp;#34; shortcode was deprecated in v0.143.0 and will be removed in a future release. See https://gohugo.io/shortcodes/gist for instructions to create a replacement.
-&lt;/code>&lt;/pre>&lt;p>Hugo公式ページでは下記の通り&lt;/p>
-&lt;a href="https://gohugo.io/shortcodes/gist/" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: inherit;" onMouseOver="this.style.opacity='0.9'">
- &lt;div style="flex-shrink: 0;">
- &lt;img src="https://hugo-theme-salt.okdyy75.com/gohugoio-card-base-1_hu_731e7eb4458b328b.webp" alt="" width="100" height="100">
- &lt;/div>
- &lt;div style="margin-left: 10px;">
- &lt;h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">Gist shortcode&lt;/h2>
- &lt;p style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;"> Embed a GitHub Gist in your content using the gist shortcode. &lt;/p>
- &lt;/div>
- &lt;/a>
-&lt;br>
-&lt;blockquote>
-&lt;p>The gist shortcode was deprecated in version 0.143.0 and will be removed in a future release. To continue embedding &amp;gt; GitHub Gists in your content, you’ll need to create a custom shortcode:&lt;/p>&lt;/blockquote>
-&lt;p>Gist ショートコードはバージョン 0.143.0 で非推奨となり、今後のリリースで削除される予定です。コンテンツに GitHub Gist を埋め込むには、カスタムショートコードを作成する必要があります。&lt;/p></description></item><item><title>Hugoでついに外部URLのブログカードを作れるようになった【自作ショートコード】</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/blog-card/</link><pubDate>Fri, 06 May 2022 23:34:09 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/blog-card/</guid><description>&lt;p>Hugoでは外部サイトのデータを扱う場合、&lt;code>getJSON&lt;/code>や&lt;code>getCSV&lt;/code>を使った方法しかありませんでしたが、ついにv0.91で&lt;code>GetRemote&lt;/code>が実装されました。&lt;/p>
+&lt;p>&lt;strong>参考&lt;/strong>: &lt;a href="https://github.com/gohugoio/hugo/releases/tag/v0.145.0">Hugo v0.145.0 リリースノート（GitHub）&lt;/a>&lt;/p></description></item><item><title>Hugoでついに外部URLのブログカードを作れるようになった【自作ショートコード】</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/blog-card/</link><pubDate>Fri, 06 May 2022 23:34:09 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/blog-card/</guid><description>&lt;p>Hugoでは外部サイトのデータを扱う場合、&lt;code>getJSON&lt;/code>や&lt;code>getCSV&lt;/code>を使った方法しかありませんでしたが、ついにv0.91で&lt;code>GetRemote&lt;/code>が実装されました。&lt;/p>
 &lt;a href="https://github.com/gohugoio/hugo/releases/tag/v0.91.0" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: inherit;" onMouseOver="this.style.opacity='0.9'">
  &lt;div style="flex-shrink: 0;">
  &lt;img src="https://hugo-theme-salt.okdyy75.com/v0.91_10250111416627201191_hu_76f0620161481b54.webp" alt="" width="100" height="100">

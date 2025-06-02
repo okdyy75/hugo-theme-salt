@@ -1,4 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Saltの使い方 on Hugoブログテーマ「Salt」</title><link>https://hugo-theme-salt.okdyy75.com/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</link><description>Recent content in Saltの使い方 on Hugoブログテーマ「Salt」</description><generator>Hugo</generator><language>ja</language><managingEditor>okdyy75@gmail.com (okdyy75)</managingEditor><webMaster>okdyy75@gmail.com (okdyy75)</webMaster><copyright>© 2021 okdyy75</copyright><lastBuildDate>Wed, 28 May 2025 18:02:09 +0900</lastBuildDate><atom:link href="https://hugo-theme-salt.okdyy75.com/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo標準のgistショートコードをテーマ内に移行しました</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/gist/</link><pubDate>Wed, 28 May 2025 18:02:09 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/gist/</guid><description>&lt;p>Hugo公式のgistショートコードはバージョン0.143.0で非推奨となり、将来のリリースで削除されるそうなので
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Saltの使い方 on Hugoブログテーマ「Salt」</title><link>https://hugo-theme-salt.okdyy75.com/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</link><description>Recent content in Saltの使い方 on Hugoブログテーマ「Salt」</description><generator>Hugo</generator><language>ja</language><managingEditor>okdyy75@gmail.com (okdyy75)</managingEditor><webMaster>okdyy75@gmail.com (okdyy75)</webMaster><copyright>© 2021 okdyy75</copyright><lastBuildDate>Thu, 29 May 2025 20:02:09 +0900</lastBuildDate><atom:link href="https://hugo-theme-salt.okdyy75.com/categories/Salt%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/index.xml" rel="self" type="application/rss+xml"/><item><title>Content adaptersに対応しました＆既存の記事の移行方法</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/migrate-content-adapters/</link><pubDate>Thu, 29 May 2025 20:02:09 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/migrate-content-adapters/</guid><description>&lt;p>Hugo Theme Salt v3.0.0でもContent adaptersに対応しました。&lt;br>
+使用方法と移行方法をまとめたので参考にして下さい&lt;/p>
+&lt;h3 id="前提として">前提として&lt;/h3>
+&lt;ul>
+&lt;li>目次が使えません&lt;/li>
+&lt;li>ページバンドル内の画像ファイル等が考慮されていません（記事本文を修正する必要あり）&lt;/li>
+&lt;li>本文内にHugoの記法がある場合ビルドエラーになります（&lt;code>{{ xxx }}&lt;/code>の記述）&lt;/li>
+&lt;li>ディレクトリ構造について
+&lt;ul>
+&lt;li>下記の構成で記事を保存している
+&lt;ul>
+&lt;li>content/article/[category]/[article]/index.md&lt;/li>
+&lt;li>content/article/[category]/[article]/thumbnail.jpg&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>記事ディレクトリパスと記事URLパスが同一（slugを使用している場合は未検証）&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="content-adaptersを使用した記事表示方法">Content adaptersを使用した記事表示方法&lt;/h2>
+&lt;p>大まかな流れとしては下記の通り&lt;/p></description></item><item><title>Hugo標準のgistショートコードをテーマ内に移行しました</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/gist/</link><pubDate>Thu, 29 May 2025 19:02:09 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/gist/</guid><description>&lt;p>Hugo公式のgistショートコードはバージョン0.143.0で非推奨となり、将来のリリースで削除されるそうなので
 Hugo Theme Salt内ののショートコードとして使えるように移行しました&lt;/p>
 &lt;pre tabindex="0">&lt;code>WARN The &amp;#34;gist&amp;#34; shortcode was deprecated in v0.143.0 and will be removed in a future release. See https://gohugo.io/shortcodes/gist for instructions to create a replacement.
 &lt;/code>&lt;/pre>&lt;p>Hugo公式ページでは下記の通り&lt;/p>

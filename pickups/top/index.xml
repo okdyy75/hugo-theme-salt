@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Top on Hugoブログテーマ「Salt」</title><link>https://hugo-theme-salt.okdyy75.com/pickups/top/</link><description>Recent content in Top on Hugoブログテーマ「Salt」</description><generator>Hugo</generator><language>ja</language><managingEditor>okdyy75@gmail.com (okdyy75)</managingEditor><webMaster>okdyy75@gmail.com (okdyy75)</webMaster><copyright>© 2021 okdyy75</copyright><lastBuildDate>Wed, 10 Aug 2022 18:26:11 +0900</lastBuildDate><atom:link href="https://hugo-theme-salt.okdyy75.com/pickups/top/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugoブログテーマ「Salt」とは？</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/about/</link><pubDate>Sun, 12 Sep 2021 15:07:11 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/about/</guid><description>&lt;p>「Salt」は&lt;strong>シンプルなブログを低コストで作成できる&lt;/strong>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Top on Hugoブログテーマ「Salt」</title><link>https://hugo-theme-salt.okdyy75.com/pickups/top/</link><description>Recent content in Top on Hugoブログテーマ「Salt」</description><generator>Hugo</generator><language>ja</language><managingEditor>okdyy75@gmail.com (okdyy75)</managingEditor><webMaster>okdyy75@gmail.com (okdyy75)</webMaster><copyright>© 2021 okdyy75</copyright><lastBuildDate>Thu, 29 May 2025 20:02:09 +0900</lastBuildDate><atom:link href="https://hugo-theme-salt.okdyy75.com/pickups/top/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugoブログテーマ「Salt」とは？</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/about/</link><pubDate>Sun, 12 Sep 2021 15:07:11 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/about/</guid><description>&lt;p>「Salt」は&lt;strong>シンプルなブログを低コストで作成できる&lt;/strong>&lt;/p>
 &lt;p>を目標にしたHugo用テーマです。名前の通り、できるだけ素材そのものを引き出せるようなシンプルなデザイン・レイアウトにしました。&lt;/p>
 &lt;p>実際にSaltでできることについて紹介したいと思います&lt;/p>
 &lt;br>
@@ -7,8 +7,24 @@
 デフォルトで横幅600pxをデフォルトにしていますが、任意のサイズに変更できます。&lt;/p>
 &lt;br>
 &lt;h2 id="2-サイトカラーを自分の好きなように変更可能">2. サイトカラーを自分の好きなように変更可能&lt;/h2>
-&lt;p>ヘッダー・フッダー・コンテンツの背景色、記事カードの細かいスタイルも簡単に変更できます&lt;/p></description></item><item><title>Hugoでできること</title><link>https://hugo-theme-salt.okdyy75.com/article/hugo/about/</link><pubDate>Sun, 12 Sep 2021 17:43:50 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/hugo/about/</guid><description>&lt;p>最近はSSG（静的サイトジェネレータ）全盛期の時代で、サーバー代をかけずにブログが作れる時代になりました。
-そこで実際にHugoを使ってこのブログを作ってみた所感とHugoでできることを紹介したいと思います&lt;/p>
-&lt;h2 id="ちなみにhugoとgatsbyどっちの方がいいの">ちなみにHugoとGatsbyどっちの方がいいの？&lt;/h2>
-&lt;p>サイト内でリッチなグラフやテーブルを使ったり、動きのあるサイトを作りたい場合は、Gatsbyのほうが良いと思います。&lt;/p>
-&lt;p>というのもGatsbyの方がReactベースで作られているので、jsとの相性が非常に良く、Reactのライブラリをそのまま使えます。&lt;/p></description></item></channel></rss>
+&lt;p>ヘッダー・フッダー・コンテンツの背景色、記事カードの細かいスタイルも簡単に変更できます&lt;/p></description></item><item><title>Content adaptersに対応しました＆既存の記事の移行方法</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/migrate-content-adapters/</link><pubDate>Thu, 29 May 2025 20:02:09 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/migrate-content-adapters/</guid><description>&lt;p>Hugo Theme Salt v3.0.0でもContent adaptersに対応しました。&lt;br>
+使用方法と移行方法をまとめたので参考にして下さい&lt;/p>
+&lt;h3 id="前提として">前提として&lt;/h3>
+&lt;ul>
+&lt;li>目次が使えません&lt;/li>
+&lt;li>ページバンドル内の画像ファイル等が考慮されていません（記事本文を修正する必要あり）&lt;/li>
+&lt;li>本文内にHugoの記法がある場合ビルドエラーになります（&lt;code>{{ xxx }}&lt;/code>の記述）&lt;/li>
+&lt;li>ディレクトリ構造について
+&lt;ul>
+&lt;li>下記の構成で記事を保存している
+&lt;ul>
+&lt;li>content/article/[category]/[article]/index.md&lt;/li>
+&lt;li>content/article/[category]/[article]/thumbnail.jpg&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>記事ディレクトリパスと記事URLパスが同一（slugを使用している場合は未検証）&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="content-adaptersを使用した記事表示方法">Content adaptersを使用した記事表示方法&lt;/h2>
+&lt;p>大まかな流れとしては下記の通り&lt;/p></description></item></channel></rss>
