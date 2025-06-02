@@ -15,6 +15,7 @@
             width: 33px;
             height: 23px;
             cursor: pointer;
+            flex-shrink: 0;
             &::before {
                 content: "";
                 width: 100%;
