@@ -6,6 +6,7 @@
     {{- partial "head-add.html" . -}}
 </head>
 <body class="body">
+    <input type="checkbox" id="hamburger" class="partials__header__hamburger__checkbox">
     <div class="container">
         <header class="header">
             <div class="header__inner">
@@ -34,7 +35,7 @@
             </div>
         </footer>
     </div>
-    <div id="overlay" class="close overlay"></div>
+    <div class="overlay"></div>
     <script>
         window.addEventListener('DOMContentLoaded', (ev) => {
             document.querySelector('#headerBlock').style.height = document.querySelector('.header').offsetHeight + 'px'
