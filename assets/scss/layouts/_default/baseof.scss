@@ -56,9 +56,6 @@
     height: 100vh;
     background: #000;
     opacity: 0.2;
-    &.open {
-        display: block;
-    }
 }
 @media only screen and (max-width: $sp-width) {
     .container {
