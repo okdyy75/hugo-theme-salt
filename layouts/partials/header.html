@@ -49,17 +49,3 @@
     </div>
 {{ end }}
 
-{{ define "header-script" }}
-    <script>
-        document.querySelectorAll('#hamburger, #overlay').forEach(ele => {
-            ele.addEventListener('click', function(ev) {
-                document.querySelector('#hamburger').classList.toggle('open')
-                document.querySelector('#hamburger').classList.toggle('close')
-                document.querySelector('#hamburgerMenu').classList.toggle('open')
-                document.querySelector('#hamburgerMenu').classList.toggle('close')
-                document.querySelector('#overlay').classList.toggle('open')
-                document.querySelector('#overlay').classList.toggle('close')
-            })
-        })
-    </script>
-{{ end }}
