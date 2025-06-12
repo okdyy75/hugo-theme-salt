@@ -4,11 +4,11 @@
             <a href="{{ $.Site.BaseURL }}">
                 {{ $.Site.Title }}
             </a>
-            <div id="hamburger" class="spShow close partials__header__hamburger">
+            <label for="hamburger" class="spShow partials__header__hamburger">
                 <div class="partials__header__hamburger__line"></div>
-            </div>
+            </label>
         </div>
-        <div id="hamburgerMenu" class="close partials__header__menu">
+        <div class="partials__header__menu">
             <nav class="spShow partials__header__menu__search">
                 <form action="{{ "search/" | relURL }}" class="partials__header__menu__search__form">
                     <input type="text" name="query" id="search" class="partials__header__menu__search__query">
@@ -49,17 +49,3 @@
     </div>
 {{ end }}
 
-{{ define "header-script" }}
-    <script>
-        document.querySelectorAll('#hamburger, #overlay').forEach(ele => {
-            ele.addEventListener('click', function(ev) {
-                document.querySelector('#hamburger').classList.toggle('open')
-                document.querySelector('#hamburger').classList.toggle('close')
-                document.querySelector('#hamburgerMenu').classList.toggle('open')
-                document.querySelector('#hamburgerMenu').classList.toggle('close')
-                document.querySelector('#overlay').classList.toggle('open')
-                document.querySelector('#overlay').classList.toggle('close')
-            })
-        })
-    </script>
-{{ end }}
