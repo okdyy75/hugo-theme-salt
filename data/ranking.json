@@ -2,22 +2,46 @@
     "items": [
         {
             "pagePath": "/",
-            "pv": "11"
+            "pv": "6"
         },
         {
-            "pagePath": "/article/salt/about/",
+            "pagePath": "/article/sample/markdown/",
+            "pv": "6"
+        },
+        {
+            "pagePath": "/categories/サンプル/",
+            "pv": "6"
+        },
+        {
+            "pagePath": "/article/hugo/search/",
+            "pv": "5"
+        },
+        {
+            "pagePath": "/article/hugo/tips/",
             "pv": "5"
         },
         {
             "pagePath": "/article/salt/blog-card/",
+            "pv": "5"
+        },
+        {
+            "pagePath": "/article/salt/about/",
             "pv": "4"
         },
         {
-            "pagePath": "/article/sample/hugo-shortcode/",
+            "pagePath": "/categories/Saltの使い方/",
+            "pv": "4"
+        },
+        {
+            "pagePath": "/article/go/go-template/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/article/hugo/archive/",
             "pv": "2"
         },
         {
-            "pagePath": "/article/sample/markdown/",
+            "pagePath": "/article/salt/gist/",
             "pv": "2"
         },
         {
@@ -25,37 +49,25 @@
             "pv": "1"
         },
         {
-            "pagePath": "/article/go/go-template/",
-            "pv": "1"
-        },
-        {
             "pagePath": "/article/hugo-release/v0.147.0/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/about/",
+            "pagePath": "/article/salt/migrate-content-adapters/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/search/",
+            "pagePath": "/article/salt/self-blog-card/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/tips/",
+            "pagePath": "/article/sample/hugo-shortcode/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/salt/custom-figure/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/salt/gist/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/categories/サンプル/",
+            "pagePath": "/search/",
             "pv": "1"
         }
     ],
-    "createdAt": "2025-06-22T01:57:13.453Z"
+    "createdAt": "2025-06-29T01:59:38.179Z"
 }
