@@ -14,6 +14,8 @@
             position: relative;
             width: 33px;
             height: 23px;
+            cursor: pointer;
+            flex-shrink: 0;
             &::before {
                 content: "";
                 width: 100%;
@@ -22,10 +24,6 @@
                 border-top: 2px solid $header-menu-color;
                 transition: 0.3s ease-in-out;
             }
-            &.open::before {
-                top: 45%;
-                transform: rotate(45deg);
-            }
             &::after {
                 content: "";
                 width: 100%;
@@ -33,10 +31,6 @@
                 bottom: 0;
                 border-top: 2px solid $header-menu-color;
                 transition: 0.3s ease-in-out;
-            }
-            &.open::after {
-                bottom: 45%;
-                transform: rotate(135deg);
             }
             &__line {
                 width: 100%;
@@ -47,8 +41,11 @@
                 transition: 0.3s ease-in-out;
                 opacity: 1;
             }
-            &.open &__line {
+            &__checkbox {
+                position: absolute;
                 opacity: 0;
+                width: 0;
+                height: 0;
             }
         }
         &__menu {
@@ -76,6 +73,29 @@
     }
 }
 
+// ハンバーガーメニューのチェックボックスが選択された時のスタイル
+#hamburger:checked {
+    ~ .container .header .partials__header__hamburger {
+        &::before {
+            top: 45%;
+            transform: rotate(45deg);
+        }
+        &::after {
+            bottom: 45%;
+            transform: rotate(135deg);
+        }
+        .partials__header__hamburger__line {
+            opacity: 0;
+        }
+    }
+    ~ .container .header .partials__header__menu {
+        right: 0;
+    }
+    ~ .overlay {
+        display: block;
+    }
+}
+
 @media only screen and (max-width: $sp-width) {
     .partials {
         &__header {
@@ -93,9 +113,6 @@
                 padding: 12.5px;
                 background: $header-background;
                 transition: 0.3s ease-in-out;
-                &.open {
-                    right: 0;
-                }
                 &__search {
                     &__form {
                         height: 36px;
