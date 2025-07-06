@@ -240,8 +240,9 @@
                         {{ $archives := partial "functions/archives" (dict "articles" $articles "from" "Date") }}
                         {{ range $archives }}
                             {{ range $year, $year_list := . }}
-                                <li class="close archive-accordion partials__sidebar__archive__yearItem">
-                                    <div class="partials__sidebar__archive__yearItemTitle">{{ $year }}年</div>
+                                <li class="archive-accordion partials__sidebar__archive__yearItem">
+                                    <input type="checkbox" id="archive-{{ $year }}" class="archive-accordion-toggle">
+                                    <label for="archive-{{ $year }}" class="partials__sidebar__archive__yearItemTitle">{{ $year }}年</label>
                                     <div class="archive-accordion-child-wrapper partials__sidebar__archive__monthListWrapper">
                                         <ul class="archive-accordion-child partials__sidebar__archive__monthList">
                                             {{ range $year_list }}
@@ -261,22 +262,6 @@
                     </ul>
                 </nav>
             </div>
-            <script>
-                document.querySelectorAll('.archive-accordion').forEach(function(ele) {
-                    ele.addEventListener('click', function(ev) {
-                        if (ev.target.tagName === 'A') {
-                            return
-                        }
-                        ev.currentTarget.classList.toggle('open')
-                        ev.currentTarget.classList.toggle('close')
-                        if (ev.currentTarget.classList.contains('open')) {
-                            ev.currentTarget.querySelector('.archive-accordion-child-wrapper').style.height = ev.currentTarget.querySelector('.archive-accordion-child').offsetHeight + 'px'
-                        } else {
-                            ev.currentTarget.querySelector('.archive-accordion-child-wrapper').style.height = '0'
-                        }
-                    })
-                })
-            </script>
-        </div>
-    {{ end }}
+        {{ end }}
+    </div>
 {{ end }}
