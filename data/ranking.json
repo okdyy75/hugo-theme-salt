@@ -2,30 +2,18 @@
     "items": [
         {
             "pagePath": "/",
-            "pv": "5"
-        },
-        {
-            "pagePath": "/article/salt/blog-card/",
-            "pv": "4"
-        },
-        {
-            "pagePath": "/tags/ショートコード/",
-            "pv": "4"
+            "pv": "8"
         },
         {
             "pagePath": "/article/hugo-release/v0.147.0/",
-            "pv": "3"
+            "pv": "4"
+        },
+        {
+            "pagePath": "/article/hugo/search/",
+            "pv": "4"
         },
         {
             "pagePath": "/article/salt/about/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/article/salt/migrate-content-adapters/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/article/sample/hugo-shortcode/",
             "pv": "3"
         },
         {
@@ -33,23 +21,15 @@
             "pv": "3"
         },
         {
-            "pagePath": "/tags/tips/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/categories/サンプル/",
+            "pagePath": "/article/sample/markdown/",
             "pv": "2"
         },
         {
-            "pagePath": "/archives/2025年5月/",
+            "pagePath": "/article/go/go-template/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo-release/v0.146.0/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/hugo/about/",
+            "pagePath": "/article/hugo/fontawesome/",
             "pv": "1"
         },
         {
@@ -57,33 +37,25 @@
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/search/",
+            "pagePath": "/article/salt/blog-card/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/tips/",
+            "pagePath": "/article/salt/migrate-content-adapters/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/salt/gist/",
+            "pagePath": "/article/sample/hugo-shortcode/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/salt/self-blog-card/",
+            "pagePath": "/categories/サンプル/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/sample/markdown/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/categories/Go言語/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/privacy-policy/",
+            "pagePath": "/tags/Hugo/",
             "pv": "1"
         }
     ],
-    "createdAt": "2025-07-20T02:04:40.059Z"
+    "createdAt": "2025-08-03T02:07:14.023Z"
 }
