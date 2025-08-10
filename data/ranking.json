@@ -2,10 +2,6 @@
     "items": [
         {
             "pagePath": "/",
-            "pv": "8"
-        },
-        {
-            "pagePath": "/article/hugo-release/v0.147.0/",
             "pv": "4"
         },
         {
@@ -17,35 +13,23 @@
             "pv": "3"
         },
         {
-            "pagePath": "/categories/Saltの使い方/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/article/sample/markdown/",
+            "pagePath": "/article/salt/blog-card/",
             "pv": "2"
         },
         {
-            "pagePath": "/article/go/go-template/",
+            "pagePath": "/article/hugo/about/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/fontawesome/",
+            "pagePath": "/article/hugo/archive/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/ranking/",
+            "pagePath": "/article/sample/markdown/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/salt/blog-card/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/salt/migrate-content-adapters/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/sample/hugo-shortcode/",
+            "pagePath": "/categories/Saltの使い方/",
             "pv": "1"
         },
         {
@@ -57,5 +41,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2025-08-03T02:07:14.023Z"
+    "createdAt": "2025-08-10T02:03:37.066Z"
 }
