@@ -2,10 +2,10 @@
     "items": [
         {
             "pagePath": "/",
-            "pv": "6"
+            "pv": "4"
         },
         {
-            "pagePath": "/article/salt/about/",
+            "pagePath": "/article/hugo-release/v0.147.0/",
             "pv": "4"
         },
         {
@@ -13,31 +13,31 @@
             "pv": "3"
         },
         {
-            "pagePath": "/article/hugo/search/",
+            "pagePath": "/article/hugo/archive/",
             "pv": "3"
+        },
+        {
+            "pagePath": "/article/salt/migrate-content-adapters/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/article/hugo-release/v0.145.0/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/hugo/build-error/",
+            "pv": "2"
         },
         {
             "pagePath": "/article/hugo/tips/",
             "pv": "2"
         },
         {
-            "pagePath": "/article/sample/hugo-shortcode/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/categories/サンプル/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/tags/Hugo/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/hugo-release/v0.147.0/",
+            "pagePath": "/article/go/go-template/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/build-error/",
+            "pagePath": "/article/salt/about/",
             "pv": "1"
         },
         {
@@ -49,14 +49,6 @@
             "pv": "1"
         },
         {
-            "pagePath": "/article/salt/migrate-content-adapters/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/article/salt/self-blog-card/",
-            "pv": "1"
-        },
-        {
             "pagePath": "/article/sample/markdown/",
             "pv": "1"
         },
@@ -65,9 +57,9 @@
             "pv": "1"
         },
         {
-            "pagePath": "/page/2/",
+            "pagePath": "/tags/新機能/",
             "pv": "1"
         }
     ],
-    "createdAt": "2025-10-05T01:45:03.745Z"
+    "createdAt": "2025-10-12T00:26:16.856Z"
 }
