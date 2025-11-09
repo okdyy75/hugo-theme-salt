@@ -2,42 +2,34 @@
     "items": [
         {
             "pagePath": "/",
+            "pv": "5"
+        },
+        {
+            "pagePath": "/article/hugo/search/",
             "pv": "4"
-        },
-        {
-            "pagePath": "/article/hugo-release/v0.147.0/",
-            "pv": "4"
-        },
-        {
-            "pagePath": "/article/hugo-release/v0.146.0/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/article/hugo/archive/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/article/salt/migrate-content-adapters/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/article/hugo-release/v0.145.0/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/hugo/build-error/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/hugo/tips/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/go/go-template/",
-            "pv": "1"
         },
         {
             "pagePath": "/article/salt/about/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/salt/custom-figure/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/article/hugo-release/v0.147.0/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/hugo/about/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/hugo/build-error/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/article/hugo/tips/",
             "pv": "1"
         },
         {
@@ -45,21 +37,17 @@
             "pv": "1"
         },
         {
-            "pagePath": "/article/salt/gist/",
-            "pv": "1"
-        },
-        {
             "pagePath": "/article/sample/markdown/",
             "pv": "1"
         },
         {
-            "pagePath": "/categories/Saltの使い方/",
+            "pagePath": "/categories/Go言語/",
             "pv": "1"
         },
         {
-            "pagePath": "/tags/新機能/",
+            "pagePath": "/search/",
             "pv": "1"
         }
     ],
-    "createdAt": "2025-10-12T00:26:16.856Z"
+    "createdAt": "2025-11-09T00:28:32.148Z"
 }
