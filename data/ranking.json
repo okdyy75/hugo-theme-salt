@@ -1,43 +1,15 @@
 {
     "items": [
         {
-            "pagePath": "/",
-            "pv": "10"
-        },
-        {
-            "pagePath": "/article/salt/about/",
-            "pv": "6"
-        },
-        {
-            "pagePath": "/article/salt/blog-card/",
-            "pv": "6"
-        },
-        {
-            "pagePath": "/archives/2025年5月/",
-            "pv": "4"
-        },
-        {
             "pagePath": "/article/go/go-template/",
             "pv": "3"
         },
         {
-            "pagePath": "/article/hugo-release/v0.147.0/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/hugo/about/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/hugo/search/",
-            "pv": "2"
-        },
-        {
             "pagePath": "/article/hugo/tips/",
-            "pv": "2"
+            "pv": "3"
         },
         {
-            "pagePath": "/article/salt/gist/",
+            "pagePath": "/article/salt/about/",
             "pv": "2"
         },
         {
@@ -45,25 +17,21 @@
             "pv": "2"
         },
         {
-            "pagePath": "/categories/Saltの使い方/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/article/hugo-release/v0.146.0/",
+            "pagePath": "/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/hugo/ranking/",
+            "pagePath": "/article/hugo/about/",
             "pv": "1"
         },
         {
-            "pagePath": "/article/sample/hugo-shortcode/",
+            "pagePath": "/article/hugo/search/",
             "pv": "1"
         },
         {
-            "pagePath": "/categories/サンプル/",
+            "pagePath": "/article/salt/gist/",
             "pv": "1"
         }
     ],
-    "createdAt": "2025-12-14T00:30:51.395Z"
+    "createdAt": "2025-12-21T00:30:40.247Z"
 }
