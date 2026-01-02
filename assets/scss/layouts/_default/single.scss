@@ -94,9 +94,15 @@
             }
             &.markdown-body {
                 color: $base-font-color;
-                pre, table {
-                    background: #f6f8fa;
-                    color: #000;
+                background: $base-background;
+                color-scheme: light;
+                --bgColor-default: #{$base-background};
+                --bgColor-muted: #{$light-background};
+                --borderColor-default: #{$light-border};
+                --borderColor-muted: #{$light-border};
+                pre {
+                    background: $light-background;
+                    color: $base-font-color;
                 }
             }
         }
