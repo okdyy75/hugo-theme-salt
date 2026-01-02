@@ -147,6 +147,7 @@ layouts/shortcodes/blog-card.html
 {{< blog-card "https://hugo-theme-salt.okdyy75.com/" >}}
 
 ### エラー時の表示例
+サイトビルド時に指定URLのコンテンツ取得や`og:image`の取得に失敗すると `WARN  Unable to get remote resource`のWARNINGが発生するので注意して下さい。
 
 #### ページが存在しない場合（500系など）
 - その場でエラーメッセージが表示されます

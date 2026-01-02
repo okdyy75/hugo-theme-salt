@@ -202,11 +202,71 @@ ranking.json
 
 ## 4. CIで定期的にpv取得スクリプトを起動させる
 
-あとは週一でCIを実行させればOK。
+あとは定期的にデプロイCIを実行させればOK。
 
-### GitHub Actions
+2026/1/1 追記  
+以前はランキングファイル（data/ranking.json）をコミットしてデプロイしていましたが、デプロイ時にランキングファイルを生成すれば良い事に気づいたので、現在はこちらのやり方の方がおすすめです
 
-gcpからDLした鍵の内容をGitHubのsercretsに`GOOGLE_ANALYTICS_CREDENTIALS`として保存してください。
+### GitHub Actionsの場合
+
+リポジトリのタブから Settings > Actions secrets and variables > Actions に  
+gcpからDLした鍵の内容を`GOOGLE_ANALYTICS_CREDENTIALS`にsecretsとして保存してください。
+
+.github/workflows/deploy.yml
+
+```yml
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  schedule:
+    - cron: '0 0 * * 0' # 毎週日曜 09:00 (JST)
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup npm
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+  
+      - name: npm Install
+        run: |
+          npm ci
+
+      - name: Create Ranking
+        env:
+          GOOGLE_ANALYTICS_CREDENTIALS: ${{ secrets.GOOGLE_ANALYTICS_CREDENTIALS }}
+        run: |
+          mkdir -p .gcp
+          echo "$GOOGLE_ANALYTICS_CREDENTIALS" > .gcp/google-analytics_credentials.json
+          npm run create-ranking
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+```
+
+
+----
+
+
+<details><summary>以前の方法</summary>
+<p>
 
 .github/workflows/create_ranking.yml
 
@@ -252,8 +312,44 @@ jobs:
 
 ```
 
+</p>
+</details> 
 
-### GitLab CI
+### GitLab CIの場合
+GitLabのプロジェクトを選択し、設定 > CI/CD > 変数に  
+gcpからDLした鍵の内容を`GOOGLE_ANALYTICS_CREDENTIALS`にsecretsとして保存してください。
+
+.gitlab-ci.yml
+
+```yml
+stages:
+  - build
+  - deploy
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+pages:
+  timeout: 5m
+  stage: deploy
+  image: node:20
+  script: |
+    npm ci
+    mkdir .gcp
+    echo "$GOOGLE_ANALYTICS_CREDENTIALS" > .gcp/google-analytics_credentials.json
+    npm run create-ranking
+    npm run build
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+```
+
+
+<details><summary>以前の方法</summary>
+<p>
+
 GitLabのプロジェクトを選択し、設定 > CI/CD > 変数に下記を設定
 - `GITLAB_USER_EMAIL`はGitLabで使っているemail
 - `GITLAB_USER_NAME`はGitLabで使っているuser name
@@ -318,5 +414,8 @@ pages:
   only:
     - main
 ```
+
+</p>
+</details> 
 
 最後にCI/CD > スケジュールから新規スケジュールを追加してください
