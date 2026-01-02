@@ -5,6 +5,8 @@ on:
     branches:
       - main
       - develop
+  schedule:
+    - cron: '0 0 * * 0' # 毎週日曜 09:00 (JST)
 
 jobs:
   deploy:
@@ -26,6 +28,14 @@ jobs:
       - name: npm Install
         run: |
           npm ci
+
+      - name: Create Ranking
+        env:
+          GOOGLE_ANALYTICS_CREDENTIALS: ${{ secrets.GOOGLE_ANALYTICS_CREDENTIALS }}
+        run: |
+          mkdir -p .gcp
+          echo "$GOOGLE_ANALYTICS_CREDENTIALS" > .gcp/google-analytics_credentials.json
+          npm run create-ranking
   
       - name: Build
         run: |
