@@ -18,7 +18,7 @@ Hugo Theme Salt内のショートコードに移行しました&lt;/p>
  &lt;h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">Hugo標準のgistショートコードをテーマ内に移行しました&lt;/h2>
  &lt;div style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;">Hugo公式のgistショートコードはバージョン0.143.0で非推奨となり、将来のリリースで削除されるそうなので Hugo Theme Salt内ののショートコードとして使えるように移行しました
 WARN The &amp;#34;gist&amp;#34; shortcode was deprecated in v0.143.0 and will be removed in a future release. See https://gohugo.io/shortcodes/gist for instructions to create a replacement. Hugo公式ページでは下記の通り
-Gist shortcode Embed a GitHub Gist in your content using the gist shortcode. The gist shortcode was deprecated in version 0.143.0 and will be removed in a future release. To continue embedding &amp;gt; GitHub Gists in your content, you’ll need to create a custom shortcode:
+The gist shortcode was deprecated in version 0.143.0 and will be removed in a future release. To continue embedding &amp;gt; GitHub Gists in your content, you’ll need to create a custom shortcode:
 Gist ショートコードはバージョン 0.143.0 で非推奨となり、今後のリリースで削除される予定です。コンテンツに GitHub Gist を埋め込むには、カスタムショートコードを作成する必要があります。
 &lt;/div>
  &lt;/div>
