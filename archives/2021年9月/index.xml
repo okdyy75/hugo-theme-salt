@@ -75,7 +75,7 @@ if内などで新しく変数を定義するとifブロック内での変数に�
  &lt;h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">画像のリサイズ・トリミング可能な自作ショートコード&lt;/h2>
  &lt;div style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;">このテーマ内で画像のリサイズ・トリミングができる「custom-figure」というショートコードを作成しました。
 使い方 Hugo標準のfigureショートコードの機能をそのまま使えます HugoのImage Processingで使えるResize、Fit、Fillが使えます Image Processingについてはこちらをチェック
-Image processing Process, transform, and analyze images. {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Resize スイカ&amp;#34; Resize=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Fit スイカ&amp;#34; Fit=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Fill スイカ&amp;#34; Fill=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Crop スイカ&amp;#34; Crop=&amp;#34;320x180&amp;#34; &amp;gt;}} 表示例 元画像は512x512です
+Image processing Transform images to change their size, shape, and appearance. {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Resize スイカ&amp;#34; Resize=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Fit スイカ&amp;#34; Fit=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Fill スイカ&amp;#34; Fill=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Crop スイカ&amp;#34; Crop=&amp;#34;320x180&amp;#34; &amp;gt;}} 表示例 元画像は512x512です
 &lt;/div>
  &lt;/div>
  &lt;/a></description></item><item><title>画像のリサイズ・トリミング可能な自作ショートコード</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/custom-figure/</link><pubDate>Sat, 11 Sep 2021 23:39:15 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/custom-figure/</guid><description>&lt;p>このテーマ内で画像のリサイズ・トリミングができる「custom-figure」というショートコードを作成しました。&lt;/p>
@@ -91,7 +91,7 @@ Image processing Process, transform, and analyze images. {{&amp;lt; custom-figur
  &lt;/div>
  &lt;div style="margin-left: 10px;">
  &lt;h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">Image processing&lt;/h2>
- &lt;p style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;"> Process, transform, and analyze images. &lt;/p>
+ &lt;p style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;"> Transform images to change their size, shape, and appearance. &lt;/p>
  &lt;/div>
  &lt;/a>
 &lt;br>
