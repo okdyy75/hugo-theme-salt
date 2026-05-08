@@ -237,7 +237,7 @@
                 <nav class="partials__sidebar__archive">
                     <ul class="partials__sidebar__archive__yearList">
                         {{ $articles := where .Site.RegularPages.ByDate.Reverse ".Section" "==" "article"}}
-                        {{ $archives := partial "functions/archives" (dict "articles" $articles "from" "Date") }}
+                        {{ $archives := partialCached "functions/archives" (dict "articles" $articles "from" "Date") "sidebar-archives" }}
                         {{ range $archives }}
                             {{ range $year, $year_list := . }}
                                 <li class="close archive-accordion partials__sidebar__archive__yearItem">
