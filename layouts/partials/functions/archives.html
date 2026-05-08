@@ -1,23 +1,24 @@
 {{ $articles := .articles }}
 {{ $from := .from }}
-{{ $latest := index (first 1 $articles) 0 }}
-{{ $oldest := index (last 1 $articles) 0 }}
 {{ $archives := slice }}
-{{ range $year := seq ((index $latest.Params $from).Format "2006") ((index $oldest.Params $from).Format "2006") }}
-    {{ $year_list := slice }}
-    {{ range $month := seq 12 1 }}
-        {{ $month_list := slice }}
-        {{ range $article := $articles }}
-            {{ if eq ((index $article.Params $from).Format "200601") (printf "%04d%02d" $year $month) }}
-                {{ $month_list = $month_list | append $article }}
+{{ if $articles }}
+    {{ $latest := index (first 1 $articles) 0 }}
+    {{ $oldest := index (last 1 $articles) 0 }}
+    {{ $startYear := int ((index $latest.Params $from).Format "2006") }}
+    {{ $endYear := int ((index $oldest.Params $from).Format "2006") }}
+    {{ range $year := seq $startYear $endYear }}
+        {{ $yearStr := string $year }}
+        {{ $yearArticles := where $articles (printf ".Params.%s.Year" $from) $year }}
+        {{ $year_list := slice }}
+        {{ range $month := seq 12 1 }}
+            {{ $monthArticles := where $yearArticles (printf ".Params.%s.Month" $from) $month }}
+            {{ if $monthArticles }}
+                {{ $year_list = $year_list | append (dict (string $month) $monthArticles) }}
             {{ end }}
         {{ end }}
-        {{ if $month_list }}
-            {{ $year_list = $year_list | append (dict (string $month) $month_list)  }}
+        {{ if $year_list }}
+            {{ $archives = $archives | append (dict $yearStr $year_list) }}
         {{ end }}
-    {{ end }}
-    {{ if $year_list }}
-        {{ $archives = $archives | append (dict (string $year) $year_list) }}
     {{ end }}
 {{ end }}
 {{ return $archives }}
