@@ -29,7 +29,7 @@ Hugo Theme Salt内ののショートコードとして使えるように移行�
 &lt;p>Gist ショートコードはバージョン 0.143.0 で非推奨となり、今後のリリースで削除される予定です。コンテンツに GitHub Gist を埋め込むには、カスタムショートコードを作成する必要があります。&lt;/p></description></item><item><title>Hugoでついに外部URLのブログカードを作れるようになった【自作ショートコード】</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/blog-card/</link><pubDate>Fri, 06 May 2022 23:34:09 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/blog-card/</guid><description>&lt;p>Hugoでは外部サイトのデータを扱う場合、&lt;code>getJSON&lt;/code>や&lt;code>getCSV&lt;/code>を使った方法しかありませんでしたが、ついにv0.91で&lt;code>GetRemote&lt;/code>が実装されました。&lt;/p>
 &lt;a href="https://github.com/gohugoio/hugo/releases/tag/v0.91.0" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: inherit;" onMouseOver="this.style.opacity='0.9'">
  &lt;div style="flex-shrink: 0;">
- &lt;img src="https://hugo-theme-salt.okdyy75.com/v0.91_10250111416627201191_hu_e77d941fe463c7e4.webp" alt="" width="100" height="100">
+ &lt;img src="https://hugo-theme-salt.okdyy75.com/v0.91_10250111416627201191_hu_1e6b087d56d55299.webp" alt="" width="100" height="100">
  &lt;/div>
  &lt;div style="margin-left: 10px;">
  &lt;h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">Release v0.91.0 · gohugoio/hugo&lt;/h2>
@@ -43,7 +43,7 @@ Hugo Theme Salt内ののショートコードとして使えるように移行�
  &lt;/div>
  &lt;div style="margin-left: 10px;">
  &lt;h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">Hugo Pipes&lt;/h2>
- &lt;p style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;"> Hugo Pipes is Hugo's asset processing set of functions. &lt;/p>
+ &lt;p style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;">Hugo Pipes is Hugo's asset processing set of functions.&lt;/p>
  &lt;/div>
  &lt;/a>
 &lt;br>
@@ -75,7 +75,8 @@ Hugo Theme Salt内ののショートコードとして使えるように移行�
  &lt;h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">画像のリサイズ・トリミング可能な自作ショートコード&lt;/h2>
  &lt;div style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;">このテーマ内で画像のリサイズ・トリミングができる「custom-figure」というショートコードを作成しました。
 使い方 Hugo標準のfigureショートコードの機能をそのまま使えます HugoのImage Processingで使えるResize、Fit、Fillが使えます Image Processingについてはこちらをチェック
-Image processing Transform images to change their size, shape, and appearance. {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Resize スイカ&amp;#34; Resize=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Fit スイカ&amp;#34; Fit=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Fill スイカ&amp;#34; Fill=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Crop スイカ&amp;#34; Crop=&amp;#34;320x180&amp;#34; &amp;gt;}} 表示例 元画像は512x512です
+Image processing Transform images to change their size, shape, and appearance.
+{{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Resize スイカ&amp;#34; Resize=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Fit スイカ&amp;#34; Fit=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Fill スイカ&amp;#34; Fill=&amp;#34;320x180&amp;#34; &amp;gt;}} {{&amp;lt; custom-figure src=&amp;#34;image.png&amp;#34; title=&amp;#34;Crop スイカ&amp;#34; Crop=&amp;#34;320x180&amp;#34; &amp;gt;}} 表示例 元画像は512x512です
 &lt;/div>
  &lt;/div>
  &lt;/a></description></item><item><title>画像のリサイズ・トリミング可能な自作ショートコード</title><link>https://hugo-theme-salt.okdyy75.com/article/salt/custom-figure/</link><pubDate>Sat, 11 Sep 2021 23:39:15 +0900</pubDate><author>okdyy75@gmail.com (okdyy75)</author><guid>https://hugo-theme-salt.okdyy75.com/article/salt/custom-figure/</guid><description>&lt;p>このテーマ内で画像のリサイズ・トリミングができる「custom-figure」というショートコードを作成しました。&lt;/p>
@@ -91,7 +92,7 @@ Image processing Transform images to change their size, shape, and appearance. {
  &lt;/div>
  &lt;div style="margin-left: 10px;">
  &lt;h2 style="margin: 0;padding-bottom: 13px;border: none;font-size: 16px;">Image processing&lt;/h2>
- &lt;p style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;"> Transform images to change their size, shape, and appearance. &lt;/p>
+ &lt;p style="margin: 0;font-size: 13px;word-break: break-word;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;">Transform images to change their size, shape, and appearance.&lt;/p>
  &lt;/div>
  &lt;/a>
 &lt;br>
